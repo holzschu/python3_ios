@@ -1,0 +1,12 @@
+diff -Naurbw libffi-3.2.1/generate-darwin-source-and-headers.py libffi-3.2.1-patched/generate-darwin-source-and-headers.py
+--- libffi-3.2.1/generate-darwin-source-and-headers.py	2014-11-08 13:47:24.000000000 +0100
++++ libffi-3.2.1-patched/generate-darwin-source-and-headers.py	2017-07-18 22:29:33.000000000 +0200
+@@ -187,7 +187,7 @@
+     if generate_ios:
+         build_target(simulator_platform, platform_headers)
+         build_target(simulator64_platform, platform_headers)
+-        build_target(device_platform, platform_headers)
++#        build_target(device_platform, platform_headers)
+         build_target(device64_platform, platform_headers)
+     if generate_osx:
+         build_target(desktop32_platform, platform_headers)
