@@ -7,9 +7,10 @@ setenv CPPFLAGS "-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/
 make install
 
 - cross-compile:
+setenv PATH /Users/holzschu/src/Xcode_iPad/python3_ios/macOS/bin/:$PATH
 setenv CFLAGS "-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/"
 setenv CPPFLAGS "-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/"
-./configure --enable-framework=$HOME/src/Xcode_iPad/python3_ios/Frameworks/ --without-gcc --host=armv7-apple-darwin --build=x86_64-apple-darwin18.2.0
+./configure  --without-gcc --host=armv7-apple-darwin --build=x86_64-apple-darwin18.2.0
 
 
 - todo: add libssh2 / openssl frameworks
