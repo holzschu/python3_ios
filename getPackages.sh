@@ -25,8 +25,8 @@ echo "Applying patch to libffi-3.2.1:"
 echo "Compiling libffi-3.2.1:"
 (cd libffi-3.2.1 ;  xcodebuild -project libffi.xcodeproj -target libffi-iOS -sdk iphoneos -arch arm64 -configuration Debug -quiet; mv build/Debug-iphoneos/libffi.a .. ; cd ..)
 echo "Applying patch to Python-3.7.1"
-(cd Python-3.7.1 ; patch -p 1 < ../Python.patch ; cd ..)
+(cd Python-3.7.1  ; patch -p 1 < ../Python_Include.patch ; patch -p 1 < ../Python_Lib.patch ; patch -p 1 < ../Python_Modules.patch; patch -p 1 < ../Python_Parser.patch ; patch -p 1 < ../Python_Python.patch; patch -p 1 < ../Python_setup.patch ; patch -p 1 < ../Python_Objects.patch; cd ..)
 
-echo "All done. Now open Python_ios.xcodeproj and compile."
+echo "All done. Now open Python3_ios.xcodeproj and compile."
 
 
