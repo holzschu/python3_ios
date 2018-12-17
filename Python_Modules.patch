@@ -1,0 +1,1055 @@
+diff -Naur tmp/Python-3.7.1/Modules/Setup Python-3.7.1/Modules/Setup
+--- tmp/Python-3.7.1/Modules/Setup	1970-01-01 01:00:00.000000000 +0100
++++ Python-3.7.1/Modules/Setup	2018-12-09 21:17:43.000000000 +0100
+@@ -0,0 +1,369 @@
++# -*- makefile -*-
++# The file Setup is used by the makesetup script to construct the files
++# Makefile and config.c, from Makefile.pre and config.c.in,
++# respectively.  The file Setup itself is initially copied from
++# Setup.dist; once it exists it will not be overwritten, so you can edit
++# Setup to your heart's content.  Note that Makefile.pre is created
++# from Makefile.pre.in by the toplevel configure script.
++
++# (VPATH notes: Setup and Makefile.pre are in the build directory, as
++# are Makefile and config.c; the *.in and *.dist files are in the source
++# directory.)
++
++# Each line in this file describes one or more optional modules.
++# Modules configured here will not be compiled by the setup.py script,
++# so the file can be used to override setup.py's behavior.
++# Tag lines containing just the word "*static*", "*shared*" or "*disabled*"
++# (without the quotes but with the stars) are used to tag the following module
++# descriptions. Tag lines may alternate throughout this file.  Modules are
++# built statically when they are preceded by a "*static*" tag line or when
++# there is no tag line between the start of the file and the module
++# description.  Modules are built as a shared library when they are preceded by
++# a "*shared*" tag line.  Modules are not built at all, not by the Makefile,
++# nor by the setup.py script, when they are preceded by a "*disabled*" tag
++# line.
++
++# Lines have the following structure:
++#
++# <module> ... [<sourcefile> ...] [<cpparg> ...] [<library> ...]
++#
++# <sourcefile> is anything ending in .c (.C, .cc, .c++ are C++ files)
++# <cpparg> is anything starting with -I, -D, -U or -C
++# <library> is anything ending in .a or beginning with -l or -L
++# <module> is anything else but should be a valid Python
++# identifier (letters, digits, underscores, beginning with non-digit)
++#
++# (As the makesetup script changes, it may recognize some other
++# arguments as well, e.g. *.so and *.sl as libraries.  See the big
++# case statement in the makesetup script.)
++#
++# Lines can also have the form
++#
++# <name> = <value>
++#
++# which defines a Make variable definition inserted into Makefile.in
++#
++# The build process works like this:
++#
++# 1. Build all modules that are declared as static in Modules/Setup,
++#    combine them into libpythonxy.a, combine that into python.
++# 2. Build all modules that are listed as shared in Modules/Setup.
++# 3. Invoke setup.py. That builds all modules that
++#    a) are not builtin, and
++#    b) are not listed in Modules/Setup, and
++#    c) can be build on the target
++#
++# Therefore, modules declared to be shared will not be
++# included in the config.c file, nor in the list of objects to be
++# added to the library archive, and their linker options won't be
++# added to the linker options. Rules to create their .o files and
++# their shared libraries will still be added to the Makefile, and
++# their names will be collected in the Make variable SHAREDMODS.  This
++# is used to build modules as shared libraries.  (They can be
++# installed using "make sharedinstall", which is implied by the
++# toplevel "make install" target.)  (For compatibility,
++# *noconfig* has the same effect as *shared*.)
++#
++# NOTE: As a standard policy, as many modules as can be supported by a
++# platform should be present.  The distribution comes with all modules
++# enabled that are supported by most platforms and don't require you
++# to ftp sources from elsewhere.
++
++
++# Some special rules to define PYTHONPATH.
++# Edit the definitions below to indicate which options you are using.
++# Don't add any whitespace or comments!
++
++# Directories where library files get installed.
++# DESTLIB is for Python modules; MACHDESTLIB for shared libraries.
++DESTLIB=$(LIBDEST)
++MACHDESTLIB=$(BINLIBDEST)
++
++# NOTE: all the paths are now relative to the prefix that is computed
++# at run time!
++
++# Standard path -- don't edit.
++# No leading colon since this is the first entry.
++# Empty since this is now just the runtime prefix.
++DESTPATH=
++
++# Site specific path components -- should begin with : if non-empty
++SITEPATH=
++
++# Standard path components for test modules
++TESTPATH=
++
++COREPYTHONPATH=$(DESTPATH)$(SITEPATH)$(TESTPATH)
++PYTHONPATH=$(COREPYTHONPATH)
++
++
++# The modules listed here can't be built as shared libraries for
++# various reasons; therefore they are listed here instead of in the
++# normal order.
++
++# This only contains the minimal set of modules required to run the
++# setup.py script in the root of the Python source tree.
++
++posix -DPy_BUILD_CORE posixmodule.c	# posix (UNIX) system calls
++errno errnomodule.c			# posix (UNIX) errno values
++pwd pwdmodule.c				# this is needed to find out the user's home dir
++					# if $HOME is not set
++_sre _sre.c				# Fredrik Lundh's new regular expressions
++_codecs _codecsmodule.c			# access to the builtin codecs and codec registry
++_weakref _weakref.c			# weak references
++_functools -DPy_BUILD_CORE _functoolsmodule.c   # Tools for working with functions and callable objects
++_operator _operator.c	        	# operator.add() and similar goodies
++_collections _collectionsmodule.c	# Container types
++_abc _abc.c				# Abstract base classes
++itertools itertoolsmodule.c		# Functions creating iterators for efficient looping
++atexit atexitmodule.c			# Register functions to be run at interpreter-shutdown
++_signal -DPy_BUILD_CORE signalmodule.c
++_stat _stat.c				# stat.h interface
++time -DPy_BUILD_CORE timemodule.c	# -lm # time operations and variables
++_thread -DPy_BUILD_CORE _threadmodule.c	# low-level threading interface
++
++# access to ISO C locale support
++_locale _localemodule.c  # -lintl
++
++# Standard I/O baseline
++_io -DPy_BUILD_CORE -I$(srcdir)/Modules/_io _io/_iomodule.c _io/iobase.c _io/fileio.c _io/bytesio.c _io/bufferedio.c _io/textio.c _io/stringio.c
++
++# The zipimport module is always imported at startup. Having it as a
++# builtin module avoids some bootstrapping problems and reduces overhead.
++zipimport -DPy_BUILD_CORE zipimport.c
++
++# faulthandler module
++faulthandler faulthandler.c
++
++# debug tool to trace memory blocks allocated by Python
++_tracemalloc _tracemalloc.c hashtable.c
++
++# The rest of the modules listed in this file are all commented out by
++# default.  Usually they can be detected and built as dynamically
++# loaded modules by the new setup.py script added in Python 2.1.  If
++# you're on a platform that doesn't support dynamic loading, want to
++# compile modules statically into the Python binary, or need to
++# specify some odd set of compiler switches, you can uncomment the
++# appropriate lines below.
++
++# ======================================================================
++
++# The Python symtable module depends on .h files that setup.py doesn't track
++_symtable symtablemodule.c
++
++# Uncommenting the following line tells makesetup that all following
++# modules are to be built as shared libraries (see above for more
++# detail; also note that *static* or *disabled* cancels this effect):
++
++#*shared*
++
++# GNU readline.  Unlike previous Python incarnations, GNU readline is
++# now incorporated in an optional module, configured in the Setup file
++# instead of by a configure script switch.  You may have to insert a
++# -L option pointing to the directory where libreadline.* lives,
++# and you may have to change -ltermcap to -ltermlib or perhaps remove
++# it, depending on your system -- see the GNU readline instructions.
++# It's okay for this to be a shared library, too.
++
++#readline readline.c -lreadline -ltermcap
++
++
++# Modules that should always be present (non UNIX dependent):
++
++#array arraymodule.c	# array objects
++#cmath cmathmodule.c _math.c # -lm # complex math library functions
++#math mathmodule.c _math.c # -lm # math library functions, e.g. sin()
++#_contextvars _contextvarsmodule.c  # Context Variables
++#_struct _struct.c	# binary structure packing/unpacking
++#_weakref _weakref.c	# basic weak reference support
++#_testcapi _testcapimodule.c    # Python C API test module
++#_random _randommodule.c	# Random number generator
++#_elementtree -I$(srcdir)/Modules/expat -DHAVE_EXPAT_CONFIG_H -DUSE_PYEXPAT_CAPI _elementtree.c	# elementtree accelerator
++#_pickle _pickle.c	# pickle accelerator
++#_datetime _datetimemodule.c	# datetime accelerator
++#_bisect _bisectmodule.c	# Bisection algorithms
++#_heapq _heapqmodule.c	# Heap queue algorithm
++#_asyncio _asynciomodule.c  # Fast asyncio Future
++
++#unicodedata unicodedata.c    # static Unicode character database
++
++
++# Modules with some UNIX dependencies -- on by default:
++# (If you have a really backward UNIX, select and socket may not be
++# supported...)
++
++#fcntl fcntlmodule.c	# fcntl(2) and ioctl(2)
++#spwd spwdmodule.c		# spwd(3)
++#grp grpmodule.c		# grp(3)
++#select selectmodule.c	# select(2); not on ancient System V
++
++# Memory-mapped files (also works on Win32).
++#mmap mmapmodule.c
++
++# CSV file helper
++#_csv _csv.c
++
++# Socket module helper for socket(2)
++#_socket socketmodule.c
++
++# Socket module helper for SSL support; you must comment out the other
++# socket line above, and possibly edit the SSL variable:
++#SSL=/usr/local/ssl
++#_ssl _ssl.c \
++#	-DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
++#	-L$(SSL)/lib -lssl -lcrypto
++
++# The crypt module is now disabled by default because it breaks builds
++# on many systems (where -lcrypt is needed), e.g. Linux (I believe).
++
++#_crypt _cryptmodule.c # -lcrypt	# crypt(3); needs -lcrypt on some systems
++
++
++# Some more UNIX dependent modules -- off by default, since these
++# are not supported by all UNIX systems:
++
++#nis nismodule.c -lnsl	# Sun yellow pages -- not everywhere
++#termios termios.c	# Steen Lumholt's termios module
++#resource resource.c	# Jeremy Hylton's rlimit interface
++
++#_posixsubprocess _posixsubprocess.c  # POSIX subprocess module helper
++
++# Multimedia modules -- off by default.
++# These don't work for 64-bit platforms!!!
++# #993173 says audioop works on 64-bit platforms, though.
++# These represent audio samples or images as strings:
++
++#audioop audioop.c	# Operations on audio samples
++
++
++# Note that the _md5 and _sha modules are normally only built if the
++# system does not have the OpenSSL libs containing an optimized version.
++
++# The _md5 module implements the RSA Data Security, Inc. MD5
++# Message-Digest Algorithm, described in RFC 1321.
++
++#_md5 md5module.c
++
++
++# The _sha module implements the SHA checksum algorithms.
++# (NIST's Secure Hash Algorithms.)
++#_sha1 sha1module.c
++#_sha256 sha256module.c
++#_sha512 sha512module.c
++#_sha3 _sha3/sha3module.c
++
++# _blake module
++#_blake2 _blake2/blake2module.c _blake2/blake2b_impl.c _blake2/blake2s_impl.c
++
++# The _tkinter module.
++#
++# The command for _tkinter is long and site specific.  Please
++# uncomment and/or edit those parts as indicated.  If you don't have a
++# specific extension (e.g. Tix or BLT), leave the corresponding line
++# commented out.  (Leave the trailing backslashes in!  If you
++# experience strange errors, you may want to join all uncommented
++# lines and remove the backslashes -- the backslash interpretation is
++# done by the shell's "read" command and it may not be implemented on
++# every system.
++
++# *** Always uncomment this (leave the leading underscore in!):
++# _tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \
++# *** Uncomment and edit to reflect where your Tcl/Tk libraries are:
++#	-L/usr/local/lib \
++# *** Uncomment and edit to reflect where your Tcl/Tk headers are:
++#	-I/usr/local/include \
++# *** Uncomment and edit to reflect where your X11 header files are:
++#	-I/usr/X11R6/include \
++# *** Or uncomment this for Solaris:
++#	-I/usr/openwin/include \
++# *** Uncomment and edit for Tix extension only:
++#	-DWITH_TIX -ltix8.1.8.2 \
++# *** Uncomment and edit for BLT extension only:
++#	-DWITH_BLT -I/usr/local/blt/blt8.0-unoff/include -lBLT8.0 \
++# *** Uncomment and edit for PIL (TkImaging) extension only:
++#     (See http://www.pythonware.com/products/pil/ for more info)
++#	-DWITH_PIL -I../Extensions/Imaging/libImaging  tkImaging.c \
++# *** Uncomment and edit for TOGL extension only:
++#	-DWITH_TOGL togl.c \
++# *** Uncomment and edit to reflect your Tcl/Tk versions:
++#	-ltk8.2 -ltcl8.2 \
++# *** Uncomment and edit to reflect where your X11 libraries are:
++#	-L/usr/X11R6/lib \
++# *** Or uncomment this for Solaris:
++#	-L/usr/openwin/lib \
++# *** Uncomment these for TOGL extension only:
++#	-lGL -lGLU -lXext -lXmu \
++# *** Uncomment for AIX:
++#	-lld \
++# *** Always uncomment this; X11 libraries to link with:
++#	-lX11
++
++# Lance Ellinghaus's syslog module
++#syslog syslogmodule.c		# syslog daemon interface
++
++
++# Curses support, requiring the System V version of curses, often
++# provided by the ncurses library.  e.g. on Linux, link with -lncurses
++# instead of -lcurses).
++
++#_curses _cursesmodule.c -lcurses -ltermcap
++# Wrapper for the panel library that's part of ncurses and SYSV curses.
++#_curses_panel _curses_panel.c -lpanel -lncurses
++
++
++# Modules that provide persistent dictionary-like semantics.  You will
++# probably want to arrange for at least one of them to be available on
++# your machine, though none are defined by default because of library
++# dependencies.  The Python module dbm/__init__.py provides an
++# implementation independent wrapper for these; dbm/dumb.py provides
++# similar functionality (but slower of course) implemented in Python.
++
++#_dbm _dbmmodule.c 	# dbm(3) may require -lndbm or similar
++
++# Anthony Baxter's gdbm module.  GNU dbm(3) will require -lgdbm:
++
++#_gdbm _gdbmmodule.c -I/usr/local/include -L/usr/local/lib -lgdbm
++
++
++# Helper module for various ascii-encoders
++#binascii binascii.c
++
++# Fred Drake's interface to the Python parser
++#parser parsermodule.c
++
++
++# Andrew Kuchling's zlib module.
++# This require zlib 1.1.3 (or later).
++# See http://www.gzip.org/zlib/
++#zlib zlibmodule.c -I$(prefix)/include -L$(exec_prefix)/lib -lz
++
++# Interface to the Expat XML parser
++# More information on Expat can be found at www.libexpat.org.
++#
++#pyexpat expat/xmlparse.c expat/xmlrole.c expat/xmltok.c pyexpat.c -I$(srcdir)/Modules/expat -DHAVE_EXPAT_CONFIG_H -DUSE_PYEXPAT_CAPI
++
++# Hye-Shik Chang's CJKCodecs
++
++# multibytecodec is required for all the other CJK codec modules
++#_multibytecodec cjkcodecs/multibytecodec.c
++
++#_codecs_cn cjkcodecs/_codecs_cn.c
++#_codecs_hk cjkcodecs/_codecs_hk.c
++#_codecs_iso2022 cjkcodecs/_codecs_iso2022.c
++#_codecs_jp cjkcodecs/_codecs_jp.c
++#_codecs_kr cjkcodecs/_codecs_kr.c
++#_codecs_tw cjkcodecs/_codecs_tw.c
++
++# Example -- included for reference only:
++# xx xxmodule.c
++
++# Another example -- the 'xxsubtype' module shows C-level subtyping in action
++xxsubtype xxsubtype.c
++
++# Uncommenting the following line tells makesetup that all following modules
++# are not built (see above for more detail).
++#
++#*disabled*
++#
++#_sqlite3 _tkinter _curses pyexpat
++#_codecs_jp _codecs_kr _codecs_tw unicodedata
+diff -Naur tmp/Python-3.7.1/Modules/Setup.local Python-3.7.1/Modules/Setup.local
+--- tmp/Python-3.7.1/Modules/Setup.local	1970-01-01 01:00:00.000000000 +0100
++++ Python-3.7.1/Modules/Setup.local	2018-12-09 21:17:43.000000000 +0100
+@@ -0,0 +1 @@
++# Edit this file for local setup changes
+diff -Naur tmp/Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h
+--- tmp/Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h	2018-12-17 08:34:48.000000000 +0100
+@@ -61,7 +61,7 @@
+ #else
+ extern void * dlopen(const char *path, int mode);
+ extern void * dlsym(void * handle, const char *symbol);
+-extern const char * dlerror(void);
++extern /* const */ char * dlerror(void);
+ extern int dlclose(void * handle);
+ extern int dladdr(const void *, Dl_info *);
+ #endif
+diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_posixsubprocess.c
+--- tmp/Python-3.7.1/Modules/_posixsubprocess.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Modules/_posixsubprocess.c	2018-12-17 13:50:50.000000000 +0100
+@@ -376,6 +376,7 @@
+ #endif  /* else NOT (defined(__linux__) && defined(HAVE_SYS_SYSCALL_H)) */
+ 
+ 
++
+ /*
+  * This function is code executed in the child process immediately after fork
+  * to set things up and call exec().
+@@ -411,6 +412,7 @@
+     if (make_inheritable(py_fds_to_keep, errpipe_write) < 0)
+         goto error;
+ 
++#ifndef TARGET_OS_IPHONE
+     /* Close parent's pipe ends. */
+     if (p2cwrite != -1)
+         POSIX_CALL(close(p2cwrite));
+@@ -463,6 +465,10 @@
+ 
+     /* We no longer manually close p2cread, c2pwrite, and errwrite here as
+      * _close_open_fds takes care when it is not already non-inheritable. */
++#else // TARGET_OS_IPHONE
++    // TODO: do something meaningful with c2pwrite/p2cread and the like.
++    // More difficult since we didn't fork.
++#endif // TARGET_OS_IPHONE
+ 
+     if (cwd)
+         POSIX_CALL(chdir(cwd));
+@@ -505,8 +511,14 @@
+         const char *executable = exec_array[i];
+         if (envp) {
+             execve(executable, argv, envp);
++#ifdef TARGET_OS_IPHONE
++            return; // We're not supposed to return from exec, but on iOS we do
++#endif
+         } else {
+             execv(executable, argv);
++#ifdef TARGET_OS_IPHONE
++            return; // We're not supposed to return from exec, but on iOS we do
++#endif
+         }
+         if (errno != ENOENT && errno != ENOTDIR && saved_errno == 0) {
+             saved_errno = errno;
+@@ -677,6 +689,9 @@
+     }
+ 
+     pid = fork();
++#ifdef TARGET_OS_IPHONE
++    pid = 0;
++#endif
+     if (pid == 0) {
+         /* Child process */
+         /*
+@@ -698,9 +713,15 @@
+                    errread, errwrite, errpipe_read, errpipe_write,
+                    close_fds, restore_signals, call_setsid,
+                    py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
++#ifndef TARGET_OS_IPHONE
+         _exit(255);
+-        return NULL;  /* Dead code to avoid a potential compiler warning. */
++        return NULL;
++#else
++        // iOS: we return now
++        Py_RETURN_NONE;
++#endif
+     }
++    // TODO: cleanup memory allocation in iOS
+     /* Parent (original) process */
+     if (pid == -1) {
+         /* Capture errno for the exception. */
+diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
+--- tmp/Python-3.7.1/Modules/config.c	1970-01-01 01:00:00.000000000 +0100
++++ Python-3.7.1/Modules/config.c	2018-12-17 14:29:03.000000000 +0100
+@@ -0,0 +1,270 @@
++/* Generated automatically from ./Modules/config.c.in by makesetup. */
++/* -*- C -*- ***********************************************
++Copyright (c) 2000, BeOpen.com.
++Copyright (c) 1995-2000, Corporation for National Research Initiatives.
++Copyright (c) 1990-1995, Stichting Mathematisch Centrum.
++All rights reserved.
++
++See the file "Misc/COPYRIGHT" for information on usage and
++redistribution of this file, and for a DISCLAIMER OF ALL WARRANTIES.
++******************************************************************/
++
++/* Module configuration */
++
++/* !!! !!! !!! This file is edited by the makesetup script !!! !!! !!! */
++
++/* This file contains the table of built-in modules.
++   See create_builtin() in import.c. */
++
++#include "Python.h"
++
++#ifdef __cplusplus
++extern "C" {
++#endif
++
++
++PyMODINIT_FUNC PyInit_posix(void);
++PyMODINIT_FUNC PyInit_errno(void);
++PyMODINIT_FUNC PyInit_pwd(void);
++PyMODINIT_FUNC PyInit__sre(void);
++PyMODINIT_FUNC PyInit__codecs(void);
++PyMODINIT_FUNC PyInit__weakref(void);
++PyMODINIT_FUNC PyInit__functools(void);
++PyMODINIT_FUNC PyInit__operator(void);
++PyMODINIT_FUNC PyInit__collections(void);
++PyMODINIT_FUNC PyInit__abc(void);
++PyMODINIT_FUNC PyInit_itertools(void);
++PyMODINIT_FUNC PyInit_atexit(void);
++PyMODINIT_FUNC PyInit__signal(void);
++PyMODINIT_FUNC PyInit__stat(void);
++PyMODINIT_FUNC PyInit_time(void);
++PyMODINIT_FUNC PyInit__thread(void);
++PyMODINIT_FUNC PyInit__locale(void);
++PyMODINIT_FUNC PyInit__io(void);
++PyMODINIT_FUNC PyInit_zipimport(void);
++PyMODINIT_FUNC PyInit_faulthandler(void);
++PyMODINIT_FUNC PyInit__tracemalloc(void);
++PyMODINIT_FUNC PyInit__symtable(void);
++PyMODINIT_FUNC PyInit_xxsubtype(void);
++
++/* -- ADDMODULE MARKER 1 -- */
++
++PyMODINIT_FUNC PyMarshal_Init(void);
++PyMODINIT_FUNC PyInit__imp(void);
++PyMODINIT_FUNC PyInit_gc(void);
++PyMODINIT_FUNC PyInit__ast(void);
++PyMODINIT_FUNC _PyWarnings_Init(void);
++PyMODINIT_FUNC PyInit__string(void);
++    
++/* Distribution standard modules -- auto generated from make.log */
++/* Standard distribution modules, embedded for iOS */
++PyMODINIT_FUNC PyInit__struct(void);
++PyMODINIT_FUNC PyInit__ctypes_test(void);
++PyMODINIT_FUNC PyInit_array(void);
++PyMODINIT_FUNC PyInit__contextvars(void);
++PyMODINIT_FUNC PyInit_cmath(void);
++PyMODINIT_FUNC PyInit_math(void);
++PyMODINIT_FUNC PyInit__datetime(void);
++PyMODINIT_FUNC PyInit__random(void);
++PyMODINIT_FUNC PyInit__bisect(void);
++PyMODINIT_FUNC PyInit__heapq(void);
++PyMODINIT_FUNC PyInit__pickle(void);
++PyMODINIT_FUNC PyInit__json(void);
++PyMODINIT_FUNC PyInit__testcapi(void);
++PyMODINIT_FUNC PyInit__testbuffer(void);
++PyMODINIT_FUNC PyInit__testimportmultiple(void);
++PyMODINIT_FUNC PyInit__testmultiphase(void);
++PyMODINIT_FUNC PyInit__lsprof(void);
++PyMODINIT_FUNC PyInit_unicodedata(void);
++PyMODINIT_FUNC PyInit__opcode(void);
++PyMODINIT_FUNC PyInit__asyncio(void);
++PyMODINIT_FUNC PyInit__queue(void);
++PyMODINIT_FUNC PyInit_fcntl(void);
++PyMODINIT_FUNC PyInit_grp(void);
++PyMODINIT_FUNC PyInit_select(void);
++PyMODINIT_FUNC PyInit_parser(void);
++PyMODINIT_FUNC PyInit_mmap(void);
++PyMODINIT_FUNC PyInit_syslog(void);
++PyMODINIT_FUNC PyInit__xxtestfuzz(void);
++PyMODINIT_FUNC PyInit_audioop(void);
++PyMODINIT_FUNC PyInit_readline(void);
++PyMODINIT_FUNC PyInit__crypt(void);
++PyMODINIT_FUNC PyInit__csv(void);
++PyMODINIT_FUNC PyInit__posixsubprocess(void);
++PyMODINIT_FUNC PyInit__socket(void);
++PyMODINIT_FUNC PyInit__ssl(void);
++PyMODINIT_FUNC PyInit__hashlib(void);
++PyMODINIT_FUNC PyInit__sha256(void);
++PyMODINIT_FUNC PyInit__sha512(void);
++PyMODINIT_FUNC PyInit__md5(void);
++PyMODINIT_FUNC PyInit__sha1(void);
++PyMODINIT_FUNC PyInit__blake2(void);
++PyMODINIT_FUNC PyInit__sha3(void);
++PyMODINIT_FUNC PyInit_termios(void);
++PyMODINIT_FUNC PyInit_resource(void);
++PyMODINIT_FUNC PyInit__curses(void);
++PyMODINIT_FUNC PyInit__curses_panel(void);
++PyMODINIT_FUNC PyInit_binascii(void);
++PyMODINIT_FUNC PyInit__bz2(void);
++PyMODINIT_FUNC PyInit__lzma(void);
++PyMODINIT_FUNC PyInit_pyexpat(void);
++PyMODINIT_FUNC PyInit__elementtree(void);
++PyMODINIT_FUNC PyInit__multibytecodec(void);
++PyMODINIT_FUNC PyInit__codecs_kr(void);
++PyMODINIT_FUNC PyInit__codecs_jp(void);
++PyMODINIT_FUNC PyInit__codecs_cn(void);
++PyMODINIT_FUNC PyInit__codecs_tw(void);
++PyMODINIT_FUNC PyInit__codecs_hk(void);
++PyMODINIT_FUNC PyInit__codecs_iso2022(void);
++PyMODINIT_FUNC PyInit__decimal(void);
++PyMODINIT_FUNC PyInit__multiprocessing(void);
++// PyMODINIT_FUNC PyInit__scproxy(void);
++// PyMODINIT_FUNC PyInit__tkinter(void);
++PyMODINIT_FUNC PyInit_xxlimited(void);
++PyMODINIT_FUNC PyInit__ctypes(void);
++// Not included by configure, but required anyway:
++PyMODINIT_FUNC PyInit_zlib(void);
++PyMODINIT_FUNC PyInit__sqlite3(void);
++// New in Python3.7:
++PyMODINIT_FUNC PyInit__dbm(void);
++PyMODINIT_FUNC PyInit__uuid(void);
++// For Jupyter:
++// PyMODINIT_FUNC PyInit__cffi_backend(void);
++// PyMODINIT_FUNC PyInit_libzmq(void);
++// PyMODINIT_FUNC PyInit_monitoredqueue(void); /*proto*/
++// PyMODINIT_FUNC PyInit__cffi_ext(void);
++
++struct _inittab _PyImport_Inittab[] = {
++
++    {"posix", PyInit_posix},
++    {"errno", PyInit_errno},
++    {"pwd", PyInit_pwd},
++    {"_sre", PyInit__sre},
++    {"_codecs", PyInit__codecs},
++    {"_weakref", PyInit__weakref},
++    {"_functools", PyInit__functools},
++    {"_operator", PyInit__operator},
++    {"_collections", PyInit__collections},
++    {"_abc", PyInit__abc},
++    {"itertools", PyInit_itertools},
++    {"atexit", PyInit_atexit},
++    {"_signal", PyInit__signal},
++    {"_stat", PyInit__stat},
++    {"time", PyInit_time},
++    {"_thread", PyInit__thread},
++    {"_locale", PyInit__locale},
++    {"_io", PyInit__io},
++    {"zipimport", PyInit_zipimport},
++    {"faulthandler", PyInit_faulthandler},
++    {"_tracemalloc", PyInit__tracemalloc},
++    {"_symtable", PyInit__symtable},
++    {"xxsubtype", PyInit_xxsubtype},
++
++/* -- ADDMODULE MARKER 2 -- */
++
++    /* This module lives in marshal.c */
++    {"marshal", PyMarshal_Init},
++
++    /* This lives in import.c */
++    {"_imp", PyInit__imp},
++
++    /* This lives in Python/Python-ast.c */
++    {"_ast", PyInit__ast},
++
++    /* These entries are here for sys.builtin_module_names */
++    {"builtins", NULL},
++    {"sys", NULL},
++
++    /* This lives in gcmodule.c */
++    {"gc", PyInit_gc},
++
++    /* This lives in _warnings.c */
++    {"_warnings", _PyWarnings_Init},
++
++    /* This lives in Objects/unicodeobject.c */
++    {"_string", PyInit__string},
++
++    /* Standard distribution modules, embedded for iOS */
++    {"_struct", PyInit__struct},
++    {"_ctypes_test", PyInit__ctypes_test},
++    {"array", PyInit_array},
++    {"_contextvars", PyInit__contextvars},
++    {"cmath", PyInit_cmath},
++    {"math", PyInit_math},
++    {"_datetime", PyInit__datetime},
++    {"_random", PyInit__random},
++    {"_bisect", PyInit__bisect},
++    {"_heapq", PyInit__heapq},
++    {"_pickle", PyInit__pickle},
++    {"_json", PyInit__json},
++    {"_testcapi", PyInit__testcapi},
++    {"_testbuffer", PyInit__testbuffer},
++    {"_testimportmultiple", PyInit__testimportmultiple},
++    {"_testmultiphase", PyInit__testmultiphase},
++    {"_lsprof", PyInit__lsprof},
++    {"unicodedata", PyInit_unicodedata},
++    {"_opcode", PyInit__opcode},
++    {"_asyncio", PyInit__asyncio},
++    {"_queue", PyInit__queue},
++    {"fcntl", PyInit_fcntl},
++    {"grp", PyInit_grp},
++    {"select", PyInit_select},
++    {"parser", PyInit_parser},
++    {"mmap", PyInit_mmap},
++    {"syslog", PyInit_syslog},
++    {"_fuzz", PyInit__xxtestfuzz},
++    {"audioop", PyInit_audioop},
++    {"readline", PyInit_readline},
++    {"_crypt", PyInit__crypt},
++    {"_csv", PyInit__csv},
++    {"_posixsubprocess", PyInit__posixsubprocess},
++    {"_socket", PyInit__socket},
++    {"_ssl", PyInit__ssl},
++    {"_hashlib", PyInit__hashlib},
++    {"_sha256", PyInit__sha256},
++    {"_sha512", PyInit__sha512},
++    {"_md5", PyInit__md5},
++    {"_sha1", PyInit__sha1},
++    {"_blake2", PyInit__blake2},
++    {"_sha3", PyInit__sha3},
++    {"termios", PyInit_termios},
++    {"resource", PyInit_resource},
++    {"_curses", PyInit__curses},
++    // {"_curses_panel", PyInit__curses_panel},
++    {"binascii", PyInit_binascii},
++    {"_bz2", PyInit__bz2},
++    {"_lzma", PyInit__lzma},
++    {"pyexpat", PyInit_pyexpat},
++    {"_elementtree", PyInit__elementtree},
++    {"_multibytecodec", PyInit__multibytecodec},
++    {"_codecs_kr", PyInit__codecs_kr},
++    {"_codecs_jp", PyInit__codecs_jp},
++    {"_codecs_cn", PyInit__codecs_cn},
++    {"_codecs_tw", PyInit__codecs_tw},
++    {"_codecs_hk", PyInit__codecs_hk},
++    {"_codecs_iso2022", PyInit__codecs_iso2022},
++    {"_decimal", PyInit__decimal},
++    {"_multiprocessing", PyInit__multiprocessing},
++    // {"_scproxy", PyInit__scproxy},
++    // {"_tkinter", PyInit__tkinter},
++    {"xxlimited", PyInit_xxlimited},
++    {"_ctypes", PyInit__ctypes},
++    
++    // Not included by configure, but required anyway:
++    {"zlib", PyInit_zlib},
++    {"_sqlite3", PyInit__sqlite3},
++    {"_dbm", PyInit__dbm},
++    {"_uuid", PyInit__uuid}, 
++    // For Jupyter:
++    // {"_cffi_ext", PyInit__cffi_ext},
++    // {"_cffi_backend", PyInit__cffi_backend},
++    // {"libzmq", PyInit_libzmq},
++    // {"_monitoredqueue", PyInit_monitoredqueue},
++    /* Sentinel */
++    {0, 0}
++};
++
++
++#ifdef __cplusplus
++}
++#endif
+diff -Naur tmp/Python-3.7.1/Modules/expat/xmlparse.c Python-3.7.1/Modules/expat/xmlparse.c
+--- tmp/Python-3.7.1/Modules/expat/xmlparse.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Modules/expat/xmlparse.c	2018-12-16 23:00:06.000000000 +0100
+@@ -56,7 +56,7 @@
+ #ifdef _WIN32
+ #include "winconfig.h"
+ #elif defined(HAVE_EXPAT_CONFIG_H)
+-#include <expat_config.h>
++#include "expat_config.h"
+ #endif /* ndef _WIN32 */
+ 
+ #include "ascii.h"
+diff -Naur tmp/Python-3.7.1/Modules/expat/xmlrole.c Python-3.7.1/Modules/expat/xmlrole.c
+--- tmp/Python-3.7.1/Modules/expat/xmlrole.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Modules/expat/xmlrole.c	2018-12-16 23:00:00.000000000 +0100
+@@ -36,7 +36,7 @@
+ #include "winconfig.h"
+ #else
+ #ifdef HAVE_EXPAT_CONFIG_H
+-#include <expat_config.h>
++#include "expat_config.h"
+ #endif
+ #endif /* ndef _WIN32 */
+ 
+diff -Naur tmp/Python-3.7.1/Modules/expat/xmltok.c Python-3.7.1/Modules/expat/xmltok.c
+--- tmp/Python-3.7.1/Modules/expat/xmltok.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Modules/expat/xmltok.c	2018-12-16 22:59:54.000000000 +0100
+@@ -47,7 +47,7 @@
+ #include "winconfig.h"
+ #else
+ #ifdef HAVE_EXPAT_CONFIG_H
+-#include <expat_config.h>
++#include "expat_config.h"
+ #endif
+ #endif /* ndef _WIN32 */
+ 
+diff -Naur tmp/Python-3.7.1/Modules/getpath.c Python-3.7.1/Modules/getpath.c
+--- tmp/Python-3.7.1/Modules/getpath.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Modules/getpath.c	2018-12-17 16:09:35.000000000 +0100
+@@ -530,6 +530,15 @@
+     wchar_t program_full_path[MAXPATHLEN+1];
+     memset(program_full_path, 0, sizeof(program_full_path));
+ 
++#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
++    // iOS: this is a bit extreme, but the sandbox is really limiting.
++    char *_iospath = Py_GETENV("PYTHONHOME");
++    wchar_t *prog = Py_GetProgramName();
++    size_t iospath_len;
++    wcsncpy(program_full_path, Py_DecodeLocale(_iospath, &iospath_len), MAXPATHLEN);
++    joinpath(program_full_path, L"bin");
++    joinpath(program_full_path, prog);
++#endif
+ #ifdef __APPLE__
+ #if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4
+     uint32_t nsexeclength = MAXPATHLEN;
+@@ -561,6 +570,7 @@
+     else if(0 == _NSGetExecutablePath(execpath, &nsexeclength) &&
+             execpath[0] == SEP)
+     {
++#ifndef __IPHONE_OS_VERSION_MAX_ALLOWED
+         size_t len;
+         wchar_t *path = Py_DecodeLocale(execpath, &len);
+         if (path == NULL) {
+@@ -568,6 +578,7 @@
+         }
+         wcsncpy(program_full_path, path, MAXPATHLEN);
+         PyMem_RawFree(path);
++#endif
+     }
+ #endif /* __APPLE__ */
+     else if (calculate->path_env) {
+@@ -663,7 +674,8 @@
+     }
+ #endif
+ 
+-#if HAVE_READLINK
++#if HAVE_READLINK && !__IPHONE_OS_VERSION_MAX_ALLOWED
++    // iOS: progpath does not really exist, so don't check it
+     wchar_t tmpbuffer[MAXPATHLEN+1];
+     int linklen = _Py_wreadlink(program_full_path, tmpbuffer, MAXPATHLEN);
+     while (linklen != -1) {
+diff -Naur tmp/Python-3.7.1/Modules/ld_so_aix Python-3.7.1/Modules/ld_so_aix
+--- tmp/Python-3.7.1/Modules/ld_so_aix	1970-01-01 01:00:00.000000000 +0100
++++ Python-3.7.1/Modules/ld_so_aix	2018-12-09 21:17:43.000000000 +0100
+@@ -0,0 +1,195 @@
++#!/bin/sh
++#
++#   ========================================================================
++#   FILE:           ld_so_aix
++#   TYPE:           executable, uses makexp_aix
++#   SYSTEM:         AIX
++#
++#   DESCRIPTION:    Creates a shareable .o from a set of pre-compiled
++#                   (unshared) .o files
++#
++#   USAGE:          ld_so_aix [CC] [arguments]
++#
++#   ARGUMENTS:      Same as for "ld". The following arguments are processed
++#                   or supplied by this script (those marked with an asterisk
++#                   can be overridden from command line):
++#
++#                       Argument                     Default value
++#                   (*) -o [OutputFileName]          -o shr.o
++#                   (*) -e [EntryPointLabel]         -e init[OutputBaseName]
++#                   (*) -bE:[ExportFile]             -bE:[OutputBaseName].exp
++#                   (*) -bI:[ImportFile]             -bI:./python.exp
++#                       -bM:[ModuleType]             -bM:SRE
++#                       -bhalt:[Number]              -bhalt:4
++#                       -T[Number]                   -T512
++#                       -H[Number]                   -H512
++#                       -lm
++#
++#                   The compiler specific ("-lc" or "-lc_r", "-lpthreads",...)
++#                   arguments will be automatically passed to "ld" according
++#                   to the CC command provided as a first argument to this
++#                   script. Usually, the same CC command was used to produce
++#                   the pre-compiled .o file(s).
++#
++#   NOTES:          1.  Since "ld_so_aix" was originally written for building
++#                       shared modules for the Python interpreter, the -e and
++#                       -bI default values match Python's conventions. In
++#                       Python, the entry point for a shared module is based
++#                       on the module's name (e.g., the "mathmodule" will
++#                       expect an  entry point of "initmath").
++#                   2.  The script accepts multiple .o or .a input files and
++#                       creates a single (shared) output file. The export list
++#                       that is created is based on the output file's basename
++#                       with the suffix ".exp".
++#                   3.  The resulting shared object file is left in the
++#                       current directory.
++#                   4.  Uncommenting the "echo" lines gives detailed output
++#                       about the commands executed in the script.
++#
++#
++#   HISTORY:        Oct-1996    -- Support added for multiple .o files --
++#                               -- and optional arguments processing.  --
++#                   Chris Myers (myers@tc.cornell.edu), Keith Kwok
++#                   (kkwok@tc.cornell.edu) and Vladimir Marangozov
++#
++#                   Aug-6-1996  -- Take care of the compiler specific  --
++#                               -- args by leaving CC to invoke "ld".  --
++#                   Vladimir Marangozov
++#
++#                   Jul-1-1996  -- Make sure to use /usr/ccs/bin/ld    --
++#                               -- Use makexp_aix for the export list. --
++#                   Vladimir Marangozov     (Vladimir.Marangozov@imag.fr)
++#
++#                   Manus Hand (mhand@csn.net) -- Initial code -- 6/24/96
++#   ========================================================================
++#
++
++usage="Usage: ld_so_aix [CC command] [ld arguments]"
++if test ! -n "$*"; then
++  echo $usage; exit 2
++fi
++
++makexp=`dirname $0`/makexp_aix
++test -x "${makexp}" || makexp="/Users/holzschu/src/Xcode_iPad/python3_ios/Python-3.7.1/Modules/makexp_aix"
++
++# Check for existence of compiler.
++CC=$1; shift
++whichcc=`which $CC`
++
++if test ! -x "$whichcc"; then
++  echo "ld_so_aix: Compiler '$CC' not found; exiting."
++  exit 2
++fi
++
++if test ! -n "$*"; then
++  echo $usage; exit 2
++fi
++
++# Default import file for Python
++# Can be overridden by providing a -bI: argument.
++impfile="./python.exp"
++
++# Parse arguments
++while test -n "$1"
++do
++  case "$1" in
++    -e | -Wl,-e)
++        if test -z "$2"; then
++	  echo "ld_so_aix: The -e flag needs a parameter; exiting."; exit 2
++	else
++	  shift; entry=$1
++	fi
++	;;
++    -e* | -Wl,-e*)
++	entry=`echo $1 | sed -e "s/-Wl,//" -e "s/-e//"`
++	;;
++    -o)
++	if test -z "$2"; then
++	  echo "ld_so_aix: The -o flag needs a parameter; exiting."; exit 2
++	else
++	  shift; objfile=$1
++	fi
++	;;
++    -o*)
++	objfile=`echo $1 | sed "s/-o//"`
++	;;
++    -bI:* | -Wl,-bI:*)
++	impfile=`echo $1 | sed -e "s/-Wl,//" -e "s/-bI://"`
++	;;
++    -bE:* | -Wl,-bE:*)
++	expfile=`echo $1 | sed -e "s/-Wl,//" -e "s/-bE://"`
++	;;
++    *.o | *.a)
++	objs="$objs $1"
++	args="$args $1"
++	;;
++    -bM:* | -Wl,-bM:* | -H* | -Wl,-H* | -T* | -Wl,-T* | -lm)
++	;;
++    *)
++        args="$args $1"
++	;;
++  esac
++  shift
++done
++
++if test "$objfile" = "libpython3.7m.so"; then
++  ldsocoremode="true"
++fi
++
++if test -z "$objs"; then
++  echo "ld_so_aix: No input files; exiting."
++  exit 2
++elif test ! -r "$impfile" -a -z "$ldsocoremode"; then
++  echo "ld_so_aix: Import file '$impfile' not found or not readable; exiting."
++  exit 2
++fi
++
++# If -o wasn't specified, assume "-o shr.o"
++if test -z "$objfile"; then
++  objfile=shr.o
++fi
++
++filename=`basename $objfile | sed "s/\.[^.]*$//"`
++
++# If -bE: wasn't specified, assume "-bE:$filename.exp"
++if test -z "$expfile"; then
++  expfile="$filename.exp"
++fi
++
++# Default entry symbol for Python modules = init[modulename]
++# Can be overridden by providing a -e argument.
++if test -z "$entry"; then
++  entry=PyInit_`echo $filename | sed "s/module.*//"`
++fi
++
++#echo "ld_so_aix: Debug info section"
++#echo "  -> output file : $objfile"
++#echo "  -> import file : $impfile"
++#echo "  -> export file : $expfile"
++#echo "  -> entry point : $entry"
++#echo "  -> object files: $objs"
++#echo "  -> CC arguments: $args"
++
++if test -z "$ldsocoremode"; then
++  CCOPT="-Wl,-e$entry -Wl,-bE:$expfile -Wl,-bI:$impfile -Wl,-bhalt:4"
++else
++  CCOPT="-Wl,-bnoentry -Wl,-bE:$expfile -Wl,-bhalt:4"
++fi
++CCOPT="$CCOPT -Wl,-bM:SRE -Wl,-T512 -Wl,-H512 -Wl,-brtl -Wl,-bnortllib -lm -o $objfile"
++
++CCARGS="$args"
++
++# Export list generation.
++#echo $makexp $expfile "$objfile" $objs
++$makexp $expfile "$objfile" $objs
++
++# Perform the link.
++#echo $CC $CCOPT $CCARGS
++$CC $CCOPT $CCARGS
++retval=$?
++
++# Delete the module's export list file.
++# Comment this line if you need it.
++rm -f $expfile
++
++exit $retval
+diff -Naur tmp/Python-3.7.1/Modules/posixmodule.c Python-3.7.1/Modules/posixmodule.c
+--- tmp/Python-3.7.1/Modules/posixmodule.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Modules/posixmodule.c	2018-12-17 15:03:20.000000000 +0100
+@@ -5018,6 +5018,10 @@
+     execv(path->narrow, argvlist);
+ #endif
+     _Py_END_SUPPRESS_IPH
++#ifdef TARGET_OS_IPHONE
++        // iOS: we return now
++        Py_RETURN_NONE;
++#endif
+ 
+     /* If we get here it's definitely an error */
+ 
+@@ -5094,6 +5098,13 @@
+         execve(path->narrow, argvlist, envlist);
+ #endif
+     _Py_END_SUPPRESS_IPH
++#ifdef TARGET_OS_IPHONE
++        while (--envc >= 0)
++            PyMem_DEL(envlist[envc]);
++        PyMem_DEL(envlist);
++        // iOS: we return now
++        Py_RETURN_NONE;
++#endif    	
+ 
+     /* If we get here it's definitely an error */
+ 
+@@ -5423,6 +5434,10 @@
+ os_fork_impl(PyObject *module)
+ /*[clinic end generated code: output=3626c81f98985d49 input=13c956413110eeaa]*/
+ {
++#ifdef TARGET_OS_IPHONE
++    PyObject* newPid = PyLong_FromPid(0);
++    return newPid;
++#endif
+     pid_t pid;
+ 
+     PyOS_BeforeFork();
