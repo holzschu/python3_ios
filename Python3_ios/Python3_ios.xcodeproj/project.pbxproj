@@ -188,6 +188,27 @@
 		226ED57821C708C700A71A20 /* semaphore.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED57721C708C700A71A20 /* semaphore.c */; settings = {COMPILER_FLAGS = "-I../Python-3.7.1/Modules/_multiprocessing"; }; };
 		226ED57C21C7093C00A71A20 /* _uuidmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED57B21C7093C00A71A20 /* _uuidmodule.c */; };
 		226ED57E21C7097900A71A20 /* xxlimited.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED57D21C7097900A71A20 /* xxlimited.c */; };
+		226ED58321C783FC00A71A20 /* libssh2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED58021C783FB00A71A20 /* libssh2.framework */; };
+		226ED58421C783FC00A71A20 /* ios_system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED58121C783FC00A71A20 /* ios_system.framework */; };
+		226ED58521C783FC00A71A20 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED58221C783FC00A71A20 /* openssl.framework */; };
+		226ED58721C7840800A71A20 /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED58621C7840800A71A20 /* libffi.a */; };
+		226ED58921C784A200A71A20 /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED58821C784A200A71A20 /* libncurses.tbd */; };
+		226ED58B21C784B300A71A20 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED58A21C784B200A71A20 /* libbz2.tbd */; };
+		226ED58E21C7865E00A71A20 /* _ctypes.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58D21C7865E00A71A20 /* _ctypes.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
+		226ED59221C7879E00A71A20 /* cfield.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58F21C7879E00A71A20 /* cfield.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
+		226ED59321C7879E00A71A20 /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59021C7879E00A71A20 /* callbacks.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
+		226ED59421C7879E00A71A20 /* callproc.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59121C7879E00A71A20 /* callproc.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
+		226ED59621C787B100A71A20 /* stgdict.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59521C787B100A71A20 /* stgdict.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
+		226ED59821C787C300A71A20 /* malloc_closure.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59721C787C300A71A20 /* malloc_closure.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
+		226ED59A21C787D800A71A20 /* dlfcn_simple.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59921C787D700A71A20 /* dlfcn_simple.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
+		226ED59C21C787EE00A71A20 /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I ../libffi-3.2.1/include/ -I ../libffi-3.2.1/build_iphoneos-arm64/"; }; };
+		226ED5A621C7D5C900A71A20 /* _lzmamodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5A521C7D5C900A71A20 /* _lzmamodule.c */; };
+		226ED5A821C7D63E00A71A20 /* liblzma.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED5A721C7D63E00A71A20 /* liblzma.tbd */; };
+		226ED5AA21C7D6A700A71A20 /* _ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5A921C7D6A700A71A20 /* _ssl.c */; };
+		226ED5AC21C7D70A00A71A20 /* readline.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5AB21C7D70A00A71A20 /* readline.c */; };
+		226ED5AE21C7D77200A71A20 /* libreadline.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED5AD21C7D77200A71A20 /* libreadline.tbd */; };
+		226ED5B021C7DA2B00A71A20 /* _curses_panel.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5AF21C7DA2B00A71A20 /* _curses_panel.c */; };
+		226ED5B221C7DA9000A71A20 /* libpanel.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED5B121C7DA9000A71A20 /* libpanel.tbd */; };
 		22E8FEE721C66AD100967E21 /* Python3_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E8FEE521C66AD100967E21 /* Python3_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22E8FEEF21C66BF000967E21 /* python.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FEEE21C66BF000967E21 /* python.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22E8FF0221C66C2200967E21 /* metagrammar.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FEF121C66C2200967E21 /* metagrammar.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -427,6 +448,27 @@
 		226ED57721C708C700A71A20 /* semaphore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = semaphore.c; path = "../Python-3.7.1/Modules/_multiprocessing/semaphore.c"; sourceTree = "<group>"; };
 		226ED57B21C7093C00A71A20 /* _uuidmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _uuidmodule.c; path = "../Python-3.7.1/Modules/_uuidmodule.c"; sourceTree = "<group>"; };
 		226ED57D21C7097900A71A20 /* xxlimited.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xxlimited.c; path = "../Python-3.7.1/Modules/xxlimited.c"; sourceTree = "<group>"; };
+		226ED58021C783FB00A71A20 /* libssh2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libssh2.framework; path = ../Frameworks/libssh2.framework; sourceTree = "<group>"; };
+		226ED58121C783FC00A71A20 /* ios_system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ios_system.framework; path = ../Frameworks/ios_system.framework; sourceTree = "<group>"; };
+		226ED58221C783FC00A71A20 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = openssl.framework; path = ../Frameworks/openssl.framework; sourceTree = "<group>"; };
+		226ED58621C7840800A71A20 /* libffi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libffi.a; path = ../libffi.a; sourceTree = "<group>"; };
+		226ED58821C784A200A71A20 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
+		226ED58A21C784B200A71A20 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		226ED58D21C7865E00A71A20 /* _ctypes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _ctypes.c; path = "../Python-3.7.1/Modules/_ctypes/_ctypes.c"; sourceTree = "<group>"; };
+		226ED58F21C7879E00A71A20 /* cfield.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cfield.c; path = "../Python-3.7.1/Modules/_ctypes/cfield.c"; sourceTree = "<group>"; };
+		226ED59021C7879E00A71A20 /* callbacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = callbacks.c; path = "../Python-3.7.1/Modules/_ctypes/callbacks.c"; sourceTree = "<group>"; };
+		226ED59121C7879E00A71A20 /* callproc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = callproc.c; path = "../Python-3.7.1/Modules/_ctypes/callproc.c"; sourceTree = "<group>"; };
+		226ED59521C787B100A71A20 /* stgdict.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stgdict.c; path = "../Python-3.7.1/Modules/_ctypes/stgdict.c"; sourceTree = "<group>"; };
+		226ED59721C787C300A71A20 /* malloc_closure.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = malloc_closure.c; path = "../Python-3.7.1/Modules/_ctypes/malloc_closure.c"; sourceTree = "<group>"; };
+		226ED59921C787D700A71A20 /* dlfcn_simple.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dlfcn_simple.c; path = "../Python-3.7.1/Modules/_ctypes/darwin/dlfcn_simple.c"; sourceTree = "<group>"; };
+		226ED59B21C787EE00A71A20 /* ffi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ffi.c; path = "../Python-3.7.1/Modules/_ctypes/libffi_osx/ffi.c"; sourceTree = "<group>"; };
+		226ED5A521C7D5C900A71A20 /* _lzmamodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _lzmamodule.c; path = "../Python-3.7.1/Modules/_lzmamodule.c"; sourceTree = "<group>"; };
+		226ED5A721C7D63E00A71A20 /* liblzma.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblzma.tbd; path = usr/lib/liblzma.tbd; sourceTree = SDKROOT; };
+		226ED5A921C7D6A700A71A20 /* _ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _ssl.c; path = "../Python-3.7.1/Modules/_ssl.c"; sourceTree = "<group>"; };
+		226ED5AB21C7D70A00A71A20 /* readline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = readline.c; path = "../Python-3.7.1/Modules/readline.c"; sourceTree = "<group>"; };
+		226ED5AD21C7D77200A71A20 /* libreadline.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libreadline.tbd; path = usr/lib/libreadline.tbd; sourceTree = SDKROOT; };
+		226ED5AF21C7DA2B00A71A20 /* _curses_panel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _curses_panel.c; path = "../Python-3.7.1/Modules/_curses_panel.c"; sourceTree = "<group>"; };
+		226ED5B121C7DA9000A71A20 /* libpanel.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpanel.tbd; path = usr/lib/libpanel.tbd; sourceTree = SDKROOT; };
 		22E8FEE221C66AD100967E21 /* Python3_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Python3_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E8FEE521C66AD100967E21 /* Python3_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Python3_ios.h; sourceTree = "<group>"; };
 		22E8FEE621C66AD100967E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -491,6 +533,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226ED58321C783FC00A71A20 /* libssh2.framework in Frameworks */,
+				226ED58421C783FC00A71A20 /* ios_system.framework in Frameworks */,
+				226ED58521C783FC00A71A20 /* openssl.framework in Frameworks */,
+				226ED58721C7840800A71A20 /* libffi.a in Frameworks */,
+				226ED5B221C7DA9000A71A20 /* libpanel.tbd in Frameworks */,
+				226ED58921C784A200A71A20 /* libncurses.tbd in Frameworks */,
+				226ED58B21C784B300A71A20 /* libbz2.tbd in Frameworks */,
+				226ED5A821C7D63E00A71A20 /* liblzma.tbd in Frameworks */,
+				226ED5AE21C7D77200A71A20 /* libreadline.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,10 +695,12 @@
 				226ED4F321C6BCA400A71A20 /* _xxtestfuzz.c */,
 				226ED4F521C6BCB000A71A20 /* fuzzer.c */,
 				226ED4F721C6BCC700A71A20 /* audioop.c */,
+				226ED5AB21C7D70A00A71A20 /* readline.c */,
 				226ED4FB21C6BCF300A71A20 /* _cryptmodule.c */,
 				226ED4FD21C6BCFE00A71A20 /* _csv.c */,
 				226ED4FF21C6BD0600A71A20 /* _posixsubprocess.c */,
 				226ED50121C6BD1800A71A20 /* socketmodule.c */,
+				226ED5A921C7D6A700A71A20 /* _ssl.c */,
 				226ED50321C6BD3700A71A20 /* _hashopenssl.c */,
 				226ED50621C6BD5500A71A20 /* sha256module.c */,
 				226ED50521C6BD5500A71A20 /* sha512module.c */,
@@ -657,22 +710,25 @@
 				226ED50F21C6BD8C00A71A20 /* blake2b_impl.c */,
 				226ED51121C6BD9200A71A20 /* blake2s_impl.c */,
 				226ED51321C6BDA900A71A20 /* sha3module.c */,
-				226ED51521C6BDCD00A71A20 /* _sqlite */,
-				226ED52821C6FD4700A71A20 /* _dbmmodule.c */,
 				226ED52A21C6FD6E00A71A20 /* termios.c */,
 				226ED52C21C6FD8400A71A20 /* resource.c */,
 				226ED53021C6FDB300A71A20 /* _cursesmodule.c */,
-				226ED53221C700B000A71A20 /* zlibmodule.c */,
+				226ED5AF21C7DA2B00A71A20 /* _curses_panel.c */,
 				226ED53421C700F500A71A20 /* binascii.c */,
 				226ED53621C7010300A71A20 /* _bz2module.c */,
+				226ED5A521C7D5C900A71A20 /* _lzmamodule.c */,
 				226ED53A21C7012C00A71A20 /* expat */,
 				226ED54321C7038800A71A20 /* _elementtree.c */,
 				226ED54521C703B100A71A20 /* cjkcodecs */,
 				226ED55621C7047400A71A20 /* _decimal */,
 				226ED57521C708C100A71A20 /* multiprocessing.c */,
 				226ED57721C708C700A71A20 /* semaphore.c */,
-				226ED57B21C7093C00A71A20 /* _uuidmodule.c */,
 				226ED57D21C7097900A71A20 /* xxlimited.c */,
+				226ED58C21C7861400A71A20 /* _ctypes */,
+				226ED53221C700B000A71A20 /* zlibmodule.c */,
+				226ED51521C6BDCD00A71A20 /* _sqlite */,
+				226ED52821C6FD4700A71A20 /* _dbmmodule.c */,
+				226ED57B21C7093C00A71A20 /* _uuidmodule.c */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -740,6 +796,37 @@
 			name = _decimal;
 			sourceTree = "<group>";
 		};
+		226ED57F21C783FB00A71A20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				226ED5B121C7DA9000A71A20 /* libpanel.tbd */,
+				226ED5AD21C7D77200A71A20 /* libreadline.tbd */,
+				226ED5A721C7D63E00A71A20 /* liblzma.tbd */,
+				226ED58A21C784B200A71A20 /* libbz2.tbd */,
+				226ED58821C784A200A71A20 /* libncurses.tbd */,
+				226ED58621C7840800A71A20 /* libffi.a */,
+				226ED58121C783FC00A71A20 /* ios_system.framework */,
+				226ED58021C783FB00A71A20 /* libssh2.framework */,
+				226ED58221C783FC00A71A20 /* openssl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		226ED58C21C7861400A71A20 /* _ctypes */ = {
+			isa = PBXGroup;
+			children = (
+				226ED58D21C7865E00A71A20 /* _ctypes.c */,
+				226ED59021C7879E00A71A20 /* callbacks.c */,
+				226ED59121C7879E00A71A20 /* callproc.c */,
+				226ED58F21C7879E00A71A20 /* cfield.c */,
+				226ED59521C787B100A71A20 /* stgdict.c */,
+				226ED59721C787C300A71A20 /* malloc_closure.c */,
+				226ED59921C787D700A71A20 /* dlfcn_simple.c */,
+				226ED59B21C787EE00A71A20 /* ffi.c */,
+			);
+			name = _ctypes;
+			sourceTree = "<group>";
+		};
 		22E8FED821C66AD100967E21 = {
 			isa = PBXGroup;
 			children = (
@@ -750,6 +837,7 @@
 				22E8FEED21C66B6600967E21 /* Programs */,
 				22E8FEE421C66AD100967E21 /* Python3_ios */,
 				22E8FEE321C66AD100967E21 /* Products */,
+				226ED57F21C783FB00A71A20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -940,7 +1028,9 @@
 				226ED47621C6AD3900A71A20 /* _collectionsmodule.c in Sources */,
 				226ED52521C6F82300A71A20 /* statement.c in Sources */,
 				226ED40B21C66E9000A71A20 /* ast_unparse.c in Sources */,
+				226ED58E21C7865E00A71A20 /* _ctypes.c in Sources */,
 				226ED4D421C6B84A00A71A20 /* _testcapimodule.c in Sources */,
+				226ED5A621C7D5C900A71A20 /* _lzmamodule.c in Sources */,
 				226ED4A021C6AE5200A71A20 /* hashtable.c in Sources */,
 				226ED44521C6ABBA00A71A20 /* mysnprintf.c in Sources */,
 				226ED4E221C6B8AF00A71A20 /* _opcode.c in Sources */,
@@ -950,6 +1040,7 @@
 				22E8FF0821C66C2200967E21 /* pgen.c in Sources */,
 				226ED41D21C6AB3400A71A20 /* dynamic_annotations.c in Sources */,
 				226ED46F21C6AC3F00A71A20 /* traceback.c in Sources */,
+				226ED59621C787B100A71A20 /* stgdict.c in Sources */,
 				22E8FF5B21C66D3B00967E21 /* floatobject.c in Sources */,
 				22E8FF4321C66D3B00967E21 /* bytesobject.c in Sources */,
 				22E8FF5921C66D3B00967E21 /* bytes_methods.c in Sources */,
@@ -986,8 +1077,11 @@
 				22E8FF5621C66D3B00967E21 /* enumobject.c in Sources */,
 				226ED50E21C6BD8100A71A20 /* blake2module.c in Sources */,
 				226ED4EE21C6B92400A71A20 /* parsermodule.c in Sources */,
+				226ED59221C7879E00A71A20 /* cfield.c in Sources */,
+				226ED59C21C787EE00A71A20 /* ffi.c in Sources */,
 				226ED45121C6ABE200A71A20 /* pyfpe.c in Sources */,
 				226ED48421C6ADD200A71A20 /* _stat.c in Sources */,
+				226ED5AA21C7D6A700A71A20 /* _ssl.c in Sources */,
 				226ED48021C6ADBA00A71A20 /* _operator.c in Sources */,
 				226ED53721C7010300A71A20 /* _bz2module.c in Sources */,
 				226ED56921C704B500A71A20 /* fnt.c in Sources */,
@@ -1003,6 +1097,7 @@
 				226ED40921C66E8B00A71A20 /* ast_opt.c in Sources */,
 				226ED50721C6BD5500A71A20 /* sha512module.c in Sources */,
 				226ED57221C704B500A71A20 /* crt.c in Sources */,
+				226ED59321C7879E00A71A20 /* callbacks.c in Sources */,
 				226ED4EA21C6B8F800A71A20 /* grpmodule.c in Sources */,
 				226ED4F421C6BCA400A71A20 /* _xxtestfuzz.c in Sources */,
 				226ED42B21C6AB6800A71A20 /* future.c in Sources */,
@@ -1013,6 +1108,7 @@
 				226ED4B421C6AEBE00A71A20 /* timemodule.c in Sources */,
 				22E8FF0A21C66C2200967E21 /* firstsets.c in Sources */,
 				226ED57821C708C700A71A20 /* semaphore.c in Sources */,
+				226ED59821C787C300A71A20 /* malloc_closure.c in Sources */,
 				22E8FF4521C66D3B00967E21 /* odictobject.c in Sources */,
 				226ED56F21C704B500A71A20 /* convolute.c in Sources */,
 				226ED44D21C6ABD100A71A20 /* pyarena.c in Sources */,
@@ -1070,6 +1166,7 @@
 				226ED44321C6ABB400A71A20 /* modsupport.c in Sources */,
 				22E8FF5A21C66D3B00967E21 /* tupleobject.c in Sources */,
 				22E8FF4A21C66D3B00967E21 /* sliceobject.c in Sources */,
+				226ED5AC21C7D70A00A71A20 /* readline.c in Sources */,
 				226ED55521C7043800A71A20 /* _codecs_hk.c in Sources */,
 				226ED47C21C6ADAC00A71A20 /* _localemodule.c in Sources */,
 				22E8FEEF21C66BF000967E21 /* python.c in Sources */,
@@ -1086,10 +1183,12 @@
 				22E8FF5F21C66D3B00967E21 /* unicodeobject.c in Sources */,
 				226ED4D021C6B83400A71A20 /* _pickle.c in Sources */,
 				226ED4CC21C6B7C700A71A20 /* _bisectmodule.c in Sources */,
+				226ED59421C7879E00A71A20 /* callproc.c in Sources */,
 				226ED4FE21C6BCFE00A71A20 /* _csv.c in Sources */,
 				22E8FF6121C66D3B00967E21 /* accu.c in Sources */,
 				226ED42721C6AB5B00A71A20 /* frozen.c in Sources */,
 				226ED47421C6AD3300A71A20 /* _codecsmodule.c in Sources */,
+				226ED5B021C7DA2B00A71A20 /* _curses_panel.c in Sources */,
 				226ED57C21C7093C00A71A20 /* _uuidmodule.c in Sources */,
 				226ED40521C66E7F00A71A20 /* _warnings.c in Sources */,
 				226ED45F21C6AC0D00A71A20 /* pystrtod.c in Sources */,
@@ -1098,6 +1197,7 @@
 				226ED4AE21C6AE9500A71A20 /* stringio.c in Sources */,
 				226ED55021C7043800A71A20 /* multibytecodec.c in Sources */,
 				226ED45D21C6AC0700A71A20 /* pystrhex.c in Sources */,
+				226ED59A21C787D800A71A20 /* dlfcn_simple.c in Sources */,
 				226ED46321C6AC1800A71A20 /* pythonrun.c in Sources */,
 				226ED43D21C6AB9E00A71A20 /* import.c in Sources */,
 				226ED55821C704A300A71A20 /* _decimal.c in Sources */,
@@ -1319,6 +1419,13 @@
 					"-I../Python-3.7.1/Include",
 					"-F",
 					../Frameworks/,
+					"-I..",
+				);
+				OTHER_LDFLAGS = (
+					"-F",
+					../Frameworks/,
+					"-L",
+					../,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.Python3-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1364,6 +1471,13 @@
 					"-I../Python-3.7.1/Include",
 					"-F",
 					../Frameworks/,
+					"-I..",
+				);
+				OTHER_LDFLAGS = (
+					"-F",
+					../Frameworks/,
+					"-L",
+					../,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.Python3-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
