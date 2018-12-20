@@ -87,8 +87,8 @@ diff -Naur tmp/Python-3.7.1/Lib/_osx_support.py Python-3.7.1/Lib/_osx_support.py
      return (osname, release, machine)
 diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py
 --- tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py	2018-12-20 22:14:05.000000000 +0100
-@@ -0,0 +1,736 @@
++++ Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py	2018-12-20 23:34:04.000000000 +0100
+@@ -0,0 +1,735 @@
 +# system configuration generated and used by the sysconfig module
 +build_time_vars = {'ABIFLAGS': 'm',
 + 'AC_APPLE_UNIVERSAL_BUILD': 0,
@@ -99,9 +99,10 @@ diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py Python-3.7.1/L
 + 'BASECFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code',
 + 'BASECPPFLAGS': '',
 + 'BASEMODLIBS': '',
-+ 'BINDIR': '/usr/local/bin',
-+ 'BINLIBDEST': '/usr/local/lib/python3.6',
-+ 'BLDLIBRARY': 'libpython3.7m.a',
++ 'BEOS_THREADS': 0,
++ 'BINDIR': '~/Library/bin',
++ 'BINLIBDEST': '~/Library/lib/python3.6',
++ 'BLDLIBRARY': '',
 + 'BLDSHARED': 'cc -bundle -undefined dynamic_lookup',
 + 'BUILDEXE': '.exe',
 + 'BUILDPYTHON': 'python.exe',
@@ -587,11 +588,9 @@ diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py Python-3.7.1/L
 + 'HAVE_ZLIB_COPY': 1,
 + 'HAVE__GETPTY': 0,
 + 'HOST_GNU_TYPE': 'arm64-apple-darwin17.0',
-+ 'INCLDIRSTOMAKE': '/usr/local/include /usr/local/include '
-+                   '/usr/local/include/python3.6m '
-+                   '/usr/local/include/python3.6m',
-+ 'INCLUDEDIR': '/usr/local/include',
-+ 'INCLUDEPY': '/usr/local/include/python3.7m',
++ 'INCLDIRSTOMAKE': '~/Library/include ~/Library/include/python3.7m',
++ 'INCLUDEDIR': '~/Library/include',
++ 'INCLUDEPY': '~/Library/include/python3.7m',
 + 'INSTALL': '/usr/bin/install -c',
 + 'INSTALL_DATA': '/usr/bin/install -c -m 644',
 + 'INSTALL_PROGRAM': '/usr/bin/install -c',
@@ -601,21 +600,21 @@ diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py Python-3.7.1/L
 + 'IO_H': 'Modules/_io/_iomodule.h',
 + 'IO_OBJS': '\\',
 + 'LDCXXSHARED': 'c++ -bundle -undefined dynamic_lookup',
-+ 'LDFLAGS': '',
++ 'LDFLAGS': '-arch arm64             -Wl,-F.',
 + 'LDLAST': '',
 + 'LDLIBRARY': 'libpython3.7m.a',
 + 'LDLIBRARYDIR': '',
 + 'LDSHARED': 'cc -bundle -undefined dynamic_lookup',
 + 'LDVERSION': '3.7m',
 + 'LIBC': '',
-+ 'LIBDEST': '/usr/local/lib/python3.6',
++ 'LIBDEST': '/usr/local/lib/python3.7',
 + 'LIBDIR': '/usr/local/lib',
 + 'LIBFFI_INCLUDEDIR': '',
 + 'LIBM': '',
 + 'LIBOBJDIR': 'Python/',
 + 'LIBOBJS': '',
 + 'LIBPC': '/usr/local/lib/pkgconfig',
-+ 'LIBPL': '/usr/local/lib/python3.6/config-3.6m-darwin',
++ 'LIBPL': '/usr/local/lib/python3.7/config-3.7m-darwin',
 + 'LIBRARY': 'libpython3.7m.a',
 + 'LIBRARY_OBJS': '\\',
 + 'LIBRARY_OBJS_OMIT_FROZEN': '\\',
@@ -753,7 +752,7 @@ diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py Python-3.7.1/L
 + 'RESSRCDIR': 'Mac/Resources/framework',
 + 'RETSIGTYPE': 'void',
 + 'RUNSHARED': '',
-+ 'SCRIPTDIR': '/usr/local/lib',
++ 'SCRIPTDIR': '~/Library/bin',
 + 'SETPGRP_HAVE_ARG': 0,
 + 'SGI_ABI': '@SGI_ABI@',
 + 'SHELL': '/bin/sh',

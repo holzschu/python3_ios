@@ -1,0 +1,12 @@
+diff -Naur tmp/Python-3.7.1/Python/getplatform.c Python-3.7.1/Python/getplatform.c
+--- tmp/Python-3.7.1/Python/getplatform.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Python/getplatform.c	2018-12-20 23:39:32.000000000 +0100
+@@ -2,7 +2,7 @@
+ #include "Python.h"
+ 
+ #ifndef PLATFORM
+-#define PLATFORM "unknown"
++#define PLATFORM "darwin"
+ #endif
+ 
+ const char *
