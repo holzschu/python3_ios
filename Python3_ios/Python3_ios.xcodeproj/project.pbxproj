@@ -58,7 +58,7 @@
 		226ED46521C6AC1E00A71A20 /* pytime.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED46421C6AC1E00A71A20 /* pytime.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		226ED46721C6AC2700A71A20 /* structmember.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED46621C6AC2700A71A20 /* structmember.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		226ED46921C6AC2D00A71A20 /* symtable.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED46821C6AC2D00A71A20 /* symtable.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
-		226ED46B21C6AC3400A71A20 /* sysmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED46A21C6AC3400A71A20 /* sysmodule.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
+		226ED46B21C6AC3400A71A20 /* sysmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED46A21C6AC3400A71A20 /* sysmodule.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE -DABIFLAGS='\"m\"' -DMULTIARCH=\\\"darwin\\\""; }; };
 		226ED46D21C6AC3A00A71A20 /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED46C21C6AC3A00A71A20 /* thread.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		226ED46F21C6AC3F00A71A20 /* traceback.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED46E21C6AC3F00A71A20 /* traceback.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		226ED47221C6AD2A00A71A20 /* _abc.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED47121C6AD2A00A71A20 /* _abc.c */; };
@@ -207,8 +207,6 @@
 		226ED5AA21C7D6A700A71A20 /* _ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5A921C7D6A700A71A20 /* _ssl.c */; };
 		226ED5AC21C7D70A00A71A20 /* readline.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5AB21C7D70A00A71A20 /* readline.c */; };
 		226ED5AE21C7D77200A71A20 /* libreadline.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED5AD21C7D77200A71A20 /* libreadline.tbd */; };
-		226ED5B021C7DA2B00A71A20 /* _curses_panel.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5AF21C7DA2B00A71A20 /* _curses_panel.c */; };
-		226ED5B221C7DA9000A71A20 /* libpanel.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED5B121C7DA9000A71A20 /* libpanel.tbd */; };
 		22E8FEE721C66AD100967E21 /* Python3_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E8FEE521C66AD100967E21 /* Python3_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22E8FEEF21C66BF000967E21 /* python.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FEEE21C66BF000967E21 /* python.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22E8FF0221C66C2200967E21 /* metagrammar.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FEF121C66C2200967E21 /* metagrammar.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -325,7 +323,7 @@
 		226ED47321C6AD3200A71A20 /* _codecsmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _codecsmodule.c; path = "../Python-3.7.1/Modules/_codecsmodule.c"; sourceTree = "<group>"; };
 		226ED47521C6AD3900A71A20 /* _collectionsmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _collectionsmodule.c; path = "../Python-3.7.1/Modules/_collectionsmodule.c"; sourceTree = "<group>"; };
 		226ED47721C6AD5000A71A20 /* _functoolsmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _functoolsmodule.c; path = "../Python-3.7.1/Modules/_functoolsmodule.c"; sourceTree = "<group>"; };
-		226ED47921C6AD9200A71A20 /* _iomodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _iomodule.c; path = "../../Python-3.7.1/Modules/_io/_iomodule.c"; sourceTree = "<group>"; };
+		226ED47921C6AD9200A71A20 /* _iomodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = _iomodule.c; sourceTree = "<group>"; };
 		226ED47B21C6ADAC00A71A20 /* _localemodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _localemodule.c; path = "../Python-3.7.1/Modules/_localemodule.c"; sourceTree = "<group>"; };
 		226ED47D21C6ADB300A71A20 /* _math.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _math.c; path = "../Python-3.7.1/Modules/_math.c"; sourceTree = "<group>"; };
 		226ED47F21C6ADBA00A71A20 /* _operator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _operator.c; path = "../Python-3.7.1/Modules/_operator.c"; sourceTree = "<group>"; };
@@ -335,25 +333,25 @@
 		226ED48721C6ADDE00A71A20 /* _tracemalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _tracemalloc.c; path = "../Python-3.7.1/Modules/_tracemalloc.c"; sourceTree = "<group>"; };
 		226ED48921C6ADE700A71A20 /* _weakref.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _weakref.c; path = "../Python-3.7.1/Modules/_weakref.c"; sourceTree = "<group>"; };
 		226ED48B21C6ADEF00A71A20 /* atexitmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = atexitmodule.c; path = "../Python-3.7.1/Modules/atexitmodule.c"; sourceTree = "<group>"; };
-		226ED48D21C6AE0300A71A20 /* bufferedio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bufferedio.c; path = "../../Python-3.7.1/Modules/_io/bufferedio.c"; sourceTree = "<group>"; };
-		226ED48E21C6AE0300A71A20 /* bytesio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bytesio.c; path = "../../Python-3.7.1/Modules/_io/bytesio.c"; sourceTree = "<group>"; };
+		226ED48D21C6AE0300A71A20 /* bufferedio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bufferedio.c; sourceTree = "<group>"; };
+		226ED48E21C6AE0300A71A20 /* bytesio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bytesio.c; sourceTree = "<group>"; };
 		226ED49121C6AE1200A71A20 /* config.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = config.c; path = "../Python-3.7.1/Modules/config.c"; sourceTree = "<group>"; };
 		226ED49321C6AE1800A71A20 /* errnomodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = errnomodule.c; path = "../Python-3.7.1/Modules/errnomodule.c"; sourceTree = "<group>"; };
 		226ED49521C6AE1F00A71A20 /* faulthandler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = faulthandler.c; path = "../Python-3.7.1/Modules/faulthandler.c"; sourceTree = "<group>"; };
-		226ED49721C6AE2F00A71A20 /* fileio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fileio.c; path = "../../Python-3.7.1/Modules/_io/fileio.c"; sourceTree = "<group>"; };
+		226ED49721C6AE2F00A71A20 /* fileio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fileio.c; sourceTree = "<group>"; };
 		226ED49921C6AE3C00A71A20 /* gcmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gcmodule.c; path = "../Python-3.7.1/Modules/gcmodule.c"; sourceTree = "<group>"; };
 		226ED49B21C6AE4300A71A20 /* getbuildinfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = getbuildinfo.c; path = "../Python-3.7.1/Modules/getbuildinfo.c"; sourceTree = "<group>"; };
 		226ED49D21C6AE4B00A71A20 /* getpath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = getpath.c; path = "../Python-3.7.1/Modules/getpath.c"; sourceTree = "<group>"; };
 		226ED49F21C6AE5200A71A20 /* hashtable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hashtable.c; path = "../Python-3.7.1/Modules/hashtable.c"; sourceTree = "<group>"; };
-		226ED4A121C6AE5E00A71A20 /* iobase.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = iobase.c; path = "../../Python-3.7.1/Modules/_io/iobase.c"; sourceTree = "<group>"; };
+		226ED4A121C6AE5E00A71A20 /* iobase.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iobase.c; sourceTree = "<group>"; };
 		226ED4A321C6AE6500A71A20 /* itertoolsmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = itertoolsmodule.c; path = "../Python-3.7.1/Modules/itertoolsmodule.c"; sourceTree = "<group>"; };
 		226ED4A521C6AE6C00A71A20 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = "../Python-3.7.1/Modules/main.c"; sourceTree = "<group>"; };
 		226ED4A721C6AE7500A71A20 /* posixmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = posixmodule.c; path = "../Python-3.7.1/Modules/posixmodule.c"; sourceTree = "<group>"; };
 		226ED4A921C6AE7C00A71A20 /* pwdmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pwdmodule.c; path = "../Python-3.7.1/Modules/pwdmodule.c"; sourceTree = "<group>"; };
 		226ED4AB21C6AE8700A71A20 /* signalmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = signalmodule.c; path = "../Python-3.7.1/Modules/signalmodule.c"; sourceTree = "<group>"; };
-		226ED4AD21C6AE9500A71A20 /* stringio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stringio.c; path = "../../Python-3.7.1/Modules/_io/stringio.c"; sourceTree = "<group>"; };
+		226ED4AD21C6AE9500A71A20 /* stringio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stringio.c; sourceTree = "<group>"; };
 		226ED4AF21C6AEA100A71A20 /* symtablemodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = symtablemodule.c; path = "../Python-3.7.1/Modules/symtablemodule.c"; sourceTree = "<group>"; };
-		226ED4B121C6AEAC00A71A20 /* textio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = textio.c; path = "../../Python-3.7.1/Modules/_io/textio.c"; sourceTree = "<group>"; };
+		226ED4B121C6AEAC00A71A20 /* textio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = textio.c; sourceTree = "<group>"; };
 		226ED4B321C6AEBE00A71A20 /* timemodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timemodule.c; path = "../Python-3.7.1/Modules/timemodule.c"; sourceTree = "<group>"; };
 		226ED4B521C6AEC800A71A20 /* xxsubtype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xxsubtype.c; path = "../Python-3.7.1/Modules/xxsubtype.c"; sourceTree = "<group>"; };
 		226ED4B721C6AECE00A71A20 /* zipimport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zipimport.c; path = "../Python-3.7.1/Modules/zipimport.c"; sourceTree = "<group>"; };
@@ -467,7 +465,6 @@
 		226ED5A921C7D6A700A71A20 /* _ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _ssl.c; path = "../Python-3.7.1/Modules/_ssl.c"; sourceTree = "<group>"; };
 		226ED5AB21C7D70A00A71A20 /* readline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = readline.c; path = "../Python-3.7.1/Modules/readline.c"; sourceTree = "<group>"; };
 		226ED5AD21C7D77200A71A20 /* libreadline.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libreadline.tbd; path = usr/lib/libreadline.tbd; sourceTree = SDKROOT; };
-		226ED5AF21C7DA2B00A71A20 /* _curses_panel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _curses_panel.c; path = "../Python-3.7.1/Modules/_curses_panel.c"; sourceTree = "<group>"; };
 		226ED5B121C7DA9000A71A20 /* libpanel.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpanel.tbd; path = usr/lib/libpanel.tbd; sourceTree = SDKROOT; };
 		22E8FEE221C66AD100967E21 /* Python3_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Python3_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E8FEE521C66AD100967E21 /* Python3_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Python3_ios.h; sourceTree = "<group>"; };
@@ -537,7 +534,6 @@
 				226ED58421C783FC00A71A20 /* ios_system.framework in Frameworks */,
 				226ED58521C783FC00A71A20 /* openssl.framework in Frameworks */,
 				226ED58721C7840800A71A20 /* libffi.a in Frameworks */,
-				226ED5B221C7DA9000A71A20 /* libpanel.tbd in Frameworks */,
 				226ED58921C784A200A71A20 /* libncurses.tbd in Frameworks */,
 				226ED58B21C784B300A71A20 /* libbz2.tbd in Frameworks */,
 				226ED5A821C7D63E00A71A20 /* liblzma.tbd in Frameworks */,
@@ -658,7 +654,8 @@
 				226ED4AD21C6AE9500A71A20 /* stringio.c */,
 				226ED4B121C6AEAC00A71A20 /* textio.c */,
 			);
-			path = _io;
+			name = _io;
+			path = "../Python-3.7.1/Modules/_io";
 			sourceTree = "<group>";
 		};
 		226ED4BA21C6B6D800A71A20 /* extensions */ = {
@@ -713,7 +710,6 @@
 				226ED52A21C6FD6E00A71A20 /* termios.c */,
 				226ED52C21C6FD8400A71A20 /* resource.c */,
 				226ED53021C6FDB300A71A20 /* _cursesmodule.c */,
-				226ED5AF21C7DA2B00A71A20 /* _curses_panel.c */,
 				226ED53421C700F500A71A20 /* binascii.c */,
 				226ED53621C7010300A71A20 /* _bz2module.c */,
 				226ED5A521C7D5C900A71A20 /* _lzmamodule.c */,
@@ -1188,7 +1184,6 @@
 				22E8FF6121C66D3B00967E21 /* accu.c in Sources */,
 				226ED42721C6AB5B00A71A20 /* frozen.c in Sources */,
 				226ED47421C6AD3300A71A20 /* _codecsmodule.c in Sources */,
-				226ED5B021C7DA2B00A71A20 /* _curses_panel.c in Sources */,
 				226ED57C21C7093C00A71A20 /* _uuidmodule.c in Sources */,
 				226ED40521C66E7F00A71A20 /* _warnings.c in Sources */,
 				226ED45F21C6AC0D00A71A20 /* pystrtod.c in Sources */,
