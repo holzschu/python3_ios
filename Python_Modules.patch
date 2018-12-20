@@ -1,6 +1,6 @@
 diff -Naur tmp/Python-3.7.1/Modules/Setup Python-3.7.1/Modules/Setup
 --- tmp/Python-3.7.1/Modules/Setup	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Modules/Setup	2018-12-09 21:17:43.000000000 +0100
++++ Python-3.7.1/Modules/Setup	2018-12-20 22:14:05.000000000 +0100
 @@ -0,0 +1,369 @@
 +# -*- makefile -*-
 +# The file Setup is used by the makesetup script to construct the files
@@ -373,12 +373,12 @@ diff -Naur tmp/Python-3.7.1/Modules/Setup Python-3.7.1/Modules/Setup
 +#_codecs_jp _codecs_kr _codecs_tw unicodedata
 diff -Naur tmp/Python-3.7.1/Modules/Setup.local Python-3.7.1/Modules/Setup.local
 --- tmp/Python-3.7.1/Modules/Setup.local	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Modules/Setup.local	2018-12-09 21:17:43.000000000 +0100
++++ Python-3.7.1/Modules/Setup.local	2018-12-20 22:14:05.000000000 +0100
 @@ -0,0 +1 @@
 +# Edit this file for local setup changes
 diff -Naur tmp/Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h
 --- tmp/Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h	2018-12-17 08:34:48.000000000 +0100
++++ Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h	2018-12-20 22:14:05.000000000 +0100
 @@ -61,7 +61,7 @@
  #else
  extern void * dlopen(const char *path, int mode);
@@ -390,7 +390,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h Python-3.7.1/Modules/
  #endif
 diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_posixsubprocess.c
 --- tmp/Python-3.7.1/Modules/_posixsubprocess.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_posixsubprocess.c	2018-12-17 20:44:01.000000000 +0100
++++ Python-3.7.1/Modules/_posixsubprocess.c	2018-12-20 22:14:05.000000000 +0100
 @@ -376,6 +376,7 @@
  #endif  /* else NOT (defined(__linux__) && defined(HAVE_SYS_SYSCALL_H)) */
  
@@ -466,7 +466,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
          /* Capture errno for the exception. */
 diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 --- tmp/Python-3.7.1/Modules/config.c	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Modules/config.c	2018-12-17 17:05:57.000000000 +0100
++++ Python-3.7.1/Modules/config.c	2018-12-20 22:14:05.000000000 +0100
 @@ -0,0 +1,270 @@
 +/* Generated automatically from ./Modules/config.c.in by makesetup. */
 +/* -*- C -*- ***********************************************
@@ -740,7 +740,7 @@ diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 +#endif
 diff -Naur tmp/Python-3.7.1/Modules/expat/xmlparse.c Python-3.7.1/Modules/expat/xmlparse.c
 --- tmp/Python-3.7.1/Modules/expat/xmlparse.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/expat/xmlparse.c	2018-12-16 23:00:06.000000000 +0100
++++ Python-3.7.1/Modules/expat/xmlparse.c	2018-12-20 22:14:05.000000000 +0100
 @@ -56,7 +56,7 @@
  #ifdef _WIN32
  #include "winconfig.h"
@@ -752,7 +752,7 @@ diff -Naur tmp/Python-3.7.1/Modules/expat/xmlparse.c Python-3.7.1/Modules/expat/
  #include "ascii.h"
 diff -Naur tmp/Python-3.7.1/Modules/expat/xmlrole.c Python-3.7.1/Modules/expat/xmlrole.c
 --- tmp/Python-3.7.1/Modules/expat/xmlrole.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/expat/xmlrole.c	2018-12-16 23:00:00.000000000 +0100
++++ Python-3.7.1/Modules/expat/xmlrole.c	2018-12-20 22:14:05.000000000 +0100
 @@ -36,7 +36,7 @@
  #include "winconfig.h"
  #else
@@ -764,7 +764,7 @@ diff -Naur tmp/Python-3.7.1/Modules/expat/xmlrole.c Python-3.7.1/Modules/expat/x
  
 diff -Naur tmp/Python-3.7.1/Modules/expat/xmltok.c Python-3.7.1/Modules/expat/xmltok.c
 --- tmp/Python-3.7.1/Modules/expat/xmltok.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/expat/xmltok.c	2018-12-16 22:59:54.000000000 +0100
++++ Python-3.7.1/Modules/expat/xmltok.c	2018-12-20 22:14:05.000000000 +0100
 @@ -47,7 +47,7 @@
  #include "winconfig.h"
  #else
@@ -776,7 +776,7 @@ diff -Naur tmp/Python-3.7.1/Modules/expat/xmltok.c Python-3.7.1/Modules/expat/xm
  
 diff -Naur tmp/Python-3.7.1/Modules/ld_so_aix Python-3.7.1/Modules/ld_so_aix
 --- tmp/Python-3.7.1/Modules/ld_so_aix	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Modules/ld_so_aix	2018-12-09 21:17:43.000000000 +0100
++++ Python-3.7.1/Modules/ld_so_aix	2018-12-20 22:14:05.000000000 +0100
 @@ -0,0 +1,195 @@
 +#!/bin/sh
 +#
@@ -975,7 +975,7 @@ diff -Naur tmp/Python-3.7.1/Modules/ld_so_aix Python-3.7.1/Modules/ld_so_aix
 +exit $retval
 diff -Naur tmp/Python-3.7.1/Modules/posixmodule.c Python-3.7.1/Modules/posixmodule.c
 --- tmp/Python-3.7.1/Modules/posixmodule.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/posixmodule.c	2018-12-17 15:03:20.000000000 +0100
++++ Python-3.7.1/Modules/posixmodule.c	2018-12-20 22:14:05.000000000 +0100
 @@ -5018,6 +5018,10 @@
      execv(path->narrow, argvlist);
  #endif
