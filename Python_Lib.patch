@@ -1658,14 +1658,22 @@ diff -Naur tmp/Python-3.7.1/Lib/os.py Python-3.7.1/Lib/os.py
      def __exit__(self, *args):
 diff -Naur tmp/Python-3.7.1/Lib/platform.py Python-3.7.1/Lib/platform.py
 --- tmp/Python-3.7.1/Lib/platform.py	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Lib/platform.py	2018-12-20 23:12:26.000000000 +0100
-@@ -802,8 +802,9 @@
++++ Python-3.7.1/Lib/platform.py	2018-12-21 14:39:31.000000000 +0100
+@@ -779,7 +779,7 @@
+ 
+     """ Interface to the system's uname command.
+     """
+-    if sys.platform in ('dos', 'win32', 'win16'):
++    if sys.platform in ('dos', 'win32', 'win16', 'darwin'):
+         # XXX Others too ?
+         return default
+     try:
+@@ -802,8 +802,8 @@
          default in case the command should fail.
  
      """
 -    if sys.platform in ('dos', 'win32', 'win16'):
 -        # XXX Others too ?
-+    print("sys.platform = ", sys.platform)
 +    if sys.platform in ('dos', 'win32', 'win16','os2','darwin'):
 +        # XXX Others too ? NH: added darwin for iOS
          return default
