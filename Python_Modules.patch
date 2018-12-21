@@ -388,6 +388,17 @@ diff -Naur tmp/Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h Python-3.7.1/Modules/
  extern int dlclose(void * handle);
  extern int dladdr(const void *, Dl_info *);
  #endif
+diff -Naur tmp/Python-3.7.1/Modules/_hashopenssl.c Python-3.7.1/Modules/_hashopenssl.c
+--- tmp/Python-3.7.1/Modules/_hashopenssl.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Modules/_hashopenssl.c	2018-12-21 22:45:48.000000000 +0100
+@@ -46,6 +46,7 @@
+ #include <openssl/hmac.h>
+ #else
+ /* OpenSSL >= 1.1.0 */
++#  define OPENSSL_VERSION_1_1 1
+ #define HAS_FAST_PKCS5_PBKDF2_HMAC 1
+ #endif
+ 
 diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_posixsubprocess.c
 --- tmp/Python-3.7.1/Modules/_posixsubprocess.c	2018-10-20 08:04:19.000000000 +0200
 +++ Python-3.7.1/Modules/_posixsubprocess.c	2018-12-21 14:47:02.000000000 +0100
