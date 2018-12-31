@@ -433,7 +433,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_hashopenssl.c Python-3.7.1/Modules/_hashope
  PyMODINIT_FUNC
 diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_posixsubprocess.c
 --- tmp/Python-3.7.1/Modules/_posixsubprocess.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_posixsubprocess.c	2018-12-31 16:22:08.000000000 +0100
++++ Python-3.7.1/Modules/_posixsubprocess.c	2018-12-31 16:54:05.000000000 +0100
 @@ -45,6 +45,12 @@
  
  #define POSIX_CALL(call)   do { if ((call) == -1) goto error; } while (0)
@@ -528,7 +528,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
      /* Report the posix error to our parent process. */
      /* We ignore all write() return values as the total size of our writes is
         less than PIPEBUF and we cannot do anything about an error anyways.
-@@ -545,6 +567,168 @@
+@@ -545,6 +567,158 @@
      }
  }
  
@@ -557,8 +557,6 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
 +    PyObject *result;
 +    const char* err_msg = "";
 +    
-+    // printf("File descriptors = %d %d \n %d %d \n %d %d \n", p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite);
-+    fflush(stdout);
 +    /* Buffer large enough to hold a hex integer.  We can't malloc. */
 +    char hex_errno[sizeof(saved_errno)*2+1];
 +    
@@ -642,19 +640,13 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
 +    
 +    int argc = 0;
 +    while(argv[argc] != NULL) { argc++;}
-+    fflush(thread_stdout);
 +    PyThreadState* pGlobalThreadState = PyThreadState_Get();
 +    PyThreadState* pInterpreterThreadState = Py_NewInterpreter();
 +    ios_pushChildThreads();
 +    saved_errno = pymain_run_python_command(argc, argv);
-+    fflush(thread_stdout);
-+    fflush(thread_stderr);
-+    fflush(stdout);
-+    fflush(stderr);
 +    Py_EndInterpreter(pInterpreterThreadState);
 +    PyThreadState_Swap(pGlobalThreadState);
-+    // if (cwd) POSIX_CALL(chdir(currentDir));
-+    // We didn't close the child std threads
++    if (cwd) POSIX_CALL(chdir(currentDir));
 +    if (saved_errno == 0) {
 +        ios_popChildThreads();
 +        return;
@@ -689,15 +681,13 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
 +        _Py_write_noraise(errpipe_write, err_msg, strlen(err_msg));
 +    }
 +    ios_popChildThreads();
-+    fflush(thread_stderr);
-+    fflush(thread_stdout);
 +}
 +#endif
 +
  
  static PyObject *
  subprocess_fork_exec(PyObject* self, PyObject *args)
-@@ -692,15 +876,36 @@
+@@ -692,15 +866,36 @@
               * to avoid deadlock... */
              PyOS_AfterFork_Child();
          }
