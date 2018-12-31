@@ -1,3 +1,15 @@
+diff -Naur tmp/Python-3.7.1/Python/fileutils.c Python-3.7.1/Python/fileutils.c
+--- tmp/Python-3.7.1/Python/fileutils.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Python/fileutils.c	2018-12-31 14:32:58.000000000 +0100
+@@ -1375,7 +1375,7 @@
+         count = PY_SSIZE_T_MAX;
+     }
+ #endif
+-
++    
+     _Py_BEGIN_SUPPRESS_IPH
+     do {
+         Py_BEGIN_ALLOW_THREADS
 diff -Naur tmp/Python-3.7.1/Python/getplatform.c Python-3.7.1/Python/getplatform.c
 --- tmp/Python-3.7.1/Python/getplatform.c	2018-10-20 08:04:19.000000000 +0200
 +++ Python-3.7.1/Python/getplatform.c	2018-12-20 23:39:32.000000000 +0100
@@ -10,3 +22,42 @@ diff -Naur tmp/Python-3.7.1/Python/getplatform.c Python-3.7.1/Python/getplatform
  #endif
  
  const char *
+diff -Naur tmp/Python-3.7.1/Python/pylifecycle.c Python-3.7.1/Python/pylifecycle.c
+--- tmp/Python-3.7.1/Python/pylifecycle.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Python/pylifecycle.c	2018-12-26 21:30:12.000000000 +0100
+@@ -2097,7 +2097,7 @@
+ static void _Py_NO_RETURN
+ fatal_error(const char *prefix, const char *msg, int status)
+ {
+-    const int fd = fileno(stderr);
++    const int fd = fileno(thread_stderr);
+     static int reentrant = 0;
+ 
+     if (reentrant) {
+@@ -2107,19 +2107,19 @@
+     }
+     reentrant = 1;
+ 
+-    fprintf(stderr, "Fatal Python error: ");
++    fprintf(thread_stderr, "Fatal Python error: ");
+     if (prefix) {
+-        fputs(prefix, stderr);
+-        fputs(": ", stderr);
++        fputs(prefix, thread_stderr);
++        fputs(": ", thread_stderr);
+     }
+     if (msg) {
+-        fputs(msg, stderr);
++        fputs(msg, thread_stderr);
+     }
+     else {
+-        fprintf(stderr, "<message not set>");
++        fprintf(thread_stderr, "<message not set>");
+     }
+-    fputs("\n", stderr);
+-    fflush(stderr); /* it helps in Windows debug build */
++    fputs("\n", thread_stderr);
++    fflush(thread_stderr); /* it helps in Windows debug build */
+ 
+     /* Print the exception (if an exception is set) with its traceback,
+      * or display the current Python stack. */
