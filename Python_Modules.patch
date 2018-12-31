@@ -433,7 +433,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_hashopenssl.c Python-3.7.1/Modules/_hashope
  PyMODINIT_FUNC
 diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_posixsubprocess.c
 --- tmp/Python-3.7.1/Modules/_posixsubprocess.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_posixsubprocess.c	2018-12-31 17:09:48.000000000 +0100
++++ Python-3.7.1/Modules/_posixsubprocess.c	2018-12-31 18:13:38.000000000 +0100
 @@ -45,6 +45,12 @@
  
  #define POSIX_CALL(call)   do { if ((call) == -1) goto error; } while (0)
@@ -508,13 +508,13 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
 -            execve(executable, argv, envp);
 +            saved_errno = execve(executable, argv, envp);
 +#ifdef TARGET_OS_IPHONE
-+            if (saved_errno != 127) break; // 127 is "command not found" for ios_system
++            break; 
 +#endif
          } else {
 -            execv(executable, argv);
 +            saved_errno = execv(executable, argv);
 +#ifdef TARGET_OS_IPHONE
-+            if (saved_errno != 127) break;
++            break;
 +#endif
          }
 +#ifdef TARGET_OS_IPHONE
@@ -1105,13 +1105,13 @@ diff -Naur tmp/Python-3.7.1/Modules/faulthandler.c Python-3.7.1/Modules/faulthan
      int save_errno = errno;
 diff -Naur tmp/Python-3.7.1/Modules/getpath.c Python-3.7.1/Modules/getpath.c
 --- tmp/Python-3.7.1/Modules/getpath.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/getpath.c	2018-12-21 15:08:10.000000000 +0100
++++ Python-3.7.1/Modules/getpath.c	2018-12-31 18:21:33.000000000 +0100
 @@ -558,8 +558,17 @@
        * will fail if a relative path was used. but in that case,
        * absolutize() should help us out below
        */
 +#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-+    // Doesn't apply on an iPhone, though, since _NSGetExecutablePath gives the parent app
++    // Doesn't apply on iOS, though, since _NSGetExecutablePath gives the parent app
 +    // This solution is a bit extreme, but the sandbox is really limiting:
 +    char *iospath = Py_GETENV("PYTHONHOME");
 +    char *prog = Py_GETENV("PYTHONEXECUTABLE");
