@@ -433,7 +433,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_hashopenssl.c Python-3.7.1/Modules/_hashope
  PyMODINIT_FUNC
 diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_posixsubprocess.c
 --- tmp/Python-3.7.1/Modules/_posixsubprocess.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_posixsubprocess.c	2018-12-31 18:13:38.000000000 +0100
++++ Python-3.7.1/Modules/_posixsubprocess.c	2019-01-17 21:59:28.000000000 +0100
 @@ -45,6 +45,12 @@
  
  #define POSIX_CALL(call)   do { if ((call) == -1) goto error; } while (0)
@@ -482,7 +482,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
      if (cwd)
          POSIX_CALL(chdir(cwd));
  
-@@ -489,25 +500,37 @@
+@@ -489,35 +500,52 @@
              errno = 0;  /* We don't want to report an OSError. */
              goto error;
          }
@@ -517,16 +517,18 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
 +            break;
 +#endif
          }
-+#ifdef TARGET_OS_IPHONE
-+        // Don't chdir back yet, we need to finish executing the command.
-+        // Will have to add it to python script, after the wait().
-+        // POSIX_CALL(chdir(currentDir));
-+        if (saved_errno == 0) return; // We're not supposed to return from execv, but on iOS we do
-+#endif
          if (errno != ENOENT && errno != ENOTDIR && saved_errno == 0) {
              saved_errno = errno;
          }
-@@ -517,7 +540,12 @@
+     }
++#ifdef TARGET_OS_IPHONE
++    // Don't chdir back yet, we need to finish executing the command.
++    // Will have to add it to python script, after the wait().
++    // POSIX_CALL(chdir(currentDir));
++    if (saved_errno == 0) return; // We're not supposed to return from execv, but on iOS we do
++#endif
+     /* Report the first exec error, not the last. */
+     if (saved_errno)
          errno = saved_errno;
  
  error:
@@ -539,7 +541,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
      /* Report the posix error to our parent process. */
      /* We ignore all write() return values as the total size of our writes is
         less than PIPEBUF and we cannot do anything about an error anyways.
-@@ -545,6 +573,158 @@
+@@ -545,6 +573,156 @@
      }
  }
  
@@ -547,8 +549,6 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
 +/* Same as child_exec, but in the specific case where the command is "python3".
 +   We won't fork or anything, but we start a new Python interpreter.
 + */
-+// iOS: Where to direct input/output of the python thread:
-+// TODO: can I move it inside the function:
 +static void
 +child_python_exec(char *const exec_array[],
 +           char *const argv[],
@@ -567,7 +567,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
 +    int i, saved_errno = 0, reached_preexec = 0;
 +    PyObject *result;
 +    const char* err_msg = "";
-+    
++
 +    /* Buffer large enough to hold a hex integer.  We can't malloc. */
 +    char hex_errno[sizeof(saved_errno)*2+1];
 +    
@@ -698,24 +698,43 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
  
  static PyObject *
  subprocess_fork_exec(PyObject* self, PyObject *args)
-@@ -692,15 +872,36 @@
+@@ -692,15 +870,55 @@
               * to avoid deadlock... */
              PyOS_AfterFork_Child();
          }
 -
 +#ifdef TARGET_OS_IPHONE
-+        // To call python from python, we have to create a new interpreter:
-+        // (it can't be created between Py_BEGIN_ALLOW_THREADS/Py_END_ALLOW_THREADS, so we do it now)
-+        // pid will store the nature of the process (0 for ios_system, 1 for python)
-+        // waitpid will react differently depending on pid (you can't wait on a python thread)
++        // Calling python from python requires some care and attention.
++        // The first time, we call a second python3 framework (identical to the 1st)
++        // called "pythonE".
++        // (this is necessary for complex commands such as jupyter, less so for pip)
 +        if (strcmp(basename(argv[0]), "python3") == 0) {
-+            pid = 1; // python "process", not ios_system.
-+            child_python_exec(exec_array, argv, envp, cwd,
-+                       p2cread, p2cwrite, c2pread, c2pwrite,
-+                       errread, errwrite, errpipe_read, errpipe_write,
-+                       close_fds, restore_signals, call_setsid,
-+                       py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
-+            // TODO: stdout, stderr are files, stdin is a pipe.
++            // Question: how far deep are we?
++            if (strcmp(ios_progname(), "pythonE") != 0) {
++                // Method 1: call a separate framework:
++                int argc = 0;
++                while (argv[argc] != NULL) argc++;
++                char** newArgv = malloc((argc + 1) * sizeof(char*));
++                newArgv[0] = "pythonE";
++                for (int i = 1; i <= argc; i++) newArgv[i] = argv[i];
++                Py_BEGIN_ALLOW_THREADS
++                child_exec(exec_array, newArgv, envp, cwd,
++                           p2cread, p2cwrite, c2pread, c2pwrite,
++                           errread, errwrite, errpipe_read, errpipe_write,
++                           close_fds, restore_signals, call_setsid,
++                           py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
++                Py_END_ALLOW_THREADS
++                free(newArgv);
++            } else {
++                // If it's the second or third time, we can't do that. So we create a new
++                // interpreter.
++                // This works for commands that are simple enough. 
++                child_python_exec(exec_array, argv, envp, cwd,
++                                  p2cread, p2cwrite, c2pread, c2pwrite,
++                                  errread, errwrite, errpipe_read, errpipe_write,
++                                  close_fds, restore_signals, call_setsid,
++                                  py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
++            }
 +        } else {
 +#endif
 +        Py_BEGIN_ALLOW_THREADS
@@ -780,8 +799,8 @@ diff -Naur tmp/Python-3.7.1/Modules/_ssl.c Python-3.7.1/Modules/_ssl.c
                        unsigned int *major, unsigned int *minor,
 diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 --- tmp/Python-3.7.1/Modules/config.c	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Modules/config.c	2018-12-20 22:14:05.000000000 +0100
-@@ -0,0 +1,270 @@
++++ Python-3.7.1/Modules/config.c	2019-01-05 10:45:58.000000000 +0100
+@@ -0,0 +1,271 @@
 +/* Generated automatically from ./Modules/config.c.in by makesetup. */
 +/* -*- C -*- ***********************************************
 +Copyright (c) 2000, BeOpen.com.
@@ -913,10 +932,10 @@ diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 +PyMODINIT_FUNC PyInit__dbm(void);
 +PyMODINIT_FUNC PyInit__uuid(void);
 +// For Jupyter:
-+// PyMODINIT_FUNC PyInit__cffi_backend(void);
-+// PyMODINIT_FUNC PyInit_libzmq(void);
-+// PyMODINIT_FUNC PyInit_monitoredqueue(void); /*proto*/
-+// PyMODINIT_FUNC PyInit__cffi_ext(void);
++PyMODINIT_FUNC PyInit__cffi_backend(void);
++PyMODINIT_FUNC PyInit_libzmq(void);
++PyMODINIT_FUNC PyInit_monitoredqueue(void); /*proto*/
++PyMODINIT_FUNC PyInit__cffi_ext(void);
 +
 +struct _inittab _PyImport_Inittab[] = {
 +
@@ -1033,17 +1052,18 @@ diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 +    // {"_tkinter", PyInit__tkinter},
 +    {"xxlimited", PyInit_xxlimited},
 +    {"_ctypes", PyInit__ctypes},
-+    
 +    // Not included by configure, but required anyway:
 +    {"zlib", PyInit_zlib},
 +    {"_sqlite3", PyInit__sqlite3},
 +    {"_dbm", PyInit__dbm},
 +    {"_uuid", PyInit__uuid}, 
 +    // For Jupyter:
-+    // {"_cffi_ext", PyInit__cffi_ext},
-+    // {"_cffi_backend", PyInit__cffi_backend},
-+    // {"libzmq", PyInit_libzmq},
-+    // {"_monitoredqueue", PyInit_monitoredqueue},
++    // cffi module:
++    {"_cffi_backend", PyInit__cffi_backend},
++    // pyzmq package:
++    {"_cffi_ext", PyInit__cffi_ext},
++    {"libzmq", PyInit_libzmq},
++    {"_monitoredqueue", PyInit_monitoredqueue},
 +    /* Sentinel */
 +    {0, 0}
 +};

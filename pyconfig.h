@@ -880,7 +880,7 @@
 #define HAVE_SETREUID 1
 
 /* Define to 1 if you have the `setsid' function. */
-#define HAVE_SETSID 1
+// #define HAVE_SETSID 1
 
 /* Define to 1 if you have the `setuid' function. */
 #define HAVE_SETUID 1

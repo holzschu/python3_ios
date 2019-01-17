@@ -1,3 +1,21 @@
+diff -Naur tmp/Python-3.7.1/Python/dynload_shlib.c Python-3.7.1/Python/dynload_shlib.c
+--- tmp/Python-3.7.1/Python/dynload_shlib.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Python/dynload_shlib.c	2019-01-02 22:28:38.000000000 +0100
+@@ -64,8 +64,14 @@
+     int dlopenflags=0;
+ 
+     if (strchr(pathname, '/') == NULL) {
++#ifndef TARGET_OS_IPHONE
+         /* Prefix bare filename with "./" */
+         PyOS_snprintf(pathbuf, sizeof(pathbuf), "./%-.255s", pathname);
++#else
++        /* Prefix bare filenames with "$APPDIR/Frameworks/" */
++        /* (the only place where we can put dynamic libraries on iOS */
++        PyOS_snprintf(pathbuf, sizeof(pathbuf), "%s/Frameworks/%s", getenv("APPDIR"), pathname);
++#endif
+         pathname = pathbuf;
+     }
+ 
 diff -Naur tmp/Python-3.7.1/Python/fileutils.c Python-3.7.1/Python/fileutils.c
 --- tmp/Python-3.7.1/Python/fileutils.c	2018-10-20 08:04:19.000000000 +0200
 +++ Python-3.7.1/Python/fileutils.c	2018-12-31 14:32:58.000000000 +0100
@@ -24,13 +42,13 @@ diff -Naur tmp/Python-3.7.1/Python/getplatform.c Python-3.7.1/Python/getplatform
  const char *
 diff -Naur tmp/Python-3.7.1/Python/pylifecycle.c Python-3.7.1/Python/pylifecycle.c
 --- tmp/Python-3.7.1/Python/pylifecycle.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/pylifecycle.c	2018-12-26 21:30:12.000000000 +0100
++++ Python-3.7.1/Python/pylifecycle.c	2019-01-06 21:12:41.000000000 +0100
 @@ -2097,7 +2097,7 @@
  static void _Py_NO_RETURN
  fatal_error(const char *prefix, const char *msg, int status)
  {
 -    const int fd = fileno(stderr);
-+    const int fd = fileno(thread_stderr);
++    const int fd = (thread_stderr != NULL) ? fileno(thread_stderr) : fileno(stderr);
      static int reentrant = 0;
  
      if (reentrant) {

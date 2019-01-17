@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221CD95D21DBBA1D00F3B47C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE"; }; };
+		221CD96021DFA97100F3B47C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I../jupyter/zeromq-4.2.5/include/ -I ../jupyter/pyzmq-17.1.2/zmq/utils/"; }; };
+		221CD96421DFAABF00F3B47C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 221CD96321DFAABF00F3B47C /* libc++.tbd */; };
+		221CD96721E0B42300F3B47C /* initlibzmq.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD96621E0B42300F3B47C /* initlibzmq.c */; };
+		221CD96921E0B44400F3B47C /* monitoredqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD96821E0B44400F3B47C /* monitoredqueue.c */; settings = {COMPILER_FLAGS = "-I../jupyter/zeromq-4.2.5/include/ -I ../jupyter/pyzmq-17.1.2/zmq/utils/"; }; };
+		2261378E21EF71DF0097B3A0 /* libzmq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2261378D21EF71DF0097B3A0 /* libzmq.a */; };
 		226ED40521C66E7F00A71A20 /* _warnings.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED40421C66E7F00A71A20 /* _warnings.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		226ED40721C66E8500A71A20 /* asdl.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED40621C66E8500A71A20 /* asdl.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		226ED40921C66E8B00A71A20 /* ast_opt.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED40821C66E8B00A71A20 /* ast_opt.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -265,6 +271,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _cffi_backend.c; path = "../jupyter/cffi-1.11.5/c/_cffi_backend.c"; sourceTree = "<group>"; };
+		221CD95F21DFA97100F3B47C /* _cffi_ext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _cffi_ext.c; path = "../jupyter/pyzmq-17.1.2/zmq/backend/cffi/_cffi_ext.c"; sourceTree = "<group>"; };
+		221CD96121DFAA8E00F3B47C /* libzmq.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzmq.dylib; path = "../jupyter/zeromq-4.2.5/lib/libzmq.dylib"; sourceTree = "<group>"; };
+		221CD96321DFAABF00F3B47C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		221CD96621E0B42300F3B47C /* initlibzmq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = initlibzmq.c; path = "../jupyter/pyzmq-17.1.2/buildutils/initlibzmq.c"; sourceTree = "<group>"; };
+		221CD96821E0B44400F3B47C /* monitoredqueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = monitoredqueue.c; path = "../jupyter/pyzmq-17.1.2/zmq/devices/monitoredqueue.c"; sourceTree = "<group>"; };
+		2261378D21EF71DF0097B3A0 /* libzmq.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzmq.a; path = ../libzmq.a; sourceTree = "<group>"; };
 		226ED40421C66E7F00A71A20 /* _warnings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _warnings.c; path = "../Python-3.7.1/Python/_warnings.c"; sourceTree = "<group>"; };
 		226ED40621C66E8500A71A20 /* asdl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = asdl.c; path = "../Python-3.7.1/Python/asdl.c"; sourceTree = "<group>"; };
 		226ED40821C66E8B00A71A20 /* ast_opt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ast_opt.c; path = "../Python-3.7.1/Python/ast_opt.c"; sourceTree = "<group>"; };
@@ -534,16 +547,45 @@
 				226ED58421C783FC00A71A20 /* ios_system.framework in Frameworks */,
 				226ED58521C783FC00A71A20 /* openssl.framework in Frameworks */,
 				226ED58721C7840800A71A20 /* libffi.a in Frameworks */,
+				2261378E21EF71DF0097B3A0 /* libzmq.a in Frameworks */,
 				226ED58921C784A200A71A20 /* libncurses.tbd in Frameworks */,
 				226ED58B21C784B300A71A20 /* libbz2.tbd in Frameworks */,
 				226ED5A821C7D63E00A71A20 /* liblzma.tbd in Frameworks */,
 				226ED5AE21C7D77200A71A20 /* libreadline.tbd in Frameworks */,
+				221CD96421DFAABF00F3B47C /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221CD95A21DBB9E800F3B47C /* jupyter */ = {
+			isa = PBXGroup;
+			children = (
+				221CD96521E0B3E800F3B47C /* pyzmq */,
+				221CD95B21DBB9F100F3B47C /* _cffi_backend */,
+			);
+			name = jupyter;
+			sourceTree = "<group>";
+		};
+		221CD95B21DBB9F100F3B47C /* _cffi_backend */ = {
+			isa = PBXGroup;
+			children = (
+				221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */,
+			);
+			name = _cffi_backend;
+			sourceTree = "<group>";
+		};
+		221CD96521E0B3E800F3B47C /* pyzmq */ = {
+			isa = PBXGroup;
+			children = (
+				221CD96621E0B42300F3B47C /* initlibzmq.c */,
+				221CD96821E0B44400F3B47C /* monitoredqueue.c */,
+				221CD95F21DFA97100F3B47C /* _cffi_ext.c */,
+			);
+			name = pyzmq;
+			sourceTree = "<group>";
+		};
 		226ED40321C66DC800A71A20 /* Python */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,6 +650,7 @@
 		226ED47021C6ACBE00A71A20 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				221CD95A21DBB9E800F3B47C /* jupyter */,
 				226ED4BA21C6B6D800A71A20 /* extensions */,
 				226ED4B921C6B62F00A71A20 /* _io */,
 				226ED47121C6AD2A00A71A20 /* _abc.c */,
@@ -795,6 +838,9 @@
 		226ED57F21C783FB00A71A20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2261378D21EF71DF0097B3A0 /* libzmq.a */,
+				221CD96321DFAABF00F3B47C /* libc++.tbd */,
+				221CD96121DFAA8E00F3B47C /* libzmq.dylib */,
 				226ED5B121C7DA9000A71A20 /* libpanel.tbd */,
 				226ED5AD21C7D77200A71A20 /* libreadline.tbd */,
 				226ED5A721C7D63E00A71A20 /* liblzma.tbd */,
@@ -1081,6 +1127,7 @@
 				226ED48021C6ADBA00A71A20 /* _operator.c in Sources */,
 				226ED53721C7010300A71A20 /* _bz2module.c in Sources */,
 				226ED56921C704B500A71A20 /* fnt.c in Sources */,
+				221CD96721E0B42300F3B47C /* initlibzmq.c in Sources */,
 				22E8FF4C21C66D3B00967E21 /* call.c in Sources */,
 				226ED49E21C6AE4B00A71A20 /* getpath.c in Sources */,
 				226ED46B21C6AC3400A71A20 /* sysmodule.c in Sources */,
@@ -1178,6 +1225,8 @@
 				226ED4A621C6AE6C00A71A20 /* main.c in Sources */,
 				22E8FF5F21C66D3B00967E21 /* unicodeobject.c in Sources */,
 				226ED4D021C6B83400A71A20 /* _pickle.c in Sources */,
+				221CD96021DFA97100F3B47C /* _cffi_ext.c in Sources */,
+				221CD96921E0B44400F3B47C /* monitoredqueue.c in Sources */,
 				226ED4CC21C6B7C700A71A20 /* _bisectmodule.c in Sources */,
 				226ED59421C7879E00A71A20 /* callproc.c in Sources */,
 				226ED4FE21C6BCFE00A71A20 /* _csv.c in Sources */,
@@ -1186,6 +1235,7 @@
 				226ED47421C6AD3300A71A20 /* _codecsmodule.c in Sources */,
 				226ED57C21C7093C00A71A20 /* _uuidmodule.c in Sources */,
 				226ED40521C66E7F00A71A20 /* _warnings.c in Sources */,
+				221CD95D21DBBA1D00F3B47C /* _cffi_backend.c in Sources */,
 				226ED45F21C6AC0D00A71A20 /* pystrtod.c in Sources */,
 				226ED42121C6AB4500A71A20 /* errors.c in Sources */,
 				226ED42921C6AB6300A71A20 /* frozenmain.c in Sources */,
