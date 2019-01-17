@@ -1,0 +1,26 @@
+diff -Naur tmp/zeromq-4.2.5/config/ltmain.sh zeromq-4.2.5/config/ltmain.sh
+--- tmp/zeromq-4.2.5/config/ltmain.sh	2018-03-23 20:34:13.000000000 +0100
++++ zeromq-4.2.5/config/ltmain.sh	2019-01-16 16:11:59.000000000 +0100
+@@ -8723,14 +8723,14 @@
+       *-*-darwin*)
+ 	# Don't allow lazy linking, it breaks C++ global constructors
+ 	# But is supposedly fixed on 10.4 or later (yay!).
+-	if test "$tagname" = CXX ; then
+-	  case ${MACOSX_DEPLOYMENT_TARGET-10.0} in
+-	    10.[0123])
+-	      func_append compile_command " ${wl}-bind_at_load"
+-	      func_append finalize_command " ${wl}-bind_at_load"
+-	    ;;
+-	  esac
+-	fi
++	# if test "$tagname" = CXX ; then
++	#   case ${MACOSX_DEPLOYMENT_TARGET-10.0} in
++	#     10.[0123])
++	#       func_append compile_command " ${wl}-bind_at_load"
++	#       func_append finalize_command " ${wl}-bind_at_load"
++	#     ;;
++	#   esac
++	# fi
+ 	# Time to change all our "foo.ltframework" stuff back to "-framework foo"
+ 	compile_deplibs=`$ECHO " $compile_deplibs" | $SED 's% \([^ $]*\).ltframework% -framework \1%g'`
+ 	finalize_deplibs=`$ECHO " $finalize_deplibs" | $SED 's% \([^ $]*\).ltframework% -framework \1%g'`
