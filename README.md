@@ -1,0 +1,44 @@
+# Python3 for iOS -- with partial fork() and exec() ability
+
+This project is a patch of Python-3.7.1, designed to make it compile on iOS. Python becomes a framework, and your programs call `python_main(argc, argv)` to execute python scripts. 
+
+This framework was designed to be used in conjunction with [Blinkshell](https://github.com/holzschu/blink), [OpenTerm](https://github.com/holzschu/terminal) or [iVim](https://github.com/holzschu/iVim), but it can be used independently. 
+
+# Compilation:
+
+- type `getPackages.sh`
+
+This will download the Python-3.7.1 source code, patch it, and compile it. It will also download libffi-3.2.1 and zeromq-4.2.5, patch them and compile them for iOS.
+
+At the end of the script, you have a compiled framework in `Python3_ios/build/Debug-iphoneos/Python3_ios.framework`, which you can link with your application.
+
+# Installation (on your device)
+
+Once you have compiled the Python3-ios framework, you can link it with your favorite app (I've done it with [Blinkshell](https://github.com/holzschu/blink), [OpenTerm](https://github.com/holzschu/terminal)  and [iVim](https://github.com/holzschu/iVim)). 
+
+You will then need to transfer the Python scripts to your device:
+- `tar -cvzf pythonScripts.tar.gz Python-3.7.1/Lib/`
+- transfer the pythonScripts.tar.gz on the device, for example using iTunes or iCloud drive.
+- on the iOS device: `tar -xvzf pythonScripts.tar.gz`
+- `mv Lib ../Library/lib/python3.7`
+
+Also transfer the scripts: 
+- `tar -cvzf binaries.tar.gz Python-3.7.1/Tools/scripts/`
+- transfer the binaries.tar.gz on your device, for example using iTunes
+- on the iOS device: `tar -xvzf binaries.tar.gz` 
+- `mv Tools/scripts ../Library/bin`
+
+This installation comes with many packages already installed: pip, setuptools, cffi...
+
+Inside Python, you can call the shell commands defined by the frameworks: ls, cat, grep... 
+
+In the shell, you can use all Python scripts: pydoc, which.py, diff.py... 
+
+# Installing new packages
+
+To install more packages, you have to try different options, in order of complexity:
+- `pip install packagename`, which will work most of the time.
+- if the package tries to compile C extensions, install will fail (obviously). Trying to run the compiler raises an exception, and the setup script then adapts itself. If this does not work (for example for cffi), you will have to add the C files to the Xcode project yourself. 
+
+
+
