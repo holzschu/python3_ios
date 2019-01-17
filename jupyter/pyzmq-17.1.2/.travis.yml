@@ -1,0 +1,91 @@
+language: python
+dist: trusty
+
+cache:
+  - apt
+  - pip
+python:
+  - 2.7
+  - 3.6
+  - pypy2.7-5.8.0
+  - pypy3.5-5.8.0
+env:
+    - ZMQ=
+    - ZMQ=bundled
+before_install:
+  - sudo add-apt-repository -y ppa:anton+/dnscrypt
+  - sudo apt-get update
+  - |
+    if [[ $ZMQ != bundled ]]; then
+      sudo apt-get install -y -qq libzmq3-dev libsodium-dev
+    fi
+  - |
+    if [[ $TRAVIS_PYTHON_VERSION != pypy* ]]; then
+      pip install -q cython --install-option="--no-cython-compile"
+    fi
+  - |
+    if [[ ! -z "$ZMQ" && $ZMQ != bundled ]]; then
+      wget https://github.com/zeromq/$ZMQ/archive/master.zip -O libzmq.zip
+      unzip libzmq.zip
+      pushd "$ZMQ-master"
+      ./autogen.sh
+      ./configure --enable-drafts
+      make -j
+      sudo make install
+      sudo ldconfig
+      popd
+      export ZMQ=/usr/local
+      export ZMQ_DRAFT_API=1
+    fi
+  - pip install -r test-requirements.txt
+  - |
+    if [[ "$TORNADO" == "master" ]]; then
+      pip install https://github.com/tornadoweb/tornado/archive/master.zip
+    fi
+  - |
+    if [[ "$NOTORNADO" == "1" ]]; then
+      pip uninstall -yq tornado
+    fi
+
+install:
+  - python setup.py build_ext --inplace --zmq=$ZMQ
+
+matrix:
+  include:
+    - python: pypy
+      env: ZMQ=bundled
+    - python: 3.6-dev
+      env: ZMQ=bundled
+    - python: 3.7
+      env: ZMQ=
+      dist: xenial
+    - python: 3.7
+      env: ZMQ=bundled
+      dist: xenial
+    - python: 3.6
+      env:
+        - ZMQ=
+        - NOTORNADO=1
+    - python: 3.6
+      env:
+        - ZMQ=
+        - TORNADO=master
+    - python: 3.5
+      env: ZMQ=libzmq
+    - python: 3.4
+      env: ZMQ=zeromq4-x
+    - python: 3.4
+      env: ZMQ=zeromq4-1
+    - python: 3.4
+      env: ZMQ=zeromq3-x
+    - python: 3.3
+      env: ZMQ=
+    - python: nightly
+      env: ZMQ=
+    - python: nightly
+      env: ZMQ=bundled
+  allow_failures:
+    - env: ZMQ=libzmq
+    - python: nightly
+
+script: travis_retry python setup.py test

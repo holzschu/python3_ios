@@ -1,0 +1,1 @@
+clang -arch arm64  -E -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/ -miphoneos-version-min=12 -I../../utils/ -I../../../..//zeromq-4.2.5/include/ _verify.c > zmq_preprocessed.c
