@@ -42,6 +42,9 @@ echo "Applying patch to Python-3.7.1"
 (cd Python-3.7.1  ; patch -p 1 < ../Python_Include.patch ; patch -p 1 < ../Python_Lib.patch ; patch -p 1 < ../Python_Modules.patch; patch -p 1 < ../Python_Parser.patch ; patch -p 1 < ../Python_Python.patch; patch -p 1 < ../Python_setup.patch ; patch -p 1 < ../Python_Objects.patch; cd ..)
 echo "All done. Now let's build the Python3 framework:" 
 xcodebuild -project Python3_ios/Python3_ios.xcodeproj -sdk iphoneos -arch arm64 -configuration Debug -quiet
+# duplicate python3 to pythonE:
+cp -r Python3_ios/build/Debug-iphoneos/Python3_ios.framework Python3_ios/build/Debug-iphoneos/PythonE.framework
+cp pythonE.plist Python3_ios/build/Debug-iphoneos/PythonE.framework/Info.plist
 echo "All done. The framework in in Python3_ios/build/Debug-iphoneos/Python3_ios.framework."
 
 
