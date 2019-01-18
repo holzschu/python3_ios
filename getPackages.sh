@@ -45,6 +45,8 @@ xcodebuild -project Python3_ios/Python3_ios.xcodeproj -sdk iphoneos -arch arm64 
 # duplicate python3 to pythonE:
 cp -r Python3_ios/build/Debug-iphoneos/Python3_ios.framework Python3_ios/build/Debug-iphoneos/PythonE.framework
 cp pythonE.plist Python3_ios/build/Debug-iphoneos/PythonE.framework/Info.plist
+echo "Adding local packages:"
+cp -r site-packages Python-3.7.1/Lib/
 echo "All done. The framework in in Python3_ios/build/Debug-iphoneos/Python3_ios.framework."
 
 
