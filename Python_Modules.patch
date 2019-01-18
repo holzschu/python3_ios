@@ -433,21 +433,16 @@ diff -Naur tmp/Python-3.7.1/Modules/_hashopenssl.c Python-3.7.1/Modules/_hashope
  PyMODINIT_FUNC
 diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_posixsubprocess.c
 --- tmp/Python-3.7.1/Modules/_posixsubprocess.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_posixsubprocess.c	2019-01-17 21:59:28.000000000 +0100
-@@ -45,6 +45,12 @@
++++ Python-3.7.1/Modules/_posixsubprocess.c	2019-01-18 13:47:20.000000000 +0100
+@@ -45,7 +45,6 @@
  
  #define POSIX_CALL(call)   do { if ((call) == -1) goto error; } while (0)
  
-+#ifdef TARGET_OS_IPHONE
-+#include <libgen.h>
-+extern int pymain_run_python_command(int argc, char** argv);
-+extern ios_pushChildThreads(void);
-+extern ios_popChildThreads(void);
-+#endif
- 
+-
  /* If gc was disabled, call gc.enable().  Return 0 on success. */
  static int
-@@ -376,6 +382,7 @@
+ _enable_gc(int need_to_reenable_gc, PyObject *gc_module)
+@@ -376,6 +375,7 @@
  #endif  /* else NOT (defined(__linux__) && defined(HAVE_SYS_SYSCALL_H)) */
  
  
@@ -455,7 +450,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
  /*
   * This function is code executed in the child process immediately after fork
   * to set things up and call exec().
-@@ -411,6 +418,7 @@
+@@ -411,6 +411,7 @@
      if (make_inheritable(py_fds_to_keep, errpipe_write) < 0)
          goto error;
  
@@ -463,7 +458,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
      /* Close parent's pipe ends. */
      if (p2cwrite != -1)
          POSIX_CALL(close(p2cwrite));
-@@ -419,7 +427,7 @@
+@@ -419,7 +420,7 @@
      if (errread != -1)
          POSIX_CALL(close(errread));
      POSIX_CALL(close(errpipe_read));
@@ -472,7 +467,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
      /* When duping fds, if there arises a situation where one of the fds is
         either 0, 1 or 2, it is possible that it is overwritten (#12607). */
      if (c2pwrite == 0) {
-@@ -464,6 +472,9 @@
+@@ -464,6 +465,9 @@
      /* We no longer manually close p2cread, c2pwrite, and errwrite here as
       * _close_open_fds takes care when it is not already non-inheritable. */
  
@@ -482,7 +477,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
      if (cwd)
          POSIX_CALL(chdir(cwd));
  
-@@ -489,35 +500,52 @@
+@@ -489,35 +493,52 @@
              errno = 0;  /* We don't want to report an OSError. */
              goto error;
          }
@@ -541,202 +536,24 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
      /* Report the posix error to our parent process. */
      /* We ignore all write() return values as the total size of our writes is
         less than PIPEBUF and we cannot do anything about an error anyways.
-@@ -545,6 +573,156 @@
+@@ -545,7 +566,6 @@
      }
  }
  
-+#ifdef TARGET_OS_IPHONE
-+/* Same as child_exec, but in the specific case where the command is "python3".
-+   We won't fork or anything, but we start a new Python interpreter.
-+ */
-+static void
-+child_python_exec(char *const exec_array[],
-+           char *const argv[],
-+           char *const envp[],
-+           const char *cwd,
-+           int p2cread, int p2cwrite,
-+           int c2pread, int c2pwrite,
-+           int errread, int errwrite,
-+           int errpipe_read, int errpipe_write,
-+           int close_fds, int restore_signals,
-+           int call_setsid,
-+           PyObject *py_fds_to_keep,
-+           PyObject *preexec_fn,
-+           PyObject *preexec_fn_args_tuple)
-+{
-+    int i, saved_errno = 0, reached_preexec = 0;
-+    PyObject *result;
-+    const char* err_msg = "";
-+
-+    /* Buffer large enough to hold a hex integer.  We can't malloc. */
-+    char hex_errno[sizeof(saved_errno)*2+1];
-+    
-+    if (make_inheritable(py_fds_to_keep, errpipe_write) < 0)
-+        goto error;
-+    
-+    /* When duping fds, if there arises a situation where one of the fds is
-+     either 0, 1 or 2, it is possible that it is overwritten (#12607). */
-+    if (c2pwrite == 0) {
-+        POSIX_CALL(c2pwrite = dup(c2pwrite));
-+        /* issue32270 */
-+        if (_Py_set_inheritable_async_safe(c2pwrite, 0, NULL) < 0) {
-+            goto error;
-+        }
-+    }
-+    while (errwrite == 0 || errwrite == 1) {
-+        POSIX_CALL(errwrite = dup(errwrite));
-+        /* issue32270 */
-+        if (_Py_set_inheritable_async_safe(errwrite, 0, NULL) < 0) {
-+            goto error;
-+        }
-+    }
-+    
-+    /* Dup fds for child.
-+     dup2() removes the CLOEXEC flag but we must do it ourselves if dup2()
-+     would be a no-op (issue #10806). */
-+    if (p2cread == 0) {
-+        if (_Py_set_inheritable_async_safe(p2cread, 1, NULL) < 0)
-+            goto error;
-+    }
-+    else if (p2cread != -1)
-+        POSIX_CALL(dup2(p2cread, 0));  /* stdin */
-+    
-+    if (c2pwrite == 1) {
-+        if (_Py_set_inheritable_async_safe(c2pwrite, 1, NULL) < 0)
-+            goto error;
-+    }
-+    else if (c2pwrite != -1)
-+        POSIX_CALL(dup2(c2pwrite, 1));  /* stdout */
-+    
-+    if (errwrite == 2) {
-+        if (_Py_set_inheritable_async_safe(errwrite, 1, NULL) < 0)
-+            goto error;
-+    }
-+    else if (errwrite != -1)
-+        POSIX_CALL(dup2(errwrite, 2));  /* stderr */
-+    
-+    /* We no longer manually close p2cread, c2pwrite, and errwrite here as
-+     * _close_open_fds takes care when it is not already non-inheritable. */
-+    
-+    const char *currentDir = getcwd(NULL, 0);
-+    if (cwd)
-+        POSIX_CALL(chdir(cwd));
-+    
-+    if (restore_signals)
-+        _Py_RestoreSignals();
-+    
-+#ifdef HAVE_SETSID
-+    if (call_setsid)
-+        POSIX_CALL(setsid());
-+#endif
-+    
-+    reached_preexec = 1;
-+    if (preexec_fn != Py_None && preexec_fn_args_tuple) {
-+        /* This is where the user has asked us to deadlock their program. */
-+        result = PyObject_Call(preexec_fn, preexec_fn_args_tuple, NULL);
-+        if (result == NULL) {
-+            /* Stringifying the exception or traceback would involve
-+             * memory allocation and thus potential for deadlock.
-+             * We've already faced potential deadlock by calling back
-+             * into Python in the first place, so it probably doesn't
-+             * matter but we avoid it to minimize the possibility. */
-+            err_msg = "Exception occurred in preexec_fn.";
-+            errno = 0;  /* We don't want to report an OSError. */
-+            goto error;
-+        }
-+        Py_DECREF(result); /* - We're about to exec so why bother? */
-+    }
-+    /* This loop matches the Lib/os.py _execvpe()'s PATH search when */
-+    /* given the executable_list generated by Lib/subprocess.py.     */
-+    
-+    int argc = 0;
-+    while(argv[argc] != NULL) { argc++;}
-+    PyThreadState* pGlobalThreadState = PyThreadState_Get();
-+    PyThreadState* pInterpreterThreadState = Py_NewInterpreter();
-+    ios_pushChildThreads();
-+    saved_errno = pymain_run_python_command(argc, argv);
-+    Py_EndInterpreter(pInterpreterThreadState);
-+    PyThreadState_Swap(pGlobalThreadState);
-+    if (cwd) POSIX_CALL(chdir(currentDir));
-+    if (saved_errno == 0) {
-+        ios_popChildThreads();
-+        return;
-+    }
-+    
-+error:
-+    /* Report the posix error to our parent process. */
-+    /* We ignore all write() return values as the total size of our writes is
-+     less than PIPEBUF and we cannot do anything about an error anyways.
-+     Use _Py_write_noraise() to retry write() if it is interrupted by a
-+     signal (fails with EINTR). */
-+    if (saved_errno) {
-+        char *cur;
-+        // TODO: remove
-+        errpipe_write = fileno(thread_stderr);
-+        _Py_write_noraise(errpipe_write, "OSError:", 8);
-+        cur = hex_errno + sizeof(hex_errno);
-+        while (saved_errno != 0 && cur != hex_errno) {
-+            *--cur = Py_hexdigits[saved_errno % 16];
-+            saved_errno /= 16;
-+        }
-+        _Py_write_noraise(errpipe_write, cur, hex_errno + sizeof(hex_errno) - cur);
-+        _Py_write_noraise(errpipe_write, ":", 1);
-+        if (!reached_preexec) {
-+            /* Indicate to the parent that the error happened before exec(). */
-+            _Py_write_noraise(errpipe_write, "noexec", 6);
-+        }
-+        /* We can't call strerror(saved_errno).  It is not async signal safe.
-+         * The parent process will look the error message up. */
-+    } else {
-+        _Py_write_noraise(errpipe_write, "SubprocessError:0:", 18);
-+        _Py_write_noraise(errpipe_write, err_msg, strlen(err_msg));
-+    }
-+    ios_popChildThreads();
-+}
-+#endif
-+
- 
+-
  static PyObject *
  subprocess_fork_exec(PyObject* self, PyObject *args)
-@@ -692,15 +870,55 @@
+ {
+@@ -692,15 +712,24 @@
               * to avoid deadlock... */
              PyOS_AfterFork_Child();
          }
 -
-+#ifdef TARGET_OS_IPHONE
-+        // Calling python from python requires some care and attention.
-+        // The first time, we call a second python3 framework (identical to the 1st)
-+        // called "pythonE".
-+        // (this is necessary for complex commands such as jupyter, less so for pip)
-+        if (strcmp(basename(argv[0]), "python3") == 0) {
-+            // Question: how far deep are we?
-+            if (strcmp(ios_progname(), "pythonE") != 0) {
-+                // Method 1: call a separate framework:
-+                int argc = 0;
-+                while (argv[argc] != NULL) argc++;
-+                char** newArgv = malloc((argc + 1) * sizeof(char*));
-+                newArgv[0] = "pythonE";
-+                for (int i = 1; i <= argc; i++) newArgv[i] = argv[i];
-+                Py_BEGIN_ALLOW_THREADS
-+                child_exec(exec_array, newArgv, envp, cwd,
-+                           p2cread, p2cwrite, c2pread, c2pwrite,
-+                           errread, errwrite, errpipe_read, errpipe_write,
-+                           close_fds, restore_signals, call_setsid,
-+                           py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
-+                Py_END_ALLOW_THREADS
-+                free(newArgv);
-+            } else {
-+                // If it's the second or third time, we can't do that. So we create a new
-+                // interpreter.
-+                // This works for commands that are simple enough. 
-+                child_python_exec(exec_array, argv, envp, cwd,
-+                                  p2cread, p2cwrite, c2pread, c2pwrite,
-+                                  errread, errwrite, errpipe_read, errpipe_write,
-+                                  close_fds, restore_signals, call_setsid,
-+                                  py_fds_to_keep, preexec_fn, preexec_fn_args_tuple);
-+            }
-+        } else {
-+#endif
++        // If we're trying to start multiple pythons, ios_system will
++        // take care of it and load a different framework.
++        // In theory, we could do the same with Py_NewInterpreter,
++        // but in practice Py_NewInterpreter() works poorly with
++        // multiple threads and sockets.
 +        Py_BEGIN_ALLOW_THREADS
          child_exec(exec_array, argv, envp, cwd,
                     p2cread, p2cwrite, c2pread, c2pwrite,
@@ -748,8 +565,6 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
          _exit(255);
 -        return NULL;  /* Dead code to avoid a potential compiler warning. */
 +        return NULL;
-+#else
-+        }
 +#endif
      }
 +    // TODO: cleanup memory allocation in iOS
@@ -1345,7 +1160,7 @@ diff -Naur tmp/Python-3.7.1/Modules/ld_so_aix Python-3.7.1/Modules/ld_so_aix
 +exit $retval
 diff -Naur tmp/Python-3.7.1/Modules/main.c Python-3.7.1/Modules/main.c
 --- tmp/Python-3.7.1/Modules/main.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/main.c	2018-12-31 16:13:58.000000000 +0100
++++ Python-3.7.1/Modules/main.c	2019-01-18 13:43:23.000000000 +0100
 @@ -2629,7 +2629,6 @@
      pymain_repl(pymain, &cf);
  }
@@ -1354,28 +1169,15 @@ diff -Naur tmp/Python-3.7.1/Modules/main.c Python-3.7.1/Modules/main.c
  static int
  pymain_cmdline_impl(_PyMain *pymain, _PyCoreConfig *config,
                      _PyCmdline *cmdline)
-@@ -2775,6 +2774,20 @@
+@@ -2775,7 +2774,6 @@
      return 0;
  }
  
-+int pymain_run_python_command(int argc, char** argv)
-+{
-+    _PyMain pymain = _PyMain_INIT;
-+    pymain.use_bytes_argv = 1;
-+    pymain.argc = argc;
-+    pymain.bytes_argv = argv;
-+    
-+    pymain_init(&pymain);
-+    pymain_run_python(&pymain);
-+    pymain_free(&pymain);
-+
-+    return pymain.status;
-+}
-+    
- 
+-
  static int
  pymain_main(_PyMain *pymain)
-@@ -2818,7 +2831,7 @@
+ {
+@@ -2818,7 +2816,7 @@
      pymain.use_bytes_argv = 1;
      pymain.argc = argc;
      pymain.bytes_argv = argv;
