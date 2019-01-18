@@ -23,10 +23,10 @@ You will then need to transfer the Python scripts to your device:
 - `mv Lib ../Library/lib/python3.7`
 
 Also transfer the scripts: 
-- `tar -cvzf binaries.tar.gz Python-3.7.1/Tools/scripts/`
-- transfer the binaries.tar.gz on your device, for example using iTunes
+- `tar -cvzf binaries.tar.gz bin`
+- transfer the binaries.tar.gz on your device, for example using iTunes or iCloud drive.
 - on the iOS device: `tar -xvzf binaries.tar.gz` 
-- `mv Tools/scripts ../Library/bin`
+- `mv bin ../Library/`
 
 This installation comes with many packages already installed: pip, setuptools, cffi...
 
