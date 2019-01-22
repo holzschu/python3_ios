@@ -1,0 +1,10 @@
+*~
+.#*
+*.bak
+*.pyc
+*.pyo
+*.egg-info
+*.swp
+*.swo
+build
+dist
