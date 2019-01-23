@@ -38,6 +38,9 @@ echo "Applying patch to zeromq:"
 echo "Compiling zeromq:"
 (cd zeromq-4.2.5 ; ./configure CC=clang CXX=clang++ CFLAGS="-arch arm64 -miphoneos-version-min=12.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/ -fembed-bitcode" CXXFLAGS="-arch arm64 -miphoneos-version-min=12.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/ -fembed-bitcode" CPPFLAGS="-arch arm64 -miphoneos-version-min=12.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/" --build=x86_64-apple-darwin --host=armv7-apple-darwin ; make ; mv src/.libs/libzmq.a .. ; cd ..)
 
+echo "Building freetype:"
+./build_freetype.sh
+
 echo "Applying patch to Python-3.7.1"
 (cd Python-3.7.1  ; patch -p 1 < ../Python_Include.patch ; patch -p 1 < ../Python_Lib.patch ; patch -p 1 < ../Python_Modules.patch; patch -p 1 < ../Python_Parser.patch ; patch -p 1 < ../Python_Python.patch; patch -p 1 < ../Python_setup.patch ; patch -p 1 < ../Python_Objects.patch; cd ..)
 echo "All done. Now let's build the Python3 framework:" 
