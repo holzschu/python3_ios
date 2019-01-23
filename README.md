@@ -14,7 +14,7 @@ If you want to compile the framework yourself:
 
 - type `getPackages.sh`
 
-This will download the Python-3.7.1 source code, patch it, and compile it. It will also download libffi-3.2.1 and zeromq-4.2.5, patch them and compile them for iOS.
+This will download the Python-3.7.1 source code, patch it, and compile it. It will also download several libraries that are required for Python: libffi-3.2.1, zeromq-4.2.5, libpng, freetype and harfbuzz, patch them and compile them for iOS. `getPackages.sh` does all the compilation for you, but it is becoming a bit long to run. 
 
 At the end of the script, you have a compiled framework in `Python3_ios/build/Debug-iphoneos/Python3_ios.framework`, which you can link with your application.
 
