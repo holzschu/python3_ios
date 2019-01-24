@@ -7,6 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22035C4D21F7BCAE007A0F60 /* ft2font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C4C21F7BCAE007A0F60 /* ft2font.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DFREETYPE_BUILD_TYPE=system -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_ft2font_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib/src -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -I../Frameworks/freetype.framework/Headers/ "; }; };
+		22035C4F21F7BCBF007A0F60 /* ft2font_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C4E21F7BCBF007A0F60 /* ft2font_wrapper.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DFREETYPE_BUILD_TYPE=system -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_ft2font_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib/src -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -I../Frameworks/freetype.framework/Headers/ "; }; };
+		22035C5121F7BCE9007A0F60 /* mplutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C5021F7BCE9007A0F60 /* mplutils.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DFREETYPE_BUILD_TYPE=system -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib/src -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035C5821F8908E007A0F60 /* freetype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22035C5521F88F5C007A0F60 /* freetype.framework */; };
+		22035C5921F8908E007A0F60 /* harfbuzz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22035C5421F88F5C007A0F60 /* harfbuzz.framework */; };
+		22035C5E21F8A638007A0F60 /* _png.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C5D21F8A638007A0F60 /* _png.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__png_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../libpng-1.6.36/ -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C6121F8A660007A0F60 /* _image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6021F8A660007A0F60 /* _image.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C6321F8A671007A0F60 /* _image_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6221F8A671007A0F60 /* _image_wrapper.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C6521F8A69E007A0F60 /* agg_bezier_arc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6421F8A69E007A0F60 /* agg_bezier_arc.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035C6721F8A6A4007A0F60 /* agg_curves.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6621F8A6A4007A0F60 /* agg_curves.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035C6921F8A6B9007A0F60 /* agg_image_filters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6821F8A6B9007A0F60 /* agg_image_filters.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C6B21F8A6C0007A0F60 /* agg_trans_affine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6A21F8A6C0007A0F60 /* agg_trans_affine.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035C6E21F8A6DE007A0F60 /* agg_vcgen_contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6C21F8A6DE007A0F60 /* agg_vcgen_contour.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035C6F21F8A6DE007A0F60 /* agg_vcgen_dash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6D21F8A6DE007A0F60 /* agg_vcgen_dash.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035C7121F8A6E4007A0F60 /* agg_vcgen_stroke.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C7021F8A6E4007A0F60 /* agg_vcgen_stroke.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035C7321F8A6EA007A0F60 /* agg_vpgen_segmentator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C7221F8A6EA007A0F60 /* agg_vpgen_segmentator.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035C7521F8ACEE007A0F60 /* libpng16.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22035C7421F8ACEE007A0F60 /* libpng16.a */; };
+		22035C7821F8B03C007A0F60 /* _ttconv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C7721F8B03C007A0F60 /* _ttconv.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_ttconv_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/ -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C7C21F8B142007A0F60 /* pprdrv_tt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C7921F8B142007A0F60 /* pprdrv_tt.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_ttconv_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/ -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035C7D21F8B142007A0F60 /* pprdrv_tt2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C7A21F8B142007A0F60 /* pprdrv_tt2.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_ttconv_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/ttconv/ -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C7E21F8B142007A0F60 /* ttutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C7B21F8B142007A0F60 /* ttutil.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_ttconv_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/ttconv/ -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C8121F8B9B2007A0F60 /* _path_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8021F8B9B1007A0F60 /* _path_wrapper.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__path_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C8B21F8BB74007A0F60 /* _contour_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8921F8BB73007A0F60 /* _contour_wrapper.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__contour_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C8C21F8BB74007A0F60 /* _contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8A21F8BB73007A0F60 /* _contour.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__contour_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035C8F21F8BD36007A0F60 /* qhull_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8E21F8BD36007A0F60 /* qhull_wrap.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CA121F8BD78007A0F60 /* random.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9021F8BD76007A0F60 /* random.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CA221F8BD78007A0F60 /* mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9121F8BD77007A0F60 /* mem.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CA321F8BD78007A0F60 /* geom.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9221F8BD77007A0F60 /* geom.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CA421F8BD78007A0F60 /* qset.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9321F8BD77007A0F60 /* qset.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CA521F8BD78007A0F60 /* merge.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9421F8BD77007A0F60 /* merge.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CA621F8BD78007A0F60 /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9521F8BD77007A0F60 /* io.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CA721F8BD78007A0F60 /* geom2.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9621F8BD77007A0F60 /* geom2.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CA821F8BD78007A0F60 /* poly.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9721F8BD77007A0F60 /* poly.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CA921F8BD78007A0F60 /* userprintf.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9821F8BD77007A0F60 /* userprintf.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CAA21F8BD78007A0F60 /* rboxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9921F8BD77007A0F60 /* rboxlib.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CAB21F8BD78007A0F60 /* global.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9A21F8BD77007A0F60 /* global.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CAC21F8BD78007A0F60 /* libqhull.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9B21F8BD78007A0F60 /* libqhull.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CAD21F8BD78007A0F60 /* poly2.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9C21F8BD78007A0F60 /* poly2.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CAE21F8BD78007A0F60 /* user.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9D21F8BD78007A0F60 /* user.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CAF21F8BD78007A0F60 /* usermem.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9E21F8BD78007A0F60 /* usermem.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CB021F8BD78007A0F60 /* stat.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9F21F8BD78007A0F60 /* stat.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CB121F8BD78007A0F60 /* userprintf_rbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035CA021F8BD78007A0F60 /* userprintf_rbox.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CB521F8BF81007A0F60 /* _tri_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CB321F8BF81007A0F60 /* _tri_wrapper.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__tri_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035CB621F8BF81007A0F60 /* _tri.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CB421F8BF81007A0F60 /* _tri.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__tri_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035CBA21F8C69A007A0F60 /* _backend_agg_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CB821F8C69A007A0F60 /* _backend_agg_wrapper.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_backends__backend_agg_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -DFREETYPE_BUILD_TYPE=system -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Frameworks/freetype.framework/Headers/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035CBB21F8C69A007A0F60 /* _backend_agg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CB921F8C69A007A0F60 /* _backend_agg.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_backends__backend_agg_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -DFREETYPE_BUILD_TYPE=system -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Frameworks/freetype.framework/Headers/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035CC721F9C6D4007A0F60 /* kiwisolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC021F9C6D3007A0F60 /* kiwisolver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CC821F9C6D4007A0F60 /* term.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC121F9C6D3007A0F60 /* term.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CC921F9C6D4007A0F60 /* strength.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC221F9C6D3007A0F60 /* strength.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CCA21F9C6D4007A0F60 /* solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC321F9C6D3007A0F60 /* solver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
+		22035CCB21F9C6D4007A0F60 /* variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC421F9C6D3007A0F60 /* variable.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035CCC21F9C6D4007A0F60 /* constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC521F9C6D3007A0F60 /* constraint.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
+		22035CCD21F9C6D4007A0F60 /* expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC621F9C6D3007A0F60 /* expression.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		2219EAAD21F4EE02004CF7FA /* npy_math_complex.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAA21F4EE01004CF7FA /* npy_math_complex.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		2219EAAE21F4EE02004CF7FA /* ieee754.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAB21F4EE01004CF7FA /* ieee754.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		2219EAB121F4EF3C004CF7FA /* npy_math.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAF21F4EF3C004CF7FA /* npy_math.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
@@ -354,6 +407,59 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22035C4C21F7BCAE007A0F60 /* ft2font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ft2font.cpp; path = "../extraPackages/matplotlib-3.0.2/src/ft2font.cpp"; sourceTree = "<group>"; };
+		22035C4E21F7BCBF007A0F60 /* ft2font_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ft2font_wrapper.cpp; path = "../extraPackages/matplotlib-3.0.2/src/ft2font_wrapper.cpp"; sourceTree = "<group>"; };
+		22035C5021F7BCE9007A0F60 /* mplutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mplutils.cpp; path = "../extraPackages/matplotlib-3.0.2/src/mplutils.cpp"; sourceTree = "<group>"; };
+		22035C5421F88F5C007A0F60 /* harfbuzz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = harfbuzz.framework; path = ../Frameworks/harfbuzz.framework; sourceTree = "<group>"; };
+		22035C5521F88F5C007A0F60 /* freetype.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = freetype.framework; path = ../Frameworks/freetype.framework; sourceTree = "<group>"; };
+		22035C5D21F8A638007A0F60 /* _png.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _png.cpp; path = "../extraPackages/matplotlib-3.0.2/src/_png.cpp"; sourceTree = "<group>"; };
+		22035C6021F8A660007A0F60 /* _image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _image.cpp; path = "../extraPackages/matplotlib-3.0.2/src/_image.cpp"; sourceTree = "<group>"; };
+		22035C6221F8A671007A0F60 /* _image_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _image_wrapper.cpp; path = "../extraPackages/matplotlib-3.0.2/src/_image_wrapper.cpp"; sourceTree = "<group>"; };
+		22035C6421F8A69E007A0F60 /* agg_bezier_arc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agg_bezier_arc.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/agg24-svn/src/agg_bezier_arc.cpp"; sourceTree = "<group>"; };
+		22035C6621F8A6A4007A0F60 /* agg_curves.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agg_curves.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/agg24-svn/src/agg_curves.cpp"; sourceTree = "<group>"; };
+		22035C6821F8A6B9007A0F60 /* agg_image_filters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agg_image_filters.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/agg24-svn/src/agg_image_filters.cpp"; sourceTree = "<group>"; };
+		22035C6A21F8A6C0007A0F60 /* agg_trans_affine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agg_trans_affine.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/agg24-svn/src/agg_trans_affine.cpp"; sourceTree = "<group>"; };
+		22035C6C21F8A6DE007A0F60 /* agg_vcgen_contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agg_vcgen_contour.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/agg24-svn/src/agg_vcgen_contour.cpp"; sourceTree = "<group>"; };
+		22035C6D21F8A6DE007A0F60 /* agg_vcgen_dash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agg_vcgen_dash.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/agg24-svn/src/agg_vcgen_dash.cpp"; sourceTree = "<group>"; };
+		22035C7021F8A6E4007A0F60 /* agg_vcgen_stroke.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agg_vcgen_stroke.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/agg24-svn/src/agg_vcgen_stroke.cpp"; sourceTree = "<group>"; };
+		22035C7221F8A6EA007A0F60 /* agg_vpgen_segmentator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agg_vpgen_segmentator.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/agg24-svn/src/agg_vpgen_segmentator.cpp"; sourceTree = "<group>"; };
+		22035C7421F8ACEE007A0F60 /* libpng16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng16.a; path = ../libpng16.a; sourceTree = "<group>"; };
+		22035C7721F8B03C007A0F60 /* _ttconv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _ttconv.cpp; path = "../extraPackages/matplotlib-3.0.2/src/_ttconv.cpp"; sourceTree = "<group>"; };
+		22035C7921F8B142007A0F60 /* pprdrv_tt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pprdrv_tt.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/ttconv/pprdrv_tt.cpp"; sourceTree = "<group>"; };
+		22035C7A21F8B142007A0F60 /* pprdrv_tt2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pprdrv_tt2.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/ttconv/pprdrv_tt2.cpp"; sourceTree = "<group>"; };
+		22035C7B21F8B142007A0F60 /* ttutil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ttutil.cpp; path = "../extraPackages/matplotlib-3.0.2/extern/ttconv/ttutil.cpp"; sourceTree = "<group>"; };
+		22035C8021F8B9B1007A0F60 /* _path_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _path_wrapper.cpp; path = "../extraPackages/matplotlib-3.0.2/src/_path_wrapper.cpp"; sourceTree = "<group>"; };
+		22035C8921F8BB73007A0F60 /* _contour_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _contour_wrapper.cpp; path = "../extraPackages/matplotlib-3.0.2/src/_contour_wrapper.cpp"; sourceTree = "<group>"; };
+		22035C8A21F8BB73007A0F60 /* _contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _contour.cpp; path = "../extraPackages/matplotlib-3.0.2/src/_contour.cpp"; sourceTree = "<group>"; };
+		22035C8E21F8BD36007A0F60 /* qhull_wrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = qhull_wrap.c; path = "../extraPackages/matplotlib-3.0.2/src/qhull_wrap.c"; sourceTree = "<group>"; };
+		22035C9021F8BD76007A0F60 /* random.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = random.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/random.c"; sourceTree = "<group>"; };
+		22035C9121F8BD77007A0F60 /* mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mem.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/mem.c"; sourceTree = "<group>"; };
+		22035C9221F8BD77007A0F60 /* geom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = geom.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/geom.c"; sourceTree = "<group>"; };
+		22035C9321F8BD77007A0F60 /* qset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = qset.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/qset.c"; sourceTree = "<group>"; };
+		22035C9421F8BD77007A0F60 /* merge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = merge.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/merge.c"; sourceTree = "<group>"; };
+		22035C9521F8BD77007A0F60 /* io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = io.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/io.c"; sourceTree = "<group>"; };
+		22035C9621F8BD77007A0F60 /* geom2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = geom2.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/geom2.c"; sourceTree = "<group>"; };
+		22035C9721F8BD77007A0F60 /* poly.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = poly.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/poly.c"; sourceTree = "<group>"; };
+		22035C9821F8BD77007A0F60 /* userprintf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = userprintf.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/userprintf.c"; sourceTree = "<group>"; };
+		22035C9921F8BD77007A0F60 /* rboxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rboxlib.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/rboxlib.c"; sourceTree = "<group>"; };
+		22035C9A21F8BD77007A0F60 /* global.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = global.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/global.c"; sourceTree = "<group>"; };
+		22035C9B21F8BD78007A0F60 /* libqhull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = libqhull.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/libqhull.c"; sourceTree = "<group>"; };
+		22035C9C21F8BD78007A0F60 /* poly2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = poly2.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/poly2.c"; sourceTree = "<group>"; };
+		22035C9D21F8BD78007A0F60 /* user.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = user.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/user.c"; sourceTree = "<group>"; };
+		22035C9E21F8BD78007A0F60 /* usermem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = usermem.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/usermem.c"; sourceTree = "<group>"; };
+		22035C9F21F8BD78007A0F60 /* stat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stat.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/stat.c"; sourceTree = "<group>"; };
+		22035CA021F8BD78007A0F60 /* userprintf_rbox.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = userprintf_rbox.c; path = "../extraPackages/matplotlib-3.0.2/extern/libqhull/userprintf_rbox.c"; sourceTree = "<group>"; };
+		22035CB321F8BF81007A0F60 /* _tri_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _tri_wrapper.cpp; path = "../extraPackages/matplotlib-3.0.2/lib/matplotlib/tri/_tri_wrapper.cpp"; sourceTree = "<group>"; };
+		22035CB421F8BF81007A0F60 /* _tri.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _tri.cpp; path = "../extraPackages/matplotlib-3.0.2/lib/matplotlib/tri/_tri.cpp"; sourceTree = "<group>"; };
+		22035CB821F8C69A007A0F60 /* _backend_agg_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _backend_agg_wrapper.cpp; path = "../extraPackages/matplotlib-3.0.2/src/_backend_agg_wrapper.cpp"; sourceTree = "<group>"; };
+		22035CB921F8C69A007A0F60 /* _backend_agg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = _backend_agg.cpp; path = "../extraPackages/matplotlib-3.0.2/src/_backend_agg.cpp"; sourceTree = "<group>"; };
+		22035CC021F9C6D3007A0F60 /* kiwisolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kiwisolver.cpp; path = "../extraPackages/kiwisolver-1.0.1/py/kiwisolver.cpp"; sourceTree = "<group>"; };
+		22035CC121F9C6D3007A0F60 /* term.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = term.cpp; path = "../extraPackages/kiwisolver-1.0.1/py/term.cpp"; sourceTree = "<group>"; };
+		22035CC221F9C6D3007A0F60 /* strength.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = strength.cpp; path = "../extraPackages/kiwisolver-1.0.1/py/strength.cpp"; sourceTree = "<group>"; };
+		22035CC321F9C6D3007A0F60 /* solver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = solver.cpp; path = "../extraPackages/kiwisolver-1.0.1/py/solver.cpp"; sourceTree = "<group>"; };
+		22035CC421F9C6D3007A0F60 /* variable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = variable.cpp; path = "../extraPackages/kiwisolver-1.0.1/py/variable.cpp"; sourceTree = "<group>"; };
+		22035CC521F9C6D3007A0F60 /* constraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = constraint.cpp; path = "../extraPackages/kiwisolver-1.0.1/py/constraint.cpp"; sourceTree = "<group>"; };
+		22035CC621F9C6D3007A0F60 /* expression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = expression.cpp; path = "../extraPackages/kiwisolver-1.0.1/py/expression.cpp"; sourceTree = "<group>"; };
 		2219EAAA21F4EE01004CF7FA /* npy_math_complex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = npy_math_complex.c; path = "../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath/npy_math_complex.c"; sourceTree = "<group>"; };
 		2219EAAB21F4EE01004CF7FA /* ieee754.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ieee754.c; path = "../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath/ieee754.c"; sourceTree = "<group>"; };
 		2219EAAF21F4EF3C004CF7FA /* npy_math.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = npy_math.c; path = "../extraPackages/numpy-1.16.0/numpy/core/src/npymath/npy_math.c"; sourceTree = "<group>"; };
@@ -708,6 +814,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22035C7521F8ACEE007A0F60 /* libpng16.a in Frameworks */,
+				22035C5821F8908E007A0F60 /* freetype.framework in Frameworks */,
+				22035C5921F8908E007A0F60 /* harfbuzz.framework in Frameworks */,
 				2219EB4B21F63672004CF7FA /* Accelerate.framework in Frameworks */,
 				226ED58321C783FC00A71A20 /* libssh2.framework in Frameworks */,
 				226ED58421C783FC00A71A20 /* ios_system.framework in Frameworks */,
@@ -725,6 +834,143 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22035C4A21F7BC41007A0F60 /* matplotlib */ = {
+			isa = PBXGroup;
+			children = (
+				22035CBF21F9C698007A0F60 /* kiwisolver */,
+				22035C5021F7BCE9007A0F60 /* mplutils.cpp */,
+				22035C4B21F7BC4D007A0F60 /* matplotlib.ft2font */,
+				22035C5A21F8A5F7007A0F60 /* matplotlib._png */,
+				22035C5F21F8A647007A0F60 /* matplotlib._image */,
+				22035C7621F8AF8F007A0F60 /* matplotlib.ttconv */,
+				22035C7F21F8B49F007A0F60 /* matplotlib._path */,
+				22035C8821F8BB53007A0F60 /* matplotlib._contour */,
+				22035C8D21F8BC69007A0F60 /* matplotlib._qhull */,
+				22035CB221F8BF44007A0F60 /* matplotlib._tri */,
+				22035CB721F8C596007A0F60 /* matplotlib.backends._backend_agg */,
+			);
+			name = matplotlib;
+			sourceTree = "<group>";
+		};
+		22035C4B21F7BC4D007A0F60 /* matplotlib.ft2font */ = {
+			isa = PBXGroup;
+			children = (
+				22035C4C21F7BCAE007A0F60 /* ft2font.cpp */,
+				22035C4E21F7BCBF007A0F60 /* ft2font_wrapper.cpp */,
+			);
+			name = matplotlib.ft2font;
+			sourceTree = "<group>";
+		};
+		22035C5A21F8A5F7007A0F60 /* matplotlib._png */ = {
+			isa = PBXGroup;
+			children = (
+				22035C5D21F8A638007A0F60 /* _png.cpp */,
+			);
+			name = matplotlib._png;
+			sourceTree = "<group>";
+		};
+		22035C5F21F8A647007A0F60 /* matplotlib._image */ = {
+			isa = PBXGroup;
+			children = (
+				22035C6021F8A660007A0F60 /* _image.cpp */,
+				22035C6221F8A671007A0F60 /* _image_wrapper.cpp */,
+				22035C6421F8A69E007A0F60 /* agg_bezier_arc.cpp */,
+				22035C6621F8A6A4007A0F60 /* agg_curves.cpp */,
+				22035C6821F8A6B9007A0F60 /* agg_image_filters.cpp */,
+				22035C6A21F8A6C0007A0F60 /* agg_trans_affine.cpp */,
+				22035C6C21F8A6DE007A0F60 /* agg_vcgen_contour.cpp */,
+				22035C6D21F8A6DE007A0F60 /* agg_vcgen_dash.cpp */,
+				22035C7021F8A6E4007A0F60 /* agg_vcgen_stroke.cpp */,
+				22035C7221F8A6EA007A0F60 /* agg_vpgen_segmentator.cpp */,
+			);
+			name = matplotlib._image;
+			sourceTree = "<group>";
+		};
+		22035C7621F8AF8F007A0F60 /* matplotlib.ttconv */ = {
+			isa = PBXGroup;
+			children = (
+				22035C7721F8B03C007A0F60 /* _ttconv.cpp */,
+				22035C7921F8B142007A0F60 /* pprdrv_tt.cpp */,
+				22035C7A21F8B142007A0F60 /* pprdrv_tt2.cpp */,
+				22035C7B21F8B142007A0F60 /* ttutil.cpp */,
+			);
+			name = matplotlib.ttconv;
+			sourceTree = "<group>";
+		};
+		22035C7F21F8B49F007A0F60 /* matplotlib._path */ = {
+			isa = PBXGroup;
+			children = (
+				22035C8021F8B9B1007A0F60 /* _path_wrapper.cpp */,
+			);
+			name = matplotlib._path;
+			sourceTree = "<group>";
+		};
+		22035C8821F8BB53007A0F60 /* matplotlib._contour */ = {
+			isa = PBXGroup;
+			children = (
+				22035C8921F8BB73007A0F60 /* _contour_wrapper.cpp */,
+				22035C8A21F8BB73007A0F60 /* _contour.cpp */,
+			);
+			name = matplotlib._contour;
+			sourceTree = "<group>";
+		};
+		22035C8D21F8BC69007A0F60 /* matplotlib._qhull */ = {
+			isa = PBXGroup;
+			children = (
+				22035C8E21F8BD36007A0F60 /* qhull_wrap.c */,
+				22035C9221F8BD77007A0F60 /* geom.c */,
+				22035C9621F8BD77007A0F60 /* geom2.c */,
+				22035C9A21F8BD77007A0F60 /* global.c */,
+				22035C9521F8BD77007A0F60 /* io.c */,
+				22035C9B21F8BD78007A0F60 /* libqhull.c */,
+				22035C9121F8BD77007A0F60 /* mem.c */,
+				22035C9421F8BD77007A0F60 /* merge.c */,
+				22035C9721F8BD77007A0F60 /* poly.c */,
+				22035C9C21F8BD78007A0F60 /* poly2.c */,
+				22035C9321F8BD77007A0F60 /* qset.c */,
+				22035C9021F8BD76007A0F60 /* random.c */,
+				22035C9921F8BD77007A0F60 /* rboxlib.c */,
+				22035C9F21F8BD78007A0F60 /* stat.c */,
+				22035C9D21F8BD78007A0F60 /* user.c */,
+				22035C9E21F8BD78007A0F60 /* usermem.c */,
+				22035CA021F8BD78007A0F60 /* userprintf_rbox.c */,
+				22035C9821F8BD77007A0F60 /* userprintf.c */,
+			);
+			name = matplotlib._qhull;
+			sourceTree = "<group>";
+		};
+		22035CB221F8BF44007A0F60 /* matplotlib._tri */ = {
+			isa = PBXGroup;
+			children = (
+				22035CB321F8BF81007A0F60 /* _tri_wrapper.cpp */,
+				22035CB421F8BF81007A0F60 /* _tri.cpp */,
+			);
+			name = matplotlib._tri;
+			sourceTree = "<group>";
+		};
+		22035CB721F8C596007A0F60 /* matplotlib.backends._backend_agg */ = {
+			isa = PBXGroup;
+			children = (
+				22035CB821F8C69A007A0F60 /* _backend_agg_wrapper.cpp */,
+				22035CB921F8C69A007A0F60 /* _backend_agg.cpp */,
+			);
+			name = matplotlib.backends._backend_agg;
+			sourceTree = "<group>";
+		};
+		22035CBF21F9C698007A0F60 /* kiwisolver */ = {
+			isa = PBXGroup;
+			children = (
+				22035CC521F9C6D3007A0F60 /* constraint.cpp */,
+				22035CC621F9C6D3007A0F60 /* expression.cpp */,
+				22035CC021F9C6D3007A0F60 /* kiwisolver.cpp */,
+				22035CC321F9C6D3007A0F60 /* solver.cpp */,
+				22035CC221F9C6D3007A0F60 /* strength.cpp */,
+				22035CC121F9C6D3007A0F60 /* term.cpp */,
+				22035CC421F9C6D3007A0F60 /* variable.cpp */,
+			);
+			name = kiwisolver;
+			sourceTree = "<group>";
+		};
 		2219EAA821F4EDEB004CF7FA /* npymath */ = {
 			isa = PBXGroup;
 			children = (
@@ -977,6 +1223,7 @@
 		226ED47021C6ACBE00A71A20 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				22035C4A21F7BC41007A0F60 /* matplotlib */,
 				226137CE21F361760097B3A0 /* numpy */,
 				221CD95A21DBB9E800F3B47C /* jupyter */,
 				226ED4BA21C6B6D800A71A20 /* extensions */,
@@ -1166,6 +1413,9 @@
 		226ED57F21C783FB00A71A20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22035C7421F8ACEE007A0F60 /* libpng16.a */,
+				22035C5521F88F5C007A0F60 /* freetype.framework */,
+				22035C5421F88F5C007A0F60 /* harfbuzz.framework */,
 				2219EB4A21F63672004CF7FA /* Accelerate.framework */,
 				2261378D21EF71DF0097B3A0 /* libzmq.a */,
 				221CD96321DFAABF00F3B47C /* libc++.tbd */,
@@ -1393,15 +1643,19 @@
 				226ED55321C7043800A71A20 /* _codecs_iso2022.c in Sources */,
 				2219EB0321F6192D004CF7FA /* shape.c in Sources */,
 				226ED4B621C6AEC800A71A20 /* xxsubtype.c in Sources */,
+				22035C8B21F8BB74007A0F60 /* _contour_wrapper.cpp in Sources */,
+				22035CC821F9C6D4007A0F60 /* term.cpp in Sources */,
 				226ED4E421C6B8BD00A71A20 /* _asynciomodule.c in Sources */,
 				226ED53521C700F600A71A20 /* binascii.c in Sources */,
 				22E8FF5721C66D3B00967E21 /* bytearrayobject.c in Sources */,
 				226ED4D221C6B83A00A71A20 /* _json.c in Sources */,
 				226ED47621C6AD3900A71A20 /* _collectionsmodule.c in Sources */,
 				226ED52521C6F82300A71A20 /* statement.c in Sources */,
+				22035CA921F8BD78007A0F60 /* userprintf.c in Sources */,
 				2219EAB221F4EF3C004CF7FA /* halffloat.c in Sources */,
 				226ED40B21C66E9000A71A20 /* ast_unparse.c in Sources */,
 				2219EAEC21F61837004CF7FA /* dtype_transfer.c in Sources */,
+				22035CA421F8BD78007A0F60 /* qset.c in Sources */,
 				226ED58E21C7865E00A71A20 /* _ctypes.c in Sources */,
 				226ED4D421C6B84A00A71A20 /* _testcapimodule.c in Sources */,
 				226ED5A621C7D5C900A71A20 /* _lzmamodule.c in Sources */,
@@ -1416,7 +1670,9 @@
 				22E8FF0821C66C2200967E21 /* pgen.c in Sources */,
 				226ED41D21C6AB3400A71A20 /* dynamic_annotations.c in Sources */,
 				226ED46F21C6AC3F00A71A20 /* traceback.c in Sources */,
+				22035C6721F8A6A4007A0F60 /* agg_curves.cpp in Sources */,
 				226ED59621C787B100A71A20 /* stgdict.c in Sources */,
+				22035C7321F8A6EA007A0F60 /* agg_vpgen_segmentator.cpp in Sources */,
 				22E8FF5B21C66D3B00967E21 /* floatobject.c in Sources */,
 				22E8FF4321C66D3B00967E21 /* bytesobject.c in Sources */,
 				22E8FF5921C66D3B00967E21 /* bytes_methods.c in Sources */,
@@ -1427,11 +1683,17 @@
 				22E8FF4221C66D3B00967E21 /* abstract.c in Sources */,
 				226ED4D621C6B85900A71A20 /* _testbuffer.c in Sources */,
 				226ED4AA21C6AE7C00A71A20 /* pwdmodule.c in Sources */,
+				22035CC721F9C6D4007A0F60 /* kiwisolver.cpp in Sources */,
 				226ED42521C6AB5000A71A20 /* formatter_unicode.c in Sources */,
+				22035C6121F8A660007A0F60 /* _image.cpp in Sources */,
+				22035C8F21F8BD36007A0F60 /* qhull_wrap.c in Sources */,
 				2219EB6521F6402C004CF7FA /* initarray.c in Sources */,
+				22035C7C21F8B142007A0F60 /* pprdrv_tt.cpp in Sources */,
 				2219EAF021F61851004CF7FA /* datetime_strings.c in Sources */,
 				22E8FF4B21C66D3B00967E21 /* listobject.c in Sources */,
+				22035C6B21F8A6C0007A0F60 /* agg_trans_affine.cpp in Sources */,
 				2219EAAD21F4EE02004CF7FA /* npy_math_complex.c in Sources */,
+				22035CCA21F9C6D4007A0F60 /* solver.cpp in Sources */,
 				2219EADA21F61796004CF7FA /* conversion_utils.c in Sources */,
 				2219EAD221F61758004CF7FA /* convert_datatype.c in Sources */,
 				226ED50821C6BD5500A71A20 /* sha256module.c in Sources */,
@@ -1451,6 +1713,7 @@
 				2219EB1421F619C4004CF7FA /* umathmodule.c in Sources */,
 				226ED56821C704B500A71A20 /* constants.c in Sources */,
 				226ED54421C7038800A71A20 /* _elementtree.c in Sources */,
+				22035C6521F8A69E007A0F60 /* agg_bezier_arc.cpp in Sources */,
 				2219EAD021F6174A004CF7FA /* datetime_busday.c in Sources */,
 				226ED48C21C6ADEF00A71A20 /* atexitmodule.c in Sources */,
 				2219EB3B21F61C25004CF7FA /* ufunc_override.c in Sources */,
@@ -1458,6 +1721,8 @@
 				2219EAE621F61817004CF7FA /* common.c in Sources */,
 				226ED48A21C6ADE700A71A20 /* _weakref.c in Sources */,
 				226ED44F21C6ABDA00A71A20 /* pyctype.c in Sources */,
+				22035C7121F8A6E4007A0F60 /* agg_vcgen_stroke.cpp in Sources */,
+				22035CAD21F8BD78007A0F60 /* poly2.c in Sources */,
 				226ED49221C6AE1200A71A20 /* config.c in Sources */,
 				226ED43521C6AB8700A71A20 /* getplatform.c in Sources */,
 				226ED40F21C66E9B00A71A20 /* bltinmodule.c in Sources */,
@@ -1467,13 +1732,17 @@
 				2219EB0421F6192D004CF7FA /* sequence.c in Sources */,
 				22E8FF5621C66D3B00967E21 /* enumobject.c in Sources */,
 				226ED50E21C6BD8100A71A20 /* blake2module.c in Sources */,
+				22035CA321F8BD78007A0F60 /* geom.c in Sources */,
 				226ED4EE21C6B92400A71A20 /* parsermodule.c in Sources */,
 				226ED59221C7879E00A71A20 /* cfield.c in Sources */,
 				226ED59C21C787EE00A71A20 /* ffi.c in Sources */,
+				22035CB121F8BD78007A0F60 /* userprintf_rbox.c in Sources */,
 				226ED45121C6ABE200A71A20 /* pyfpe.c in Sources */,
 				226ED48421C6ADD200A71A20 /* _stat.c in Sources */,
 				2219EB2221F61A49004CF7FA /* loops.c in Sources */,
 				226ED5AA21C7D6A700A71A20 /* _ssl.c in Sources */,
+				22035CAB21F8BD78007A0F60 /* global.c in Sources */,
+				22035C8C21F8BB74007A0F60 /* _contour.cpp in Sources */,
 				226ED48021C6ADBA00A71A20 /* _operator.c in Sources */,
 				226ED53721C7010300A71A20 /* _bz2module.c in Sources */,
 				2219EB4321F61C5A004CF7FA /* override.c in Sources */,
@@ -1482,6 +1751,7 @@
 				221CD96721E0B42300F3B47C /* initlibzmq.c in Sources */,
 				22E8FF4C21C66D3B00967E21 /* call.c in Sources */,
 				226ED49E21C6AE4B00A71A20 /* getpath.c in Sources */,
+				22035CBB21F8C69A007A0F60 /* _backend_agg.cpp in Sources */,
 				2219EB4721F61CB9004CF7FA /* matmul.c in Sources */,
 				226ED46B21C6AC3400A71A20 /* sysmodule.c in Sources */,
 				226ED51B21C6F7F000A71A20 /* cursor.c in Sources */,
@@ -1498,28 +1768,36 @@
 				2219EB0621F6193A004CF7FA /* scalarapi.c in Sources */,
 				226ED59321C7879E00A71A20 /* callbacks.c in Sources */,
 				2219EADE21F617AC004CF7FA /* ctors.c in Sources */,
+				22035CB021F8BD78007A0F60 /* stat.c in Sources */,
 				226ED4EA21C6B8F800A71A20 /* grpmodule.c in Sources */,
 				2219EAF821F61889004CF7FA /* nditer_api.c in Sources */,
 				226ED4F421C6BCA400A71A20 /* _xxtestfuzz.c in Sources */,
 				2219EB2821F61AF3004CF7FA /* scalarmath.c in Sources */,
+				22035C7D21F8B142007A0F60 /* pprdrv_tt2.cpp in Sources */,
 				2219EAF421F6186E004CF7FA /* nditer_templ.c in Sources */,
 				226ED42B21C6AB6800A71A20 /* future.c in Sources */,
+				22035C7821F8B03C007A0F60 /* _ttconv.cpp in Sources */,
 				2219EAE821F61821004CF7FA /* datetime.c in Sources */,
 				226ED48221C6ADCA00A71A20 /* _sre.c in Sources */,
 				226ED4A221C6AE5E00A71A20 /* iobase.c in Sources */,
 				226ED52321C6F81B00A71A20 /* row.c in Sources */,
 				226ED52721C6F82E00A71A20 /* util.c in Sources */,
 				226ED4B421C6AEBE00A71A20 /* timemodule.c in Sources */,
+				22035C7E21F8B142007A0F60 /* ttutil.cpp in Sources */,
 				22E8FF0A21C66C2200967E21 /* firstsets.c in Sources */,
 				226ED57821C708C700A71A20 /* semaphore.c in Sources */,
 				2219EB3F21F61C3C004CF7FA /* cblasfuncs.c in Sources */,
 				226ED59821C787C300A71A20 /* malloc_closure.c in Sources */,
+				22035CAE21F8BD78007A0F60 /* user.c in Sources */,
 				22E8FF4521C66D3B00967E21 /* odictobject.c in Sources */,
 				2219EB5721F63E52004CF7FA /* fftpack_litemodule.c in Sources */,
+				22035CCB21F9C6D4007A0F60 /* variable.cpp in Sources */,
 				226ED56F21C704B500A71A20 /* convolute.c in Sources */,
 				226ED44D21C6ABD100A71A20 /* pyarena.c in Sources */,
 				226ED50C21C6BD6E00A71A20 /* sha1module.c in Sources */,
 				22E8FF4021C66D3B00967E21 /* dictobject.c in Sources */,
+				22035CA821F8BD78007A0F60 /* poly.c in Sources */,
+				22035CC921F9C6D4007A0F60 /* strength.cpp in Sources */,
 				2219EB4121F61C49004CF7FA /* python_xerbla.c in Sources */,
 				2219EAD421F61763004CF7FA /* arrayobject.c in Sources */,
 				226ED4B821C6AECE00A71A20 /* zipimport.c in Sources */,
@@ -1549,11 +1827,13 @@
 				22E8FF0C21C66C2200967E21 /* node.c in Sources */,
 				2219EB6421F6402C004CF7FA /* randomkit.c in Sources */,
 				22E8FF4E21C66D3B00967E21 /* fileobject.c in Sources */,
+				22035C6321F8A671007A0F60 /* _image_wrapper.cpp in Sources */,
 				2219EB4921F61CC5004CF7FA /* ufunc_object.c in Sources */,
 				2219EB6321F6402C004CF7FA /* mtrand.c in Sources */,
 				2219EB2021F61A36004CF7FA /* getset.c in Sources */,
 				22E8FF4721C66D3B00967E21 /* capsule.c in Sources */,
 				2219EABE21F4F0B1004CF7FA /* heapsort.c in Sources */,
+				22035C5E21F8A638007A0F60 /* _png.cpp in Sources */,
 				226ED47221C6AD2A00A71A20 /* _abc.c in Sources */,
 				2219EB3921F61C01004CF7FA /* ufunc_type_resolution.c in Sources */,
 				226ED53121C6FDB300A71A20 /* _cursesmodule.c in Sources */,
@@ -1567,23 +1847,29 @@
 				22E8FF4121C66D3B00967E21 /* complexobject.c in Sources */,
 				226ED55421C7043800A71A20 /* _codecs_jp.c in Sources */,
 				226ED51721C6F7C800A71A20 /* cache.c in Sources */,
+				22035CCD21F9C6D4007A0F60 /* expression.cpp in Sources */,
 				22E8FF4421C66D3B00967E21 /* cellobject.c in Sources */,
 				226ED56A21C704B500A71A20 /* context.c in Sources */,
 				22E8FF5321C66D3B00967E21 /* namespaceobject.c in Sources */,
 				22E8FF0521C66C2200967E21 /* tokenizer.c in Sources */,
 				226ED56D21C704B500A71A20 /* io.c in Sources */,
 				22E8FF0B21C66C2200967E21 /* acceler.c in Sources */,
+				22035CAF21F8BD78007A0F60 /* usermem.c in Sources */,
 				22E8FF5821C66D3B00967E21 /* exceptions.c in Sources */,
 				226ED52121C6F80D00A71A20 /* prepare_protocol.c in Sources */,
 				226ED49421C6AE1800A71A20 /* errnomodule.c in Sources */,
 				22E8FF3E21C66D3B00967E21 /* boolobject.c in Sources */,
 				226ED43B21C6AB9900A71A20 /* hamt.c in Sources */,
 				22E8FF3D21C66D3B00967E21 /* classobject.c in Sources */,
+				22035CB521F8BF81007A0F60 /* _tri_wrapper.cpp in Sources */,
 				226ED4BC21C6B6F400A71A20 /* _struct.c in Sources */,
 				226ED57121C704B500A71A20 /* basearith.c in Sources */,
 				226ED41521C66EAD00A71A20 /* codecs.c in Sources */,
 				226ED46921C6AC2D00A71A20 /* symtable.c in Sources */,
+				22035CA221F8BD78007A0F60 /* mem.c in Sources */,
 				226ED40721C66E8500A71A20 /* asdl.c in Sources */,
+				22035CA121F8BD78007A0F60 /* random.c in Sources */,
+				22035C5121F7BCE9007A0F60 /* mplutils.cpp in Sources */,
 				226ED45921C6ABFA00A71A20 /* pystate.c in Sources */,
 				226ED44321C6ABB400A71A20 /* modsupport.c in Sources */,
 				2219EACE21F6173A004CF7FA /* buffer.c in Sources */,
@@ -1605,7 +1891,9 @@
 				226ED48F21C6AE0300A71A20 /* bufferedio.c in Sources */,
 				22E8FF6321C66D3B00967E21 /* rangeobject.c in Sources */,
 				226ED4A621C6AE6C00A71A20 /* main.c in Sources */,
+				22035CA721F8BD78007A0F60 /* geom2.c in Sources */,
 				22E8FF5F21C66D3B00967E21 /* unicodeobject.c in Sources */,
+				22035C8121F8B9B2007A0F60 /* _path_wrapper.cpp in Sources */,
 				226ED4D021C6B83400A71A20 /* _pickle.c in Sources */,
 				221CD96021DFA97100F3B47C /* _cffi_ext.c in Sources */,
 				2219EB0021F6191F004CF7FA /* refcount.c in Sources */,
@@ -1626,6 +1914,8 @@
 				221CD95D21DBBA1D00F3B47C /* _cffi_backend.c in Sources */,
 				2219EAEA21F6182C004CF7FA /* convert.c in Sources */,
 				2219EB2421F61A57004CF7FA /* cpuid.c in Sources */,
+				22035CA621F8BD78007A0F60 /* io.c in Sources */,
+				22035CAC21F8BD78007A0F60 /* libqhull.c in Sources */,
 				226ED45F21C6AC0D00A71A20 /* pystrtod.c in Sources */,
 				226ED42121C6AB4500A71A20 /* errors.c in Sources */,
 				226ED42921C6AB6300A71A20 /* frozenmain.c in Sources */,
@@ -1640,15 +1930,21 @@
 				226ED46321C6AC1800A71A20 /* pythonrun.c in Sources */,
 				226ED43D21C6AB9E00A71A20 /* import.c in Sources */,
 				226ED55821C704A300A71A20 /* _decimal.c in Sources */,
+				22035CA521F8BD78007A0F60 /* merge.c in Sources */,
 				226ED52B21C6FD6E00A71A20 /* termios.c in Sources */,
 				226ED4DA21C6B87000A71A20 /* _testmultiphase.c in Sources */,
+				22035C6921F8A6B9007A0F60 /* agg_image_filters.cpp in Sources */,
+				22035CAA21F8BD78007A0F60 /* rboxlib.c in Sources */,
 				22E8FF4621C66D3B00967E21 /* unicodectype.c in Sources */,
 				22E8FF5421C66D3B00967E21 /* setobject.c in Sources */,
+				22035C4D21F7BCAE007A0F60 /* ft2font.cpp in Sources */,
+				22035C6E21F8A6DE007A0F60 /* agg_vcgen_contour.cpp in Sources */,
 				226ED43F21C6ABA800A71A20 /* importdl.c in Sources */,
 				2219EB3721F61BD9004CF7FA /* ucsnarrow.c in Sources */,
 				22E8FF3C21C66D3B00967E21 /* typeobject.c in Sources */,
 				22E8FF6221C66D3B00967E21 /* methodobject.c in Sources */,
 				22E8FF5021C66D3B00967E21 /* structseq.c in Sources */,
+				22035C4F21F7BCBF007A0F60 /* ft2font_wrapper.cpp in Sources */,
 				226ED41321C66EA700A71A20 /* ceval.c in Sources */,
 				226ED4E621C6B8D000A71A20 /* _queuemodule.c in Sources */,
 				2219EB5821F63E52004CF7FA /* fftpack.c in Sources */,
@@ -1658,6 +1954,8 @@
 				226ED55221C7043800A71A20 /* _codecs_kr.c in Sources */,
 				226ED4E021C6B89F00A71A20 /* unicodedata.c in Sources */,
 				2219EB0C21F61963004CF7FA /* array_assign_scalar.c in Sources */,
+				22035CCC21F9C6D4007A0F60 /* constraint.cpp in Sources */,
+				22035C6F21F8A6DE007A0F60 /* agg_vcgen_dash.cpp in Sources */,
 				2219EB4521F61C89004CF7FA /* apple_sgemv_fix.c in Sources */,
 				226ED43721C6AB8E00A71A20 /* getversion.c in Sources */,
 				2219EAD621F61775004CF7FA /* datetime_busdaycal.c in Sources */,
@@ -1681,6 +1979,7 @@
 				226ED57421C704B500A71A20 /* transpose.c in Sources */,
 				22E8FF4821C66D3B00967E21 /* frameobject.c in Sources */,
 				2219EB5A21F63EE4004CF7FA /* lapack_litemodule.c in Sources */,
+				22035CBA21F8C69A007A0F60 /* _backend_agg_wrapper.cpp in Sources */,
 				226ED46521C6AC1E00A71A20 /* pytime.c in Sources */,
 				226ED41B21C6AB2D00A71A20 /* dtoa.c in Sources */,
 				226ED4AC21C6AE8700A71A20 /* signalmodule.c in Sources */,
@@ -1713,6 +2012,7 @@
 				226ED57E21C7097900A71A20 /* xxlimited.c in Sources */,
 				22E8FF4F21C66D3B00967E21 /* genobject.c in Sources */,
 				226ED50021C6BD0600A71A20 /* _posixsubprocess.c in Sources */,
+				22035CB621F8BF81007A0F60 /* _tri.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1847,8 +2147,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Python3_ios/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1876,6 +2178,7 @@
 					../Frameworks/,
 					"-I..",
 				);
+				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-F",
 					../Frameworks/,
@@ -1899,8 +2202,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Python3_ios/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1928,6 +2233,7 @@
 					../Frameworks/,
 					"-I..",
 				);
+				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-F",
 					../Frameworks/,
