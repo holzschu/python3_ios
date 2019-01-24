@@ -36,7 +36,7 @@ rm zeromq-4.2.5.tar.gz
 echo "Applying patch to zeromq:"
 (cd zeromq-4.2.5 ; patch -p 1 < ../zeromq.patch ; cd ..)
 echo "Compiling zeromq:"
-(cd zeromq-4.2.5 ; ./configure CC=clang CXX=clang++ CFLAGS="-arch arm64 -miphoneos-version-min=12.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/ -fembed-bitcode" CXXFLAGS="-arch arm64 -miphoneos-version-min=12.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/ -fembed-bitcode" CPPFLAGS="-arch arm64 -miphoneos-version-min=12.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/" --build=x86_64-apple-darwin --host=armv7-apple-darwin ; make ; mv src/.libs/libzmq.a .. ; cd ..)
+(cd zeromq-4.2.5 ; ./configure CC=clang CXX=clang++ CFLAGS="-arch arm64 -miphoneos-version-min=11.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/ -fembed-bitcode" CXXFLAGS="-arch arm64 -miphoneos-version-min=11.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/ -fembed-bitcode" CPPFLAGS="-arch arm64 -miphoneos-version-min=12.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/" --build=x86_64-apple-darwin --host=armv7-apple-darwin ; make ; mv src/.libs/libzmq.a .. ; cd ..)
 
 echo "Building freetype:"
 ./build_freetype.sh
