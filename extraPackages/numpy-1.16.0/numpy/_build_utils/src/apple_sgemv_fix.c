@@ -32,10 +32,12 @@
 
 /* ----------------------------------------------------------------- */
 /* Original cblas_sgemv */
-#ifndef TARGET_OS_IPHONE
-#define VECLIB_FILE "/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/vecLib"
-#else
+#if TARGET_OS_IOS
 #define VECLIB_FILE "/System/Library/Frameworks/Accelerate.framework//Frameworks/vecLib.framework/vecLib"
+#elif TARGET_OS_SIMULATOR
+#define VECLIB_FILE "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/vecLib"
+#else
+#define VECLIB_FILE "/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/vecLib"
 #endif
 
 
