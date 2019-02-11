@@ -37,6 +37,11 @@
 #define PyDictProxy_Check(obj) (Py_TYPE(obj) == &PyDictProxy_Type)
 #endif
 
+NPY_NO_EXPORT void clear_descriptor_caches() {
+    _npy_ctypes_check = NULL; // defined in npy_ctypes.h
+}
+
+
 static PyObject *typeDict = NULL;   /* Must be explicitly loaded */
 
 static PyArray_Descr *

@@ -475,6 +475,13 @@ array_nbytes_get(PyArrayObject *self)
  * (contiguous or fortran) with compatible dimensions The shape and strides
  * will be adjusted in that case as well.
  */
+// iOS: move static variables out of functions
+static PyObject *checkfunc = NULL;
+
+NPY_NO_EXPORT void clear_getset_caches(void) {
+    checkfunc = NULL;
+}
+
 static int
 array_descr_set(PyArrayObject *self, PyObject *arg)
 {
@@ -495,7 +502,6 @@ array_descr_set(PyArrayObject *self, PyObject *arg)
 
     /* check that we are not reinterpreting memory containing Objects. */
     if (_may_have_objects(PyArray_DESCR(self)) || _may_have_objects(newtype)) {
-        static PyObject *checkfunc = NULL;
         PyObject *safe;
 
         npy_cache_import("numpy.core._internal", "_view_is_safe", &checkfunc);

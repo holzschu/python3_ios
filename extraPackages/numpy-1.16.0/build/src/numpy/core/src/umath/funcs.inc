@@ -187,6 +187,10 @@ npy_ObjectLogicalNot(PyObject *i1)
     }
 }
 
+// iOS: move static variables out of functions, so they can be re-initialized:
+static PyObject *math_gcd_func = NULL;
+static PyObject *internal_gcd_func = NULL;
+
 static PyObject *
 npy_ObjectGCD(PyObject *i1, PyObject *i2)
 {
@@ -195,8 +199,6 @@ npy_ObjectGCD(PyObject *i1, PyObject *i2)
     /* use math.gcd if available, and valid on the provided types */
 #if PY_VERSION_HEX >= 0x03050000
     {
-        static PyObject *math_gcd_func = NULL;
-
         npy_cache_import("math", "gcd", &math_gcd_func);
         if (math_gcd_func == NULL) {
             return NULL;
@@ -212,8 +214,6 @@ npy_ObjectGCD(PyObject *i1, PyObject *i2)
 
     /* otherwise, use our internal one, written in python */
     {
-        static PyObject *internal_gcd_func = NULL;
-
         npy_cache_import("numpy.core._internal", "_gcd", &internal_gcd_func);
         if (internal_gcd_func == NULL) {
             return NULL;

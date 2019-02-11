@@ -26,6 +26,35 @@
 #include "methods.h"
 #include "alloc.h"
 
+// iOS: move static variables (used for caching) outside of functions
+static PyObject *checkfunc = NULL;
+static PyObject *callable_array_function = NULL;
+static PyObject *callable_mean = NULL;
+static PyObject *callable_sum = NULL;
+static PyObject *callable_prod = NULL;
+static PyObject *callable_any = NULL;
+static PyObject *callable_all = NULL;
+static PyObject *callable_std = NULL;
+static PyObject *callable_var = NULL;
+static PyObject *callable_amax = NULL;
+static PyObject *callable_amin = NULL;
+static PyObject *callable_ptp = NULL;
+
+NPY_NO_EXPORT void clear_methods_caches() {
+    checkfunc = NULL;
+    callable_array_function = NULL;
+    callable_mean = NULL;
+    callable_sum = NULL;
+    callable_prod = NULL;
+    callable_any = NULL;
+    callable_all = NULL;
+    callable_std = NULL;
+    callable_var = NULL;
+    callable_amax = NULL;
+    callable_amin = NULL;
+    callable_ptp = NULL;
+}
+
 
 /* NpyArg_ParseKeywords
  *
@@ -318,19 +347,43 @@ array_argmin(PyArrayObject *self, PyObject *args, PyObject *kwds)
 static PyObject *
 array_max(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_amax");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_amax");
+    if (callable_amax == NULL) {
+        callable_amax = get_forwarding_ndarray_method("_amax");
+        if (callable_amax == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_amax);
 }
 
 static PyObject *
 array_min(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_amin");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_amin");
+    if (callable_amin == NULL) {
+        callable_amin = get_forwarding_ndarray_method("_amin");
+        if (callable_amin == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_amin);
 }
 
 static PyObject *
 array_ptp(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_ptp");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_ptp");
+    if (callable_ptp == NULL) {
+        callable_ptp = get_forwarding_ndarray_method("_ptp");
+        if (callable_ptp == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_ptp);
 }
 
 
@@ -350,12 +403,12 @@ array_swapaxes(PyArrayObject *self, PyObject *args)
   Get a subset of bytes from each element of the array
   steals reference to typed, must not be NULL
 */
+
 NPY_NO_EXPORT PyObject *
 PyArray_GetField(PyArrayObject *self, PyArray_Descr *typed, int offset)
 {
     PyObject *ret = NULL;
     PyObject *safe;
-    static PyObject *checkfunc = NULL;
     int self_elsize, typed_elsize;
 
     /* check that we are not reinterpreting memory containing Objects. */
@@ -1092,7 +1145,15 @@ cleanup:
 static PyObject *
 array_function(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_array_function");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_array_function");
+    if (callable_array_function == NULL) {
+        callable_array_function = get_forwarding_ndarray_method("_array_function");
+        if (callable_array_function == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_array_function);
 }
 
 
@@ -2189,13 +2250,29 @@ array_transpose(PyArrayObject *self, PyObject *args)
 static PyObject *
 array_mean(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_mean");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_mean");
+    if (callable_mean == NULL) {
+        callable_mean = get_forwarding_ndarray_method("_mean");
+        if (callable_mean == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_mean);
 }
 
 static PyObject *
 array_sum(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_sum");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_sum");
+    if (callable_sum == NULL) {
+        callable_sum = get_forwarding_ndarray_method("_sum");
+        if (callable_sum == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_sum);
 }
 
 
@@ -2224,7 +2301,15 @@ array_cumsum(PyArrayObject *self, PyObject *args, PyObject *kwds)
 static PyObject *
 array_prod(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_prod");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_prod");
+    if (callable_prod == NULL) {
+        callable_prod = get_forwarding_ndarray_method("_prod");
+        if (callable_prod == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_prod);
 }
 
 static PyObject *
@@ -2280,26 +2365,58 @@ array_dot(PyArrayObject *self, PyObject *args, PyObject *kwds)
 static PyObject *
 array_any(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_any");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_any");
+    if (callable_any == NULL) {
+        callable_any = get_forwarding_ndarray_method("_any");
+        if (callable_any == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_any);
 }
 
 
 static PyObject *
 array_all(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_all");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_all");
+    if (callable_all == NULL) {
+        callable_all = get_forwarding_ndarray_method("_all");
+        if (callable_all == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_all);
 }
 
 static PyObject *
 array_stddev(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_std");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_std");
+    if (callable_std == NULL) {
+        callable_std = get_forwarding_ndarray_method("_std");
+        if (callable_std == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_std);
 }
 
 static PyObject *
 array_variance(PyArrayObject *self, PyObject *args, PyObject *kwds)
 {
-    NPY_FORWARD_NDARRAY_METHOD("_var");
+    // iOS: we need the static variable outside of the function.
+    // NPY_FORWARD_NDARRAY_METHOD("_var");
+    if (callable_var == NULL) {
+        callable_var = get_forwarding_ndarray_method("_var");
+        if (callable_var == NULL) {
+            return NULL;
+        }
+    }
+    return forward_ndarray_method(self, args, kwds, callable_var);
 }
 
 static PyObject *

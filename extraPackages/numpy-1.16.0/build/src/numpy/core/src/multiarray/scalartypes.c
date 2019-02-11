@@ -987,6 +987,7 @@ gentype_nonzero_number(PyObject *m1)
     int ret;
 
     arr = PyArray_FromScalar(m1, NULL);
+
     if (arr == NULL) {
         return -1;
     }
@@ -1326,15 +1327,19 @@ _void_to_hex(const char* argbuf, const Py_ssize_t arglen,
     return retval;
 }
 
+// iOS: move static variables outside of function, so
+// we can clear them when we leave. And change name since
+// reprfunc is a type name.
+static PyObject *reprfunc_cache = NULL;
+
 static PyObject *
 _void_scalar_repr(PyObject *obj) {
-    static PyObject *reprfunc = NULL;
     npy_cache_import("numpy.core.arrayprint",
-                     "_void_scalar_repr", &reprfunc);
-    if (reprfunc == NULL) {
+                     "_void_scalar_repr", &reprfunc_cache);
+    if (reprfunc_cache == NULL) {
         return NULL;
     }
-    return PyObject_CallFunction(reprfunc, "O", obj);
+    return PyObject_CallFunction(reprfunc_cache, "O", obj);
 }
 
 static PyObject *
@@ -32532,11 +32537,107 @@ static PyNumberMethods longdoubletype_as_number;
 static PyNumberMethods clongdoubletype_as_number;
 static void init_basetypes(void);
 
+static void reset_type(PyTypeObject *type) {
+    type->tp_itemsize = 0;
+    type->tp_dealloc = 0;
+    type->tp_print = 0;
+    type->tp_getattr = 0;
+    type->tp_setattr = 0;
+#if defined(NPY_PY3K)
+    // type->tp_reserved = 0;                     /* tp_reserved */
+#else
+    type->tp_compare = 0;                         /* tp_compare */
+#endif
+    type->tp_repr = 0;                            /* tp_repr */
+    type->tp_as_number = 0;                       /* tp_as_number */
+    type->tp_as_sequence  = 0;                    /* tp_as_sequence */
+    type->tp_as_mapping  = 0;                     /* tp_as_mapping */
+    type->tp_hash  = 0;                           /* tp_hash */
+    type->tp_call  = 0;                           /* tp_call */
+    type->tp_str  = 0;                            /* tp_str */
+    type->tp_getattro  = 0;                       /* tp_getattro */
+    type->tp_setattro  = 0;                       /* tp_setattro */
+    type->tp_as_buffer  = 0;                      /* tp_as_buffer */
+    type->tp_flags  = 0;                          /* tp_flags */
+    type->tp_doc  = 0;                            /* tp_doc */
+    type->tp_traverse  = 0;                       /* tp_traverse */
+    type->tp_clear  = 0;                          /* tp_clear */
+    type->tp_richcompare  = 0;                    /* tp_richcompare */
+    type->tp_weaklistoffset  = 0;                 /* tp_weaklistoffset */
+    type->tp_iter  = 0;                           /* tp_iter */
+    type->tp_iternext  = 0;                       /* tp_iternext */
+    type->tp_methods  = 0;                        /* tp_methods */
+    type->tp_members  = 0;                        /* tp_members */
+    type->tp_getset  = 0;                         /* tp_getset */
+    type->tp_base  = 0;                           /* tp_base */
+    type->tp_dict  = 0;                           /* tp_dict */
+    type->tp_descr_get  = 0;                      /* tp_descr_get */
+    type->tp_descr_set  = 0;                      /* tp_descr_set */
+    type->tp_dictoffset  = 0;                     /* tp_dictoffset */
+    type->tp_init  = 0;                           /* tp_init */
+    type->tp_alloc  = 0;                          /* tp_alloc */
+    type->tp_new  = 0;                            /* tp_new */
+    type->tp_free  = 0;                           /* tp_free */
+    type->tp_is_gc  = 0;                          /* tp_is_gc */
+    type->tp_bases  = 0;                          /* tp_bases */
+    type->tp_mro  = 0;                            /* tp_mro */
+    type->tp_cache  = 0;                          /* tp_cache */
+    type->tp_subclasses  = 0;                     /* tp_subclasses */
+    type->tp_weaklist  = 0;                       /* tp_weaklist */
+    type->tp_del  = 0;                            /* tp_del */
+    type->tp_version_tag  = 0;                    /* tp_version_tag */
+
+    
+    
+}
+
+static void reset_numeric_types() {
+    reset_type(&PyGenericArrType_Type);
+    reset_type(&PyBoolArrType_Type);
+    reset_type(&PyByteArrType_Type);
+    reset_type(&PyShortArrType_Type);
+    reset_type(&PyIntArrType_Type);
+    reset_type(&PyLongArrType_Type);
+    reset_type(&PyLongLongArrType_Type);
+    reset_type(&PyUByteArrType_Type);
+    reset_type(&PyUShortArrType_Type);
+    reset_type(&PyUIntArrType_Type);
+    reset_type(&PyULongArrType_Type);
+    reset_type(&PyULongLongArrType_Type);
+    reset_type(&PyHalfArrType_Type);
+    reset_type(&PyFloatArrType_Type);
+    reset_type(&PyDoubleArrType_Type);
+    reset_type(&PyLongDoubleArrType_Type);
+    reset_type(&PyCFloatArrType_Type);
+    reset_type(&PyCDoubleArrType_Type);
+    reset_type(&PyCLongDoubleArrType_Type);
+    reset_type(&PyStringArrType_Type);
+    reset_type(&PyUnicodeArrType_Type);
+    reset_type(&PyVoidArrType_Type);
+    reset_type(&PyIntegerArrType_Type);
+    reset_type(&PySignedIntegerArrType_Type);
+    reset_type(&PyUnsignedIntegerArrType_Type);
+    reset_type(&PyInexactArrType_Type);
+    reset_type(&PyFloatingArrType_Type);
+    reset_type(&PyComplexFloatingArrType_Type);
+    reset_type(&PyFlexibleArrType_Type);
+    reset_type(&PyCharacterArrType_Type);
+    reset_type(&PyCFloatArrType_Type);
+    reset_type(&PyCDoubleArrType_Type);
+    reset_type(&PyCLongDoubleArrType_Type);
+    reset_type(&PyObjectArrType_Type);
+    reset_type(&PyDatetimeArrType_Type);
+    reset_type(&PyTimedeltaArrType_Type);
+    reset_type(&PyNumberArrType_Type);
+}
+
 
 NPY_NO_EXPORT void
 initialize_numeric_types(void)
 {
     init_basetypes();
+    reset_numeric_types();   // reset fields to 0 before inheritance. Required if we start numpy several times.
+    reprfunc_cache = NULL;   // reset cached variable. 
     PyGenericArrType_Type.tp_dealloc = (destructor)gentype_dealloc;
     PyGenericArrType_Type.tp_as_number = &gentype_as_number;
     PyGenericArrType_Type.tp_as_buffer = &gentype_as_buffer;

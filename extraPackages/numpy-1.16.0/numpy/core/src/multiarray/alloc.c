@@ -43,6 +43,27 @@ typedef struct {
 static cache_bucket datacache[NBUCKETS];
 static cache_bucket dimcache[NBUCKETS_DIM];
 
+
+NPY_NO_EXPORT void
+npy_clean_caches()
+{
+    // Cleanup both datacache and dimcache:
+    for (int i = 0; i < NBUCKETS; i++) {
+        for (npy_uintp j = 0; j < datacache[i].available; j++) {
+            PyDataMem_FREE(datacache[i].ptrs[j]);
+            datacache[i].ptrs[j] = NULL;
+        }
+        datacache[i].available = 0;
+    }
+    for (int i = 0; i < NBUCKETS_DIM; i++) {
+        for (npy_uintp j = 0; j < dimcache[i].available; j++) {
+            PyDataMem_FREE(dimcache[i].ptrs[j]);
+            dimcache[i].ptrs[j] = NULL;
+        }
+        dimcache[i].available = 0;
+    }
+}
+
 /* as the cache is managed in global variables verify the GIL is held */
 #if defined(NPY_PY3K)
 #define NPY_CHECK_GIL_HELD() PyGILState_Check()

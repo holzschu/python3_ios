@@ -1333,17 +1333,24 @@ _dtype_from_buffer_3118(PyObject *memoryview)
 /*
  * Call the python _is_from_ctypes
  */
+// iOS: move static variables outside of functions
+static PyObject *is_from_ctypes = NULL;
+
+NPY_NO_EXPORT void clear_ctors_caches() {
+    is_from_ctypes = NULL;
+    _npy_ctypes_check = NULL; 
+}
+
 NPY_NO_EXPORT int
 _is_from_ctypes(PyObject *obj) {
     PyObject *ret_obj;
-    static PyObject *py_func = NULL;
 
-    npy_cache_import("numpy.core._internal", "_is_from_ctypes", &py_func);
+    npy_cache_import("numpy.core._internal", "_is_from_ctypes", &is_from_ctypes);
 
-    if (py_func == NULL) {
+    if (is_from_ctypes == NULL) {
         return -1;
     }
-    ret_obj = PyObject_CallFunctionObjArgs(py_func, obj, NULL);
+    ret_obj = PyObject_CallFunctionObjArgs(is_from_ctypes, obj, NULL);
     if (ret_obj == NULL) {
         return -1;
     }

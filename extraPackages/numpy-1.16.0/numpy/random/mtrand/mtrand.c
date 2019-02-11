@@ -189,6 +189,18 @@
     #define CYTHON_USE_EXC_INFO_STACK (PY_VERSION_HEX >= 0x030700A3)
   #endif
 #endif
+
+#if TARGET_OS_IPHONE
+// We can't use static variables inside functions in iOS
+    #undef CYTHON_USE_DICT_VERSIONS
+    #define CYTHON_USE_DICT_VERSIONS 0
+// And we really need to call the destructor on our modules:
+    #undef CYTHON_PEP489_MULTI_PHASE_INIT
+    #define CYTHON_PEP489_MULTI_PHASE_INIT 0
+#endif
+
+
+
 #if !defined(CYTHON_FAST_PYCCALL)
 #define CYTHON_FAST_PYCCALL  (CYTHON_FAST_PYCALL && PY_VERSION_HEX >= 0x030600B1)
 #endif
@@ -37823,6 +37835,65 @@ static PyMethodDef __pyx_methods[] = {
   {0, 0, 0, 0}
 };
 
+static void reset___pyx_type_6mtrand_RandomState()
+{
+    __pyx_type_6mtrand_RandomState.tp_name = "mtrand.RandomState"; /**/
+    __pyx_type_6mtrand_RandomState.tp_basicsize = sizeof(struct __pyx_obj_6mtrand_RandomState); /**/
+    __pyx_type_6mtrand_RandomState.tp_itemsize = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_dealloc = __pyx_tp_dealloc_6mtrand_RandomState; /**/
+    __pyx_type_6mtrand_RandomState.tp_print = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_getattr = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_setattr = 0; /**/
+#if PY_MAJOR_VERSION < 3
+    __pyx_type_6mtrand_RandomState.tp_compare = 0; /**/
+#endif
+#if PY_MAJOR_VERSION >= 3
+    __pyx_type_6mtrand_RandomState.tp_as_async = 0; /**/
+#endif
+    __pyx_type_6mtrand_RandomState.tp_repr = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_as_number = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_as_sequence = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_as_mapping = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_hash = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_call = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_str = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_getattro = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_setattro = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_as_buffer = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_flags = Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC;
+    __pyx_type_6mtrand_RandomState.tp_doc = "\n    RandomState(seed=None)\n\n    Container for the Mersenne Twister pseudo-random number generator.\n\n    `RandomState` exposes a number of methods for generating random numbers\n    drawn from a variety of probability distributions. In addition to the\n    distribution-specific arguments, each method takes a keyword argument\n    `size` that defaults to ``None``. If `size` is ``None``, then a single\n    value is generated and returned. If `size` is an integer, then a 1-D\n    array filled with generated values is returned. If `size` is a tuple,\n    then an array with that shape is filled and returned.\n\n    *Compatibility Guarantee*\n    A fixed seed and a fixed series of calls to 'RandomState' methods using\n    the same parameters will always produce the same results up to roundoff\n    error except when the values were incorrect. Incorrect values will be\n    fixed and the NumPy version in which the fix was made will be noted in\n    the relevant docstring. Extension of existing parameter ranges and the\n    addition of new parameters is allowed as long the previous behavior\n    remains unchanged.\n\n    Parameters\n    ----------\n    seed : {None, int, array_like}, optional\n        Random seed used to initialize the pseudo-random number generator.  Can\n        be any integer between 0 and 2**32 - 1 inclusive, an array (or other\n        sequence) of such integers, or ``None`` (the default).  If `seed` is\n        ``None``, then `RandomState` will try to read data from\n        ``/dev/urandom`` (or the Windows analogue) if available or seed from\n        the clock otherwise.\n\n    Notes\n    -----\n    The Python stdlib module \"random\" also contains a Mersenne Twister\n    pseudo-random number generator with a number of methods that are similar\n    to the ones available in `RandomState`. `RandomState`, besides being\n    NumPy-aware, has the advantage that it provides a much larger number\n    of probability distributions to choose from.\n\n    "; /**/
+    __pyx_type_6mtrand_RandomState.tp_traverse = __pyx_tp_traverse_6mtrand_RandomState; /**/
+    __pyx_type_6mtrand_RandomState.tp_clear = __pyx_tp_clear_6mtrand_RandomState; /**/
+    __pyx_type_6mtrand_RandomState.tp_richcompare = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_weaklistoffset = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_iter = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_iternext = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_methods = __pyx_methods_6mtrand_RandomState; /**/
+    __pyx_type_6mtrand_RandomState.tp_members = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_getset = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_base = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_dict = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_descr_get = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_descr_set = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_dictoffset = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_init = __pyx_pw_6mtrand_11RandomState_1__init__; /**/
+    __pyx_type_6mtrand_RandomState.tp_alloc = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_new = __pyx_tp_new_6mtrand_RandomState; /**/
+    __pyx_type_6mtrand_RandomState.tp_free = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_is_gc = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_bases = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_mro = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_cache = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_subclasses = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_weaklist = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_del = 0; /**/
+    __pyx_type_6mtrand_RandomState.tp_version_tag = 0; /**/
+#if PY_VERSION_HEX >= 0x030400a1
+    __pyx_type_6mtrand_RandomState.tp_finalize = 0; /**/
+#endif
+}
+
+
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
@@ -37833,6 +37904,29 @@ static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {0, NULL}
 };
 #endif
+
+
+
+// iOS: reset static variables (interpreter Id)
+static PY_INT64_T main_interpreter_id = -1;
+static void free_numpy_random_mtrand(PyObject *m) {
+    main_interpreter_id = -1;
+    __pyx_module_is_main_mtrand = 0;
+    __pyx_m = NULL;
+    __pyx_cython_runtime = NULL;
+    __pyx_clineno = 0;
+    __pyx_cfilenm= __FILE__;
+    __pyx_ptype_7cpython_4type_type = 0;
+    __pyx_ptype_6mtrand_dtype = 0;
+    __pyx_ptype_6mtrand_ndarray = 0;
+    __pyx_ptype_6mtrand_flatiter = 0;
+    __pyx_ptype_6mtrand_broadcast = 0;
+    __pyx_ptype_6mtrand_RandomState = 0;
+    //
+    __pyx_vtable_6mtrand_RandomState._shuffle_raw = NULL;
+    __pyx_vtabptr_6mtrand_RandomState = NULL;
+    PyObject_Print(__pyx_d, stderr, 0);
+}
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
@@ -37852,7 +37946,7 @@ static struct PyModuleDef __pyx_moduledef = {
   #endif
     NULL, /* m_traverse */
     NULL, /* m_clear */
-    NULL /* m_free */
+    (freefunc) free_numpy_random_mtrand /* m_free */
 };
 #endif
 #ifndef CYTHON_SMALL_CODE
@@ -40381,6 +40475,8 @@ static int __Pyx_modinit_function_export_code(void) {
 }
 
 static int __Pyx_modinit_type_init_code(void) {
+    // iOS: reset type to default values before first action
+    reset___pyx_type_6mtrand_RandomState();
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
@@ -40485,7 +40581,6 @@ __Pyx_PyMODINIT_FUNC PyInit_numpy_random_mtrand(void)
 }
 static CYTHON_SMALL_CODE int __Pyx_check_single_interpreter(void) {
     #if PY_VERSION_HEX >= 0x030700A1
-    static PY_INT64_T main_interpreter_id = -1;
     PY_INT64_T current_id = PyInterpreterState_GetID(PyThreadState_Get()->interp);
     if (main_interpreter_id == -1) {
         main_interpreter_id = current_id;

@@ -1846,3 +1846,63 @@ NPY_NO_EXPORT PyTypeObject PyArray_Type = {
     0,                                          /* tp_del */
     0,                                          /* tp_version_tag */
 };
+
+// iOS: reset to default values:
+NPY_NO_EXPORT void reset_PyArray_Type(void)
+{
+    PyArray_Type.tp_name  = "numpy.ndarray";
+    PyArray_Type.tp_basicsize  = NPY_SIZEOF_PYARRAYOBJECT;
+    PyArray_Type.tp_itemsize  = 0;
+    PyArray_Type.tp_dealloc  = (destructor)array_dealloc;
+    PyArray_Type.tp_print  = (printfunc)NULL;
+    PyArray_Type.tp_getattr  = 0;
+    PyArray_Type.tp_setattr  = 0;
+#if defined(NPY_PY3K)
+    // PyArray_Type.tp_reserved  = 0;
+#else
+    PyArray_Type.tp_compare  = 0;
+#endif
+    PyArray_Type.tp_repr  = (reprfunc)array_repr;
+    PyArray_Type.tp_as_number  = &array_as_number;
+    PyArray_Type.tp_as_sequence  = &array_as_sequence;
+    PyArray_Type.tp_as_mapping  = &array_as_mapping;
+    PyArray_Type.tp_hash  = (hashfunc)0;
+    PyArray_Type.tp_call  = (ternaryfunc)0;
+    PyArray_Type.tp_str  = (reprfunc)array_str;
+    PyArray_Type.tp_getattro  = (getattrofunc)0;
+    PyArray_Type.tp_setattro  = (setattrofunc)0;
+    PyArray_Type.tp_as_buffer  = &array_as_buffer;
+    PyArray_Type.tp_flags  = (Py_TPFLAGS_DEFAULT
+#if !defined(NPY_PY3K)
+                              | Py_TPFLAGS_CHECKTYPES
+                              | Py_TPFLAGS_HAVE_NEWBUFFER
+#endif
+                              | Py_TPFLAGS_BASETYPE);
+    PyArray_Type.tp_doc  = 0;
+    PyArray_Type.tp_traverse  = (traverseproc)0;
+    PyArray_Type.tp_clear  = (inquiry)0;
+    PyArray_Type.tp_richcompare  = (richcmpfunc)array_richcompare;
+    PyArray_Type.tp_weaklistoffset  = offsetof(PyArrayObject_fields, weakreflist);
+    PyArray_Type.tp_iter  = (getiterfunc)array_iter;
+    PyArray_Type.tp_iternext  = (iternextfunc)0;
+    PyArray_Type.tp_methods  = array_methods;
+    PyArray_Type.tp_members  = 0;
+    PyArray_Type.tp_getset  = array_getsetlist;
+    PyArray_Type.tp_base  = 0;
+    PyArray_Type.tp_dict  = 0;
+    PyArray_Type.tp_descr_get  = 0;
+    PyArray_Type.tp_descr_set  = 0;
+    PyArray_Type.tp_dictoffset  = 0;
+    PyArray_Type.tp_init  = (initproc)0;
+    PyArray_Type.tp_alloc  = (allocfunc)array_alloc;
+    PyArray_Type.tp_new  = (newfunc)array_new;
+    PyArray_Type.tp_free  = (freefunc)array_free;
+    PyArray_Type.tp_is_gc  = 0;
+    PyArray_Type.tp_bases  = 0;
+    PyArray_Type.tp_mro  = 0;
+    PyArray_Type.tp_cache  = 0;
+    PyArray_Type.tp_subclasses  = 0;
+    PyArray_Type.tp_weaklist  = 0;
+    PyArray_Type.tp_del  = 0;
+    PyArray_Type.tp_version_tag  = 0;
+}

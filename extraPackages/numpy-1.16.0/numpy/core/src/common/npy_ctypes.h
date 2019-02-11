@@ -14,19 +14,21 @@
  * This entire function is just a wrapper around the Python function of the
  * same name.
  */
+// iOS: move static variables outside of functions
+static PyObject *_npy_ctypes_check = NULL;
+
 NPY_INLINE static int
 npy_ctypes_check(PyTypeObject *obj)
 {
-    static PyObject *py_func = NULL;
     PyObject *ret_obj;
     int ret;
 
-    npy_cache_import("numpy.core._internal", "npy_ctypes_check", &py_func);
-    if (py_func == NULL) {
+    npy_cache_import("numpy.core._internal", "npy_ctypes_check", &_npy_ctypes_check);
+    if (_npy_ctypes_check == NULL) {
         goto fail;
     }
 
-    ret_obj = PyObject_CallFunctionObjArgs(py_func, (PyObject *)obj, NULL);
+    ret_obj = PyObject_CallFunctionObjArgs(_npy_ctypes_check, (PyObject *)obj, NULL);
     if (ret_obj == NULL) {
         goto fail;
     }

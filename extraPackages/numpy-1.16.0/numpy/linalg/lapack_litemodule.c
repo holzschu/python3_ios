@@ -315,6 +315,23 @@ static struct PyMethodDef lapack_lite_module_methods[] = {
 };
 
 
+static int clear_numpy_linalg_lapack_lite(PyObject *m) {
+    // reset PyArray_API when leaving
+    void *state = PyModule_GetState(m);
+    PyArray_API = NULL;
+    return 0;
+}
+
+static void free_numpy_linalg_lapack_lite(PyObject *m) {
+    // reset PyArray_API when leaving
+    void *state = PyModule_GetState(m);
+    PyArray_API = NULL;
+    PyObject *d = PyModule_GetDict(m);
+    if (d != NULL)
+        _PyModule_ClearDict(d);
+}
+
+
 #if PY_MAJOR_VERSION >= 3
 static struct PyModuleDef moduledef = {
         PyModuleDef_HEAD_INIT,
@@ -325,8 +342,8 @@ static struct PyModuleDef moduledef = {
         lapack_lite_module_methods,
         NULL,
         NULL,
-        NULL,
-        NULL
+    clear_numpy_linalg_lapack_lite,         /* m_clear */
+    (freefunc)free_numpy_linalg_lapack_lite /* m_free */
 };
 #endif
 

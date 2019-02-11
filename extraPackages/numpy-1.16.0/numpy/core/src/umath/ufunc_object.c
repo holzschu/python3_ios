@@ -3558,6 +3558,9 @@ finish_loop:
  * The axes must already be bounds-checked by the calling function,
  * this function does not validate them.
  */
+// iOS: move static variables outside of functions
+static PyObject *NoValue = NULL;
+
 static PyArrayObject *
 PyUFunc_Reduce(PyUFuncObject *ufunc, PyArrayObject *arr, PyArrayObject *out,
         int naxes, int *axes, PyArray_Descr *odtype, int keepdims,
@@ -3572,7 +3575,6 @@ PyUFunc_Reduce(PyUFuncObject *ufunc, PyArrayObject *arr, PyArrayObject *out,
     const char *ufunc_name = ufunc_get_name_cstr(ufunc);
     /* These parameters come from a TLS global */
     int buffersize = 0, errormask = 0;
-    static PyObject *NoValue = NULL;
 
     NPY_UF_DBG_PRINT1("\nEvaluating ufunc %s.reduce\n", ufunc_name);
 
@@ -5831,10 +5833,17 @@ _typecharfromnum(int num) {
     return ret;
 }
 
+// iOS: move the cache outside of the function
+static PyObject *_sig_formatter = NULL;
+
+void clear_ufunc_object_caches() {
+    NoValue = NULL;
+    _sig_formatter = NULL;
+}
+
 static PyObject *
 ufunc_get_doc(PyUFuncObject *ufunc)
 {
-    static PyObject *_sig_formatter;
     PyObject *doc;
 
     npy_cache_import(
@@ -6046,3 +6055,58 @@ NPY_NO_EXPORT PyTypeObject PyUFunc_Type = {
 };
 
 /* End of code for ufunc objects */
+
+// iOS: reset type to default values:
+NPY_NO_EXPORT void reset_PyUFunc_Type(void)
+{
+    PyUFunc_Type.tp_name  = "numpy.ufunc";
+    PyUFunc_Type.tp_basicsize  = sizeof(PyUFuncObject);
+    PyUFunc_Type.tp_itemsize  = 0;
+    PyUFunc_Type.tp_dealloc  = (destructor)ufunc_dealloc;
+    PyUFunc_Type.tp_print  = 0;
+    PyUFunc_Type.tp_getattr  = 0;
+    PyUFunc_Type.tp_setattr  = 0;
+#if defined(NPY_PY3K)
+    // PyUFunc_Type.tp_reserved  = 0;
+#else
+    PyUFunc_Type.tp_compare  = 0;
+#endif
+    PyUFunc_Type.tp_repr  = (reprfunc)ufunc_repr;
+    PyUFunc_Type.tp_as_number  = 0;
+    PyUFunc_Type.tp_as_sequence  = 0;
+    PyUFunc_Type.tp_as_mapping  = 0;
+    PyUFunc_Type.tp_hash  = 0;
+    PyUFunc_Type.tp_call  = (ternaryfunc)ufunc_generic_call;
+    PyUFunc_Type.tp_str  = (reprfunc)ufunc_repr;
+    PyUFunc_Type.tp_getattro  = 0;
+    PyUFunc_Type.tp_setattro  = 0;
+    PyUFunc_Type.tp_as_buffer  = 0;
+    PyUFunc_Type.tp_flags  = Py_TPFLAGS_DEFAULT;
+    PyUFunc_Type.tp_doc  = 0;
+    PyUFunc_Type.tp_traverse  = 0;
+    PyUFunc_Type.tp_clear  = 0;
+    PyUFunc_Type.tp_richcompare  = 0;
+    PyUFunc_Type.tp_weaklistoffset  = 0;
+    PyUFunc_Type.tp_iter  = 0;
+    PyUFunc_Type.tp_iternext  = 0;
+    PyUFunc_Type.tp_methods  = ufunc_methods;
+    PyUFunc_Type.tp_members  = 0;
+    PyUFunc_Type.tp_getset  = ufunc_getset;
+    PyUFunc_Type.tp_base  = 0;
+    PyUFunc_Type.tp_dict  = 0;
+    PyUFunc_Type.tp_descr_get  = 0;
+    PyUFunc_Type.tp_descr_set  = 0;
+    PyUFunc_Type.tp_dictoffset  = 0;
+    PyUFunc_Type.tp_init  = 0;
+    PyUFunc_Type.tp_alloc  = 0;
+    PyUFunc_Type.tp_new  = 0;
+    PyUFunc_Type.tp_free  = 0;
+    PyUFunc_Type.tp_is_gc  = 0;
+    PyUFunc_Type.tp_bases  = 0;
+    PyUFunc_Type.tp_mro  = 0;
+    PyUFunc_Type.tp_cache  = 0;
+    PyUFunc_Type.tp_subclasses  = 0;
+    PyUFunc_Type.tp_weaklist  = 0;
+    PyUFunc_Type.tp_del  = 0;
+    PyUFunc_Type.tp_version_tag  = 0;
+}

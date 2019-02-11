@@ -214,6 +214,9 @@ normalize___call___args(PyUFuncObject *ufunc, PyObject *args,
     return nkwds == 0 ? 0 : normalize_signature_keyword(*normal_kwds);
 }
 
+// iOS: move static variables outside of function
+static PyObject *NoValue = NULL;
+
 static int
 normalize_reduce_args(PyUFuncObject *ufunc, PyObject *args,
                       PyObject **normal_args, PyObject **normal_kwds)
@@ -224,7 +227,6 @@ normalize_reduce_args(PyUFuncObject *ufunc, PyObject *args,
     npy_intp nargs = PyTuple_GET_SIZE(args);
     npy_intp i;
     PyObject *obj;
-    static PyObject *NoValue = NULL;
     static char *kwlist[] = {"array", "axis", "dtype", "out", "keepdims",
         "initial"};
 
@@ -411,6 +413,14 @@ normalize_at_args(PyUFuncObject *ufunc, PyObject *args,
     }
     *normal_args = PyTuple_GetSlice(args, 0, nargs);
     return (*normal_args == NULL);
+}
+
+// iOS: move static variables out of functions:
+static PyObject *errmsg_formatter = NULL;
+
+NPY_NO_EXPORT void clear_override_caches() {
+    NoValue = NULL;
+    errmsg_formatter = NULL;
 }
 
 /*
@@ -649,7 +659,6 @@ PyUFunc_CheckOverride(PyUFuncObject *ufunc, char *method,
         /* Check if there is a method left to call */
         if (!override_obj) {
             /* No acceptable override found. */
-            static PyObject *errmsg_formatter = NULL;
             PyObject *errmsg;
 
             npy_cache_import("numpy.core._internal",

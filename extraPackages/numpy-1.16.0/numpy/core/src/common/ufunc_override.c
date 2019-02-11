@@ -14,10 +14,20 @@
  * Returns a new reference, the value of type(obj).__array_ufunc__ if it
  * exists and is different from that of ndarray, and NULL otherwise.
  */
+// iOS: move the static ndarray_array_ufunc outside of the
+// PyUFuncOverride_GetNonDefaultArrayUfunc function.
+// iOS: this will cause an issue with objects that define their own __array_ufunc__.
+// Apparently none of numpy / matplotlib objects are doing this, but keep an eye.
+static PyObject *ndarray_array_ufunc = NULL;
+
+// Add a function to reset the cached value:
+NPY_NO_EXPORT void PyUFuncOverride_ResetDefaultArrayUfunc() {
+    ndarray_array_ufunc = NULL;
+}
+
 NPY_NO_EXPORT PyObject *
 PyUFuncOverride_GetNonDefaultArrayUfunc(PyObject *obj)
 {
-    static PyObject *ndarray_array_ufunc = NULL;
     PyObject *cls_array_ufunc;
 
     /* On first entry, cache ndarray's __array_ufunc__ */

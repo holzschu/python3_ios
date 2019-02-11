@@ -1426,7 +1426,7 @@ arr_add_docstring(PyObject *NPY_UNUSED(dummy), PyObject *args)
 #define _TESTDOC2(typebase) (Py_TYPE(obj) == Py##typebase##_TypePtr)
 #define _ADDDOC(typebase, doc, name) do {                               \
         Py##typebase##Object *new = (Py##typebase##Object *)obj;        \
-        if (!(doc)) {                                                   \
+        if (!(doc) || (strcmp(doc, docstr) == 0)) {                     \
             doc = docstr;                                               \
         }                                                               \
         else {                                                          \
