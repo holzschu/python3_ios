@@ -378,34 +378,17 @@ diff -Naur tmp/Python-3.7.1/Modules/Setup.local Python-3.7.1/Modules/Setup.local
 +# Edit this file for local setup changes
 diff -Naur tmp/Python-3.7.1/Modules/_asynciomodule.c Python-3.7.1/Modules/_asynciomodule.c
 --- tmp/Python-3.7.1/Modules/_asynciomodule.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_asynciomodule.c	2019-01-25 22:22:01.000000000 +0100
-@@ -252,12 +252,26 @@
-         cached_running_holder_tsid = ts->id;
-     }
++++ Python-3.7.1/Modules/_asynciomodule.c	2019-02-06 10:37:26.000000000 +0100
+@@ -3198,6 +3198,9 @@
  
-+#if TARGET_OS_IPHONE
-+    // This seems to happen when closing/opening multiple kernels
-+    if (rl == NULL) {
-+        fprintf(stderr, "Detected (rl == NULL). Will attempt to recover.\n"); fflush(stderr);
-+        goto not_found;
-+    }
-+#endif
-     assert(Py_TYPE(rl) == &PyRunningLoopHolder_Type);
-     PyObject *running_loop = ((PyRunningLoopHolder *)rl)->rl_loop;
+     Py_CLEAR(context_kwname);
  
-     if (running_loop == Py_None) {
-         goto not_found;
-     }
-+#if TARGET_OS_IPHONE
-+    // This seems to happen when closing/opening multiple kernels
-+    if (running_loop == NULL) {
-+        fprintf(stderr, "Detected (running_loop == NULL). Will attempt to recover.\n"); fflush(stderr);
-+        goto not_found;
-+    }
-+#endif
++    cached_running_holder = NULL; // Not Py_CLEAR because there are no references to it
++    cached_running_holder_tsid = -1;
++
+     module_free_freelists();
+ }
  
- #if defined(HAVE_GETPID) && !defined(MS_WINDOWS)
-     /* On Windows there is no getpid, but there is also no os.fork(),
 diff -Naur tmp/Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h
 --- tmp/Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h	2018-10-20 08:04:19.000000000 +0200
 +++ Python-3.7.1/Modules/_ctypes/darwin/dlfcn.h	2018-12-20 22:14:05.000000000 +0100
@@ -455,6 +438,200 @@ diff -Naur tmp/Python-3.7.1/Modules/_datetimemodule.c Python-3.7.1/Modules/_date
      return _PyObject_CallMethodIdObjArgs(module, &PyId__strptime_datetime,
                                           cls, string, format, NULL);
  }
+diff -Naur tmp/Python-3.7.1/Modules/_decimal/_decimal.c Python-3.7.1/Modules/_decimal/_decimal.c
+--- tmp/Python-3.7.1/Modules/_decimal/_decimal.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Modules/_decimal/_decimal.c	2019-02-08 13:10:43.000000000 +0100
+@@ -5428,6 +5428,164 @@
+   { NULL, NULL, 1, NULL }
+ };
+ 
++
++static void reset_PyDec_Type() {
++    PyDec_Type.tp_itemsize = 0;
++    PyDec_Type.tp_dealloc = (destructor) dec_dealloc;
++    PyDec_Type.tp_print = 0;
++    PyDec_Type.tp_getattr = (getattrfunc) 0;
++    PyDec_Type.tp_setattr = (setattrfunc) 0;
++    // PyDec_Type.tp_reserved = 0;
++    PyDec_Type.tp_repr = (reprfunc) dec_repr;
++    PyDec_Type.tp_as_number = &dec_number_methods;
++    PyDec_Type.tp_as_sequence = 0;
++    PyDec_Type.tp_as_mapping = 0;
++    PyDec_Type.tp_hash = (hashfunc) dec_hash;
++    PyDec_Type.tp_call = 0;
++    PyDec_Type.tp_str = (reprfunc) dec_str;
++    PyDec_Type.tp_getattro = (getattrofunc) PyObject_GenericGetAttr;
++    PyDec_Type.tp_setattro = (setattrofunc) 0;
++    PyDec_Type.tp_as_buffer = (PyBufferProcs *) 0;
++    PyDec_Type.tp_flags = (Py_TPFLAGS_DEFAULT| Py_TPFLAGS_BASETYPE);
++    PyDec_Type.tp_doc = doc_decimal;
++    PyDec_Type.tp_traverse = 0;
++    PyDec_Type.tp_clear = 0;
++    PyDec_Type.tp_richcompare = dec_richcompare;
++    PyDec_Type.tp_weaklistoffset = 0;
++    PyDec_Type.tp_iter = 0;
++    PyDec_Type.tp_iternext = 0;
++    PyDec_Type.tp_methods = dec_methods;
++    PyDec_Type.tp_members = 0;
++    PyDec_Type.tp_getset = dec_getsets;
++    PyDec_Type.tp_base = 0;
++    PyDec_Type.tp_dict = 0;
++    PyDec_Type.tp_descr_get = 0;
++    PyDec_Type.tp_descr_set = 0;
++    PyDec_Type.tp_dictoffset = 0;
++    PyDec_Type.tp_init = 0;
++    PyDec_Type.tp_alloc = 0;
++    PyDec_Type.tp_new = dec_new;
++    PyDec_Type.tp_free = PyObject_Del;
++
++}
++
++static void reset_PyDecContext_Type()  {
++    PyDecContext_Type.tp_itemsize = 0;
++    PyDecContext_Type.tp_dealloc = (destructor) context_dealloc;
++    PyDecContext_Type.tp_print = 0;
++    PyDecContext_Type.tp_getattr = (getattrfunc) 0;
++    PyDecContext_Type.tp_setattr = (setattrfunc) 0;
++    // PyDecContext_Type.tp_reserved = 0;
++    PyDecContext_Type.tp_repr = (reprfunc) context_repr;
++    PyDecContext_Type.tp_as_number = 0;
++    PyDecContext_Type.tp_as_sequence = 0;
++    PyDecContext_Type.tp_as_mapping = 0;
++    PyDecContext_Type.tp_hash = (hashfunc) 0;
++    PyDecContext_Type.tp_call = 0;
++    PyDecContext_Type.tp_str = (reprfunc) context_repr;
++    PyDecContext_Type.tp_getattro = (getattrofunc) context_getattr;
++    PyDecContext_Type.tp_setattro = (setattrofunc) context_setattr;
++    PyDecContext_Type.tp_as_buffer = (PyBufferProcs *) 0;
++    PyDecContext_Type.tp_flags = Py_TPFLAGS_DEFAULT|Py_TPFLAGS_BASETYPE;
++    PyDecContext_Type.tp_doc = doc_context;
++    PyDecContext_Type.tp_traverse = 0;
++    PyDecContext_Type.tp_clear = 0;
++    PyDecContext_Type.tp_richcompare = 0;
++    PyDecContext_Type.tp_weaklistoffset = 0;
++    PyDecContext_Type.tp_iter = 0;
++    PyDecContext_Type.tp_iternext = 0;
++    PyDecContext_Type.tp_methods = context_methods;
++    PyDecContext_Type.tp_members = 0;
++    PyDecContext_Type.tp_getset = context_getsets;
++    PyDecContext_Type.tp_base = 0;
++    PyDecContext_Type.tp_dict = 0;
++    PyDecContext_Type.tp_descr_get = 0;
++    PyDecContext_Type.tp_descr_set = 0;
++    PyDecContext_Type.tp_dictoffset = 0;
++    PyDecContext_Type.tp_init = context_init;
++    PyDecContext_Type.tp_alloc = 0;
++    PyDecContext_Type.tp_new = context_new;
++    PyDecContext_Type.tp_free = PyObject_Del;
++}
++
++static void reset_PyDecContextManager_Type() {
++    PyDecContextManager_Type.tp_itemsize = 0;
++    PyDecContextManager_Type.tp_dealloc = (destructor) ctxmanager_dealloc;
++    PyDecContextManager_Type.tp_print = 0;
++    PyDecContextManager_Type.tp_getattr = (getattrfunc) 0;
++    PyDecContextManager_Type.tp_setattr = (setattrfunc) 0;
++    // PyDecContextManager_Type.tp_reserved = 0;
++    PyDecContextManager_Type.tp_repr = (reprfunc) 0;
++    PyDecContextManager_Type.tp_as_number = 0;
++    PyDecContextManager_Type.tp_as_sequence = 0;
++    PyDecContextManager_Type.tp_as_mapping = 0;
++    PyDecContextManager_Type.tp_hash = 0;
++    PyDecContextManager_Type.tp_call = 0;
++    PyDecContextManager_Type.tp_str = 0;
++    PyDecContextManager_Type.tp_getattro = (getattrofunc) PyObject_GenericGetAttr;
++    PyDecContextManager_Type.tp_setattro = (setattrofunc) 0;
++    PyDecContextManager_Type.tp_as_buffer = (PyBufferProcs *) 0;
++    PyDecContextManager_Type.tp_flags = Py_TPFLAGS_DEFAULT;
++    PyDecContextManager_Type.tp_doc = 0;
++    PyDecContextManager_Type.tp_traverse = 0;
++    PyDecContextManager_Type.tp_clear = 0;
++    PyDecContextManager_Type.tp_richcompare = 0;
++    PyDecContextManager_Type.tp_weaklistoffset = 0;
++    PyDecContextManager_Type.tp_iter = 0;
++    PyDecContextManager_Type.tp_iternext = 0;
++    PyDecContextManager_Type.tp_methods = ctxmanager_methods;
++}
++
++static void reset_PyDecSignalDictMixin_Type() {
++    PyDecSignalDictMixin_Type.tp_itemsize = 0;
++    PyDecSignalDictMixin_Type.tp_dealloc = 0;
++    PyDecSignalDictMixin_Type.tp_print = 0;
++    PyDecSignalDictMixin_Type.tp_getattr = (getattrfunc) 0;
++    PyDecSignalDictMixin_Type.tp_setattr = (setattrfunc) 0;
++    // PyDecSignalDictMixin_Type.tp_reserved = 0;
++    PyDecSignalDictMixin_Type.tp_repr = (reprfunc) signaldict_repr;
++    PyDecSignalDictMixin_Type.tp_as_number = 0;
++    PyDecSignalDictMixin_Type.tp_as_sequence = 0;
++    PyDecSignalDictMixin_Type.tp_as_mapping = &signaldict_as_mapping;
++    PyDecSignalDictMixin_Type.tp_hash = PyObject_HashNotImplemented;
++    PyDecSignalDictMixin_Type.tp_call = 0;
++    PyDecSignalDictMixin_Type.tp_str = (reprfunc) 0;
++    PyDecSignalDictMixin_Type.tp_getattro = PyObject_GenericGetAttr;
++    PyDecSignalDictMixin_Type.tp_setattro = (setattrofunc) 0;
++    PyDecSignalDictMixin_Type.tp_as_buffer = (PyBufferProcs *) 0;
++    PyDecSignalDictMixin_Type.tp_flags = Py_TPFLAGS_DEFAULT|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC;
++    PyDecSignalDictMixin_Type.tp_doc = 0;
++    PyDecSignalDictMixin_Type.tp_traverse = 0;
++    PyDecSignalDictMixin_Type.tp_clear = 0;
++    PyDecSignalDictMixin_Type.tp_richcompare = signaldict_richcompare;
++    PyDecSignalDictMixin_Type.tp_weaklistoffset = 0;
++    PyDecSignalDictMixin_Type.tp_iter = (getiterfunc)signaldict_iter;
++    PyDecSignalDictMixin_Type.tp_iternext = 0;
++    PyDecSignalDictMixin_Type.tp_methods = signaldict_methods;
++    PyDecSignalDictMixin_Type.tp_members = 0;
++    PyDecSignalDictMixin_Type.tp_getset = 0;
++    PyDecSignalDictMixin_Type.tp_base = 0;
++    PyDecSignalDictMixin_Type.tp_dict = 0;
++    PyDecSignalDictMixin_Type.tp_descr_get = 0;
++    PyDecSignalDictMixin_Type.tp_descr_set = 0;
++    PyDecSignalDictMixin_Type.tp_dictoffset = 0;
++    PyDecSignalDictMixin_Type.tp_init = (initproc)signaldict_init;
++    PyDecSignalDictMixin_Type.tp_alloc = 0;
++    PyDecSignalDictMixin_Type.tp_new = PyType_GenericNew;
++
++}
++
++static void reset_decimal_types() {
++    // iOS: reset the types to their default values, so they are back to their
++    // original self after a PyFinalize() / PyInitialize() pair of calls.
++    // We cannot call this function as the destructor, as type.dealloc() members
++    // will be called later, in another destructor. So we call it in the initializer.
++    reset_PyDec_Type();
++    reset_PyDecContext_Type();
++    reset_PyDecContextManager_Type();
++    reset_PyDecSignalDictMixin_Type();
++}
++
+ static struct PyModuleDef _decimal_module = {
+     PyModuleDef_HEAD_INIT,
+     "decimal",
+@@ -5513,7 +5671,6 @@
+     return NULL;
+ }
+ 
+-
+ PyMODINIT_FUNC
+ PyInit__decimal(void)
+ {
+@@ -5544,6 +5701,9 @@
+         goto error;
+     }
+ 
++    // iOS: reset all types to their default values (0, mostly)
++    reset_decimal_types();
++    
+     /* Init external C-API functions */
+     _py_long_multiply = PyLong_Type.tp_as_number->nb_multiply;
+     _py_long_floor_divide = PyLong_Type.tp_as_number->nb_floor_divide;
+@@ -5553,7 +5713,6 @@
+                                                         "as_integer_ratio"));
+     ASSIGN_PTR(_py_long_bit_length, cfunc_noargs(&PyLong_Type, "bit_length"));
+ 
+-
+     /* Init types */
+     PyDec_Type.tp_base = &PyBaseObject_Type;
+     PyDecContext_Type.tp_base = &PyBaseObject_Type;
 diff -Naur tmp/Python-3.7.1/Modules/_hashopenssl.c Python-3.7.1/Modules/_hashopenssl.c
 --- tmp/Python-3.7.1/Modules/_hashopenssl.c	2018-10-20 08:04:19.000000000 +0200
 +++ Python-3.7.1/Modules/_hashopenssl.c	2018-12-24 16:05:10.000000000 +0100
@@ -640,17 +817,8 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
          /* Capture errno for the exception. */
 diff -Naur tmp/Python-3.7.1/Modules/_ssl.c Python-3.7.1/Modules/_ssl.c
 --- tmp/Python-3.7.1/Modules/_ssl.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_ssl.c	2019-01-25 10:49:11.000000000 +0100
-@@ -4212,6 +4212,8 @@
- _ssl__SSLContext_set_default_verify_paths_impl(PySSLContext *self)
- /*[clinic end generated code: output=0bee74e6e09deaaa input=35f3408021463d74]*/
- {
-+    fprintf(stderr, "Entering the difficult function. self = %x ; self->ctx = %x \n");
-+    fflush(stderr);
-     if (!SSL_CTX_set_default_verify_paths(self->ctx)) {
-         _setSSLError(NULL, 0, __FILE__, __LINE__);
-         return NULL;
-@@ -5651,19 +5653,29 @@
++++ Python-3.7.1/Modules/_ssl.c	2019-01-28 22:58:55.000000000 +0100
+@@ -5651,19 +5651,29 @@
  for documentation.");
  
  
@@ -690,7 +858,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_ssl.c Python-3.7.1/Modules/_ssl.c
                        unsigned int *major, unsigned int *minor,
 diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 --- tmp/Python-3.7.1/Modules/config.c	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Modules/config.c	2019-01-24 16:58:41.000000000 +0100
++++ Python-3.7.1/Modules/config.c	2019-02-11 11:46:47.000000000 +0100
 @@ -0,0 +1,305 @@
 +/* Generated automatically from ./Modules/config.c.in by makesetup. */
 +/* -*- C -*- ***********************************************
@@ -781,7 +949,7 @@ diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 +PyMODINIT_FUNC PyInit_syslog(void);
 +PyMODINIT_FUNC PyInit__xxtestfuzz(void);
 +PyMODINIT_FUNC PyInit_audioop(void);
-+PyMODINIT_FUNC PyInit_readline(void);
++// PyMODINIT_FUNC PyInit_readline(void); // not compatible with AppStore
 +PyMODINIT_FUNC PyInit__crypt(void);
 +PyMODINIT_FUNC PyInit__csv(void);
 +PyMODINIT_FUNC PyInit__posixsubprocess(void);
@@ -796,11 +964,11 @@ diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 +PyMODINIT_FUNC PyInit__sha3(void);
 +PyMODINIT_FUNC PyInit_termios(void);
 +PyMODINIT_FUNC PyInit_resource(void);
-+PyMODINIT_FUNC PyInit__curses(void);
++// PyMODINIT_FUNC PyInit__curses(void); // not compatible with AppStore
 +// PyMODINIT_FUNC PyInit__curses_panel(void); // Library not loaded: /usr/lib/libpanel.5.4.dylib
 +PyMODINIT_FUNC PyInit_binascii(void);
 +PyMODINIT_FUNC PyInit__bz2(void);
-+PyMODINIT_FUNC PyInit__lzma(void);
++// PyMODINIT_FUNC PyInit__lzma(void);  // not compatible with AppStore
 +PyMODINIT_FUNC PyInit_pyexpat(void);
 +PyMODINIT_FUNC PyInit__elementtree(void);
 +PyMODINIT_FUNC PyInit__multibytecodec(void);
@@ -925,7 +1093,7 @@ diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 +    {"syslog", PyInit_syslog},
 +    {"_fuzz", PyInit__xxtestfuzz},
 +    {"audioop", PyInit_audioop},
-+    {"readline", PyInit_readline},
++    // {"readline", PyInit_readline}, // not compatible with AppStore
 +    {"_crypt", PyInit__crypt},
 +    {"_csv", PyInit__csv},
 +    {"_posixsubprocess", PyInit__posixsubprocess},
@@ -940,11 +1108,11 @@ diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 +    {"_sha3", PyInit__sha3},
 +    {"termios", PyInit_termios},
 +    {"resource", PyInit_resource},
-+    {"_curses", PyInit__curses},
++    // {"_curses", PyInit__curses},  // Not compatible with AppStore
 +    // {"_curses_panel", PyInit__curses_panel}, // Library not loaded: /usr/lib/libpanel.5.4.dylib
 +    {"binascii", PyInit_binascii},
 +    {"_bz2", PyInit__bz2},
-+    {"_lzma", PyInit__lzma},
++    // {"_lzma", PyInit__lzma},  // not compatible with AppStore
 +    {"pyexpat", PyInit_pyexpat},
 +    {"_elementtree", PyInit__elementtree},
 +    {"_multibytecodec", PyInit__multibytecodec},

@@ -1,0 +1,83 @@
+diff -Naur tmp/Python-3.7.1/Objects/moduleobject.c Python-3.7.1/Objects/moduleobject.c
+--- tmp/Python-3.7.1/Objects/moduleobject.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Objects/moduleobject.c	2019-02-05 12:50:25.000000000 +0100
+@@ -214,7 +214,7 @@
+     }
+     if ((m = (PyModuleObject*)PyModule_New(name)) == NULL)
+         return NULL;
+-
++    
+     if (module->m_size > 0) {
+         m->md_state = PyMem_MALLOC(module->m_size);
+         if (!m->md_state) {
+diff -Naur tmp/Python-3.7.1/Objects/typeobject.c Python-3.7.1/Objects/typeobject.c
+--- tmp/Python-3.7.1/Objects/typeobject.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Objects/typeobject.c	2019-02-08 17:21:54.000000000 +0100
+@@ -1253,7 +1253,7 @@
+     if (PyType_IS_GC(base))
+         _PyObject_GC_TRACK(self);
+     assert(basedealloc);
+-    basedealloc(self);
++        basedealloc(self);
+ 
+     /* Can't reference self beyond this point. It's possible tp_del switched
+        our type from a HEAPTYPE to a non-HEAPTYPE, so be careful about
+@@ -4959,11 +4959,18 @@
+ 
+     /* This won't inherit indirect slots (from tp_as_number etc.)
+        if type doesn't provide the space. */
+-
++    if (Py_VerboseFlag) {
++        fprintf(stderr, "type->tp_as_number = %x base->tp_as_number = %x \n", type->tp_as_number, base->tp_as_number);
++    }
+     if (type->tp_as_number != NULL && base->tp_as_number != NULL) {
+         basebase = base->tp_base;
+         if (basebase->tp_as_number == NULL)
+             basebase = NULL;
++        if (Py_VerboseFlag) {
++            fprintf(stderr, "basebase = %x ", basebase);
++            if (basebase != NULL) fprintf(stderr, "basebase>tp_as_number = %x \n", basebase->tp_as_number);
++            else fprintf(stderr, "\n");
++        }
+         COPYNUM(nb_add);
+         COPYNUM(nb_subtract);
+         COPYNUM(nb_multiply);
+@@ -5001,6 +5008,7 @@
+         COPYNUM(nb_inplace_matrix_multiply);
+     }
+ 
++    if (Py_VerboseFlag) fprintf(stderr, "Inside inherit_slots, after COPYNUM: PyUnicode_Type.tp_as_number.nb_bool = %x \n", (unsigned int) PyUnicode_Type.tp_as_number->nb_bool);
+     if (type->tp_as_async != NULL && base->tp_as_async != NULL) {
+         basebase = base->tp_base;
+         if (basebase->tp_as_async == NULL)
+@@ -5208,17 +5216,22 @@
+     if (type->tp_base != NULL)
+         inherit_special(type, type->tp_base);
+ 
++    if (Py_VerboseFlag) fprintf(stderr, "Inside PyTypeReady, after inherit_special: PyUnicode_Type.tp_as_number.nb_bool = %x \n", (unsigned int) PyUnicode_Type.tp_as_number->nb_bool); // Not yet
++
+     /* Initialize tp_dict properly */
+     bases = type->tp_mro;
+     assert(bases != NULL);
+     assert(PyTuple_Check(bases));
+     n = PyTuple_GET_SIZE(bases);
++    if (Py_VerboseFlag) fprintf(stderr, "Inside PyTypeReady: before inherit_slots = %x \n", (unsigned int) PyUnicode_Type.tp_as_number->nb_bool); // done
+     for (i = 1; i < n; i++) {
+         PyObject *b = PyTuple_GET_ITEM(bases, i);
+         if (PyType_Check(b))
+             inherit_slots(type, (PyTypeObject *)b);
+     }
+ 
++    if (Py_VerboseFlag) fprintf(stderr, "Inside PyTypeReady: after inherit_slots = %x \n", (unsigned int) PyUnicode_Type.tp_as_number->nb_bool); // done
++    
+     /* All bases of statically allocated type should be statically allocated */
+     if (!(type->tp_flags & Py_TPFLAGS_HEAPTYPE))
+         for (i = 0; i < n; i++) {
+@@ -5281,7 +5294,6 @@
+             type->tp_hash = PyObject_HashNotImplemented;
+         }
+     }
+-
+     /* Some more special stuff */
+     base = type->tp_base;
+     if (base != NULL) {

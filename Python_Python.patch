@@ -1,3 +1,33 @@
+diff -Naur tmp/Python-3.7.1/Python/ceval.c Python-3.7.1/Python/ceval.c
+--- tmp/Python-3.7.1/Python/ceval.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Python/ceval.c	2019-02-07 17:17:55.000000000 +0100
+@@ -618,6 +618,10 @@
+    can be disabled on gcc by using the -fno-gcse flag (or possibly
+    -fno-crossjumping).
+ */
++    
++    // iOS addition: computed gotos are a static variable (array of goto destinations)
++    // This can't work with iOS model, based on dynamic libraries. We've
++    // disabled the acceleration in pyconfig.h
+ 
+ #ifdef DYNAMIC_EXECUTION_PROFILE
+ #undef USE_COMPUTED_GOTOS
+@@ -1060,7 +1064,6 @@
+             }
+         }
+ #endif
+-
+         switch (opcode) {
+ 
+         /* BEWARE!
+@@ -2127,7 +2130,6 @@
+             }
+             else {
+                 /* Slow-path if globals or builtins is not a dict */
+-
+                 /* namespace 1: globals */
+                 v = PyObject_GetItem(f->f_globals, name);
+                 if (v == NULL) {
 diff -Naur tmp/Python-3.7.1/Python/dynload_shlib.c Python-3.7.1/Python/dynload_shlib.c
 --- tmp/Python-3.7.1/Python/dynload_shlib.c	2018-10-20 08:04:19.000000000 +0200
 +++ Python-3.7.1/Python/dynload_shlib.c	2019-01-02 22:28:38.000000000 +0100
@@ -40,9 +70,21 @@ diff -Naur tmp/Python-3.7.1/Python/getplatform.c Python-3.7.1/Python/getplatform
  #endif
  
  const char *
+diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
+--- tmp/Python-3.7.1/Python/import.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Python/import.c	2019-02-05 13:13:00.000000000 +0100
+@@ -413,7 +413,7 @@
+        destruction order.  Sigh. */
+ 
+     /* XXX Perhaps these precautions are obsolete. Who knows? */
+-
++    
+     if (Py_VerboseFlag)
+         PySys_WriteStderr("# clear builtins._\n");
+     if (PyDict_SetItemString(interp->builtins, "_", Py_None) < 0) {
 diff -Naur tmp/Python-3.7.1/Python/pylifecycle.c Python-3.7.1/Python/pylifecycle.c
 --- tmp/Python-3.7.1/Python/pylifecycle.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/pylifecycle.c	2019-01-06 21:12:41.000000000 +0100
++++ Python-3.7.1/Python/pylifecycle.c	2019-02-07 21:41:22.000000000 +0100
 @@ -2097,7 +2097,7 @@
  static void _Py_NO_RETURN
  fatal_error(const char *prefix, const char *msg, int status)
