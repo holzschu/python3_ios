@@ -378,7 +378,7 @@ diff -Naur tmp/Python-3.7.1/Modules/Setup.local Python-3.7.1/Modules/Setup.local
 +# Edit this file for local setup changes
 diff -Naur tmp/Python-3.7.1/Modules/_asynciomodule.c Python-3.7.1/Modules/_asynciomodule.c
 --- tmp/Python-3.7.1/Modules/_asynciomodule.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_asynciomodule.c	2019-02-06 10:37:26.000000000 +0100
++++ Python-3.7.1/Modules/_asynciomodule.c	2019-02-26 18:03:47.000000000 +0100
 @@ -3198,6 +3198,9 @@
  
      Py_CLEAR(context_kwname);
@@ -677,7 +677,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_hashopenssl.c Python-3.7.1/Modules/_hashope
  PyMODINIT_FUNC
 diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_posixsubprocess.c
 --- tmp/Python-3.7.1/Modules/_posixsubprocess.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/_posixsubprocess.c	2019-01-18 13:47:20.000000000 +0100
++++ Python-3.7.1/Modules/_posixsubprocess.c	2019-02-26 17:54:02.000000000 +0100
 @@ -45,7 +45,6 @@
  
  #define POSIX_CALL(call)   do { if ((call) == -1) goto error; } while (0)
@@ -788,7 +788,17 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
  static PyObject *
  subprocess_fork_exec(PyObject* self, PyObject *args)
  {
-@@ -692,15 +712,24 @@
+@@ -677,7 +697,9 @@
+     }
+ 
+     pid = fork();
++#ifndef TARGET_OS_IPHONE
+     if (pid == 0) {
++#endif
+         /* Child process */
+         /*
+          * Code from here to _exit() must only use async-signal-safe functions,
+@@ -692,15 +714,24 @@
               * to avoid deadlock... */
              PyOS_AfterFork_Child();
          }
@@ -809,8 +819,8 @@ diff -Naur tmp/Python-3.7.1/Modules/_posixsubprocess.c Python-3.7.1/Modules/_pos
          _exit(255);
 -        return NULL;  /* Dead code to avoid a potential compiler warning. */
 +        return NULL;
-+#endif
      }
++#endif
 +    // TODO: cleanup memory allocation in iOS
      /* Parent (original) process */
      if (pid == -1) {
@@ -1218,7 +1228,7 @@ diff -Naur tmp/Python-3.7.1/Modules/faulthandler.c Python-3.7.1/Modules/faulthan
      int save_errno = errno;
 diff -Naur tmp/Python-3.7.1/Modules/getpath.c Python-3.7.1/Modules/getpath.c
 --- tmp/Python-3.7.1/Modules/getpath.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/getpath.c	2018-12-31 18:21:33.000000000 +0100
++++ Python-3.7.1/Modules/getpath.c	2019-02-25 08:05:43.000000000 +0100
 @@ -558,8 +558,17 @@
        * will fail if a relative path was used. but in that case,
        * absolutize() should help us out below
@@ -1466,7 +1476,7 @@ diff -Naur tmp/Python-3.7.1/Modules/main.c Python-3.7.1/Modules/main.c
  
 diff -Naur tmp/Python-3.7.1/Modules/posixmodule.c Python-3.7.1/Modules/posixmodule.c
 --- tmp/Python-3.7.1/Modules/posixmodule.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/posixmodule.c	2018-12-25 12:04:59.000000000 +0100
++++ Python-3.7.1/Modules/posixmodule.c	2019-02-26 17:56:09.000000000 +0100
 @@ -5018,6 +5018,10 @@
      execv(path->narrow, argvlist);
  #endif
@@ -1492,18 +1502,27 @@ diff -Naur tmp/Python-3.7.1/Modules/posixmodule.c Python-3.7.1/Modules/posixmodu
  
      /* If we get here it's definitely an error */
  
-@@ -5423,6 +5434,10 @@
- os_fork_impl(PyObject *module)
- /*[clinic end generated code: output=3626c81f98985d49 input=13c956413110eeaa]*/
- {
-+#ifdef TARGET_OS_IPHONE
-+    PyObject* newPid = PyLong_FromPid(0);
-+    return newPid;
-+#endif
-     pid_t pid;
+@@ -5427,13 +5438,19 @@
  
      PyOS_BeforeFork();
-@@ -7034,6 +7049,7 @@
+     pid = fork();
++#ifdef TARGET_OS_IPHONE // on iOS, go through both branches:
+     if (pid == 0) {
++#endif
+         /* child: this clobbers and resets the import lock. */
+         PyOS_AfterFork_Child();
++#ifdef TARGET_OS_IPHONE // on iOS, go through both branches:
+     } else {
++#endif
+         /* parent: release the import lock. */
+         PyOS_AfterFork_Parent();
++#ifdef TARGET_OS_IPHONE // on iOS, go through both branches:
+     }
++#endif
+     if (pid == -1)
+         return posix_error();
+     return PyLong_FromPid(pid);
+@@ -7034,6 +7051,7 @@
      do {
          Py_BEGIN_ALLOW_THREADS
          res = waitpid(pid, &status, options);

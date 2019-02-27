@@ -48,7 +48,7 @@ diff -Naur tmp/Python-3.7.1/Python/dynload_shlib.c Python-3.7.1/Python/dynload_s
  
 diff -Naur tmp/Python-3.7.1/Python/fileutils.c Python-3.7.1/Python/fileutils.c
 --- tmp/Python-3.7.1/Python/fileutils.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/fileutils.c	2018-12-31 14:32:58.000000000 +0100
++++ Python-3.7.1/Python/fileutils.c	2019-02-17 20:28:32.000000000 +0100
 @@ -1375,7 +1375,7 @@
          count = PY_SSIZE_T_MAX;
      }
@@ -72,7 +72,7 @@ diff -Naur tmp/Python-3.7.1/Python/getplatform.c Python-3.7.1/Python/getplatform
  const char *
 diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
 --- tmp/Python-3.7.1/Python/import.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/import.c	2019-02-05 13:13:00.000000000 +0100
++++ Python-3.7.1/Python/import.c	2019-02-22 20:36:44.000000000 +0100
 @@ -413,7 +413,7 @@
         destruction order.  Sigh. */
  
@@ -84,7 +84,7 @@ diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
      if (PyDict_SetItemString(interp->builtins, "_", Py_None) < 0) {
 diff -Naur tmp/Python-3.7.1/Python/pylifecycle.c Python-3.7.1/Python/pylifecycle.c
 --- tmp/Python-3.7.1/Python/pylifecycle.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/pylifecycle.c	2019-02-07 21:41:22.000000000 +0100
++++ Python-3.7.1/Python/pylifecycle.c	2019-02-21 21:51:49.000000000 +0100
 @@ -2097,7 +2097,7 @@
  static void _Py_NO_RETURN
  fatal_error(const char *prefix, const char *msg, int status)

@@ -100,7 +100,7 @@ diff -Naur tmp/Python-3.7.1/Lib/_osx_support.py Python-3.7.1/Lib/_osx_support.py
      return (osname, release, machine)
 diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py
 --- tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py	2019-01-20 16:21:00.000000000 +0100
++++ Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py	2019-02-26 18:01:03.000000000 +0100
 @@ -0,0 +1,735 @@
 +# system configuration generated and used by the sysconfig module
 +build_time_vars = {'ABIFLAGS': 'm',
@@ -293,7 +293,7 @@ diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py Python-3.7.1/L
 + 'HAVE_FINITE': 1,
 + 'HAVE_FLOCK': 1,
 + 'HAVE_FORK': 1,
-+ 'HAVE_FORKPTY': 1,
++ 'HAVE_FORKPTY': 0,
 + 'HAVE_FPATHCONF': 1,
 + 'HAVE_FSEEK64': 0,
 + 'HAVE_FSEEKO': 1,
@@ -839,7 +839,7 @@ diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_darwin_darwin.py Python-3.7.1/L
 + 
 diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_unknown_darwin.py Python-3.7.1/Lib/_sysconfigdata_m_unknown_darwin.py
 --- tmp/Python-3.7.1/Lib/_sysconfigdata_m_unknown_darwin.py	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Lib/_sysconfigdata_m_unknown_darwin.py	2019-01-20 16:21:05.000000000 +0100
++++ Python-3.7.1/Lib/_sysconfigdata_m_unknown_darwin.py	2019-02-26 18:01:16.000000000 +0100
 @@ -0,0 +1,736 @@
 +# system configuration generated and used by the sysconfig module
 +build_time_vars = {'ABIFLAGS': 'm',
@@ -1031,7 +1031,7 @@ diff -Naur tmp/Python-3.7.1/Lib/_sysconfigdata_m_unknown_darwin.py Python-3.7.1/
 + 'HAVE_FINITE': 1,
 + 'HAVE_FLOCK': 1,
 + 'HAVE_FORK': 1,
-+ 'HAVE_FORKPTY': 1,
++ 'HAVE_FORKPTY': 0,
 + 'HAVE_FPATHCONF': 1,
 + 'HAVE_FSEEK64': 0,
 + 'HAVE_FSEEKO': 1,
@@ -1690,7 +1690,7 @@ diff -Naur tmp/Python-3.7.1/Lib/platform.py Python-3.7.1/Lib/platform.py
      try:
 diff -Naur tmp/Python-3.7.1/Lib/subprocess.py Python-3.7.1/Lib/subprocess.py
 --- tmp/Python-3.7.1/Lib/subprocess.py	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Lib/subprocess.py	2018-12-25 21:59:06.000000000 +0100
++++ Python-3.7.1/Lib/subprocess.py	2019-02-25 08:07:57.000000000 +0100
 @@ -845,6 +845,8 @@
          if not self._child_created:
              # We didn't get to successfully create a child process.
