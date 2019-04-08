@@ -12,6 +12,7 @@ echo "Creating all frameworks:"
 for name in python3_ios pythonA pythonB pythonC pythonD pythonE
 do
 	echo Frameworks/${name}_kiwisolver.framework
+	framework = ${name}_kiwisolver
 	rm -rf ../../Frameworks/${name}-kiwisolver.framework
 	mkdir ../../Frameworks/${name}-kiwisolver.framework
 	cp ../../onIpad/lib/python3.7/site-packages/kiwisolver-1.0.1-py3.7-macosx-10.9-x86_64.egg/kiwisolver.cpython-37m-darwin.so ../../Frameworks/${name}-kiwisolver.framework/${name}-kiwisolver

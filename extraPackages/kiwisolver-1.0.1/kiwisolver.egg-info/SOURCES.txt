@@ -2,6 +2,7 @@ COPYING.txt
 MANIFEST.in
 README.rst
 releasenotes.rst
+setup.cfg
 setup.py
 kiwi/AssocVector.h
 kiwi/constraint.h

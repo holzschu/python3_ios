@@ -38,7 +38,7 @@ class BuildExt(build_ext):
         opts = self.c_opts.get(ct, [])
         for ext in self.extensions:
             ext.extra_compile_args = opts
-        # build_ext.build_extensions(self)
+        build_ext.build_extensions(self)
 
 
 setup(
