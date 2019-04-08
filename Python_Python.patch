@@ -30,8 +30,8 @@ diff -Naur tmp/Python-3.7.1/Python/ceval.c Python-3.7.1/Python/ceval.c
                  if (v == NULL) {
 diff -Naur tmp/Python-3.7.1/Python/dynload_shlib.c Python-3.7.1/Python/dynload_shlib.c
 --- tmp/Python-3.7.1/Python/dynload_shlib.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/dynload_shlib.c	2019-01-02 22:28:38.000000000 +0100
-@@ -64,8 +64,14 @@
++++ Python-3.7.1/Python/dynload_shlib.c	2019-04-07 14:29:52.000000000 +0200
+@@ -64,8 +64,16 @@
      int dlopenflags=0;
  
      if (strchr(pathname, '/') == NULL) {
@@ -41,7 +41,9 @@ diff -Naur tmp/Python-3.7.1/Python/dynload_shlib.c Python-3.7.1/Python/dynload_s
 +#else
 +        /* Prefix bare filenames with "$APPDIR/Frameworks/" */
 +        /* (the only place where we can put dynamic libraries on iOS */
++        fprintf(stderr, "_PyImport_FindSharedFuncptr: %s\n", pathname);
 +        PyOS_snprintf(pathbuf, sizeof(pathbuf), "%s/Frameworks/%s", getenv("APPDIR"), pathname);
++        fprintf(stderr, "_PyImport_FindSharedFuncptr, new path: %s\n", pathbuf);
 +#endif
          pathname = pathbuf;
      }
@@ -72,7 +74,7 @@ diff -Naur tmp/Python-3.7.1/Python/getplatform.c Python-3.7.1/Python/getplatform
  const char *
 diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
 --- tmp/Python-3.7.1/Python/import.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/import.c	2019-02-22 20:36:44.000000000 +0100
++++ Python-3.7.1/Python/import.c	2019-04-08 15:58:30.000000000 +0200
 @@ -413,7 +413,7 @@
         destruction order.  Sigh. */
  
@@ -82,10 +84,97 @@ diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
      if (Py_VerboseFlag)
          PySys_WriteStderr("# clear builtins._\n");
      if (PyDict_SetItemString(interp->builtins, "_", Py_None) < 0) {
+@@ -1367,6 +1367,7 @@
+ {
+     PyObject *nameobj;
+     int ret;
++
+     nameobj = PyUnicode_InternFromString(name);
+     if (nameobj == NULL)
+         return -1;
+@@ -1482,7 +1483,7 @@
+     Py_ssize_t last_dot;
+     PyObject *base;
+     int level_up;
+-
++    
+     if (globals == NULL) {
+         PyErr_SetString(PyExc_KeyError, "'__name__' not in globals");
+         goto error;
+@@ -2118,6 +2119,9 @@
+ 
+ Create an extension module.
+ [clinic start generated code]*/
++#ifdef TARGET_OS_IPHONE
++    extern void Py_GetArgcArgv(int *argc, wchar_t ***argv);
++#endif
+ 
+ static PyObject *
+ _imp_create_dynamic_impl(PyObject *module, PyObject *spec, PyObject *file)
+@@ -2136,9 +2140,30 @@
+         Py_DECREF(name);
+         return NULL;
+     }
++#ifdef TARGET_OS_IPHONE
++    fprintf(stderr, "_imp_create_dynamic_impl, name = ");
++    PyObject_Print(name, stderr, 0);
++    fprintf(stderr, " path = ");
++    PyObject_Print(path, stderr, 0);
++    fprintf(stderr, " file = ");
++    PyObject_Print(file, stderr, 0);
++    fprintf(stderr, " \n");
++    char newPathString[MAXPATHLEN];
++    int argc;
++    wchar_t **argv_orig;
++    Py_GetArgcArgv(&argc, &argv_orig);
++    const char* nameC = PyUnicode_AsUTF8(name);
++    sprintf(newPathString, "%s/Frameworks/%S-%s.framework/%S-%s", getenv("APPDIR"), argv_orig[0], nameC, argv_orig[0], nameC);
++    fprintf(stderr, "New path: %s\n", newPathString);
++    path = PyUnicode_FromString(newPathString);
++    PyObject_SetAttrString(spec, "origin", path);
++#endif
+ 
+     mod = _PyImport_FindExtensionObject(name, path);
+     if (mod != NULL) {
++#ifdef TARGET_OS_IPHONE
++        fprintf(stderr, "Already imported.\n");
++#endif
+         Py_DECREF(name);
+         Py_DECREF(path);
+         Py_INCREF(mod);
+@@ -2148,6 +2173,9 @@
+     if (file != NULL) {
+         fp = _Py_fopen_obj(path, "r");
+         if (fp == NULL) {
++#ifdef TARGET_OS_IPHONE
++            fprintf(stderr, " _Py_fopen_obj is NULL (logical) ");
++#endif
+             Py_DECREF(name);
+             Py_DECREF(path);
+             return NULL;
+diff -Naur tmp/Python-3.7.1/Python/pathconfig.c Python-3.7.1/Python/pathconfig.c
+--- tmp/Python-3.7.1/Python/pathconfig.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Python/pathconfig.c	2019-04-06 22:39:42.000000000 +0200
+@@ -277,6 +277,7 @@
+ #endif
+ 
+     argv0 = argv[0];
++    
+     if (argc > 0 && argv0 != NULL) {
+         have_module_arg = (wcscmp(argv0, L"-m") == 0);
+         have_script_arg = !have_module_arg && (wcscmp(argv0, L"-c") != 0);
 diff -Naur tmp/Python-3.7.1/Python/pylifecycle.c Python-3.7.1/Python/pylifecycle.c
 --- tmp/Python-3.7.1/Python/pylifecycle.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/pylifecycle.c	2019-02-21 21:51:49.000000000 +0100
-@@ -2097,7 +2097,7 @@
++++ Python-3.7.1/Python/pylifecycle.c	2019-04-08 11:02:01.000000000 +0200
+@@ -893,6 +893,7 @@
+  * Other errors should be reported as normal Python exceptions with a
+  * non-zero return code.
+  */
++
+ _PyInitError
+ _Py_InitializeMainInterpreter(PyInterpreterState *interp,
+                               const _PyMainInterpreterConfig *config)
+@@ -2097,7 +2098,7 @@
  static void _Py_NO_RETURN
  fatal_error(const char *prefix, const char *msg, int status)
  {
@@ -94,7 +183,7 @@ diff -Naur tmp/Python-3.7.1/Python/pylifecycle.c Python-3.7.1/Python/pylifecycle
      static int reentrant = 0;
  
      if (reentrant) {
-@@ -2107,19 +2107,19 @@
+@@ -2107,19 +2108,19 @@
      }
      reentrant = 1;
  

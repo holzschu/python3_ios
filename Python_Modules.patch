@@ -868,7 +868,7 @@ diff -Naur tmp/Python-3.7.1/Modules/_ssl.c Python-3.7.1/Modules/_ssl.c
                        unsigned int *major, unsigned int *minor,
 diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 --- tmp/Python-3.7.1/Modules/config.c	1970-01-01 01:00:00.000000000 +0100
-+++ Python-3.7.1/Modules/config.c	2019-02-11 11:46:47.000000000 +0100
++++ Python-3.7.1/Modules/config.c	2019-04-05 14:33:36.000000000 +0200
 @@ -0,0 +1,305 @@
 +/* Generated automatically from ./Modules/config.c.in by makesetup. */
 +/* -*- C -*- ***********************************************
@@ -1021,7 +1021,7 @@ diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 +PyMODINIT_FUNC PyInit_matplotlib__qhull(void);
 +PyMODINIT_FUNC PyInit_matplotlib__tri(void);
 +PyMODINIT_FUNC PyInit_matplotlib_backends__backend_agg(void);
-+PyMODINIT_FUNC PyInit_kiwisolver( void );
++// PyMODINIT_FUNC PyInit_kiwisolver( void );
 +
 +struct _inittab _PyImport_Inittab[] = {
 +
@@ -1166,7 +1166,7 @@ diff -Naur tmp/Python-3.7.1/Modules/config.c Python-3.7.1/Modules/config.c
 +    {"matplotlib__qhull", PyInit_matplotlib__qhull},
 +    {"matplotlib__tri", PyInit_matplotlib__tri},
 +    {"matplotlib_backends__backend_agg", PyInit_matplotlib_backends__backend_agg},
-+    {"kiwisolver", PyInit_kiwisolver},
++    // {"kiwisolver", PyInit_kiwisolver},
 +    /* Sentinel */
 +    {0, 0}
 +};
@@ -1448,8 +1448,24 @@ diff -Naur tmp/Python-3.7.1/Modules/ld_so_aix Python-3.7.1/Modules/ld_so_aix
 +exit $retval
 diff -Naur tmp/Python-3.7.1/Modules/main.c Python-3.7.1/Modules/main.c
 --- tmp/Python-3.7.1/Modules/main.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Modules/main.c	2019-01-25 22:36:59.000000000 +0100
-@@ -2629,7 +2629,6 @@
++++ Python-3.7.1/Modules/main.c	2019-04-07 14:31:01.000000000 +0200
+@@ -1347,6 +1347,7 @@
+     /* Prepend argv[0] to sys.path.
+        If argv[0] is a symlink, use the real path. */
+     PyObject *sys_path = PySys_GetObject("path");
++
+     if (sys_path == NULL) {
+         pymain->err = _Py_INIT_ERR("can't get sys.path");
+         return -1;
+@@ -2568,6 +2569,7 @@
+ 
+     _PyMainInterpreterConfig main_config = _PyMainInterpreterConfig_INIT;
+     err = _PyMainInterpreterConfig_Read(&main_config, &interp->core_config);
++
+     if (!_Py_INIT_FAILED(err)) {
+         err = _Py_InitializeMainInterpreter(interp, &main_config);
+     }
+@@ -2629,7 +2631,6 @@
      pymain_repl(pymain, &cf);
  }
  
@@ -1457,7 +1473,21 @@ diff -Naur tmp/Python-3.7.1/Modules/main.c Python-3.7.1/Modules/main.c
  static int
  pymain_cmdline_impl(_PyMain *pymain, _PyCoreConfig *config,
                      _PyCmdline *cmdline)
-@@ -2775,7 +2774,6 @@
+@@ -2764,18 +2765,18 @@
+ 
+     pymain_clear_config(&local_config);
+     config = &interp->core_config;
+-
++    
++    // ios, debug: here, sys_path is nil
++    
+     if (pymain_init_python_main(pymain, interp) < 0) {
+         _Py_FatalInitError(pymain->err);
+     }
+-
+     if (pymain_init_sys_path(pymain, config) < 0) {
+         _Py_FatalInitError(pymain->err);
+     }
      return 0;
  }
  
@@ -1465,7 +1495,7 @@ diff -Naur tmp/Python-3.7.1/Modules/main.c Python-3.7.1/Modules/main.c
  static int
  pymain_main(_PyMain *pymain)
  {
-@@ -2818,7 +2816,7 @@
+@@ -2818,7 +2819,7 @@
      pymain.use_bytes_argv = 1;
      pymain.argc = argc;
      pymain.bytes_argv = argv;

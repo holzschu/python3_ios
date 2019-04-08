@@ -53,13 +53,6 @@
 		22035CB621F8BF81007A0F60 /* _tri.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CB421F8BF81007A0F60 /* _tri.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__tri_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		22035CBA21F8C69A007A0F60 /* _backend_agg_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CB821F8C69A007A0F60 /* _backend_agg_wrapper.cpp */; settings = {COMPILER_FLAGS = "-g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_backends__backend_agg_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -DFREETYPE_BUILD_TYPE=system -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Frameworks/freetype.framework/Headers/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
 		22035CBB21F8C69A007A0F60 /* _backend_agg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CB921F8C69A007A0F60 /* _backend_agg.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib_backends__backend_agg_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -DFREETYPE_BUILD_TYPE=system -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Frameworks/freetype.framework/Headers/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
-		22035CC721F9C6D4007A0F60 /* kiwisolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC021F9C6D3007A0F60 /* kiwisolver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
-		22035CC821F9C6D4007A0F60 /* term.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC121F9C6D3007A0F60 /* term.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
-		22035CC921F9C6D4007A0F60 /* strength.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC221F9C6D3007A0F60 /* strength.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
-		22035CCA21F9C6D4007A0F60 /* solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC321F9C6D3007A0F60 /* solver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
-		22035CCB21F9C6D4007A0F60 /* variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC421F9C6D3007A0F60 /* variable.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
-		22035CCC21F9C6D4007A0F60 /* constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC521F9C6D3007A0F60 /* constraint.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
-		22035CCD21F9C6D4007A0F60 /* expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC621F9C6D3007A0F60 /* expression.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		2219EAAD21F4EE02004CF7FA /* npy_math_complex.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAA21F4EE01004CF7FA /* npy_math_complex.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		2219EAAE21F4EE02004CF7FA /* ieee754.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAB21F4EE01004CF7FA /* ieee754.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		2219EAB121F4EF3C004CF7FA /* npy_math.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAF21F4EF3C004CF7FA /* npy_math.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
@@ -172,7 +165,6 @@
 		223549BD22109AC6009A404C /* shape.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0121F6192C004CF7FA /* shape.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		223549BE22109AC6009A404C /* xxsubtype.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B521C6AEC800A71A20 /* xxsubtype.c */; };
 		223549BF22109AC6009A404C /* _contour_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8921F8BB73007A0F60 /* _contour_wrapper.cpp */; settings = {COMPILER_FLAGS = "-g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__contour_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
-		223549C022109AC6009A404C /* term.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC121F9C6D3007A0F60 /* term.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		223549C122109AC6009A404C /* _asynciomodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4E321C6B8BD00A71A20 /* _asynciomodule.c */; };
 		223549C222109AC6009A404C /* binascii.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED53421C700F500A71A20 /* binascii.c */; };
 		223549C322109AC6009A404C /* bytearrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2F21C66D3A00967E21 /* bytearrayobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -210,7 +202,6 @@
 		223549E422109AC6009A404C /* abstract.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1A21C66D3800967E21 /* abstract.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223549E522109AC6009A404C /* _testbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4D521C6B85800A71A20 /* _testbuffer.c */; };
 		223549E622109AC6009A404C /* pwdmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A921C6AE7C00A71A20 /* pwdmodule.c */; };
-		223549E722109AC6009A404C /* kiwisolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC021F9C6D3007A0F60 /* kiwisolver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
 		223549E822109AC6009A404C /* formatter_unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42421C6AB5000A71A20 /* formatter_unicode.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223549E922109AC6009A404C /* _image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6021F8A660007A0F60 /* _image.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		223549EA22109AC6009A404C /* qhull_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8E21F8BD36007A0F60 /* qhull_wrap.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
@@ -220,7 +211,6 @@
 		223549EE22109AC6009A404C /* listobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2321C66D3900967E21 /* listobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223549EF22109AC6009A404C /* agg_trans_affine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6A21F8A6C0007A0F60 /* agg_trans_affine.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		223549F022109AC6009A404C /* npy_math_complex.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAA21F4EE01004CF7FA /* npy_math_complex.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		223549F122109AC6009A404C /* solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC321F9C6D3007A0F60 /* solver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		223549F222109AC6009A404C /* conversion_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD921F61796004CF7FA /* conversion_utils.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		223549F322109AC6009A404C /* convert_datatype.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD121F61757004CF7FA /* convert_datatype.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		223549F422109AC6009A404C /* sha256module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50621C6BD5500A71A20 /* sha256module.c */; };
@@ -318,13 +308,11 @@
 		22354A5022109AC6009A404C /* user.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9D21F8BD78007A0F60 /* user.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		22354A5122109AC6009A404C /* odictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1D21C66D3900967E21 /* odictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354A5222109AC6009A404C /* fftpack_litemodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB5521F63E52004CF7FA /* fftpack_litemodule.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0//Library/Frameworks/Python.framework/Versions/3.6/include/python3.6m -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354A5322109AC6009A404C /* variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC421F9C6D3007A0F60 /* variable.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354A5422109AC6009A404C /* convolute.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED56121C704B400A71A20 /* convolute.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		22354A5522109AC6009A404C /* pyarena.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED44C21C6ABD100A71A20 /* pyarena.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354A5622109AC6009A404C /* sha1module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50B21C6BD6E00A71A20 /* sha1module.c */; };
 		22354A5722109AC6009A404C /* dictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1821C66D3800967E21 /* dictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354A5822109AC6009A404C /* poly.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9721F8BD77007A0F60 /* poly.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
-		22354A5922109AC6009A404C /* strength.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC221F9C6D3007A0F60 /* strength.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354A5A22109AC6009A404C /* python_xerbla.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4021F61C49004CF7FA /* python_xerbla.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354A5B22109AC6009A404C /* arrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD321F61763004CF7FA /* arrayobject.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354A5C22109AC6009A404C /* zipimport.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B721C6AECE00A71A20 /* zipimport.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -373,7 +361,6 @@
 		22354A8822109AC6009A404C /* complexobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1921C66D3800967E21 /* complexobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354A8922109AC6009A404C /* _codecs_jp.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54D21C7043800A71A20 /* _codecs_jp.c */; };
 		22354A8A22109AC6009A404C /* cache.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED51621C6F7C800A71A20 /* cache.c */; settings = {COMPILER_FLAGS = " -DMODULE_NAME=\\\"sqlite3\\\" -DSQLITE_OMIT_LOAD_EXTENSION=1 -I../Modules/_sqlite "; }; };
-		22354A8B22109AC6009A404C /* expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC621F9C6D3007A0F60 /* expression.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354A8C22109AC6009A404C /* cellobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1C21C66D3900967E21 /* cellobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354A8D22109AC6009A404C /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED55C21C704B400A71A20 /* context.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		22354A8E22109AC6009A404C /* namespaceobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2B21C66D3900967E21 /* namespaceobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -479,7 +466,6 @@
 		22354AF322109AC6009A404C /* _codecs_kr.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54B21C7043700A71A20 /* _codecs_kr.c */; };
 		22354AF422109AC6009A404C /* unicodedata.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4DF21C6B89F00A71A20 /* unicodedata.c */; };
 		22354AF522109AC6009A404C /* array_assign_scalar.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0B21F61962004CF7FA /* array_assign_scalar.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354AF622109AC6009A404C /* constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC521F9C6D3007A0F60 /* constraint.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354AF722109AC6009A404C /* agg_vcgen_dash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6D21F8A6DE007A0F60 /* agg_vcgen_dash.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		22354AF822109AC6009A404C /* apple_sgemv_fix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4421F61C89004CF7FA /* apple_sgemv_fix.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354AF922109AC6009A404C /* getversion.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED43621C6AB8E00A71A20 /* getversion.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -562,7 +548,6 @@
 		22354B5422109AEA009A404C /* shape.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0121F6192C004CF7FA /* shape.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354B5522109AEA009A404C /* xxsubtype.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B521C6AEC800A71A20 /* xxsubtype.c */; };
 		22354B5622109AEA009A404C /* _contour_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8921F8BB73007A0F60 /* _contour_wrapper.cpp */; settings = {COMPILER_FLAGS = "-g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__contour_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
-		22354B5722109AEA009A404C /* term.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC121F9C6D3007A0F60 /* term.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354B5822109AEA009A404C /* _asynciomodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4E321C6B8BD00A71A20 /* _asynciomodule.c */; };
 		22354B5922109AEA009A404C /* binascii.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED53421C700F500A71A20 /* binascii.c */; };
 		22354B5A22109AEA009A404C /* bytearrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2F21C66D3A00967E21 /* bytearrayobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -600,7 +585,6 @@
 		22354B7B22109AEA009A404C /* abstract.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1A21C66D3800967E21 /* abstract.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354B7C22109AEA009A404C /* _testbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4D521C6B85800A71A20 /* _testbuffer.c */; };
 		22354B7D22109AEA009A404C /* pwdmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A921C6AE7C00A71A20 /* pwdmodule.c */; };
-		22354B7E22109AEA009A404C /* kiwisolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC021F9C6D3007A0F60 /* kiwisolver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
 		22354B7F22109AEA009A404C /* formatter_unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42421C6AB5000A71A20 /* formatter_unicode.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354B8022109AEA009A404C /* _image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6021F8A660007A0F60 /* _image.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		22354B8122109AEA009A404C /* qhull_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8E21F8BD36007A0F60 /* qhull_wrap.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
@@ -610,7 +594,6 @@
 		22354B8522109AEA009A404C /* listobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2321C66D3900967E21 /* listobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354B8622109AEA009A404C /* agg_trans_affine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6A21F8A6C0007A0F60 /* agg_trans_affine.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		22354B8722109AEA009A404C /* npy_math_complex.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAA21F4EE01004CF7FA /* npy_math_complex.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354B8822109AEA009A404C /* solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC321F9C6D3007A0F60 /* solver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354B8922109AEA009A404C /* conversion_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD921F61796004CF7FA /* conversion_utils.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354B8A22109AEA009A404C /* convert_datatype.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD121F61757004CF7FA /* convert_datatype.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354B8B22109AEA009A404C /* sha256module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50621C6BD5500A71A20 /* sha256module.c */; };
@@ -708,13 +691,11 @@
 		22354BE722109AEA009A404C /* user.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9D21F8BD78007A0F60 /* user.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		22354BE822109AEA009A404C /* odictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1D21C66D3900967E21 /* odictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354BE922109AEA009A404C /* fftpack_litemodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB5521F63E52004CF7FA /* fftpack_litemodule.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0//Library/Frameworks/Python.framework/Versions/3.6/include/python3.6m -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354BEA22109AEA009A404C /* variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC421F9C6D3007A0F60 /* variable.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354BEB22109AEA009A404C /* convolute.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED56121C704B400A71A20 /* convolute.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		22354BEC22109AEA009A404C /* pyarena.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED44C21C6ABD100A71A20 /* pyarena.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354BED22109AEA009A404C /* sha1module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50B21C6BD6E00A71A20 /* sha1module.c */; };
 		22354BEE22109AEA009A404C /* dictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1821C66D3800967E21 /* dictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354BEF22109AEA009A404C /* poly.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9721F8BD77007A0F60 /* poly.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
-		22354BF022109AEA009A404C /* strength.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC221F9C6D3007A0F60 /* strength.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354BF122109AEA009A404C /* python_xerbla.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4021F61C49004CF7FA /* python_xerbla.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354BF222109AEA009A404C /* arrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD321F61763004CF7FA /* arrayobject.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354BF322109AEA009A404C /* zipimport.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B721C6AECE00A71A20 /* zipimport.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -763,7 +744,6 @@
 		22354C1F22109AEA009A404C /* complexobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1921C66D3800967E21 /* complexobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354C2022109AEA009A404C /* _codecs_jp.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54D21C7043800A71A20 /* _codecs_jp.c */; };
 		22354C2122109AEA009A404C /* cache.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED51621C6F7C800A71A20 /* cache.c */; settings = {COMPILER_FLAGS = " -DMODULE_NAME=\\\"sqlite3\\\" -DSQLITE_OMIT_LOAD_EXTENSION=1 -I../Modules/_sqlite "; }; };
-		22354C2222109AEA009A404C /* expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC621F9C6D3007A0F60 /* expression.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354C2322109AEA009A404C /* cellobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1C21C66D3900967E21 /* cellobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354C2422109AEA009A404C /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED55C21C704B400A71A20 /* context.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		22354C2522109AEA009A404C /* namespaceobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2B21C66D3900967E21 /* namespaceobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -869,7 +849,6 @@
 		22354C8A22109AEA009A404C /* _codecs_kr.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54B21C7043700A71A20 /* _codecs_kr.c */; };
 		22354C8B22109AEA009A404C /* unicodedata.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4DF21C6B89F00A71A20 /* unicodedata.c */; };
 		22354C8C22109AEA009A404C /* array_assign_scalar.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0B21F61962004CF7FA /* array_assign_scalar.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354C8D22109AEA009A404C /* constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC521F9C6D3007A0F60 /* constraint.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354C8E22109AEA009A404C /* agg_vcgen_dash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6D21F8A6DE007A0F60 /* agg_vcgen_dash.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		22354C8F22109AEA009A404C /* apple_sgemv_fix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4421F61C89004CF7FA /* apple_sgemv_fix.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354C9022109AEA009A404C /* getversion.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED43621C6AB8E00A71A20 /* getversion.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -952,7 +931,6 @@
 		22354CEB22109C8E009A404C /* shape.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0121F6192C004CF7FA /* shape.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354CEC22109C8E009A404C /* xxsubtype.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B521C6AEC800A71A20 /* xxsubtype.c */; };
 		22354CED22109C8E009A404C /* _contour_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8921F8BB73007A0F60 /* _contour_wrapper.cpp */; settings = {COMPILER_FLAGS = "-g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__contour_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
-		22354CEE22109C8E009A404C /* term.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC121F9C6D3007A0F60 /* term.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354CEF22109C8E009A404C /* _asynciomodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4E321C6B8BD00A71A20 /* _asynciomodule.c */; };
 		22354CF022109C8E009A404C /* binascii.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED53421C700F500A71A20 /* binascii.c */; };
 		22354CF122109C8E009A404C /* bytearrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2F21C66D3A00967E21 /* bytearrayobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -990,7 +968,6 @@
 		22354D1222109C8E009A404C /* abstract.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1A21C66D3800967E21 /* abstract.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354D1322109C8E009A404C /* _testbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4D521C6B85800A71A20 /* _testbuffer.c */; };
 		22354D1422109C8E009A404C /* pwdmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A921C6AE7C00A71A20 /* pwdmodule.c */; };
-		22354D1522109C8E009A404C /* kiwisolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC021F9C6D3007A0F60 /* kiwisolver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
 		22354D1622109C8E009A404C /* formatter_unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42421C6AB5000A71A20 /* formatter_unicode.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354D1722109C8E009A404C /* _image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6021F8A660007A0F60 /* _image.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		22354D1822109C8E009A404C /* qhull_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8E21F8BD36007A0F60 /* qhull_wrap.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
@@ -1000,7 +977,6 @@
 		22354D1C22109C8E009A404C /* listobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2321C66D3900967E21 /* listobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354D1D22109C8E009A404C /* agg_trans_affine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6A21F8A6C0007A0F60 /* agg_trans_affine.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		22354D1E22109C8E009A404C /* npy_math_complex.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAA21F4EE01004CF7FA /* npy_math_complex.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354D1F22109C8E009A404C /* solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC321F9C6D3007A0F60 /* solver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354D2022109C8E009A404C /* conversion_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD921F61796004CF7FA /* conversion_utils.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354D2122109C8E009A404C /* convert_datatype.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD121F61757004CF7FA /* convert_datatype.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354D2222109C8E009A404C /* sha256module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50621C6BD5500A71A20 /* sha256module.c */; };
@@ -1098,13 +1074,11 @@
 		22354D7E22109C8E009A404C /* user.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9D21F8BD78007A0F60 /* user.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		22354D7F22109C8E009A404C /* odictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1D21C66D3900967E21 /* odictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354D8022109C8E009A404C /* fftpack_litemodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB5521F63E52004CF7FA /* fftpack_litemodule.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0//Library/Frameworks/Python.framework/Versions/3.6/include/python3.6m -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354D8122109C8E009A404C /* variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC421F9C6D3007A0F60 /* variable.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354D8222109C8E009A404C /* convolute.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED56121C704B400A71A20 /* convolute.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		22354D8322109C8E009A404C /* pyarena.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED44C21C6ABD100A71A20 /* pyarena.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354D8422109C8E009A404C /* sha1module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50B21C6BD6E00A71A20 /* sha1module.c */; };
 		22354D8522109C8E009A404C /* dictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1821C66D3800967E21 /* dictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354D8622109C8E009A404C /* poly.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9721F8BD77007A0F60 /* poly.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
-		22354D8722109C8E009A404C /* strength.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC221F9C6D3007A0F60 /* strength.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354D8822109C8E009A404C /* python_xerbla.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4021F61C49004CF7FA /* python_xerbla.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354D8922109C8E009A404C /* arrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD321F61763004CF7FA /* arrayobject.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354D8A22109C8E009A404C /* zipimport.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B721C6AECE00A71A20 /* zipimport.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1153,7 +1127,6 @@
 		22354DB622109C8E009A404C /* complexobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1921C66D3800967E21 /* complexobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354DB722109C8E009A404C /* _codecs_jp.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54D21C7043800A71A20 /* _codecs_jp.c */; };
 		22354DB822109C8E009A404C /* cache.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED51621C6F7C800A71A20 /* cache.c */; settings = {COMPILER_FLAGS = " -DMODULE_NAME=\\\"sqlite3\\\" -DSQLITE_OMIT_LOAD_EXTENSION=1 -I../Modules/_sqlite "; }; };
-		22354DB922109C8E009A404C /* expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC621F9C6D3007A0F60 /* expression.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354DBA22109C8E009A404C /* cellobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1C21C66D3900967E21 /* cellobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354DBB22109C8E009A404C /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED55C21C704B400A71A20 /* context.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		22354DBC22109C8E009A404C /* namespaceobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2B21C66D3900967E21 /* namespaceobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1259,7 +1232,6 @@
 		22354E2122109C8E009A404C /* _codecs_kr.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54B21C7043700A71A20 /* _codecs_kr.c */; };
 		22354E2222109C8E009A404C /* unicodedata.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4DF21C6B89F00A71A20 /* unicodedata.c */; };
 		22354E2322109C8E009A404C /* array_assign_scalar.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0B21F61962004CF7FA /* array_assign_scalar.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354E2422109C8E009A404C /* constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC521F9C6D3007A0F60 /* constraint.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354E2522109C8E009A404C /* agg_vcgen_dash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6D21F8A6DE007A0F60 /* agg_vcgen_dash.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		22354E2622109C8E009A404C /* apple_sgemv_fix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4421F61C89004CF7FA /* apple_sgemv_fix.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354E2722109C8E009A404C /* getversion.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED43621C6AB8E00A71A20 /* getversion.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1342,7 +1314,6 @@
 		22354E8222109EB7009A404C /* shape.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0121F6192C004CF7FA /* shape.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354E8322109EB7009A404C /* xxsubtype.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B521C6AEC800A71A20 /* xxsubtype.c */; };
 		22354E8422109EB7009A404C /* _contour_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8921F8BB73007A0F60 /* _contour_wrapper.cpp */; settings = {COMPILER_FLAGS = "-g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__contour_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
-		22354E8522109EB7009A404C /* term.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC121F9C6D3007A0F60 /* term.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354E8622109EB7009A404C /* _asynciomodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4E321C6B8BD00A71A20 /* _asynciomodule.c */; };
 		22354E8722109EB7009A404C /* binascii.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED53421C700F500A71A20 /* binascii.c */; };
 		22354E8822109EB7009A404C /* bytearrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2F21C66D3A00967E21 /* bytearrayobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1380,7 +1351,6 @@
 		22354EA922109EB7009A404C /* abstract.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1A21C66D3800967E21 /* abstract.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354EAA22109EB7009A404C /* _testbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4D521C6B85800A71A20 /* _testbuffer.c */; };
 		22354EAB22109EB7009A404C /* pwdmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A921C6AE7C00A71A20 /* pwdmodule.c */; };
-		22354EAC22109EB7009A404C /* kiwisolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC021F9C6D3007A0F60 /* kiwisolver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
 		22354EAD22109EB7009A404C /* formatter_unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42421C6AB5000A71A20 /* formatter_unicode.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354EAE22109EB7009A404C /* _image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6021F8A660007A0F60 /* _image.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		22354EAF22109EB7009A404C /* qhull_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8E21F8BD36007A0F60 /* qhull_wrap.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
@@ -1390,7 +1360,6 @@
 		22354EB322109EB7009A404C /* listobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2321C66D3900967E21 /* listobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354EB422109EB7009A404C /* agg_trans_affine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6A21F8A6C0007A0F60 /* agg_trans_affine.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		22354EB522109EB7009A404C /* npy_math_complex.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAA21F4EE01004CF7FA /* npy_math_complex.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354EB622109EB7009A404C /* solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC321F9C6D3007A0F60 /* solver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354EB722109EB7009A404C /* conversion_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD921F61796004CF7FA /* conversion_utils.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354EB822109EB7009A404C /* convert_datatype.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD121F61757004CF7FA /* convert_datatype.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354EB922109EB7009A404C /* sha256module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50621C6BD5500A71A20 /* sha256module.c */; };
@@ -1488,13 +1457,11 @@
 		22354F1522109EB7009A404C /* user.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9D21F8BD78007A0F60 /* user.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		22354F1622109EB7009A404C /* odictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1D21C66D3900967E21 /* odictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354F1722109EB7009A404C /* fftpack_litemodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB5521F63E52004CF7FA /* fftpack_litemodule.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0//Library/Frameworks/Python.framework/Versions/3.6/include/python3.6m -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354F1822109EB7009A404C /* variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC421F9C6D3007A0F60 /* variable.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354F1922109EB7009A404C /* convolute.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED56121C704B400A71A20 /* convolute.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		22354F1A22109EB7009A404C /* pyarena.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED44C21C6ABD100A71A20 /* pyarena.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354F1B22109EB7009A404C /* sha1module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50B21C6BD6E00A71A20 /* sha1module.c */; };
 		22354F1C22109EB7009A404C /* dictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1821C66D3800967E21 /* dictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354F1D22109EB7009A404C /* poly.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9721F8BD77007A0F60 /* poly.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
-		22354F1E22109EB7009A404C /* strength.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC221F9C6D3007A0F60 /* strength.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354F1F22109EB7009A404C /* python_xerbla.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4021F61C49004CF7FA /* python_xerbla.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354F2022109EB7009A404C /* arrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD321F61763004CF7FA /* arrayobject.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354F2122109EB7009A404C /* zipimport.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B721C6AECE00A71A20 /* zipimport.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1543,7 +1510,6 @@
 		22354F4D22109EB7009A404C /* complexobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1921C66D3800967E21 /* complexobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354F4E22109EB7009A404C /* _codecs_jp.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54D21C7043800A71A20 /* _codecs_jp.c */; };
 		22354F4F22109EB7009A404C /* cache.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED51621C6F7C800A71A20 /* cache.c */; settings = {COMPILER_FLAGS = " -DMODULE_NAME=\\\"sqlite3\\\" -DSQLITE_OMIT_LOAD_EXTENSION=1 -I../Modules/_sqlite "; }; };
-		22354F5022109EB7009A404C /* expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC621F9C6D3007A0F60 /* expression.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354F5122109EB7009A404C /* cellobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1C21C66D3900967E21 /* cellobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354F5222109EB7009A404C /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED55C21C704B400A71A20 /* context.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		22354F5322109EB7009A404C /* namespaceobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2B21C66D3900967E21 /* namespaceobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1649,7 +1615,6 @@
 		22354FB822109EB7009A404C /* _codecs_kr.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54B21C7043700A71A20 /* _codecs_kr.c */; };
 		22354FB922109EB7009A404C /* unicodedata.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4DF21C6B89F00A71A20 /* unicodedata.c */; };
 		22354FBA22109EB7009A404C /* array_assign_scalar.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0B21F61962004CF7FA /* array_assign_scalar.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		22354FBB22109EB7009A404C /* constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC521F9C6D3007A0F60 /* constraint.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		22354FBC22109EB7009A404C /* agg_vcgen_dash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6D21F8A6DE007A0F60 /* agg_vcgen_dash.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		22354FBD22109EB7009A404C /* apple_sgemv_fix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4421F61C89004CF7FA /* apple_sgemv_fix.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		22354FBE22109EB7009A404C /* getversion.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED43621C6AB8E00A71A20 /* getversion.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1732,7 +1697,6 @@
 		2235501822109EB9009A404C /* shape.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0121F6192C004CF7FA /* shape.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		2235501922109EB9009A404C /* xxsubtype.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B521C6AEC800A71A20 /* xxsubtype.c */; };
 		2235501A22109EB9009A404C /* _contour_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8921F8BB73007A0F60 /* _contour_wrapper.cpp */; settings = {COMPILER_FLAGS = "-g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__contour_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
-		2235501B22109EB9009A404C /* term.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC121F9C6D3007A0F60 /* term.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		2235501C22109EB9009A404C /* _asynciomodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4E321C6B8BD00A71A20 /* _asynciomodule.c */; };
 		2235501D22109EB9009A404C /* binascii.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED53421C700F500A71A20 /* binascii.c */; };
 		2235501E22109EB9009A404C /* bytearrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2F21C66D3A00967E21 /* bytearrayobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1770,7 +1734,6 @@
 		2235503F22109EB9009A404C /* abstract.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1A21C66D3800967E21 /* abstract.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		2235504022109EB9009A404C /* _testbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4D521C6B85800A71A20 /* _testbuffer.c */; };
 		2235504122109EB9009A404C /* pwdmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A921C6AE7C00A71A20 /* pwdmodule.c */; };
-		2235504222109EB9009A404C /* kiwisolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC021F9C6D3007A0F60 /* kiwisolver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DNDEBUG -DWITH_PYMALLOC"; }; };
 		2235504322109EB9009A404C /* formatter_unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42421C6AB5000A71A20 /* formatter_unicode.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		2235504422109EB9009A404C /* _image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6021F8A660007A0F60 /* _image.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		2235504522109EB9009A404C /* qhull_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C8E21F8BD36007A0F60 /* qhull_wrap.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
@@ -1780,7 +1743,6 @@
 		2235504922109EB9009A404C /* listobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2321C66D3900967E21 /* listobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		2235504A22109EB9009A404C /* agg_trans_affine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6A21F8A6C0007A0F60 /* agg_trans_affine.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		2235504B22109EB9009A404C /* npy_math_complex.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAAA21F4EE01004CF7FA /* npy_math_complex.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		2235504C22109EB9009A404C /* solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC321F9C6D3007A0F60 /* solver.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		2235504D22109EB9009A404C /* conversion_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD921F61796004CF7FA /* conversion_utils.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		2235504E22109EB9009A404C /* convert_datatype.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD121F61757004CF7FA /* convert_datatype.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		2235504F22109EB9009A404C /* sha256module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50621C6BD5500A71A20 /* sha256module.c */; };
@@ -1878,13 +1840,11 @@
 		223550AB22109EB9009A404C /* user.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9D21F8BD78007A0F60 /* user.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
 		223550AC22109EB9009A404C /* odictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1D21C66D3900967E21 /* odictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223550AD22109EB9009A404C /* fftpack_litemodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB5521F63E52004CF7FA /* fftpack_litemodule.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0//Library/Frameworks/Python.framework/Versions/3.6/include/python3.6m -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		223550AE22109EB9009A404C /* variable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC421F9C6D3007A0F60 /* variable.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		223550AF22109EB9009A404C /* convolute.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED56121C704B400A71A20 /* convolute.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		223550B022109EB9009A404C /* pyarena.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED44C21C6ABD100A71A20 /* pyarena.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223550B122109EB9009A404C /* sha1module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50B21C6BD6E00A71A20 /* sha1module.c */; };
 		223550B222109EB9009A404C /* dictobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1821C66D3800967E21 /* dictobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223550B322109EB9009A404C /* poly.c in Sources */ = {isa = PBXBuildFile; fileRef = 22035C9721F8BD77007A0F60 /* poly.c */; settings = {COMPILER_FLAGS = "-DNDEBUG -g -fwrapv -O3 -Wall -DMPL_DEVNULL=/dev/null -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__qhull_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy/ -I../extraPackages/matplotlib-3.0.2/extern -I../extraPackages/matplotlib-3.0.2/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.."; }; };
-		223550B422109EB9009A404C /* strength.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC221F9C6D3007A0F60 /* strength.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		223550B522109EB9009A404C /* python_xerbla.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4021F61C49004CF7FA /* python_xerbla.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		223550B622109EB9009A404C /* arrayobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EAD321F61763004CF7FA /* arrayobject.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		223550B722109EB9009A404C /* zipimport.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4B721C6AECE00A71A20 /* zipimport.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1933,7 +1893,6 @@
 		223550E322109EB9009A404C /* complexobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1921C66D3800967E21 /* complexobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223550E422109EB9009A404C /* _codecs_jp.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54D21C7043800A71A20 /* _codecs_jp.c */; };
 		223550E522109EB9009A404C /* cache.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED51621C6F7C800A71A20 /* cache.c */; settings = {COMPILER_FLAGS = " -DMODULE_NAME=\\\"sqlite3\\\" -DSQLITE_OMIT_LOAD_EXTENSION=1 -I../Modules/_sqlite "; }; };
-		223550E622109EB9009A404C /* expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC621F9C6D3007A0F60 /* expression.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		223550E722109EB9009A404C /* cellobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1C21C66D3900967E21 /* cellobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223550E822109EB9009A404C /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED55C21C704B400A71A20 /* context.c */; settings = {COMPILER_FLAGS = " -DCONFIG_64=1 -DANSI=1"; }; };
 		223550E922109EB9009A404C /* namespaceobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF2B21C66D3900967E21 /* namespaceobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -2039,7 +1998,6 @@
 		2235514E22109EB9009A404C /* _codecs_kr.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED54B21C7043700A71A20 /* _codecs_kr.c */; };
 		2235514F22109EB9009A404C /* unicodedata.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4DF21C6B89F00A71A20 /* unicodedata.c */; };
 		2235515022109EB9009A404C /* array_assign_scalar.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB0B21F61962004CF7FA /* array_assign_scalar.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
-		2235515122109EB9009A404C /* constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035CC521F9C6D3007A0F60 /* constraint.cpp */; settings = {COMPILER_FLAGS = "-I../extraPackages/kiwisolver-1.0.1/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. -DWITH_PYMALLOC -DNDEBUG"; }; };
 		2235515222109EB9009A404C /* agg_vcgen_dash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22035C6D21F8A6DE007A0F60 /* agg_vcgen_dash.cpp */; settings = {COMPILER_FLAGS = "-DNDEBUG -DWITH_PYMALLOC -g -fwrapv -O3 -Wall -DPY_ARRAY_UNIQUE_SYMBOL=MPL_matplotlib__image_ARRAY_API -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -D__STDC_FORMAT_MACROS=1 -I../extraPackages/numpy-1.16.0/numpy/core/include/ -I../extraPackages/matplotlib-3.0.2/extern/agg24-svn/include -I../extraPackages/matplotlib-3.0.2/src/ -I../Python-3.7.1/Include/ -I../Python-3.7.1/ -I.. "; }; };
 		2235515322109EB9009A404C /* apple_sgemv_fix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2219EB4421F61C89004CF7FA /* apple_sgemv_fix.c */; settings = {COMPILER_FLAGS = "-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -I../extraPackages/numpy-1.16.0/numpy/core/include -I../extraPackages/numpy-1.16.0/build/src/numpy/core/include/numpy -I../extraPackages/numpy-1.16.0/numpy/core/src/common -I../extraPackages/numpy-1.16.0/numpy/core/src -I../extraPackages/numpy-1.16.0/numpy/core -I../extraPackages/numpy-1.16.0/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/numpy/core/src/multiarray -I../extraPackages/numpy-1.16.0/numpy/core/src/umath -I../extraPackages/numpy-1.16.0/numpy/core/src/npysort -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/common -I../extraPackages/numpy-1.16.0/build/src/numpy/core/src/npymath"; }; };
 		2235515422109EB9009A404C /* getversion.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED43621C6AB8E00A71A20 /* getversion.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -2503,14 +2461,14 @@
 		221CD96621E0B42300F3B47C /* initlibzmq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = initlibzmq.c; path = "../extraPackages/pyzmq-17.1.2/buildutils/initlibzmq.c"; sourceTree = "<group>"; };
 		221CD96821E0B44400F3B47C /* monitoredqueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = monitoredqueue.c; path = "../extraPackages/pyzmq-17.1.2/zmq/devices/monitoredqueue.c"; sourceTree = "<group>"; };
 		22288E072211FAC20081D86C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		22354B4422109AC6009A404C /* PythonA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PythonA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22354B4422109AC6009A404C /* pythonA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pythonA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22354B4522109ACF009A404C /* Python3_ios copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Python3_ios copy-Info.plist"; path = "/Users/holzschu/src/Xcode_iPad/python3_ios/Python3_ios/Python3_ios copy-Info.plist"; sourceTree = "<absolute>"; };
-		22354CDB22109AEA009A404C /* PythonB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PythonB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22354CDB22109AEA009A404C /* pythonB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pythonB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22354CDC22109AF4009A404C /* PythonA copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PythonA copy-Info.plist"; path = "/Users/holzschu/src/Xcode_iPad/python3_ios/Python3_ios/PythonA copy-Info.plist"; sourceTree = "<absolute>"; };
-		22354E7222109C8E009A404C /* PythonC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PythonC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22354E7222109C8E009A404C /* pythonC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pythonC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22354E7322109C9B009A404C /* PythonB copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PythonB copy-Info.plist"; path = "/Users/holzschu/src/Xcode_iPad/python3_ios/Python3_ios/PythonB copy-Info.plist"; sourceTree = "<absolute>"; };
-		2235500922109EB7009A404C /* PythonD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PythonD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2235519F22109EB9009A404C /* PythonE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PythonE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2235500922109EB7009A404C /* pythonD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pythonD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2235519F22109EB9009A404C /* pythonE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pythonE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2235533622109EBC009A404C /* PythonC copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PythonC copy-Info.plist"; path = "/Users/holzschu/src/Xcode_iPad/python3_ios/Python3_ios/PythonC copy-Info.plist"; sourceTree = "<absolute>"; };
 		223554CD22109EC1009A404C /* PythonC copy copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PythonC copy copy-Info.plist"; path = "/Users/holzschu/src/Xcode_iPad/python3_ios/Python3_ios/PythonC copy copy-Info.plist"; sourceTree = "<absolute>"; };
 		223559902210A133009A404C /* PythonE copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PythonE copy-Info.plist"; path = "/Users/holzschu/src/Xcode_iPad/python3_ios/Python3_ios/PythonE copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -2712,7 +2670,7 @@
 		226ED59921C787D700A71A20 /* dlfcn_simple.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dlfcn_simple.c; path = "../Python-3.7.1/Modules/_ctypes/darwin/dlfcn_simple.c"; sourceTree = "<group>"; };
 		226ED59B21C787EE00A71A20 /* ffi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ffi.c; path = "../Python-3.7.1/Modules/_ctypes/libffi_osx/ffi.c"; sourceTree = "<group>"; };
 		226ED5A921C7D6A700A71A20 /* _ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = _ssl.c; path = "../Python-3.7.1/Modules/_ssl.c"; sourceTree = "<group>"; };
-		22E8FEE221C66AD100967E21 /* Python3_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Python3_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E8FEE221C66AD100967E21 /* python3_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = python3_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E8FEE521C66AD100967E21 /* Python3_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Python3_ios.h; sourceTree = "<group>"; };
 		22E8FEE621C66AD100967E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E8FEEE21C66BF000967E21 /* python.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = python.c; path = "../Python-3.7.1/Programs/python.c"; sourceTree = "<group>"; };
@@ -3523,12 +3481,12 @@
 		22E8FEE321C66AD100967E21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22E8FEE221C66AD100967E21 /* Python3_ios.framework */,
-				22354B4422109AC6009A404C /* PythonA.framework */,
-				22354CDB22109AEA009A404C /* PythonB.framework */,
-				22354E7222109C8E009A404C /* PythonC.framework */,
-				2235500922109EB7009A404C /* PythonD.framework */,
-				2235519F22109EB9009A404C /* PythonE.framework */,
+				22E8FEE221C66AD100967E21 /* python3_ios.framework */,
+				22354B4422109AC6009A404C /* pythonA.framework */,
+				22354CDB22109AEA009A404C /* pythonB.framework */,
+				22354E7222109C8E009A404C /* pythonC.framework */,
+				2235500922109EB7009A404C /* pythonD.framework */,
+				2235519F22109EB9009A404C /* pythonE.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3671,112 +3629,106 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		223549AF22109AC6009A404C /* PythonA */ = {
+		223549AF22109AC6009A404C /* pythonA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22354B4122109AC6009A404C /* Build configuration list for PBXNativeTarget "PythonA" */;
+			buildConfigurationList = 22354B4122109AC6009A404C /* Build configuration list for PBXNativeTarget "pythonA" */;
 			buildPhases = (
 				223549B022109AC6009A404C /* Headers */,
 				223549B222109AC6009A404C /* Sources */,
 				22354B3122109AC6009A404C /* Frameworks */,
-				22354B4022109AC6009A404C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PythonA;
+			name = pythonA;
 			productName = Python3_ios;
-			productReference = 22354B4422109AC6009A404C /* PythonA.framework */;
+			productReference = 22354B4422109AC6009A404C /* pythonA.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		22354B4622109AEA009A404C /* PythonB */ = {
+		22354B4622109AEA009A404C /* pythonB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22354CD822109AEA009A404C /* Build configuration list for PBXNativeTarget "PythonB" */;
+			buildConfigurationList = 22354CD822109AEA009A404C /* Build configuration list for PBXNativeTarget "pythonB" */;
 			buildPhases = (
 				22354B4722109AEA009A404C /* Headers */,
 				22354B4922109AEA009A404C /* Sources */,
 				22354CC822109AEA009A404C /* Frameworks */,
-				22354CD722109AEA009A404C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PythonB;
+			name = pythonB;
 			productName = Python3_ios;
-			productReference = 22354CDB22109AEA009A404C /* PythonB.framework */;
+			productReference = 22354CDB22109AEA009A404C /* pythonB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		22354CDD22109C8E009A404C /* PythonC */ = {
+		22354CDD22109C8E009A404C /* pythonC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22354E6F22109C8E009A404C /* Build configuration list for PBXNativeTarget "PythonC" */;
+			buildConfigurationList = 22354E6F22109C8E009A404C /* Build configuration list for PBXNativeTarget "pythonC" */;
 			buildPhases = (
 				22354CDE22109C8E009A404C /* Headers */,
 				22354CE022109C8E009A404C /* Sources */,
 				22354E5F22109C8E009A404C /* Frameworks */,
-				22354E6E22109C8E009A404C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PythonC;
+			name = pythonC;
 			productName = Python3_ios;
-			productReference = 22354E7222109C8E009A404C /* PythonC.framework */;
+			productReference = 22354E7222109C8E009A404C /* pythonC.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		22354E7422109EB7009A404C /* PythonD */ = {
+		22354E7422109EB7009A404C /* pythonD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2235500622109EB7009A404C /* Build configuration list for PBXNativeTarget "PythonD" */;
+			buildConfigurationList = 2235500622109EB7009A404C /* Build configuration list for PBXNativeTarget "pythonD" */;
 			buildPhases = (
 				22354E7522109EB7009A404C /* Headers */,
 				22354E7722109EB7009A404C /* Sources */,
 				22354FF622109EB7009A404C /* Frameworks */,
-				2235500522109EB7009A404C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PythonD;
+			name = pythonD;
 			productName = Python3_ios;
-			productReference = 2235500922109EB7009A404C /* PythonD.framework */;
+			productReference = 2235500922109EB7009A404C /* pythonD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		2235500A22109EB9009A404C /* PythonE */ = {
+		2235500A22109EB9009A404C /* pythonE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2235519C22109EB9009A404C /* Build configuration list for PBXNativeTarget "PythonE" */;
+			buildConfigurationList = 2235519C22109EB9009A404C /* Build configuration list for PBXNativeTarget "pythonE" */;
 			buildPhases = (
 				2235500B22109EB9009A404C /* Headers */,
 				2235500D22109EB9009A404C /* Sources */,
 				2235518C22109EB9009A404C /* Frameworks */,
-				2235519B22109EB9009A404C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PythonE;
+			name = pythonE;
 			productName = Python3_ios;
-			productReference = 2235519F22109EB9009A404C /* PythonE.framework */;
+			productReference = 2235519F22109EB9009A404C /* pythonE.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		22E8FEE121C66AD100967E21 /* Python3_ios */ = {
+		22E8FEE121C66AD100967E21 /* python3_ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22E8FEEA21C66AD100967E21 /* Build configuration list for PBXNativeTarget "Python3_ios" */;
+			buildConfigurationList = 22E8FEEA21C66AD100967E21 /* Build configuration list for PBXNativeTarget "python3_ios" */;
 			buildPhases = (
 				22E8FEDD21C66AD100967E21 /* Headers */,
 				22E8FEDE21C66AD100967E21 /* Sources */,
 				22E8FEDF21C66AD100967E21 /* Frameworks */,
-				22E8FEE021C66AD100967E21 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Python3_ios;
+			name = python3_ios;
 			productName = Python3_ios;
-			productReference = 22E8FEE221C66AD100967E21 /* Python3_ios.framework */;
+			productReference = 22E8FEE221C66AD100967E21 /* python3_ios.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -3805,60 +3757,15 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22E8FEE121C66AD100967E21 /* Python3_ios */,
-				223549AF22109AC6009A404C /* PythonA */,
-				22354B4622109AEA009A404C /* PythonB */,
-				22354CDD22109C8E009A404C /* PythonC */,
-				22354E7422109EB7009A404C /* PythonD */,
-				2235500A22109EB9009A404C /* PythonE */,
+				22E8FEE121C66AD100967E21 /* python3_ios */,
+				223549AF22109AC6009A404C /* pythonA */,
+				22354B4622109AEA009A404C /* pythonB */,
+				22354CDD22109C8E009A404C /* pythonC */,
+				22354E7422109EB7009A404C /* pythonD */,
+				2235500A22109EB9009A404C /* pythonE */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		22354B4022109AC6009A404C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		22354CD722109AEA009A404C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		22354E6E22109C8E009A404C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2235500522109EB7009A404C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2235519B22109EB9009A404C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		22E8FEE021C66AD100967E21 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		223549B222109AC6009A404C /* Sources */ = {
@@ -3878,7 +3785,6 @@
 				223549BD22109AC6009A404C /* shape.c in Sources */,
 				223549BE22109AC6009A404C /* xxsubtype.c in Sources */,
 				223549BF22109AC6009A404C /* _contour_wrapper.cpp in Sources */,
-				223549C022109AC6009A404C /* term.cpp in Sources */,
 				223549C122109AC6009A404C /* _asynciomodule.c in Sources */,
 				223549C222109AC6009A404C /* binascii.c in Sources */,
 				223549C322109AC6009A404C /* bytearrayobject.c in Sources */,
@@ -3916,7 +3822,6 @@
 				223549E422109AC6009A404C /* abstract.c in Sources */,
 				223549E522109AC6009A404C /* _testbuffer.c in Sources */,
 				223549E622109AC6009A404C /* pwdmodule.c in Sources */,
-				223549E722109AC6009A404C /* kiwisolver.cpp in Sources */,
 				223549E822109AC6009A404C /* formatter_unicode.c in Sources */,
 				223549E922109AC6009A404C /* _image.cpp in Sources */,
 				223549EA22109AC6009A404C /* qhull_wrap.c in Sources */,
@@ -3926,7 +3831,6 @@
 				223549EE22109AC6009A404C /* listobject.c in Sources */,
 				223549EF22109AC6009A404C /* agg_trans_affine.cpp in Sources */,
 				223549F022109AC6009A404C /* npy_math_complex.c in Sources */,
-				223549F122109AC6009A404C /* solver.cpp in Sources */,
 				223549F222109AC6009A404C /* conversion_utils.c in Sources */,
 				223549F322109AC6009A404C /* convert_datatype.c in Sources */,
 				223549F422109AC6009A404C /* sha256module.c in Sources */,
@@ -4024,13 +3928,11 @@
 				22354A5022109AC6009A404C /* user.c in Sources */,
 				22354A5122109AC6009A404C /* odictobject.c in Sources */,
 				22354A5222109AC6009A404C /* fftpack_litemodule.c in Sources */,
-				22354A5322109AC6009A404C /* variable.cpp in Sources */,
 				22354A5422109AC6009A404C /* convolute.c in Sources */,
 				22354A5522109AC6009A404C /* pyarena.c in Sources */,
 				22354A5622109AC6009A404C /* sha1module.c in Sources */,
 				22354A5722109AC6009A404C /* dictobject.c in Sources */,
 				22354A5822109AC6009A404C /* poly.c in Sources */,
-				22354A5922109AC6009A404C /* strength.cpp in Sources */,
 				22354A5A22109AC6009A404C /* python_xerbla.c in Sources */,
 				22354A5B22109AC6009A404C /* arrayobject.c in Sources */,
 				22354A5C22109AC6009A404C /* zipimport.c in Sources */,
@@ -4079,7 +3981,6 @@
 				22354A8822109AC6009A404C /* complexobject.c in Sources */,
 				22354A8922109AC6009A404C /* _codecs_jp.c in Sources */,
 				22354A8A22109AC6009A404C /* cache.c in Sources */,
-				22354A8B22109AC6009A404C /* expression.cpp in Sources */,
 				22354A8C22109AC6009A404C /* cellobject.c in Sources */,
 				22354A8D22109AC6009A404C /* context.c in Sources */,
 				22354A8E22109AC6009A404C /* namespaceobject.c in Sources */,
@@ -4185,7 +4086,6 @@
 				22354AF322109AC6009A404C /* _codecs_kr.c in Sources */,
 				22354AF422109AC6009A404C /* unicodedata.c in Sources */,
 				22354AF522109AC6009A404C /* array_assign_scalar.c in Sources */,
-				22354AF622109AC6009A404C /* constraint.cpp in Sources */,
 				22354AF722109AC6009A404C /* agg_vcgen_dash.cpp in Sources */,
 				22354AF822109AC6009A404C /* apple_sgemv_fix.c in Sources */,
 				22354AF922109AC6009A404C /* getversion.c in Sources */,
@@ -4264,7 +4164,6 @@
 				22354B5422109AEA009A404C /* shape.c in Sources */,
 				22354B5522109AEA009A404C /* xxsubtype.c in Sources */,
 				22354B5622109AEA009A404C /* _contour_wrapper.cpp in Sources */,
-				22354B5722109AEA009A404C /* term.cpp in Sources */,
 				22354B5822109AEA009A404C /* _asynciomodule.c in Sources */,
 				22354B5922109AEA009A404C /* binascii.c in Sources */,
 				22354B5A22109AEA009A404C /* bytearrayobject.c in Sources */,
@@ -4302,7 +4201,6 @@
 				22354B7B22109AEA009A404C /* abstract.c in Sources */,
 				22354B7C22109AEA009A404C /* _testbuffer.c in Sources */,
 				22354B7D22109AEA009A404C /* pwdmodule.c in Sources */,
-				22354B7E22109AEA009A404C /* kiwisolver.cpp in Sources */,
 				22354B7F22109AEA009A404C /* formatter_unicode.c in Sources */,
 				22354B8022109AEA009A404C /* _image.cpp in Sources */,
 				22354B8122109AEA009A404C /* qhull_wrap.c in Sources */,
@@ -4312,7 +4210,6 @@
 				22354B8522109AEA009A404C /* listobject.c in Sources */,
 				22354B8622109AEA009A404C /* agg_trans_affine.cpp in Sources */,
 				22354B8722109AEA009A404C /* npy_math_complex.c in Sources */,
-				22354B8822109AEA009A404C /* solver.cpp in Sources */,
 				22354B8922109AEA009A404C /* conversion_utils.c in Sources */,
 				22354B8A22109AEA009A404C /* convert_datatype.c in Sources */,
 				22354B8B22109AEA009A404C /* sha256module.c in Sources */,
@@ -4410,13 +4307,11 @@
 				22354BE722109AEA009A404C /* user.c in Sources */,
 				22354BE822109AEA009A404C /* odictobject.c in Sources */,
 				22354BE922109AEA009A404C /* fftpack_litemodule.c in Sources */,
-				22354BEA22109AEA009A404C /* variable.cpp in Sources */,
 				22354BEB22109AEA009A404C /* convolute.c in Sources */,
 				22354BEC22109AEA009A404C /* pyarena.c in Sources */,
 				22354BED22109AEA009A404C /* sha1module.c in Sources */,
 				22354BEE22109AEA009A404C /* dictobject.c in Sources */,
 				22354BEF22109AEA009A404C /* poly.c in Sources */,
-				22354BF022109AEA009A404C /* strength.cpp in Sources */,
 				22354BF122109AEA009A404C /* python_xerbla.c in Sources */,
 				22354BF222109AEA009A404C /* arrayobject.c in Sources */,
 				22354BF322109AEA009A404C /* zipimport.c in Sources */,
@@ -4465,7 +4360,6 @@
 				22354C1F22109AEA009A404C /* complexobject.c in Sources */,
 				22354C2022109AEA009A404C /* _codecs_jp.c in Sources */,
 				22354C2122109AEA009A404C /* cache.c in Sources */,
-				22354C2222109AEA009A404C /* expression.cpp in Sources */,
 				22354C2322109AEA009A404C /* cellobject.c in Sources */,
 				22354C2422109AEA009A404C /* context.c in Sources */,
 				22354C2522109AEA009A404C /* namespaceobject.c in Sources */,
@@ -4571,7 +4465,6 @@
 				22354C8A22109AEA009A404C /* _codecs_kr.c in Sources */,
 				22354C8B22109AEA009A404C /* unicodedata.c in Sources */,
 				22354C8C22109AEA009A404C /* array_assign_scalar.c in Sources */,
-				22354C8D22109AEA009A404C /* constraint.cpp in Sources */,
 				22354C8E22109AEA009A404C /* agg_vcgen_dash.cpp in Sources */,
 				22354C8F22109AEA009A404C /* apple_sgemv_fix.c in Sources */,
 				22354C9022109AEA009A404C /* getversion.c in Sources */,
@@ -4650,7 +4543,6 @@
 				22354CEB22109C8E009A404C /* shape.c in Sources */,
 				22354CEC22109C8E009A404C /* xxsubtype.c in Sources */,
 				22354CED22109C8E009A404C /* _contour_wrapper.cpp in Sources */,
-				22354CEE22109C8E009A404C /* term.cpp in Sources */,
 				22354CEF22109C8E009A404C /* _asynciomodule.c in Sources */,
 				22354CF022109C8E009A404C /* binascii.c in Sources */,
 				22354CF122109C8E009A404C /* bytearrayobject.c in Sources */,
@@ -4688,7 +4580,6 @@
 				22354D1222109C8E009A404C /* abstract.c in Sources */,
 				22354D1322109C8E009A404C /* _testbuffer.c in Sources */,
 				22354D1422109C8E009A404C /* pwdmodule.c in Sources */,
-				22354D1522109C8E009A404C /* kiwisolver.cpp in Sources */,
 				22354D1622109C8E009A404C /* formatter_unicode.c in Sources */,
 				22354D1722109C8E009A404C /* _image.cpp in Sources */,
 				22354D1822109C8E009A404C /* qhull_wrap.c in Sources */,
@@ -4698,7 +4589,6 @@
 				22354D1C22109C8E009A404C /* listobject.c in Sources */,
 				22354D1D22109C8E009A404C /* agg_trans_affine.cpp in Sources */,
 				22354D1E22109C8E009A404C /* npy_math_complex.c in Sources */,
-				22354D1F22109C8E009A404C /* solver.cpp in Sources */,
 				22354D2022109C8E009A404C /* conversion_utils.c in Sources */,
 				22354D2122109C8E009A404C /* convert_datatype.c in Sources */,
 				22354D2222109C8E009A404C /* sha256module.c in Sources */,
@@ -4796,13 +4686,11 @@
 				22354D7E22109C8E009A404C /* user.c in Sources */,
 				22354D7F22109C8E009A404C /* odictobject.c in Sources */,
 				22354D8022109C8E009A404C /* fftpack_litemodule.c in Sources */,
-				22354D8122109C8E009A404C /* variable.cpp in Sources */,
 				22354D8222109C8E009A404C /* convolute.c in Sources */,
 				22354D8322109C8E009A404C /* pyarena.c in Sources */,
 				22354D8422109C8E009A404C /* sha1module.c in Sources */,
 				22354D8522109C8E009A404C /* dictobject.c in Sources */,
 				22354D8622109C8E009A404C /* poly.c in Sources */,
-				22354D8722109C8E009A404C /* strength.cpp in Sources */,
 				22354D8822109C8E009A404C /* python_xerbla.c in Sources */,
 				22354D8922109C8E009A404C /* arrayobject.c in Sources */,
 				22354D8A22109C8E009A404C /* zipimport.c in Sources */,
@@ -4851,7 +4739,6 @@
 				22354DB622109C8E009A404C /* complexobject.c in Sources */,
 				22354DB722109C8E009A404C /* _codecs_jp.c in Sources */,
 				22354DB822109C8E009A404C /* cache.c in Sources */,
-				22354DB922109C8E009A404C /* expression.cpp in Sources */,
 				22354DBA22109C8E009A404C /* cellobject.c in Sources */,
 				22354DBB22109C8E009A404C /* context.c in Sources */,
 				22354DBC22109C8E009A404C /* namespaceobject.c in Sources */,
@@ -4957,7 +4844,6 @@
 				22354E2122109C8E009A404C /* _codecs_kr.c in Sources */,
 				22354E2222109C8E009A404C /* unicodedata.c in Sources */,
 				22354E2322109C8E009A404C /* array_assign_scalar.c in Sources */,
-				22354E2422109C8E009A404C /* constraint.cpp in Sources */,
 				22354E2522109C8E009A404C /* agg_vcgen_dash.cpp in Sources */,
 				22354E2622109C8E009A404C /* apple_sgemv_fix.c in Sources */,
 				22354E2722109C8E009A404C /* getversion.c in Sources */,
@@ -5036,7 +4922,6 @@
 				22354E8222109EB7009A404C /* shape.c in Sources */,
 				22354E8322109EB7009A404C /* xxsubtype.c in Sources */,
 				22354E8422109EB7009A404C /* _contour_wrapper.cpp in Sources */,
-				22354E8522109EB7009A404C /* term.cpp in Sources */,
 				22354E8622109EB7009A404C /* _asynciomodule.c in Sources */,
 				22354E8722109EB7009A404C /* binascii.c in Sources */,
 				22354E8822109EB7009A404C /* bytearrayobject.c in Sources */,
@@ -5074,7 +4959,6 @@
 				22354EA922109EB7009A404C /* abstract.c in Sources */,
 				22354EAA22109EB7009A404C /* _testbuffer.c in Sources */,
 				22354EAB22109EB7009A404C /* pwdmodule.c in Sources */,
-				22354EAC22109EB7009A404C /* kiwisolver.cpp in Sources */,
 				22354EAD22109EB7009A404C /* formatter_unicode.c in Sources */,
 				22354EAE22109EB7009A404C /* _image.cpp in Sources */,
 				22354EAF22109EB7009A404C /* qhull_wrap.c in Sources */,
@@ -5084,7 +4968,6 @@
 				22354EB322109EB7009A404C /* listobject.c in Sources */,
 				22354EB422109EB7009A404C /* agg_trans_affine.cpp in Sources */,
 				22354EB522109EB7009A404C /* npy_math_complex.c in Sources */,
-				22354EB622109EB7009A404C /* solver.cpp in Sources */,
 				22354EB722109EB7009A404C /* conversion_utils.c in Sources */,
 				22354EB822109EB7009A404C /* convert_datatype.c in Sources */,
 				22354EB922109EB7009A404C /* sha256module.c in Sources */,
@@ -5182,13 +5065,11 @@
 				22354F1522109EB7009A404C /* user.c in Sources */,
 				22354F1622109EB7009A404C /* odictobject.c in Sources */,
 				22354F1722109EB7009A404C /* fftpack_litemodule.c in Sources */,
-				22354F1822109EB7009A404C /* variable.cpp in Sources */,
 				22354F1922109EB7009A404C /* convolute.c in Sources */,
 				22354F1A22109EB7009A404C /* pyarena.c in Sources */,
 				22354F1B22109EB7009A404C /* sha1module.c in Sources */,
 				22354F1C22109EB7009A404C /* dictobject.c in Sources */,
 				22354F1D22109EB7009A404C /* poly.c in Sources */,
-				22354F1E22109EB7009A404C /* strength.cpp in Sources */,
 				22354F1F22109EB7009A404C /* python_xerbla.c in Sources */,
 				22354F2022109EB7009A404C /* arrayobject.c in Sources */,
 				22354F2122109EB7009A404C /* zipimport.c in Sources */,
@@ -5237,7 +5118,6 @@
 				22354F4D22109EB7009A404C /* complexobject.c in Sources */,
 				22354F4E22109EB7009A404C /* _codecs_jp.c in Sources */,
 				22354F4F22109EB7009A404C /* cache.c in Sources */,
-				22354F5022109EB7009A404C /* expression.cpp in Sources */,
 				22354F5122109EB7009A404C /* cellobject.c in Sources */,
 				22354F5222109EB7009A404C /* context.c in Sources */,
 				22354F5322109EB7009A404C /* namespaceobject.c in Sources */,
@@ -5343,7 +5223,6 @@
 				22354FB822109EB7009A404C /* _codecs_kr.c in Sources */,
 				22354FB922109EB7009A404C /* unicodedata.c in Sources */,
 				22354FBA22109EB7009A404C /* array_assign_scalar.c in Sources */,
-				22354FBB22109EB7009A404C /* constraint.cpp in Sources */,
 				22354FBC22109EB7009A404C /* agg_vcgen_dash.cpp in Sources */,
 				22354FBD22109EB7009A404C /* apple_sgemv_fix.c in Sources */,
 				22354FBE22109EB7009A404C /* getversion.c in Sources */,
@@ -5422,7 +5301,6 @@
 				2235501822109EB9009A404C /* shape.c in Sources */,
 				2235501922109EB9009A404C /* xxsubtype.c in Sources */,
 				2235501A22109EB9009A404C /* _contour_wrapper.cpp in Sources */,
-				2235501B22109EB9009A404C /* term.cpp in Sources */,
 				2235501C22109EB9009A404C /* _asynciomodule.c in Sources */,
 				2235501D22109EB9009A404C /* binascii.c in Sources */,
 				2235501E22109EB9009A404C /* bytearrayobject.c in Sources */,
@@ -5460,7 +5338,6 @@
 				2235503F22109EB9009A404C /* abstract.c in Sources */,
 				2235504022109EB9009A404C /* _testbuffer.c in Sources */,
 				2235504122109EB9009A404C /* pwdmodule.c in Sources */,
-				2235504222109EB9009A404C /* kiwisolver.cpp in Sources */,
 				2235504322109EB9009A404C /* formatter_unicode.c in Sources */,
 				2235504422109EB9009A404C /* _image.cpp in Sources */,
 				2235504522109EB9009A404C /* qhull_wrap.c in Sources */,
@@ -5470,7 +5347,6 @@
 				2235504922109EB9009A404C /* listobject.c in Sources */,
 				2235504A22109EB9009A404C /* agg_trans_affine.cpp in Sources */,
 				2235504B22109EB9009A404C /* npy_math_complex.c in Sources */,
-				2235504C22109EB9009A404C /* solver.cpp in Sources */,
 				2235504D22109EB9009A404C /* conversion_utils.c in Sources */,
 				2235504E22109EB9009A404C /* convert_datatype.c in Sources */,
 				2235504F22109EB9009A404C /* sha256module.c in Sources */,
@@ -5568,13 +5444,11 @@
 				223550AB22109EB9009A404C /* user.c in Sources */,
 				223550AC22109EB9009A404C /* odictobject.c in Sources */,
 				223550AD22109EB9009A404C /* fftpack_litemodule.c in Sources */,
-				223550AE22109EB9009A404C /* variable.cpp in Sources */,
 				223550AF22109EB9009A404C /* convolute.c in Sources */,
 				223550B022109EB9009A404C /* pyarena.c in Sources */,
 				223550B122109EB9009A404C /* sha1module.c in Sources */,
 				223550B222109EB9009A404C /* dictobject.c in Sources */,
 				223550B322109EB9009A404C /* poly.c in Sources */,
-				223550B422109EB9009A404C /* strength.cpp in Sources */,
 				223550B522109EB9009A404C /* python_xerbla.c in Sources */,
 				223550B622109EB9009A404C /* arrayobject.c in Sources */,
 				223550B722109EB9009A404C /* zipimport.c in Sources */,
@@ -5623,7 +5497,6 @@
 				223550E322109EB9009A404C /* complexobject.c in Sources */,
 				223550E422109EB9009A404C /* _codecs_jp.c in Sources */,
 				223550E522109EB9009A404C /* cache.c in Sources */,
-				223550E622109EB9009A404C /* expression.cpp in Sources */,
 				223550E722109EB9009A404C /* cellobject.c in Sources */,
 				223550E822109EB9009A404C /* context.c in Sources */,
 				223550E922109EB9009A404C /* namespaceobject.c in Sources */,
@@ -5729,7 +5602,6 @@
 				2235514E22109EB9009A404C /* _codecs_kr.c in Sources */,
 				2235514F22109EB9009A404C /* unicodedata.c in Sources */,
 				2235515022109EB9009A404C /* array_assign_scalar.c in Sources */,
-				2235515122109EB9009A404C /* constraint.cpp in Sources */,
 				2235515222109EB9009A404C /* agg_vcgen_dash.cpp in Sources */,
 				2235515322109EB9009A404C /* apple_sgemv_fix.c in Sources */,
 				2235515422109EB9009A404C /* getversion.c in Sources */,
@@ -5808,7 +5680,6 @@
 				2219EB0321F6192D004CF7FA /* shape.c in Sources */,
 				226ED4B621C6AEC800A71A20 /* xxsubtype.c in Sources */,
 				22035C8B21F8BB74007A0F60 /* _contour_wrapper.cpp in Sources */,
-				22035CC821F9C6D4007A0F60 /* term.cpp in Sources */,
 				226ED4E421C6B8BD00A71A20 /* _asynciomodule.c in Sources */,
 				226ED53521C700F600A71A20 /* binascii.c in Sources */,
 				22E8FF5721C66D3B00967E21 /* bytearrayobject.c in Sources */,
@@ -5846,7 +5717,6 @@
 				22E8FF4221C66D3B00967E21 /* abstract.c in Sources */,
 				226ED4D621C6B85900A71A20 /* _testbuffer.c in Sources */,
 				226ED4AA21C6AE7C00A71A20 /* pwdmodule.c in Sources */,
-				22035CC721F9C6D4007A0F60 /* kiwisolver.cpp in Sources */,
 				226ED42521C6AB5000A71A20 /* formatter_unicode.c in Sources */,
 				22035C6121F8A660007A0F60 /* _image.cpp in Sources */,
 				22035C8F21F8BD36007A0F60 /* qhull_wrap.c in Sources */,
@@ -5856,7 +5726,6 @@
 				22E8FF4B21C66D3B00967E21 /* listobject.c in Sources */,
 				22035C6B21F8A6C0007A0F60 /* agg_trans_affine.cpp in Sources */,
 				2219EAAD21F4EE02004CF7FA /* npy_math_complex.c in Sources */,
-				22035CCA21F9C6D4007A0F60 /* solver.cpp in Sources */,
 				2219EADA21F61796004CF7FA /* conversion_utils.c in Sources */,
 				2219EAD221F61758004CF7FA /* convert_datatype.c in Sources */,
 				226ED50821C6BD5500A71A20 /* sha256module.c in Sources */,
@@ -5954,13 +5823,11 @@
 				22035CAE21F8BD78007A0F60 /* user.c in Sources */,
 				22E8FF4521C66D3B00967E21 /* odictobject.c in Sources */,
 				2219EB5721F63E52004CF7FA /* fftpack_litemodule.c in Sources */,
-				22035CCB21F9C6D4007A0F60 /* variable.cpp in Sources */,
 				226ED56F21C704B500A71A20 /* convolute.c in Sources */,
 				226ED44D21C6ABD100A71A20 /* pyarena.c in Sources */,
 				226ED50C21C6BD6E00A71A20 /* sha1module.c in Sources */,
 				22E8FF4021C66D3B00967E21 /* dictobject.c in Sources */,
 				22035CA821F8BD78007A0F60 /* poly.c in Sources */,
-				22035CC921F9C6D4007A0F60 /* strength.cpp in Sources */,
 				2219EB4121F61C49004CF7FA /* python_xerbla.c in Sources */,
 				2219EAD421F61763004CF7FA /* arrayobject.c in Sources */,
 				226ED4B821C6AECE00A71A20 /* zipimport.c in Sources */,
@@ -6009,7 +5876,6 @@
 				22E8FF4121C66D3B00967E21 /* complexobject.c in Sources */,
 				226ED55421C7043800A71A20 /* _codecs_jp.c in Sources */,
 				226ED51721C6F7C800A71A20 /* cache.c in Sources */,
-				22035CCD21F9C6D4007A0F60 /* expression.cpp in Sources */,
 				22E8FF4421C66D3B00967E21 /* cellobject.c in Sources */,
 				226ED56A21C704B500A71A20 /* context.c in Sources */,
 				22E8FF5321C66D3B00967E21 /* namespaceobject.c in Sources */,
@@ -6115,7 +5981,6 @@
 				226ED55221C7043800A71A20 /* _codecs_kr.c in Sources */,
 				226ED4E021C6B89F00A71A20 /* unicodedata.c in Sources */,
 				2219EB0C21F61963004CF7FA /* array_assign_scalar.c in Sources */,
-				22035CCC21F9C6D4007A0F60 /* constraint.cpp in Sources */,
 				22035C6F21F8A6DE007A0F60 /* agg_vcgen_dash.cpp in Sources */,
 				2219EB4521F61C89004CF7FA /* apple_sgemv_fix.c in Sources */,
 				226ED43721C6AB8E00A71A20 /* getversion.c in Sources */,
@@ -6985,7 +6850,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22354B4122109AC6009A404C /* Build configuration list for PBXNativeTarget "PythonA" */ = {
+		22354B4122109AC6009A404C /* Build configuration list for PBXNativeTarget "pythonA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22354B4222109AC6009A404C /* Debug */,
@@ -6994,7 +6859,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22354CD822109AEA009A404C /* Build configuration list for PBXNativeTarget "PythonB" */ = {
+		22354CD822109AEA009A404C /* Build configuration list for PBXNativeTarget "pythonB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22354CD922109AEA009A404C /* Debug */,
@@ -7003,7 +6868,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22354E6F22109C8E009A404C /* Build configuration list for PBXNativeTarget "PythonC" */ = {
+		22354E6F22109C8E009A404C /* Build configuration list for PBXNativeTarget "pythonC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22354E7022109C8E009A404C /* Debug */,
@@ -7012,7 +6877,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2235500622109EB7009A404C /* Build configuration list for PBXNativeTarget "PythonD" */ = {
+		2235500622109EB7009A404C /* Build configuration list for PBXNativeTarget "pythonD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2235500722109EB7009A404C /* Debug */,
@@ -7021,7 +6886,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2235519C22109EB9009A404C /* Build configuration list for PBXNativeTarget "PythonE" */ = {
+		2235519C22109EB9009A404C /* Build configuration list for PBXNativeTarget "pythonE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2235519D22109EB9009A404C /* Debug */,
@@ -7039,7 +6904,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22E8FEEA21C66AD100967E21 /* Build configuration list for PBXNativeTarget "Python3_ios" */ = {
+		22E8FEEA21C66AD100967E21 /* Build configuration list for PBXNativeTarget "python3_ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22E8FEEB21C66AD100967E21 /* Debug */,
