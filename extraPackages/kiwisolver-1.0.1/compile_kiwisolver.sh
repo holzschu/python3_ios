@@ -12,11 +12,15 @@ echo "Creating all frameworks:"
 for name in python3_ios pythonA pythonB pythonC pythonD pythonE
 do
 	echo Frameworks/${name}_kiwisolver.framework
-	framework = ${name}_kiwisolver
-	rm -rf ../../Frameworks/${name}-kiwisolver.framework
-	mkdir ../../Frameworks/${name}-kiwisolver.framework
-	cp ../../onIpad/lib/python3.7/site-packages/kiwisolver-1.0.1-py3.7-macosx-10.9-x86_64.egg/kiwisolver.cpython-37m-darwin.so ../../Frameworks/${name}-kiwisolver.framework/${name}-kiwisolver
-	cp ../../plists/${name}_kiwisolver_Info.plist ../../Frameworks/${name}-kiwisolver.framework/Info.plist
-	install_name_tool -change @rpath/Python3_ios.framework/Python3_ios @rpath/${name}.framework/${name}  ../../Frameworks/${name}-kiwisolver.framework/${name}-kiwisolver
-	install_name_tool -id @rpath/${name}-kiwisolver.framework/${name}-kiwisolver   ../../Frameworks/${name}-kiwisolver.framework/${name}-kiwisolver
+	framework=${name}-kiwisolver
+	rm -rf ../../Frameworks/$framework.framework
+	mkdir ../../Frameworks/$framework.framework
+	cp ../../onIpad/lib/python3.7/site-packages/kiwisolver-1.0.1-py3.7-macosx-10.9-x86_64.egg/kiwisolver.cpython-37m-darwin.so ../../Frameworks/$framework.framework/$framework
+	# cp ../../plists/${name}_kiwisolver_Info.plist ../../Frameworks/$framework.framework/Info.plist
+	cp ../../plists/basic_Info.plist ../../Frameworks/$framework.framework/Info.plist
+	plutil -replace CFBundleExecutable -string $framework ../../Frameworks/$framework.framework/Info.plist
+	plutil -replace CFBundleName -string $framework ../../Frameworks/$framework.framework/Info.plist
+	plutil -replace CFBundleIdentifier -string Nicolas-Holzschuch.$framework  ../../Frameworks/$framework.framework/Info.plist
+	install_name_tool -change @rpath/Python3_ios.framework/Python3_ios @rpath/${name}.framework/${name}  ../../Frameworks/$framework.framework/$framework
+	install_name_tool -id @rpath/$framework.framework/$framework   ../../Frameworks/$framework.framework/$framework
 done
