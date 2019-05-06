@@ -403,7 +403,6 @@ array_swapaxes(PyArrayObject *self, PyObject *args)
   Get a subset of bytes from each element of the array
   steals reference to typed, must not be NULL
 */
-
 NPY_NO_EXPORT PyObject *
 PyArray_GetField(PyArrayObject *self, PyArray_Descr *typed, int offset)
 {
@@ -1702,8 +1701,8 @@ array_reduce(PyArrayObject *self, PyObject *NPY_UNUSED(args))
     if (ret == NULL) {
         return NULL;
     }
-    mod = PyImport_ImportModule("numpy_core__multiarray_umath");
-    // mod = PyImport_ImportModule("numpy.core._multiarray_umath");
+    // mod = PyImport_ImportModule("numpy_core__multiarray_umath");
+    mod = PyImport_ImportModule("numpy.core._multiarray_umath");
     if (mod == NULL) {
         Py_DECREF(ret);
         return NULL;

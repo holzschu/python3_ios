@@ -1250,6 +1250,7 @@ init_@lapack_func@(EIGH_PARAMS_t* params, char JOBZ, char UPLO,
     {
         @typ@ query_work_size;
         fortran_int query_iwork_size;
+        query_iwork_size = 0;
 
         params->LWORK = -1;
         params->LIWORK = -1;
@@ -1350,6 +1351,7 @@ init_@lapack_func@(EIGH_PARAMS_t *params,
         @ftyp@ query_work_size;
         @fbasetyp@ query_rwork_size;
         fortran_int query_iwork_size;
+        query_iwork_size = 0;
 
         params->LWORK = -1;
         params->LRWORK = -1;
@@ -2949,6 +2951,8 @@ init_@lapack_func@(GELSD_PARAMS_t *params,
     fortran_int work_count;
     size_t work_size;
     size_t iwork_size;
+    work_size = 0; 
+    iwork_size = 0;
     fortran_int lda = fortran_int_max(1, m);
     fortran_int ldb = fortran_int_max(1, fortran_int_max(m,n));
 
@@ -2975,6 +2979,7 @@ init_@lapack_func@(GELSD_PARAMS_t *params,
         /* compute optimal work size */
         @ftyp@ work_size_query;
         fortran_int iwork_size_query;
+        iwork_size_query = 0;
 
         params->WORK = &work_size_query;
         params->IWORK = &iwork_size_query;
@@ -3087,6 +3092,7 @@ init_@lapack_func@(GELSD_PARAMS_t *params,
         @ftyp@ work_size_query;
         @frealtyp@ rwork_size_query;
         fortran_int iwork_size_query;
+        iwork_size_query = 0; 
 
         params->WORK = &work_size_query;
         params->IWORK = &iwork_size_query;

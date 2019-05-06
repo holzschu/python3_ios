@@ -34,8 +34,8 @@ class install_clib(Command):
             source = os.path.join(build_dir, name)
             self.mkpath(target_dir)
             # iOS
-            print("We want to copy ", source, " to ", target_dir)
-            # self.outfiles.append(self.copy_file(source, target_dir)[0])
+            # print("We want to copy ", source, " to ", target_dir)
+            self.outfiles.append(self.copy_file(source, target_dir)[0])
 
     def get_outputs(self):
         return self.outfiles

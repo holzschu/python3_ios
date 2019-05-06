@@ -664,7 +664,7 @@ def configuration(parent_package='',top_path=None):
         # compiler does not work).
         st = config_cmd.try_link('int main(void) { return 0;}')
         if not st:
-            raise RuntimeError("Broken toolchain: cannot link a simple C program")
+           raise RuntimeError("Broken toolchain: cannot link a simple C program")
         mlibs = check_mathlib(config_cmd)
 
         posix_mlib = ' '.join(['-l%s' % l for l in mlibs])
@@ -715,12 +715,13 @@ def configuration(parent_package='',top_path=None):
     #                     multiarray_tests module                         #
     #######################################################################
 
-    config.add_extension('_multiarray_tests',
-                    sources=[join('src', 'multiarray', '_multiarray_tests.c.src'),
-                             join('src', 'common', 'mem_overlap.c')],
-                    depends=[join('src', 'common', 'mem_overlap.h'),
-                             join('src', 'common', 'npy_extint128.h')],
-                    libraries=['npymath'])
+    # iOS: don't add tests
+    # config.add_extension('_multiarray_tests',
+    #                 sources=[join('src', 'multiarray', '_multiarray_tests.c.src'),
+    #                          join('src', 'common', 'mem_overlap.c')],
+    #                 depends=[join('src', 'common', 'mem_overlap.h'),
+    #                          join('src', 'common', 'npy_extint128.h')],
+    #                 libraries=['npymath'])
 
     #######################################################################
     #             _multiarray_umath module - common part                  #
@@ -935,33 +936,36 @@ def configuration(parent_package='',top_path=None):
     #                        umath_tests module                           #
     #######################################################################
 
-    config.add_extension('_umath_tests',
-                    sources=[join('src', 'umath', '_umath_tests.c.src')])
+    # iOS: don't add tests
+    # config.add_extension('_umath_tests',
+    #                 sources=[join('src', 'umath', '_umath_tests.c.src')])
 
     #######################################################################
     #                   custom rational dtype module                      #
     #######################################################################
 
-    config.add_extension('_rational_tests',
-                    sources=[join('src', 'umath', '_rational_tests.c.src')])
+    # iOS: don't add tests
+    # config.add_extension('_rational_tests',
+    #                 sources=[join('src', 'umath', '_rational_tests.c.src')])
 
     #######################################################################
     #                        struct_ufunc_test module                     #
     #######################################################################
 
-    config.add_extension('_struct_ufunc_tests',
-                    sources=[join('src', 'umath', '_struct_ufunc_tests.c.src')])
+    # iOS: don't add tests
+    # config.add_extension('_struct_ufunc_tests',
+    #                 sources=[join('src', 'umath', '_struct_ufunc_tests.c.src')])
 
 
     #######################################################################
     #                        operand_flag_tests module                    #
     #######################################################################
 
-    config.add_extension('_operand_flag_tests',
-                    sources=[join('src', 'umath', '_operand_flag_tests.c.src')])
+    # config.add_extension('_operand_flag_tests',
+    #                 sources=[join('src', 'umath', '_operand_flag_tests.c.src')])
 
-    config.add_data_dir('tests')
-    config.add_data_dir('tests/data')
+    # config.add_data_dir('tests')
+    # config.add_data_dir('tests/data')
 
     config.make_svn_version_py()
 

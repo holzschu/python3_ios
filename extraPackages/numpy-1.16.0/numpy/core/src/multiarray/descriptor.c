@@ -2358,9 +2358,8 @@ arraydescr_reduce(PyArray_Descr *self, PyObject *NPY_UNUSED(args))
     if (ret == NULL) {
         return NULL;
     }
-    
-    mod = PyImport_ImportModule("numpy_core__multiarray_umath");
-    // mod = PyImport_ImportModule("numpy.core._multiarray_umath");
+    mod = PyImport_ImportModule("numpy.core._multiarray_umath");
+    // mod = PyImport_ImportModule("numpy_core__multiarray_umath");
     if (mod == NULL) {
         Py_DECREF(ret);
         return NULL;

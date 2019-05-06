@@ -4546,8 +4546,8 @@ intern_strings(void)
 #if defined(NPY_PY3K)
 static struct PyModuleDef moduledef = {
         PyModuleDef_HEAD_INIT,
-       "numpy_core__multiarray_umath",
-        // "_multiarray_umath",
+        // "numpy_core__multiarray_umath",
+        "_multiarray_umath",
         NULL,
         -1,
         array_module_methods,
@@ -4561,8 +4561,8 @@ static struct PyModuleDef moduledef = {
 /* Initialization function for the module */
 #if defined(NPY_PY3K)
 #define RETVAL(x) x
-PyMODINIT_FUNC PyInit_numpy_core__multiarray_umath(void) {
-// PyMODINIT_FUNC PyInit__multiarray_umath(void) {
+// PyMODINIT_FUNC PyInit_numpy_core__multiarray_umath(void) {
+PyMODINIT_FUNC PyInit__multiarray_umath(void) {
 #else
 #define RETVAL(x)
 PyMODINIT_FUNC init_multiarray_umath(void) {
@@ -4758,7 +4758,6 @@ PyMODINIT_FUNC init_multiarray_umath(void) {
 
     /* Create the typeinfo types */
     typeinfo_init_structsequences();
-
     PyDict_SetItemString(d,
         "typeinfo", (PyObject *)&PyArray_typeinfoType);
     PyDict_SetItemString(d,
@@ -4774,7 +4773,6 @@ PyMODINIT_FUNC init_multiarray_umath(void) {
     if (initumath(m) != 0) {
         goto err;
     }
-    
     return RETVAL(m);
 
  err:

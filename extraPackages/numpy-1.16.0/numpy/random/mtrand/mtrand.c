@@ -37910,6 +37910,7 @@ static PyModuleDef_Slot __pyx_moduledef_slots[] = {
 // iOS: reset static variables (interpreter Id)
 static PY_INT64_T main_interpreter_id = -1;
 static void free_numpy_random_mtrand(PyObject *m) {
+    fprintf(stderr, "numpy_random_mtrand module, entering free function\n");	
     main_interpreter_id = -1;
     __pyx_module_is_main_mtrand = 0;
     __pyx_m = NULL;
@@ -37930,8 +37931,8 @@ static void free_numpy_random_mtrand(PyObject *m) {
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-//     "mtrand",
-    "numpy_random_mtrand", 
+    "mtrand",
+//     "numpy_random_mtrand", 
     0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -40571,10 +40572,10 @@ __Pyx_PyMODINIT_FUNC initmtrand(void) CYTHON_SMALL_CODE; /*proto*/
 __Pyx_PyMODINIT_FUNC initmtrand(void)
 #else
 // iOS:
-// __Pyx_PyMODINIT_FUNC PyInit_mtrand(void) CYTHON_SMALL_CODE; /*proto*/
-// __Pyx_PyMODINIT_FUNC PyInit_mtrand(void)
-__Pyx_PyMODINIT_FUNC PyInit_numpy_random_mtrand(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_numpy_random_mtrand(void)
+__Pyx_PyMODINIT_FUNC PyInit_mtrand(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_mtrand(void)
+// __Pyx_PyMODINIT_FUNC PyInit_numpy_random_mtrand(void) CYTHON_SMALL_CODE; /*proto*/
+// __Pyx_PyMODINIT_FUNC PyInit_numpy_random_mtrand(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);

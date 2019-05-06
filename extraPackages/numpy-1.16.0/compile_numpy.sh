@@ -22,7 +22,6 @@ do
 	level2=`/usr/bin/basename $library`
 	# Test with "." first, if it fails use "-" (not "_')
 	package=numpy.$level1.$level2
-	echo $framework
 	for name in python3_ios pythonA pythonB pythonC pythonD pythonE
 	do
 		echo "Creating: " Frameworks/${name}-${package}.framework
@@ -34,11 +33,7 @@ do
 		plutil -replace CFBundleExecutable -string $framework ../../Frameworks/$framework.framework/Info.plist
 		plutil -replace CFBundleName -string $framework ../../Frameworks/$framework.framework/Info.plist
 		# underscore is not allowed in CFBundleIdentifier:
-		if [ "$name" == python3_ios ]; then 
-			signature=python3-ios-kiwisolver
-		else
-			signature=$framework
-		fi
+		signature=${framework//_/-}
 		plutil -replace CFBundleIdentifier -string Nicolas-Holzschuch.$signature  ../../Frameworks/$framework.framework/Info.plist
 		install_name_tool -change @rpath/python3_ios.framework/python3_ios @rpath/${name}.framework/${name}  ../../Frameworks/$framework.framework/$framework
 		install_name_tool -id @rpath/$framework.framework/$framework   ../../Frameworks/$framework.framework/$framework

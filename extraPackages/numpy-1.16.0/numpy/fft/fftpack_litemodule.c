@@ -317,8 +317,8 @@ static struct PyMethodDef fftpack_methods[] = {
 #if PY_MAJOR_VERSION >= 3
 static struct PyModuleDef moduledef = {
         PyModuleDef_HEAD_INIT,
-        // "fftpack_lite",
-        "numpy_fft_fftpack_lite",
+        "fftpack_lite",
+        // "numpy_fft_fftpack_lite",
         NULL,
         -1,
         fftpack_methods,
@@ -332,8 +332,8 @@ static struct PyModuleDef moduledef = {
 /* Initialization function for the module */
 #if PY_MAJOR_VERSION >= 3
 #define RETVAL(x) x
-// PyMODINIT_FUNC PyInit_fftpack_lite(void)
-PyMODINIT_FUNC PyInit_numpy_fft_fftpack_lite(void)
+PyMODINIT_FUNC PyInit_fftpack_lite(void)
+// PyMODINIT_FUNC PyInit_numpy_fft_fftpack_lite(void)
 #else
 #define RETVAL(x)
 PyMODINIT_FUNC

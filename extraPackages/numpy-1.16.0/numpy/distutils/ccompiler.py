@@ -365,7 +365,28 @@ def CCompiler_compile(self, sources, output_dir=None, macros=None,
     # Return *all* object filenames, not just the ones we just built.
     return objects
 
+# iOS: 
+def CCompiler_link_executable(self,
+        objects,
+        output_progname,
+        output_dir=None,
+        libraries=None,
+        library_dirs=None,
+        runtime_library_dirs=None,
+        debug=0,
+        extra_preargs=None,
+        extra_postargs=None,
+        target_lang=None):
+    self.link(CCompiler.SHARED_LIBRARY, objects,
+            output_progname, output_dir,
+            libraries, library_dirs, runtime_library_dirs, None,
+            debug, extra_preargs, extra_postargs, None, target_lang)
+
 replace_method(CCompiler, 'compile', CCompiler_compile)
+# iOS: 
+replace_method(CCompiler, 'link_executable', CCompiler_link_executable)
+
+
 
 def CCompiler_customize_cmd(self, cmd, ignore=()):
     """

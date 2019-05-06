@@ -335,23 +335,23 @@ static void free_numpy_linalg_lapack_lite(PyObject *m) {
 #if PY_MAJOR_VERSION >= 3
 static struct PyModuleDef moduledef = {
         PyModuleDef_HEAD_INIT,
-        "numpy_linalg_lapack_lite",
-//     "lapack_lite",
+        // "numpy_linalg_lapack_lite",
+		"lapack_lite",
         NULL,
         -1,
         lapack_lite_module_methods,
         NULL,
         NULL,
-    clear_numpy_linalg_lapack_lite,         /* m_clear */
-    (freefunc)free_numpy_linalg_lapack_lite /* m_free */
+		clear_numpy_linalg_lapack_lite,         /* m_clear */
+		(freefunc)free_numpy_linalg_lapack_lite /* m_free */
 };
 #endif
 
 /* Initialization function for the module */
 #if PY_MAJOR_VERSION >= 3
 #define RETVAL(x) x
-// PyMODINIT_FUNC PyInit_lapack_lite(void)
-PyMODINIT_FUNC PyInit_numpy_linalg_lapack_lite(void)
+PyMODINIT_FUNC PyInit_lapack_lite(void)
+// PyMODINIT_FUNC PyInit_numpy_linalg_lapack_lite(void)
 #else
 #define RETVAL(x)
 PyMODINIT_FUNC

@@ -237,7 +237,7 @@ static void **PyUFunc_API=NULL;
 static NPY_INLINE int
 _import_umath(void)
 {
-  PyObject *numpy = PyImport_ImportModule("numpy_core__multiarray_umath");
+  PyObject *numpy = PyImport_ImportModule("numpy.core._multiarray_umath");
   PyObject *c_api = NULL;
 
   if (numpy == NULL) {

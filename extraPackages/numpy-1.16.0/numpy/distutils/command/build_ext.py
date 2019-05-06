@@ -170,14 +170,14 @@ class build_ext (old_build_ext):
                 ext.define_macros = ext.define_macros + macros
 
             # determine extension languages
-            # iOS: 
-            # if has_f_sources(ext.sources):
-            #     ext_languages.add('f77')
-            # if has_cxx_sources(ext.sources):
-            #     ext_languages.add('c++')
-            l = ext.language # or self.compiler.detect_language(ext.sources)
-            # if l:
-            #     ext_languages.add(l)
+            # iOS: (comment all these lines until 182)
+            if has_f_sources(ext.sources):
+                ext_languages.add('f77')
+            if has_cxx_sources(ext.sources):
+                ext_languages.add('c++')
+            l = ext.language or self.compiler.detect_language(ext.sources)
+            if l:
+                ext_languages.add(l)
             # reset language attribute for choosing proper linker
             if 'c++' in ext_languages:
                 ext_language = 'c++'
@@ -300,9 +300,9 @@ class build_ext (old_build_ext):
 
         fullname = self.get_ext_fullname(ext.name)
         # iOS:
-        print("Not building ", fullname, " extension")
-        print("Source is : ", sources)
-        return
+        # print("Not building ", fullname, " extension")
+        # print("Source is : ", sources)
+        # return
         
         if self.inplace:
             modpath = fullname.split('.')

@@ -54,7 +54,7 @@ class build_clib(old_build_clib):
 
     def have_f_sources(self):
         #iOS: let's make it simple
-        return False
+        # return False
         for (lib_name, build_info) in self.libraries:
             if has_f_sources(build_info.get('sources', [])):
                 return True
@@ -62,7 +62,7 @@ class build_clib(old_build_clib):
 
     def have_cxx_sources(self):
         #iOS: let's make it simple
-        return False
+        # return False
         for (lib_name, build_info) in self.libraries:
             if has_cxx_sources(build_info.get('sources', [])):
                 return True
@@ -117,7 +117,8 @@ class build_clib(old_build_clib):
         else:
             self._f_compiler = None
 
-        # self.build_libraries(self.libraries)
+        # iOS: comment this line
+        self.build_libraries(self.libraries)
 
         if self.inplace:
             for l in self.distribution.installed_libraries:

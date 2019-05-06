@@ -27,9 +27,6 @@ from numpy.distutils.conv_template import process_file as process_c_file
 def subst_vars(target, source, d):
     """Substitute any occurrence of @foo@ by d['foo'] from source file into
     target."""
-    print("source = ", source)
-    print("target = ", target)
-    print("d = ", d)
     var = re.compile('@([a-zA-Z_]+)@')
     fs = open(source, 'r')
     try:
@@ -159,15 +156,15 @@ class build_src(build_ext.build_ext):
         self.build_py_modules_sources()
 
         for libname_info in self.libraries:
-            print("Not building ", libname_info, " (it was pre-built)")
-            # self.build_library_sources(*libname_info)
+            # print("Not building ", libname_info, " (it was pre-built)")
+            self.build_library_sources(*libname_info)
 
         if self.extensions:
             self.check_extensions_list(self.extensions)
 
             for ext in self.extensions:
-                print("Not building ", ext, " (it was built beforehand)")
-                # self.build_extension_sources(ext)
+                # print("Not building ", ext, " (it was built beforehand)")
+                self.build_extension_sources(ext)
 
         self.build_data_files_sources()
         self.build_npy_pkg_config()

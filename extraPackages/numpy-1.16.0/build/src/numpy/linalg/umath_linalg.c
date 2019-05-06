@@ -417,8 +417,8 @@ set_fp_invalid_or_clear(int error_occurred)
  *****************************************************************************
  */
 
-// #define UMATH_LINALG_MODULE_NAME "_umath_linalg"
-#define UMATH_LINALG_MODULE_NAME "numpy_linalg__umath_linalg"
+#define UMATH_LINALG_MODULE_NAME "_umath_linalg"
+// #define UMATH_LINALG_MODULE_NAME "numpy_linalg__umath_linalg"
 
 typedef union {
     fortran_complex f;
@@ -6537,6 +6537,8 @@ init_dgelsd(GELSD_PARAMS_t *params,
         /* compute optimal work size */
         fortran_doublereal work_size_query;
         fortran_int iwork_size_query;
+        work_size_query = 0;
+        iwork_size_query = 0;
 
         params->WORK = &work_size_query;
         params->IWORK = &iwork_size_query;
@@ -7592,8 +7594,8 @@ static struct PyModuleDef moduledef = {
 
 #if defined(NPY_PY3K)
 #define RETVAL(x) x
-// PyObject *PyInit__umath_linalg(void)
-PyObject *PyInit_numpy_linalg__umath_linalg(void)
+PyObject *PyInit__umath_linalg(void)
+// PyObject *PyInit_numpy_linalg__umath_linalg(void)
 #else
 #define RETVAL(x)
 PyMODINIT_FUNC

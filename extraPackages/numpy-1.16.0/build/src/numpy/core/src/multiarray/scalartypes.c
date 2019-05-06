@@ -4118,8 +4118,8 @@ gentype_reduce(PyObject *self, PyObject *NPY_UNUSED(args))
     }
 #endif
 
-    mod = PyImport_ImportModule("numpy_core__multiarray_umath");
-    // mod = PyImport_ImportModule("numpy.core._multiarray_umath");
+    // mod = PyImport_ImportModule("numpy_core__multiarray_umath");
+    mod = PyImport_ImportModule("numpy.core._multiarray_umath");
     if (mod == NULL) {
         return NULL;
     }
