@@ -1,0 +1,26 @@
+# Development, documentation & testing requirements.
+-e .
+alabaster
+Babel
+check-manifest
+cov-core
+coverage
+coveralls
+docopt
+docutils
+jarn.viewdoc
+Jinja2
+MarkupSafe
+olefile
+pycodestyle
+pyflakes
+Pygments
+pyroma
+pytest
+pytest-cov
+pytz
+requests
+six
+snowballstemmer
+Sphinx
+sphinx-rtd-theme
