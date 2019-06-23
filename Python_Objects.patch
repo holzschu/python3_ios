@@ -1,6 +1,39 @@
+diff -Naur tmp/Python-3.7.1/Objects/call.c Python-3.7.1/Objects/call.c
+--- tmp/Python-3.7.1/Objects/call.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Objects/call.c	2019-06-03 17:55:17.000000000 +0200
+@@ -2,7 +2,6 @@
+ #include "internal/pystate.h"
+ #include "frameobject.h"
+ 
+-
+ int
+ _PyObject_HasFastCall(PyObject *callable)
+ {
+@@ -587,6 +586,7 @@
+ }
+ 
+ 
++
+ PyObject *
+ _PyMethodDef_RawFastCallKeywords(PyMethodDef *method, PyObject *self,
+                                  PyObject *const *args, Py_ssize_t nargs,
+diff -Naur tmp/Python-3.7.1/Objects/methodobject.c Python-3.7.1/Objects/methodobject.c
+--- tmp/Python-3.7.1/Objects/methodobject.c	2018-10-20 08:04:19.000000000 +0200
++++ Python-3.7.1/Objects/methodobject.c	2019-05-02 17:38:52.000000000 +0200
+@@ -176,6 +176,10 @@
+ static int
+ meth_traverse(PyCFunctionObject *m, visitproc visit, void *arg)
+ {
++    // iOS: module cleanup in PyImport_Cleanup has left some modules with negative ref counts.
++    if ((m->m_self != NULL) && (m->m_self->ob_refcnt < 0)) m->m_self = NULL;
++    if ((m->m_module != NULL) && (m->m_module->ob_refcnt < 0)) m->m_module = NULL;
++    //
+     Py_VISIT(m->m_self);
+     Py_VISIT(m->m_module);
+     return 0;
 diff -Naur tmp/Python-3.7.1/Objects/moduleobject.c Python-3.7.1/Objects/moduleobject.c
 --- tmp/Python-3.7.1/Objects/moduleobject.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Objects/moduleobject.c	2019-04-07 15:36:46.000000000 +0200
++++ Python-3.7.1/Objects/moduleobject.c	2019-06-06 15:15:14.000000000 +0200
 @@ -187,6 +187,7 @@
      if (!PyModuleDef_Init(module))
          return NULL;
@@ -18,9 +51,72 @@ diff -Naur tmp/Python-3.7.1/Objects/moduleobject.c Python-3.7.1/Objects/moduleob
      if (module->m_size > 0) {
          m->md_state = PyMem_MALLOC(module->m_size);
          if (!m->md_state) {
+@@ -572,9 +573,30 @@
+ void
+ _PyModule_Clear(PyObject *m)
+ {
++#if TARGET_OS_IPHONE
++    // Modules created with Cython + PEP489 have strange issues with number of references
++    // which prevent the freefunc function from being called.
++    // We explicitly call the freefunc function here, before the dictionary is cleared.
++    // (otherwise, "name" is gone)
++    int moduleNeedsCleanup = 0;
++    PyModuleObject *mod = (PyModuleObject *)m;
++    const char* utf8name = PyUnicode_AsUTF8(mod->md_name);
++    if ((strncmp(utf8name, "pandas.", 7) == 0) || (strncmp(utf8name, "numpy.", 6) == 0)) {
++        fprintf(stderr, "Module = %x name = %s refCount = %zd ", mod, utf8name, m->ob_refcnt);
++        if (mod->md_def && mod->md_def->m_free) {
++            fprintf(stderr, "module has a free function: %x", mod->md_def->m_free);
++            moduleNeedsCleanup = 1;
++        }
++        fprintf(stderr, "\n");
++    }
++#endif
+     PyObject *d = ((PyModuleObject *)m)->md_dict;
+     if (d != NULL)
+         _PyModule_ClearDict(d);
++#if TARGET_OS_IPHONE
++    // Cleanup module after clearing dictionary:
++    if (moduleNeedsCleanup) mod->md_def->m_free(mod);
++#endif
+ }
+ 
+ void
+@@ -679,12 +701,14 @@
+     }
+     if (m->md_weaklist != NULL)
+         PyObject_ClearWeakRefs((PyObject *) m);
+-    if (m->md_def && m->md_def->m_free)
++    if (m->md_def && m->md_def->m_free) {
+         m->md_def->m_free(m);
++    }
+     Py_XDECREF(m->md_dict);
+     Py_XDECREF(m->md_name);
+     if (m->md_state != NULL)
+         PyMem_FREE(m->md_state);
++    // This call module->tp_free.
+     Py_TYPE(m)->tp_free((PyObject *)m);
+ }
+ 
+@@ -716,8 +740,13 @@
+         _Py_IDENTIFIER(__name__);
+         mod_name = _PyDict_GetItemId(m->md_dict, &PyId___name__);
+         if (mod_name && PyUnicode_Check(mod_name)) {
+-            PyErr_Format(PyExc_AttributeError,
+-                        "module '%U' has no attribute '%U'", mod_name, name);
++            if (!getattr) {
++                PyErr_Format(PyExc_AttributeError,
++                             "module '%U' has no attribute __getattr__", mod_name);
++            } else {
++                PyErr_Format(PyExc_AttributeError,
++                             "module '%U' has no attribute '%U'", mod_name, name);
++            }
+             return NULL;
+         }
+     }
 diff -Naur tmp/Python-3.7.1/Objects/typeobject.c Python-3.7.1/Objects/typeobject.c
 --- tmp/Python-3.7.1/Objects/typeobject.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Objects/typeobject.c	2019-02-08 17:21:54.000000000 +0100
++++ Python-3.7.1/Objects/typeobject.c	2019-05-02 09:26:44.000000000 +0200
 @@ -1253,7 +1253,7 @@
      if (PyType_IS_GC(base))
          _PyObject_GC_TRACK(self);
@@ -58,7 +154,26 @@ diff -Naur tmp/Python-3.7.1/Objects/typeobject.c Python-3.7.1/Objects/typeobject
      if (type->tp_as_async != NULL && base->tp_as_async != NULL) {
          basebase = base->tp_base;
          if (basebase->tp_as_async == NULL)
-@@ -5208,17 +5216,22 @@
+@@ -5106,6 +5114,18 @@
+ 
+ static int add_operators(PyTypeObject *);
+ 
++#if TARGET_OS_IPHONE
++// to reset PyTypeObject parameters at cleanup (required for Cython):
++void PyType_Reset(PyTypeObject* pt) {
++    // Need to decrement the tp_dict of the typeObjects too (unless it's NULL):
++    Py_XDECREF(pt->tp_dict);
++    pt->tp_dict = 0;
++    // TODO: should I call PyDict_Cleanup on the typeObjects tp_dict?
++    // And reset the TP_FLAGS_READY flag:
++    pt->tp_flags &= !Py_TPFLAGS_READY;
++}
++#endif
++
+ int
+ PyType_Ready(PyTypeObject *type)
+ {
+@@ -5208,17 +5228,22 @@
      if (type->tp_base != NULL)
          inherit_special(type, type->tp_base);
  
@@ -81,7 +196,7 @@ diff -Naur tmp/Python-3.7.1/Objects/typeobject.c Python-3.7.1/Objects/typeobject
      /* All bases of statically allocated type should be statically allocated */
      if (!(type->tp_flags & Py_TPFLAGS_HEAPTYPE))
          for (i = 0; i < n; i++) {
-@@ -5281,7 +5294,6 @@
+@@ -5281,7 +5306,6 @@
              type->tp_hash = PyObject_HashNotImplemented;
          }
      }

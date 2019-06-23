@@ -1,6 +1,6 @@
 diff -Naur tmp/Python-3.7.1/Python/ceval.c Python-3.7.1/Python/ceval.c
 --- tmp/Python-3.7.1/Python/ceval.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/ceval.c	2019-02-07 17:17:55.000000000 +0100
++++ Python-3.7.1/Python/ceval.c	2019-04-13 23:10:01.000000000 +0200
 @@ -618,6 +618,10 @@
     can be disabled on gcc by using the -fno-gcse flag (or possibly
     -fno-crossjumping).
@@ -30,10 +30,13 @@ diff -Naur tmp/Python-3.7.1/Python/ceval.c Python-3.7.1/Python/ceval.c
                  if (v == NULL) {
 diff -Naur tmp/Python-3.7.1/Python/dynload_shlib.c Python-3.7.1/Python/dynload_shlib.c
 --- tmp/Python-3.7.1/Python/dynload_shlib.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/dynload_shlib.c	2019-04-07 14:29:52.000000000 +0200
-@@ -64,8 +64,16 @@
++++ Python-3.7.1/Python/dynload_shlib.c	2019-06-06 16:52:01.000000000 +0200
+@@ -62,16 +62,23 @@
+     char funcname[258];
+     char pathbuf[260];
      int dlopenflags=0;
- 
+-
++    
      if (strchr(pathname, '/') == NULL) {
 +#ifndef TARGET_OS_IPHONE
          /* Prefix bare filename with "./" */
@@ -48,9 +51,24 @@ diff -Naur tmp/Python-3.7.1/Python/dynload_shlib.c Python-3.7.1/Python/dynload_s
          pathname = pathbuf;
      }
  
+     PyOS_snprintf(funcname, sizeof(funcname),
+                   LEAD_UNDERSCORE "%.20s_%.200s", prefix, shortname);
+-
+     if (fp != NULL) {
+         int i;
+         struct _Py_stat_struct status;
+@@ -102,6 +109,8 @@
+         const char *error = dlerror();
+         if (error == NULL)
+             error = "unknown dlopen() error";
++        // iOS, debug:
++        fprintf(stderr, "dlopen error: %s\n", error);
+         error_ob = PyUnicode_FromString(error);
+         if (error_ob == NULL)
+             return NULL;
 diff -Naur tmp/Python-3.7.1/Python/fileutils.c Python-3.7.1/Python/fileutils.c
 --- tmp/Python-3.7.1/Python/fileutils.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/fileutils.c	2019-02-17 20:28:32.000000000 +0100
++++ Python-3.7.1/Python/fileutils.c	2019-05-08 20:31:54.000000000 +0200
 @@ -1375,7 +1375,7 @@
          count = PY_SSIZE_T_MAX;
      }
@@ -74,8 +92,17 @@ diff -Naur tmp/Python-3.7.1/Python/getplatform.c Python-3.7.1/Python/getplatform
  const char *
 diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
 --- tmp/Python-3.7.1/Python/import.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/import.c	2019-04-08 15:58:30.000000000 +0200
-@@ -413,7 +413,7 @@
++++ Python-3.7.1/Python/import.c	2019-06-06 16:39:39.000000000 +0200
+@@ -391,8 +391,6 @@
+     NULL
+ };
+ 
+-/* Un-initialize things, as good as we can */
+-
+ void
+ PyImport_Cleanup(void)
+ {
+@@ -413,7 +411,7 @@
         destruction order.  Sigh. */
  
      /* XXX Perhaps these precautions are obsolete. Who knows? */
@@ -84,7 +111,37 @@ diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
      if (Py_VerboseFlag)
          PySys_WriteStderr("# clear builtins._\n");
      if (PyDict_SetItemString(interp->builtins, "_", Py_None) < 0) {
-@@ -1367,6 +1367,7 @@
+@@ -557,6 +555,18 @@
+                 PySys_FormatStderr("# cleanup[3] wiping %U\n", name);
+             _PyModule_Clear(mod);
+             Py_DECREF(mod);
++#if TARGET_OS_IPHONE
++            // Modules created with Cython + PEP489 have strange issues with number of references
++            // which prevent the freefunc function from being called.
++            // We explicitly call the freefunc function here, before the dictionary is cleared.
++            // (otherwise, "name" is gone)
++            // Thos here is just for debugging, the module erasure is done in moduleobject.c
++            const char* utf8name = PyUnicode_AsUTF8(name);
++            if ((strncmp(utf8name, "pandas.", 7) == 0) || (strncmp(utf8name, "numpy.", 6) == 0)) {
++                // fprintf(stderr, "We have a module = %x name = %s refCount = %zd\n", mod, utf8name, mod->ob_refcnt);
++                // if (mod->md_def && mod->md_def->m_free) mod->md_def->m_free(mod);
++            }
++#endif
+         }
+         Py_DECREF(weaklist);
+     }
+@@ -576,7 +586,9 @@
+     Py_DECREF(modules);
+ 
+     /* Once more */
+-    _PyGC_CollectNoFail();
++    Py_VerboseFlag = 0;
++    _PyGC_CollectNoFail(); // The line destroying all remaining modules
++    Py_VerboseFlag = 0;
+ 
+ #undef CLEAR_MODULE
+ #undef STORE_MODULE_WEAKREF
+@@ -1367,6 +1379,7 @@
  {
      PyObject *nameobj;
      int ret;
@@ -92,7 +149,7 @@ diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
      nameobj = PyUnicode_InternFromString(name);
      if (nameobj == NULL)
          return -1;
-@@ -1482,7 +1483,7 @@
+@@ -1482,7 +1495,7 @@
      Py_ssize_t last_dot;
      PyObject *base;
      int level_up;
@@ -101,7 +158,7 @@ diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
      if (globals == NULL) {
          PyErr_SetString(PyExc_KeyError, "'__name__' not in globals");
          goto error;
-@@ -2118,6 +2119,9 @@
+@@ -2118,6 +2131,9 @@
  
  Create an extension module.
  [clinic start generated code]*/
@@ -111,38 +168,39 @@ diff -Naur tmp/Python-3.7.1/Python/import.c Python-3.7.1/Python/import.c
  
  static PyObject *
  _imp_create_dynamic_impl(PyObject *module, PyObject *spec, PyObject *file)
-@@ -2136,9 +2140,30 @@
+@@ -2136,6 +2152,31 @@
          Py_DECREF(name);
          return NULL;
      }
 +#ifdef TARGET_OS_IPHONE
-+    fprintf(stderr, "_imp_create_dynamic_impl, name = ");
-+    PyObject_Print(name, stderr, 0);
-+    fprintf(stderr, " path = ");
-+    PyObject_Print(path, stderr, 0);
-+    fprintf(stderr, " file = ");
-+    PyObject_Print(file, stderr, 0);
-+    fprintf(stderr, " \n");
++    // fprintf(stderr, "_imp_create_dynamic_impl, name = ");
++    // PyObject_Print(name, stderr, 0);
++    // PyObject_Print(name, stderr, Py_PRINT_RAW);
++    // fprintf(stderr, " path = ");
++    // PyObject_Print(path, stderr, 0);
++    // PyObject_Print(path, stderr, Py_PRINT_RAW);
++    // fprintf(stderr, " file = ");
++    // PyObject_Print(file, stderr, 0);
++    // fprintf(stderr, " \n");
 +    char newPathString[MAXPATHLEN];
 +    int argc;
 +    wchar_t **argv_orig;
 +    Py_GetArgcArgv(&argc, &argv_orig);
 +    const char* nameC = PyUnicode_AsUTF8(name);
-+    sprintf(newPathString, "%s/Frameworks/%S-%s.framework/%S-%s", getenv("APPDIR"), argv_orig[0], nameC, argv_orig[0], nameC);
-+    fprintf(stderr, "New path: %s\n", newPathString);
++    wchar_t pythonName[12];
++    wcscpy(pythonName, argv_orig[0]);
++    if (wcscmp(pythonName, L"python3") == 0) {
++        wcscpy(pythonName, L"python3_ios");
++    }
++    sprintf(newPathString, "%s/Frameworks/%S-%s.framework/%S-%s", getenv("APPDIR"), pythonName, nameC, pythonName, nameC);
++    // fprintf(stderr, "New path: %s\n", newPathString);
 +    path = PyUnicode_FromString(newPathString);
 +    PyObject_SetAttrString(spec, "origin", path);
 +#endif
  
      mod = _PyImport_FindExtensionObject(name, path);
      if (mod != NULL) {
-+#ifdef TARGET_OS_IPHONE
-+        fprintf(stderr, "Already imported.\n");
-+#endif
-         Py_DECREF(name);
-         Py_DECREF(path);
-         Py_INCREF(mod);
-@@ -2148,6 +2173,9 @@
+@@ -2148,6 +2189,9 @@
      if (file != NULL) {
          fp = _Py_fopen_obj(path, "r");
          if (fp == NULL) {
@@ -165,7 +223,7 @@ diff -Naur tmp/Python-3.7.1/Python/pathconfig.c Python-3.7.1/Python/pathconfig.c
          have_script_arg = !have_module_arg && (wcscmp(argv0, L"-c") != 0);
 diff -Naur tmp/Python-3.7.1/Python/pylifecycle.c Python-3.7.1/Python/pylifecycle.c
 --- tmp/Python-3.7.1/Python/pylifecycle.c	2018-10-20 08:04:19.000000000 +0200
-+++ Python-3.7.1/Python/pylifecycle.c	2019-04-08 11:02:01.000000000 +0200
++++ Python-3.7.1/Python/pylifecycle.c	2019-05-02 22:41:04.000000000 +0200
 @@ -893,6 +893,7 @@
   * Other errors should be reported as normal Python exceptions with a
   * non-zero return code.
