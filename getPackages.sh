@@ -2,7 +2,7 @@
 
 
 HHROOT="https://github.com/holzschu"
-IOS_SYSTEM_VER="2.3"
+IOS_SYSTEM_VER="2.4"
 
 # Python-3.7.1
 rm -rf Python-3.7.1
