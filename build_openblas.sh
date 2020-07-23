@@ -1,8 +1,13 @@
 # Building for iOS:
-echo "Download OpenBLAS and install"
+# This works for version 2.20. 
+# OpenBlas is now at version 3.37, but compilation for iOS is still problematic. 
+# I tried with this here: https://github.com/xianyi/OpenBLAS/issues/1687
+# but did not get a full working library
+echo "Uncompress OpenBLAS and compile:"
 rm -rf OpenBLAS-0.2.20/
-curl -OL http://github.com/xianyi/OpenBLAS/archive/v0.2.20.tar.gz 
-tar -xzf v0.2.20.tar.gz
+# download does not work, please download manually from: https://github.com/xianyi/OpenBLAS/releases/tag/v0.2.20
+# curl -OL https://github.com/xianyi/OpenBLAS/archive/v0.2.20.tar.gz 
+tar -xzf OpenBLAS-0.2.20.tar.gz
 (cd OpenBLAS-0.2.20/ ; make HOSTCC="clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/" CC="clang -arch arm64 -miphoneos-version-min=11.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/ " TARGET=ARMV8 AR="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar" NOFORTRAN="1" NO_SHARED="1" ; make HOSTCC="clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/" CC="clang -arch arm64 -miphoneos-version-min=11.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/ " TARGET=ARMV8 AR="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar" NOFORTRAN="1" NO_SHARED="1" install PREFIX=./install ; cd ..)
 
 echo "Creating framework:"
