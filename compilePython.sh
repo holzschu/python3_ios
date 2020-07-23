@@ -9,6 +9,10 @@ for framework in python3_ios pythonA pythonB pythonC pythonD pythonE
 do
    rm -rf $framework.xcframework
    xcodebuild -create-xcframework -framework Python3_ios/build//Release-iphoneos/$framework.framework -framework Python3_ios/build//Release-iphonesimulator/$framework.framework -output $framework.xcframework
+done
+
+for framework in python3_ios pythonA pythonB pythonC pythonD pythonE
+do
    echo $framework
    rm -f $framework.xcframework.zip
    zip -rq $framework.xcframework.zip $framework.xcframework
