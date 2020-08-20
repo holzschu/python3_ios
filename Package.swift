@@ -13,48 +13,48 @@ let package = Package(
         .binaryTarget(
             name: "python3_ios",
             url: "https://github.com/holzschu/python3_ios/releases/download/v1.0/python3_ios.xcframework.zip",
-            checksum: "ec3190430fae143cba81ef334c51166ccb99ec3435d8a9797cc7468511d4e75f"
+            checksum: "4c2d2e95b230adf62ff516dafae92dea542334a79ee9db2483d6f6ef51555140"
         ),
         .binaryTarget(
             name: "pythonA",
             url: "https://github.com/holzschu/python3_ios/releases/download/v1.0/pythonA.xcframework.zip",
-            checksum: "934f22cf50572a257670e4d90275a5f70355d334ea78fccd84357b6f78ac4422"
+            checksum: "4c067470ae5d89f12563cf9430b0a21946faa27b43e757dd84b390ad3addb17b"
         ),
         .binaryTarget(
             name: "pythonB",
             url: "https://github.com/holzschu/python3_ios/releases/download/v1.0/pythonB.xcframework.zip",
-            checksum: "22bd76235151c1ae1f64041859888377d0a154b90c35a7a43d31661222ab6b7e"
+            checksum: "807f1cd53257ba72951e53270a59997cdda6db7664c00aeaf788bedb270f9bcc"
         ),
         .binaryTarget(
             name: "pythonC",
             url: "https://github.com/holzschu/python3_ios/releases/download/v1.0/pythonC.xcframework.zip",
-            checksum: "843b6281b303d6a33740cd18bc90332d24c38496377b11595c3932b7ac841a20"
+            checksum: "b7517fb086f1a13a185ad9d2f932866cc17904a6ae4eb76a139de9edef7e1800"
         ),
         .binaryTarget(
             name: "pythonD",
             url: "https://github.com/holzschu/python3_ios/releases/download/v1.0/pythonD.xcframework.zip",
-            checksum: "2c4a606c890017e9333c487b6e0b1766fd2d4b84dc5af6580549cf47c3528391"
+            checksum: "84255b7312970c8f94d94c268137135f14bf1c91f9e240b1a1ecebb5cd2d8a4f"
         ),
         .binaryTarget(
             name: "pythonE",
             url: "https://github.com/holzschu/python3_ios/releases/download/v1.0/pythonE.xcframework.zip",
-            checksum: "0c5fdb2b25e06dfa1d0200db449b6239ef0dd86b96ea3193a9fbbeed12e7b800"
+            checksum: "be8ab1c89998c8f5d88fb30f46c289a7d77dbc6227d16b4d189b98b89cd0648a"
         )
     ]
 )
 /*
 - recompiled with Xcode 12b5, python3_ios copied 5 times.
-- module.modulemap not right?
+- Removed Module
 python3_ios
-ec3190430fae143cba81ef334c51166ccb99ec3435d8a9797cc7468511d4e75f
+4c2d2e95b230adf62ff516dafae92dea542334a79ee9db2483d6f6ef51555140
 pythonA
-934f22cf50572a257670e4d90275a5f70355d334ea78fccd84357b6f78ac4422
+4c067470ae5d89f12563cf9430b0a21946faa27b43e757dd84b390ad3addb17b
 pythonB
-22bd76235151c1ae1f64041859888377d0a154b90c35a7a43d31661222ab6b7e
+807f1cd53257ba72951e53270a59997cdda6db7664c00aeaf788bedb270f9bcc
 pythonC
-843b6281b303d6a33740cd18bc90332d24c38496377b11595c3932b7ac841a20
+b7517fb086f1a13a185ad9d2f932866cc17904a6ae4eb76a139de9edef7e1800
 pythonD
-2c4a606c890017e9333c487b6e0b1766fd2d4b84dc5af6580549cf47c3528391
+84255b7312970c8f94d94c268137135f14bf1c91f9e240b1a1ecebb5cd2d8a4f
 pythonE
-0c5fdb2b25e06dfa1d0200db449b6239ef0dd86b96ea3193a9fbbeed12e7b800
+be8ab1c89998c8f5d88fb30f46c289a7d77dbc6227d16b4d189b98b89cd0648a
 */
