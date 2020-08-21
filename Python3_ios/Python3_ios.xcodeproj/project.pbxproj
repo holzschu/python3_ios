@@ -61,8 +61,8 @@
 		2216149A24C62C0500757BFE /* ios_system.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2216149624C62C0500757BFE /* ios_system.xcframework */; };
 		2216149B24C62C0500757BFE /* ios_system.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2216149624C62C0500757BFE /* ios_system.xcframework */; };
 		2216149C24C62C0500757BFE /* ios_system.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2216149624C62C0500757BFE /* ios_system.xcframework */; };
-		221CD95D21DBBA1D00F3B47C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE"; }; };
-		221CD96021DFA97100F3B47C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
+		221CD95D21DBBA1D00F3B47C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; };
+		221CD96021DFA97100F3B47C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		221CD96421DFAABF00F3B47C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 221CD96321DFAABF00F3B47C /* libc++.tbd */; };
 		221CD96721E0B42300F3B47C /* initlibzmq.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD96621E0B42300F3B47C /* initlibzmq.c */; };
 		221CD96921E0B44400F3B47C /* monitoredqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD96821E0B44400F3B47C /* monitoredqueue.c */; settings = {COMPILER_FLAGS = "-I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
@@ -101,7 +101,7 @@
 		223549D722109AC6009A404C /* pgen.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FEF721C66C2200967E21 /* pgen.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223549D822109AC6009A404C /* dynamic_annotations.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED41C21C6AB3400A71A20 /* dynamic_annotations.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223549D922109AC6009A404C /* traceback.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED46E21C6AC3F00A71A20 /* traceback.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
-		223549DB22109AC6009A404C /* stgdict.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59521C787B100A71A20 /* stgdict.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
+		223549DB22109AC6009A404C /* stgdict.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59521C787B100A71A20 /* stgdict.c */; };
 		223549DD22109AC6009A404C /* floatobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3321C66D3A00967E21 /* floatobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223549DE22109AC6009A404C /* bytesobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF1B21C66D3900967E21 /* bytesobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		223549DF22109AC6009A404C /* bytes_methods.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3121C66D3A00967E21 /* bytes_methods.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -139,7 +139,7 @@
 		22354A1722109AC6009A404C /* blake2module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50D21C6BD8100A71A20 /* blake2module.c */; };
 		22354A1922109AC6009A404C /* parsermodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4ED21C6B92400A71A20 /* parsermodule.c */; };
 		22354A1A22109AC6009A404C /* cfield.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58F21C7879E00A71A20 /* cfield.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		22354A1B22109AC6009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I ../libffi-3.2.1/include/ -I ../libffi-3.2.1/build_iphoneos-arm64/"; }; };
+		22354A1B22109AC6009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; };
 		22354A1D22109AC6009A404C /* pyfpe.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45021C6ABE200A71A20 /* pyfpe.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354A1E22109AC6009A404C /* _stat.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED48321C6ADD100A71A20 /* _stat.c */; };
 		22354A2022109AC6009A404C /* _ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5A921C7D6A700A71A20 /* _ssl.c */; };
@@ -242,7 +242,7 @@
 		22354AB622109AC6009A404C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A521C6AE6C00A71A20 /* main.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354AB822109AC6009A404C /* unicodeobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3721C66D3B00967E21 /* unicodeobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354ABA22109AC6009A404C /* _pickle.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CF21C6B83400A71A20 /* _pickle.c */; };
-		22354ABB22109AC6009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
+		22354ABB22109AC6009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		22354ABD22109AC6009A404C /* monitoredqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD96821E0B44400F3B47C /* monitoredqueue.c */; settings = {COMPILER_FLAGS = "-I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		22354ABF22109AC6009A404C /* _bisectmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CB21C6B7C700A71A20 /* _bisectmodule.c */; };
 		22354AC022109AC6009A404C /* callproc.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59121C7879E00A71A20 /* callproc.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
@@ -252,7 +252,7 @@
 		22354AC722109AC6009A404C /* _codecsmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED47321C6AD3200A71A20 /* _codecsmodule.c */; };
 		22354AC922109AC6009A404C /* _uuidmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED57B21C7093C00A71A20 /* _uuidmodule.c */; };
 		22354ACA22109AC6009A404C /* _warnings.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED40421C66E7F00A71A20 /* _warnings.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
-		22354ACB22109AC6009A404C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE"; }; };
+		22354ACB22109AC6009A404C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; };
 		22354AD022109AC6009A404C /* pystrtod.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45E21C6AC0C00A71A20 /* pystrtod.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354AD122109AC6009A404C /* errors.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42021C6AB4500A71A20 /* errors.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354AD222109AC6009A404C /* frozenmain.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42821C6AB6300A71A20 /* frozenmain.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -389,7 +389,7 @@
 		22354BAE22109AEA009A404C /* blake2module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50D21C6BD8100A71A20 /* blake2module.c */; };
 		22354BB022109AEA009A404C /* parsermodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4ED21C6B92400A71A20 /* parsermodule.c */; };
 		22354BB122109AEA009A404C /* cfield.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58F21C7879E00A71A20 /* cfield.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		22354BB222109AEA009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I ../libffi-3.2.1/include/ -I ../libffi-3.2.1/build_iphoneos-arm64/"; }; };
+		22354BB222109AEA009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; };
 		22354BB422109AEA009A404C /* pyfpe.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45021C6ABE200A71A20 /* pyfpe.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354BB522109AEA009A404C /* _stat.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED48321C6ADD100A71A20 /* _stat.c */; };
 		22354BB722109AEA009A404C /* _ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5A921C7D6A700A71A20 /* _ssl.c */; };
@@ -492,7 +492,7 @@
 		22354C4D22109AEA009A404C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A521C6AE6C00A71A20 /* main.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354C4F22109AEA009A404C /* unicodeobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3721C66D3B00967E21 /* unicodeobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354C5122109AEA009A404C /* _pickle.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CF21C6B83400A71A20 /* _pickle.c */; };
-		22354C5222109AEA009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
+		22354C5222109AEA009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		22354C5422109AEA009A404C /* monitoredqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD96821E0B44400F3B47C /* monitoredqueue.c */; settings = {COMPILER_FLAGS = "-I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		22354C5622109AEA009A404C /* _bisectmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CB21C6B7C700A71A20 /* _bisectmodule.c */; };
 		22354C5722109AEA009A404C /* callproc.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59121C7879E00A71A20 /* callproc.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
@@ -502,7 +502,7 @@
 		22354C5E22109AEA009A404C /* _codecsmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED47321C6AD3200A71A20 /* _codecsmodule.c */; };
 		22354C6022109AEA009A404C /* _uuidmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED57B21C7093C00A71A20 /* _uuidmodule.c */; };
 		22354C6122109AEA009A404C /* _warnings.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED40421C66E7F00A71A20 /* _warnings.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
-		22354C6222109AEA009A404C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE"; }; };
+		22354C6222109AEA009A404C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; };
 		22354C6722109AEA009A404C /* pystrtod.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45E21C6AC0C00A71A20 /* pystrtod.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354C6822109AEA009A404C /* errors.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42021C6AB4500A71A20 /* errors.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354C6922109AEA009A404C /* frozenmain.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42821C6AB6300A71A20 /* frozenmain.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -639,7 +639,7 @@
 		22354D4522109C8E009A404C /* blake2module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50D21C6BD8100A71A20 /* blake2module.c */; };
 		22354D4722109C8E009A404C /* parsermodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4ED21C6B92400A71A20 /* parsermodule.c */; };
 		22354D4822109C8E009A404C /* cfield.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58F21C7879E00A71A20 /* cfield.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		22354D4922109C8E009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I ../libffi-3.2.1/include/ -I ../libffi-3.2.1/build_iphoneos-arm64/"; }; };
+		22354D4922109C8E009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; };
 		22354D4B22109C8E009A404C /* pyfpe.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45021C6ABE200A71A20 /* pyfpe.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354D4C22109C8E009A404C /* _stat.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED48321C6ADD100A71A20 /* _stat.c */; };
 		22354D4E22109C8E009A404C /* _ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5A921C7D6A700A71A20 /* _ssl.c */; };
@@ -742,7 +742,7 @@
 		22354DE422109C8E009A404C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A521C6AE6C00A71A20 /* main.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354DE622109C8E009A404C /* unicodeobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3721C66D3B00967E21 /* unicodeobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354DE822109C8E009A404C /* _pickle.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CF21C6B83400A71A20 /* _pickle.c */; };
-		22354DE922109C8E009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
+		22354DE922109C8E009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		22354DEB22109C8E009A404C /* monitoredqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD96821E0B44400F3B47C /* monitoredqueue.c */; settings = {COMPILER_FLAGS = "-I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		22354DED22109C8E009A404C /* _bisectmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CB21C6B7C700A71A20 /* _bisectmodule.c */; };
 		22354DEE22109C8E009A404C /* callproc.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59121C7879E00A71A20 /* callproc.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
@@ -752,7 +752,6 @@
 		22354DF522109C8E009A404C /* _codecsmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED47321C6AD3200A71A20 /* _codecsmodule.c */; };
 		22354DF722109C8E009A404C /* _uuidmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED57B21C7093C00A71A20 /* _uuidmodule.c */; };
 		22354DF822109C8E009A404C /* _warnings.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED40421C66E7F00A71A20 /* _warnings.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
-		22354DF922109C8E009A404C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE"; }; };
 		22354DFE22109C8E009A404C /* pystrtod.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45E21C6AC0C00A71A20 /* pystrtod.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354DFF22109C8E009A404C /* errors.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42021C6AB4500A71A20 /* errors.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354E0022109C8E009A404C /* frozenmain.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42821C6AB6300A71A20 /* frozenmain.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -889,7 +888,7 @@
 		22354EDC22109EB7009A404C /* blake2module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50D21C6BD8100A71A20 /* blake2module.c */; };
 		22354EDE22109EB7009A404C /* parsermodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4ED21C6B92400A71A20 /* parsermodule.c */; };
 		22354EDF22109EB7009A404C /* cfield.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58F21C7879E00A71A20 /* cfield.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		22354EE022109EB7009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I ../libffi-3.2.1/include/ -I ../libffi-3.2.1/build_iphoneos-arm64/"; }; };
+		22354EE022109EB7009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; };
 		22354EE222109EB7009A404C /* pyfpe.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45021C6ABE200A71A20 /* pyfpe.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354EE322109EB7009A404C /* _stat.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED48321C6ADD100A71A20 /* _stat.c */; };
 		22354EE522109EB7009A404C /* _ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5A921C7D6A700A71A20 /* _ssl.c */; };
@@ -992,7 +991,7 @@
 		22354F7B22109EB7009A404C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A521C6AE6C00A71A20 /* main.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354F7D22109EB7009A404C /* unicodeobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3721C66D3B00967E21 /* unicodeobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354F7F22109EB7009A404C /* _pickle.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CF21C6B83400A71A20 /* _pickle.c */; };
-		22354F8022109EB7009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
+		22354F8022109EB7009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		22354F8222109EB7009A404C /* monitoredqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD96821E0B44400F3B47C /* monitoredqueue.c */; settings = {COMPILER_FLAGS = "-I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		22354F8422109EB7009A404C /* _bisectmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CB21C6B7C700A71A20 /* _bisectmodule.c */; };
 		22354F8522109EB7009A404C /* callproc.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59121C7879E00A71A20 /* callproc.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
@@ -1002,7 +1001,7 @@
 		22354F8C22109EB7009A404C /* _codecsmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED47321C6AD3200A71A20 /* _codecsmodule.c */; };
 		22354F8E22109EB7009A404C /* _uuidmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED57B21C7093C00A71A20 /* _uuidmodule.c */; };
 		22354F8F22109EB7009A404C /* _warnings.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED40421C66E7F00A71A20 /* _warnings.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
-		22354F9022109EB7009A404C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE"; }; };
+		22354F9022109EB7009A404C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; };
 		22354F9522109EB7009A404C /* pystrtod.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45E21C6AC0C00A71A20 /* pystrtod.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354F9622109EB7009A404C /* errors.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42021C6AB4500A71A20 /* errors.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22354F9722109EB7009A404C /* frozenmain.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42821C6AB6300A71A20 /* frozenmain.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1139,7 +1138,7 @@
 		2235507222109EB9009A404C /* blake2module.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED50D21C6BD8100A71A20 /* blake2module.c */; };
 		2235507422109EB9009A404C /* parsermodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4ED21C6B92400A71A20 /* parsermodule.c */; };
 		2235507522109EB9009A404C /* cfield.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58F21C7879E00A71A20 /* cfield.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		2235507622109EB9009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I ../libffi-3.2.1/include/ -I ../libffi-3.2.1/build_iphoneos-arm64/"; }; };
+		2235507622109EB9009A404C /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; };
 		2235507822109EB9009A404C /* pyfpe.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45021C6ABE200A71A20 /* pyfpe.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		2235507922109EB9009A404C /* _stat.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED48321C6ADD100A71A20 /* _stat.c */; };
 		2235507B22109EB9009A404C /* _ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5A921C7D6A700A71A20 /* _ssl.c */; };
@@ -1242,7 +1241,7 @@
 		2235511122109EB9009A404C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4A521C6AE6C00A71A20 /* main.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		2235511322109EB9009A404C /* unicodeobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3721C66D3B00967E21 /* unicodeobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		2235511522109EB9009A404C /* _pickle.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CF21C6B83400A71A20 /* _pickle.c */; };
-		2235511622109EB9009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
+		2235511622109EB9009A404C /* _cffi_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95F21DFA97100F3B47C /* _cffi_ext.c */; settings = {COMPILER_FLAGS = "-I../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		2235511822109EB9009A404C /* monitoredqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD96821E0B44400F3B47C /* monitoredqueue.c */; settings = {COMPILER_FLAGS = "-I../zeromq-4.2.5/include/ -I ../extraPackages/pyzmq-17.1.2/zmq/utils/"; }; };
 		2235511A22109EB9009A404C /* _bisectmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED4CB21C6B7C700A71A20 /* _bisectmodule.c */; };
 		2235511B22109EB9009A404C /* callproc.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59121C7879E00A71A20 /* callproc.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
@@ -1252,7 +1251,7 @@
 		2235512222109EB9009A404C /* _codecsmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED47321C6AD3200A71A20 /* _codecsmodule.c */; };
 		2235512422109EB9009A404C /* _uuidmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED57B21C7093C00A71A20 /* _uuidmodule.c */; };
 		2235512522109EB9009A404C /* _warnings.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED40421C66E7F00A71A20 /* _warnings.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
-		2235512622109EB9009A404C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE"; }; };
+		2235512622109EB9009A404C /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; };
 		2235512B22109EB9009A404C /* pystrtod.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED45E21C6AC0C00A71A20 /* pystrtod.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		2235512C22109EB9009A404C /* errors.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42021C6AB4500A71A20 /* errors.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		2235512D22109EB9009A404C /* frozenmain.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED42821C6AB6300A71A20 /* frozenmain.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1504,14 +1503,15 @@
 		226ED57E21C7097900A71A20 /* xxlimited.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED57D21C7097900A71A20 /* xxlimited.c */; };
 		226ED58B21C784B300A71A20 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 226ED58A21C784B200A71A20 /* libbz2.tbd */; };
 		226ED58E21C7865E00A71A20 /* _ctypes.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58D21C7865E00A71A20 /* _ctypes.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		226ED59221C7879E00A71A20 /* cfield.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58F21C7879E00A71A20 /* cfield.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		226ED59321C7879E00A71A20 /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59021C7879E00A71A20 /* callbacks.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		226ED59421C7879E00A71A20 /* callproc.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59121C7879E00A71A20 /* callproc.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		226ED59621C787B100A71A20 /* stgdict.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59521C787B100A71A20 /* stgdict.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		226ED59821C787C300A71A20 /* malloc_closure.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59721C787C300A71A20 /* malloc_closure.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		226ED59A21C787D800A71A20 /* dlfcn_simple.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59921C787D700A71A20 /* dlfcn_simple.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/"; }; };
-		226ED59C21C787EE00A71A20 /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; settings = {COMPILER_FLAGS = "-I ../libffi-3.2.1/build_iphoneos-arm64/include/ -I ../libffi-3.2.1/include/ -I ../libffi-3.2.1/build_iphoneos-arm64/"; }; };
+		226ED59221C7879E00A71A20 /* cfield.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED58F21C7879E00A71A20 /* cfield.c */; };
+		226ED59321C7879E00A71A20 /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59021C7879E00A71A20 /* callbacks.c */; };
+		226ED59421C7879E00A71A20 /* callproc.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59121C7879E00A71A20 /* callproc.c */; };
+		226ED59621C787B100A71A20 /* stgdict.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59521C787B100A71A20 /* stgdict.c */; };
+		226ED59821C787C300A71A20 /* malloc_closure.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59721C787C300A71A20 /* malloc_closure.c */; };
+		226ED59A21C787D800A71A20 /* dlfcn_simple.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59921C787D700A71A20 /* dlfcn_simple.c */; };
+		226ED59C21C787EE00A71A20 /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED59B21C787EE00A71A20 /* ffi.c */; };
 		226ED5AA21C7D6A700A71A20 /* _ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 226ED5A921C7D6A700A71A20 /* _ssl.c */; };
+		22D2A45D24EDA95700E7609B /* _cffi_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = 221CD95C21DBBA1D00F3B47C /* _cffi_backend.c */; };
 		22E8FEE721C66AD100967E21 /* Python3_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E8FEE521C66AD100967E21 /* Python3_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22E8FEEF21C66BF000967E21 /* python.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FEEE21C66BF000967E21 /* python.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22E8FF0221C66C2200967E21 /* metagrammar.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FEF121C66C2200967E21 /* metagrammar.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
@@ -1567,6 +1567,9 @@
 		22E8FF6121C66D3B00967E21 /* accu.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3921C66D3B00967E21 /* accu.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22E8FF6221C66D3B00967E21 /* methodobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3A21C66D3B00967E21 /* methodobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
 		22E8FF6321C66D3B00967E21 /* rangeobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 22E8FF3B21C66D3B00967E21 /* rangeobject.c */; settings = {COMPILER_FLAGS = "-DPy_BUILD_CORE"; }; };
+		22F833DD24EDB20800C5E2F3 /* Python-aux in Frameworks */ = {isa = PBXBuildFile; productRef = 22F833DC24EDB20800C5E2F3 /* Python-aux */; };
+		22F833E024EDB56A00C5E2F3 /* openssl in Frameworks */ = {isa = PBXBuildFile; productRef = 22F833DF24EDB56A00C5E2F3 /* openssl */; };
+		22F833E324EDB79B00C5E2F3 /* ios_system in Frameworks */ = {isa = PBXBuildFile; productRef = 22F833E224EDB79B00C5E2F3 /* ios_system */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1939,10 +1942,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2216146E24C628CC00757BFE /* libffi.xcframework in Frameworks */,
 				2216148D24C62A8400757BFE /* openssl.xcframework in Frameworks */,
 				2216148624C62A7E00757BFE /* libssh2.xcframework in Frameworks */,
 				2216149724C62C0500757BFE /* ios_system.xcframework in Frameworks */,
-				2216146E24C628CC00757BFE /* libffi.xcframework in Frameworks */,
 				2216145924C628A200757BFE /* freetype.xcframework in Frameworks */,
 				2216146024C628AF00757BFE /* harfbuzz.xcframework in Frameworks */,
 				2216146724C628B800757BFE /* libpng.xcframework in Frameworks */,
@@ -1950,7 +1953,10 @@
 				2216147C24C628E900757BFE /* openblas.xcframework in Frameworks */,
 				22288E082211FAC20081D86C /* Accelerate.framework in Frameworks */,
 				226ED58B21C784B300A71A20 /* libbz2.tbd in Frameworks */,
+				22F833DD24EDB20800C5E2F3 /* Python-aux in Frameworks */,
+				22F833E324EDB79B00C5E2F3 /* ios_system in Frameworks */,
 				221CD96421DFAABF00F3B47C /* libc++.tbd in Frameworks */,
+				22F833E024EDB56A00C5E2F3 /* openssl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2528,6 +2534,9 @@
 			);
 			name = python3_ios;
 			packageProductDependencies = (
+				22F833DC24EDB20800C5E2F3 /* Python-aux */,
+				22F833DF24EDB56A00C5E2F3 /* openssl */,
+				22F833E224EDB79B00C5E2F3 /* ios_system */,
 			);
 			productName = Python3_ios;
 			productReference = 22E8FEE221C66AD100967E21 /* python3_ios.framework */;
@@ -2556,9 +2565,9 @@
 			);
 			mainGroup = 22E8FED821C66AD100967E21;
 			packageReferences = (
-				2216145424C6283000757BFE /* XCRemoteSwiftPackageReference "Python-aux" */,
-				2216148224C62A5900757BFE /* XCRemoteSwiftPackageReference "libssh2-for-iOS" */,
-				2216149324C62BEA00757BFE /* XCRemoteSwiftPackageReference "ios_system" */,
+				22F833DB24EDB20800C5E2F3 /* XCRemoteSwiftPackageReference "Python-aux" */,
+				22F833DE24EDB56900C5E2F3 /* XCRemoteSwiftPackageReference "libssh2-for-iOS" */,
+				22F833E124EDB79B00C5E2F3 /* XCRemoteSwiftPackageReference "ios_system" */,
 			);
 			productRefGroup = 22E8FEE321C66AD100967E21 /* Products */;
 			projectDirPath = "";
@@ -3089,6 +3098,7 @@
 			files = (
 				22354CE122109C8E009A404C /* _cryptmodule.c in Sources */,
 				22354CE222109C8E009A404C /* object.c in Sources */,
+				22D2A45D24EDA95700E7609B /* _cffi_backend.c in Sources */,
 				22354CE322109C8E009A404C /* codeobject.c in Sources */,
 				22354CE422109C8E009A404C /* parser.c in Sources */,
 				22354CE522109C8E009A404C /* _contextvarsmodule.c in Sources */,
@@ -3266,7 +3276,6 @@
 				22354DF522109C8E009A404C /* _codecsmodule.c in Sources */,
 				22354DF722109C8E009A404C /* _uuidmodule.c in Sources */,
 				22354DF822109C8E009A404C /* _warnings.c in Sources */,
-				22354DF922109C8E009A404C /* _cffi_backend.c in Sources */,
 				22354DFE22109C8E009A404C /* pystrtod.c in Sources */,
 				22354DFF22109C8E009A404C /* errors.c in Sources */,
 				22354E0022109C8E009A404C /* frozenmain.c in Sources */,
@@ -4138,11 +4147,10 @@
 					"-Werror=implicit-function-declaration",
 					"-I../Python-3.7.1/",
 					"-I../Python-3.7.1/Include",
-					"-F",
-					../Frameworks/,
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4154,6 +4162,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4195,11 +4204,10 @@
 					"-Werror=implicit-function-declaration",
 					"-I../Python-3.7.1/",
 					"-I../Python-3.7.1/Include",
-					"-F",
-					../Frameworks/,
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4211,6 +4219,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4257,6 +4266,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4268,6 +4278,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4314,6 +4325,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4325,6 +4337,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4371,6 +4384,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4382,6 +4396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4428,6 +4443,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4439,6 +4455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4485,6 +4502,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4496,6 +4514,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4542,6 +4561,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4553,6 +4573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4599,6 +4620,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4610,6 +4632,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4656,6 +4679,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4667,6 +4691,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.PythonE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4801,6 +4826,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
+				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = Python3_ios/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -4829,6 +4855,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4840,6 +4867,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.Python3-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4856,6 +4884,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
+				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = Python3_ios/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -4884,6 +4913,7 @@
 					"-I..",
 					"-DNDEBUG",
 					"-DWITH_PYMALLOC",
+					"-I$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/ffi/",
 				);
 				OTHER_CPLUSPLUSFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -4895,6 +4925,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Nicolas-Holzschuch.Python3-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s ";
 			};
@@ -4969,7 +5000,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2216145424C6283000757BFE /* XCRemoteSwiftPackageReference "Python-aux" */ = {
+		22F833DB24EDB20800C5E2F3 /* XCRemoteSwiftPackageReference "Python-aux" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/holzschu/Python-aux.git";
 			requirement = {
@@ -4977,7 +5008,7 @@
 				kind = branch;
 			};
 		};
-		2216148224C62A5900757BFE /* XCRemoteSwiftPackageReference "libssh2-for-iOS" */ = {
+		22F833DE24EDB56900C5E2F3 /* XCRemoteSwiftPackageReference "libssh2-for-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/holzschu/libssh2-for-iOS.git";
 			requirement = {
@@ -4985,7 +5016,7 @@
 				kind = branch;
 			};
 		};
-		2216149324C62BEA00757BFE /* XCRemoteSwiftPackageReference "ios_system" */ = {
+		22F833E124EDB79B00C5E2F3 /* XCRemoteSwiftPackageReference "ios_system" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/holzschu/ios_system.git";
 			requirement = {
@@ -4994,6 +5025,24 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22F833DC24EDB20800C5E2F3 /* Python-aux */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22F833DB24EDB20800C5E2F3 /* XCRemoteSwiftPackageReference "Python-aux" */;
+			productName = "Python-aux";
+		};
+		22F833DF24EDB56A00C5E2F3 /* openssl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22F833DE24EDB56900C5E2F3 /* XCRemoteSwiftPackageReference "libssh2-for-iOS" */;
+			productName = openssl;
+		};
+		22F833E224EDB79B00C5E2F3 /* ios_system */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22F833E124EDB79B00C5E2F3 /* XCRemoteSwiftPackageReference "ios_system" */;
+			productName = ios_system;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 22E8FED921C66AD100967E21 /* Project object */;
 }
