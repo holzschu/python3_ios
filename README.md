@@ -1,3 +1,7 @@
+# Obsolete
+
+This project is not maintained anymore. Please use [CPython](https://github.com/holzschu/cpython) instead. It has Python 3.9 and all the latest packages, and builds XCFrameworks for MacOSX, iOS and simulator simultaneously. 
+
 # Python3 for iOS -- with partial fork() and exec() ability
 
 This project is a patch of Python-3.7.1, designed to make it compile on iOS. Python becomes a framework, and your programs call `python_main(argc, argv)` to execute python scripts. 
